@@ -1,6 +1,7 @@
 extends Node2D
 
-
-
-func _on_quit_pressed():
-	get_tree().quit()
+# a tmp way to turn off the game by pressing Q
+func _input(event):
+		if event is InputEventKey and event.pressed:
+			if event.keycode == KEY_Q:
+				get_tree().quit()

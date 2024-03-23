@@ -96,3 +96,9 @@ libraries = {
 "": SubResource("AnimationLibrary_w87xx")
 }
 autoplay = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_right = 1152
+limit_bottom = 647

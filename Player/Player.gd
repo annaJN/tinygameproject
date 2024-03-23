@@ -26,3 +26,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _input(event):
+		if event is InputEventKey and event.pressed:
+			if event.keycode == KEY_D:
+				# self.position.x += 50
+				var tween = get_tree().create_tween()
+				tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
