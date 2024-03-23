@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://45iq2ut2ou6v"]
+[gd_scene load_steps=61 format=3 uid="uid://45iq2ut2ou6v"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_oyxqv"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_48nqo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_av5j0"]
 [ext_resource type="PackedScene" uid="uid://c5vd8x40yfoan" path="res://Player/Player.tscn" id="8_jd6vj"]
 [ext_resource type="Texture2D" uid="uid://de3iwha7bbl28" path="res://tmp/Untitled2.png" id="9_q0wrf"]
+[ext_resource type="PackedScene" uid="uid://btdhlu33mv53v" path="res://Portal.tscn" id="10_emjyh"]
 
 [sub_resource type="Resource" id="Resource_6s4je"]
 script = ExtResource("3_6x6vj")
@@ -386,10 +387,10 @@ render_offset = 0.0
 script = ExtResource("1_oyxqv")
 
 [node name="Header" type="Label" parent="."]
-offset_left = 396.0
-offset_top = 67.0
-offset_right = 491.0
-offset_bottom = 90.0
+offset_left = 534.0
+offset_top = 495.0
+offset_right = 629.0
+offset_bottom = 518.0
 text = "Game Scene"
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -505,3 +506,6 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(568.646, 400.57, 637.462, 405.052, 637.47, 419.509, 569.564, 416.819)
+
+[node name="Portal" parent="." instance=ExtResource("10_emjyh")]
+position = Vector2(730, 491)
