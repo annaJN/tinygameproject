@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Tinygameproject"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,3 +22,7 @@ project/assembly_name="Tinygameproject"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
