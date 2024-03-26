@@ -36,11 +36,6 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Quit"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_top = 3.0
-offset_right = 1147.0
-offset_bottom = 652.0
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
