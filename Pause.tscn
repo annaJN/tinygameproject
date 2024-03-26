@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://g3kd520yg4xk"]
+
+[ext_resource type="Script" path="res://Pause.gd" id="1_duaes"]
+
+[node name="Pause" type="Node2D"]
+script = ExtResource("1_duaes")
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 132.0
+offset_right = 652.0
+offset_bottom = 207.0
+text = "Continue"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 214.0
+offset_right = 652.0
+offset_bottom = 289.0
+text = "Quit"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

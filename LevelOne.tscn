@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=69 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8fs6s"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5njbc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xmkcxth476rm" path="res://tmp/Untitled3.png" id="6_mop6y"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_0ndqs"]
 [ext_resource type="PackedScene" uid="uid://c5vd8x40yfoan" path="res://Player/Player.tscn" id="8_yqlfn"]
+[ext_resource type="PackedScene" uid="uid://g3kd520yg4xk" path="res://Pause.tscn" id="10_chadk"]
 [ext_resource type="PackedScene" uid="uid://btdhlu33mv53v" path="res://Portal.tscn" id="10_p26rg"]
 
 [sub_resource type="Resource" id="Resource_w07w4"]
@@ -505,3 +506,6 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(1.69883, -88.7153, 1.76445, 823.043, -211.189, 765.815)
+
+[node name="Pause" parent="." instance=ExtResource("10_chadk")]
+position = Vector2(1, 2)
