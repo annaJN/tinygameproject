@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=68 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8fs6s"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5njbc"]
@@ -287,6 +287,168 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="Resource" id="Resource_xu6bc"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_x0p34"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1152.51, -47.007)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_xu6bc")
+
+[sub_resource type="Resource" id="Resource_cjhpq"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_ur005"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1154.1, 818.126)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_cjhpq")
+
+[sub_resource type="Resource" id="Resource_xl2d5"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_dfn56"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1455.7, 626.05)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_xl2d5")
+
+[sub_resource type="Resource" id="Resource_blaqr"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_y11q7"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1152.51, -47.007)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_blaqr")
+
+[sub_resource type="Resource" id="Resource_5gmoi"]
+script = ExtResource("5_jhi1n")
+_points = {
+0: SubResource("Resource_x0p34"),
+1: SubResource("Resource_ur005"),
+2: SubResource("Resource_dfn56"),
+3: SubResource("Resource_y11q7")
+}
+_point_order = Array[int]([3, 2, 1, 0])
+_constraints = {
+Array[int]([0, 3]): 15
+}
+_next_key = 4
+_material_overrides = {}
+
+[sub_resource type="Resource" id="Resource_cyevy"]
+script = ExtResource("7_0ndqs")
+_edge_meta_materials = Array[Resource("res://addons/rmsmartshape/materials/edge_material_metadata.gd")]([])
+fill_textures = Array[Texture2D]([])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[sub_resource type="Resource" id="Resource_gjcka"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_vbs2e"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1.64536, -88.2794)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_gjcka")
+
+[sub_resource type="Resource" id="Resource_bqy0u"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_ejtp1"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1.64536, 822.888)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_bqy0u")
+
+[sub_resource type="Resource" id="Resource_n6uov"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_sbm2d"]
+script = ExtResource("4_gnsqa")
+position = Vector2(-211.066, 765.742)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_n6uov")
+
+[sub_resource type="Resource" id="Resource_rht48"]
+script = ExtResource("3_qpvgo")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_fg1lb"]
+script = ExtResource("4_gnsqa")
+position = Vector2(1.64536, -88.2794)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_rht48")
+
+[sub_resource type="Resource" id="Resource_0onrl"]
+script = ExtResource("5_jhi1n")
+_points = {
+0: SubResource("Resource_vbs2e"),
+1: SubResource("Resource_ejtp1"),
+2: SubResource("Resource_sbm2d"),
+3: SubResource("Resource_fg1lb")
+}
+_point_order = Array[int]([0, 1, 2, 3])
+_constraints = {
+Array[int]([0, 3]): 15
+}
+_next_key = 4
+_material_overrides = {}
+
+[sub_resource type="Resource" id="Resource_ieclr"]
+script = ExtResource("7_0ndqs")
+_edge_meta_materials = Array[Resource("res://addons/rmsmartshape/materials/edge_material_metadata.gd")]([])
+fill_textures = Array[Texture2D]([])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_8fs6s")
 
@@ -297,21 +459,49 @@ offset_right = 638.0
 offset_bottom = 488.0
 text = "Level 1"
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("8_yqlfn")]
+position = Vector2(409, 394)
 
-[node name="SS2D_Shape_Closed" type="Node2D" parent="Ground"]
+[node name="Portal" parent="." instance=ExtResource("10_p26rg")]
+position = Vector2(730, 491)
+
+[node name="Crashables" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Crashables"]
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="Crashables/Ground"]
 script = ExtResource("2_5njbc")
 _points = SubResource("Resource_sgvjl")
 shape_material = SubResource("Resource_a6rwy")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Crashables/Ground"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(-39.7017, 530.069, 66.9766, 608.717, 175.927, 522.178, 198.378, 604.211, 322.88, 575.118, 370.009, 503.214, 477.815, 536.962, 519.36, 595.279, 676.4, 567.22, 680.893, 518.96, 817.917, 488.669, 903.217, 557.179, 1025.53, 595.266, 1086.15, 517.849, 1204.1, 524.556, 1240.09, 715.571, -119.543, 704.352)
 
-[node name="Player" parent="." instance=ExtResource("8_yqlfn")]
-position = Vector2(409, 394)
+[node name="Wall right" type="StaticBody2D" parent="Crashables"]
 
-[node name="Portal" parent="." instance=ExtResource("10_p26rg")]
-position = Vector2(730, 491)
+[node name="SS2D_Shape_Closed" type="Node2D" parent="Crashables/Wall right"]
+script = ExtResource("2_5njbc")
+_points = SubResource("Resource_5gmoi")
+shape_material = SubResource("Resource_cyevy")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Crashables/Wall right"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(1152.43, -47.3936, 1455.82, 626.085, 1153.97, 818.353)
+
+[node name="Wall left" type="StaticBody2D" parent="Crashables"]
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="Crashables/Wall left"]
+script = ExtResource("2_5njbc")
+_points = SubResource("Resource_0onrl")
+shape_material = SubResource("Resource_ieclr")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Crashables/Wall left"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(1.69881, -88.7153, 1.76445, 823.043, -211.19, 765.814)
