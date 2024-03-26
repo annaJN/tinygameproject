@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://blqfu67pm8yq3"]
+[gd_scene load_steps=3 format=3 uid="uid://blqfu67pm8yq3"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_pki7g"]
+[ext_resource type="Texture2D" uid="uid://bkp2ud52syqfn" path="res://backgrounds/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" id="2_gkc5u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pki7g")
+
+[node name="Johannes-plenio-rwHv7LgeC7s-unsplash" type="Sprite2D" parent="."]
+position = Vector2(609, 321)
+scale = Vector2(0.287775, 0.287775)
+texture = ExtResource("2_gkc5u")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = -12.0
@@ -29,6 +35,11 @@ text = "Settings"
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 3.0
+offset_right = 1147.0
+offset_bottom = 652.0
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
