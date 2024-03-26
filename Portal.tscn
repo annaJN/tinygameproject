@@ -41,9 +41,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_0w4su"]
-resource_name = "Haning"
-
 [sub_resource type="Animation" id="Animation_4b73o"]
 resource_name = "Hanging"
 length = 0.7
@@ -72,6 +69,9 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
+
+[sub_resource type="Animation" id="Animation_0w4su"]
+resource_name = "Haning"
 
 [sub_resource type="Animation" id="Animation_eo1c7"]
 length = 0.001
