@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var ground
 var jump_count = 0
+# could be increased if we want a power up or for accessibly purposes
 var max_jumps = 2
 
 func _physics_process(delta):
@@ -15,9 +16,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	# Makes sure the jump count is reset when the player is on the floor
 	if is_on_floor():
 		jump_count = 0
-	# Handle jump.
+	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
