@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://hukgge0g7vn0"]
+[gd_scene load_steps=81 format=3 uid="uid://hukgge0g7vn0"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_oyxqv"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_48nqo"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_brbcm"]
 [ext_resource type="Texture2D" uid="uid://xmkcxth476rm" path="res://tmp/Untitled3.png" id="6_jmuc1"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_av5j0"]
-[ext_resource type="PackedScene" uid="uid://c5vd8x40yfoan" path="res://Player/Player.tscn" id="8_jd6vj"]
 [ext_resource type="Texture2D" uid="uid://de3iwha7bbl28" path="res://tmp/Untitled2.png" id="9_q0wrf"]
 [ext_resource type="PackedScene" uid="uid://btdhlu33mv53v" path="res://Portal.tscn" id="10_emjyh"]
 [ext_resource type="PackedScene" uid="uid://dpkbfwro3pgnp" path="res://NPC/npc.tscn" id="11_b5s1t"]
@@ -555,9 +554,6 @@ offset_top = 495.0
 offset_right = 629.0
 offset_bottom = 518.0
 text = "Game Scene"
-
-[node name="Player" parent="." instance=ExtResource("8_jd6vj")]
-position = Vector2(409, 394)
 
 [node name="Portal" parent="." instance=ExtResource("10_emjyh")]
 position = Vector2(730, 491)

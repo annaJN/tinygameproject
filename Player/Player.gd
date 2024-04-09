@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -200.0
 
-var health = 50
+#var health = 50
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -81,7 +81,7 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	SaveGame.health = health
+	#SaveGame.health = health
 	SaveGame.positionX = self.position.x
 	SaveGame.positionY = self.position.y
 	SaveGame.sceneActive = get_tree().current_scene.name
