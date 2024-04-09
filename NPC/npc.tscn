@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpkbfwro3pgnp"]
+
+[ext_resource type="Script" path="res://NPC/npc.gd" id="1_adjsa"]
+[ext_resource type="Texture2D" uid="uid://eqfgd6fmnphp" path="res://tmp/Frog/idle/frog-idle-1.png" id="1_i7qon"]
+[ext_resource type="Texture2D" uid="uid://ddgouall7d21f" path="res://tmp/Frog/idle/frog-idle-2.png" id="2_3e4vk"]
+[ext_resource type="Texture2D" uid="uid://d2l1gnork2cu3" path="res://tmp/Frog/idle/frog-idle-3.png" id="3_1qwvm"]
+[ext_resource type="Texture2D" uid="uid://vcbher7xvbi1" path="res://tmp/Frog/idle/frog-idle-4.png" id="4_vhk0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da0is"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uo4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i7qon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3e4vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1qwvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vhk0f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_q07mp"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_6uo4n")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_phukj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_6uo4n")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kr7mw"]
+_data = {
+"Idle": SubResource("Animation_q07mp"),
+"RESET": SubResource("Animation_phukj")
+}
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_adjsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_da0is")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_6uo4n")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kr7mw")
+}
+autoplay = "Idle"

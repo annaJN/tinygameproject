@@ -35,6 +35,10 @@ Pause={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_5="Actionables"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
