@@ -1,6 +1,7 @@
 extends Node2D
 
 
+
 func _input(event):
 	# a tmp way to turn off the game by pressing Q
 	if event is InputEventKey and event.pressed:
@@ -11,4 +12,3 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().paused = true
 		$Player/Camera2D/PauseMenu.show()
-		
