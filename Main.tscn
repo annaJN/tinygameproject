@@ -24,7 +24,12 @@ size_flags_stretch_ratio = 0.0
 [node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Start Game"
+text = "Start New Game"
+
+[node name="Load" type="Button" parent="CenterContainer/VBoxContainer" groups=["Saves"]]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Resume Game"
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
@@ -36,14 +41,7 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Quit"
 
-[node name="Load" type="Button" parent="." groups=["Saves"]]
-offset_left = 726.0
-offset_top = 241.0
-offset_right = 913.0
-offset_bottom = 313.0
-text = "Saved Game Start"
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
