@@ -11,3 +11,6 @@ func _on_settings_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+## A button to start the last loaded game (hopefully)
+func _on_load_pressed():
+	SaveGame.loadGame()

@@ -105,6 +105,7 @@ limit_bottom = 647
 
 [node name="PauseMenu" type="MenuBar" parent="Camera2D"]
 process_mode = 2
+visible = false
 offset_left = -414.0
 offset_top = -383.0
 offset_right = 406.0
