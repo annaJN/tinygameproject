@@ -32,8 +32,6 @@ func _physics_process(delta):
 		wall_jump()
 		
 	wall_sliding(delta)	
-		
-
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -51,12 +49,6 @@ func _input(event):
 				# self.position.x += 50
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
-
-
-func _on_resume_pressed():
-	$Camera2D/PauseMenu.hide()
-	get_tree().paused = false
-	
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):
@@ -78,3 +70,17 @@ func wall_jump():
 	if Input.is_action_pressed("ui_left") and is_on_wall():
 		velocity.y = JUMP_VELOCITY
 		velocity.x = wall_jump_push
+
+## 
+## Pause menu functionality
+##
+func _on_resume_pressed():
+	$Camera2D/PauseMenu.hide()
+	get_tree().paused = false
+	
+func _on_save_pressed():
+	pass # Replace with function body.
+
+func _on_main_menu_pressed():
+	_on_resume_pressed()
+	get_tree().change_scene_to_file("res://Main.tscn")
