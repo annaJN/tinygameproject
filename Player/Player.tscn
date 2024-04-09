@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=13 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://tmp/PlayerSprites/idle/player-idle-1.png" id="1_1e7fb"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_qlfjm"]
 [ext_resource type="Texture2D" uid="uid://cfrdapyev4k1h" path="res://tmp/PlayerSprites/idle/player-idle-2.png" id="2_eu6ge"]
 [ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://tmp/PlayerSprites/idle/player-idle-3.png" id="3_duvqp"]
 [ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://tmp/PlayerSprites/idle/player-idle-4.png" id="4_7yi2y"]
+[ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_36tvk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
 radius = 7.0
@@ -80,10 +81,13 @@ _data = {
 "RESET": SubResource("Animation_u5uxy")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
+radius = 14.1421
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qlfjm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_rloiv")
 
@@ -102,3 +106,38 @@ zoom = Vector2(1.4, 1.4)
 limit_left = 0
 limit_right = 1152
 limit_bottom = 647
+
+[node name="PauseMenu" type="MenuBar" parent="Camera2D"]
+process_mode = 2
+visible = false
+offset_left = -406.0
+offset_top = -230.0
+offset_right = 414.0
+offset_bottom = 233.0
+
+[node name="Label" type="Label" parent="Camera2D/PauseMenu"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 218.0
+offset_right = 532.0
+offset_bottom = 241.0
+text = "THIS IS THE PAUSE MENU TEXT!!!"
+
+[node name="Resume" type="Button" parent="Camera2D/PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 252.0
+offset_right = 478.0
+offset_bottom = 310.0
+text = "Resume"
+
+[node name="ActionableFinder" parent="." instance=ExtResource("6_36tvk")]
+position = Vector2(12, 6)
+collision_layer = 0
+collision_mask = 16
+script = null
+
+[node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
+shape = SubResource("CircleShape2D_fh5e2")
+
+[connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]

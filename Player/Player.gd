@@ -12,11 +12,21 @@ var jump_count = 0
 #if we don't want to have double jump, change it to 1
 var max_jumps = 2
 
+@onready var actionableFinder: Area2D = $ActionableFinder
+
 var push_force = 80.0
 
 const wall_jump_push = 100
 const wall_slide_gravity = 50
 var is_wall_sliding = false
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("interact"):
+		var actionables = actionableFinder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -35,7 +45,6 @@ func _physics_process(delta):
 		
 	wall_sliding(delta)	
 		
-
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -58,6 +67,12 @@ func _input(event):
 				# self.position.x += 50
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
+
+
+func _on_resume_pressed():
+	$Camera2D/PauseMenu.hide()
+	get_tree().paused = false
+	
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):
