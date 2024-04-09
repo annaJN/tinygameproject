@@ -12,6 +12,8 @@ var jump_count = 0
 #if we don't want to have double jump, change it to 1
 var max_jumps = 2
 
+var push_force = 80.0
+
 const wall_jump_push = 100
 const wall_slide_gravity = 50
 var is_wall_sliding = false
@@ -44,6 +46,11 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 func _input(event):
 		if event is InputEventKey and event.pressed:
