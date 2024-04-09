@@ -1,31 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqu35bi5jvjp2"]
+[gd_scene load_steps=3 format=3 uid="uid://blqfu67pm8yq3"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_pki7g"]
+[ext_resource type="Texture2D" uid="uid://bkp2ud52syqfn" path="res://backgrounds/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" id="2_gkc5u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pki7g")
 
-[node name="Start" type="Button" parent="."]
-offset_left = 73.0
-offset_top = 114.0
-offset_right = 236.0
-offset_bottom = 170.0
-text = "Start"
+[node name="Johannes-plenio-rwHv7LgeC7s-unsplash" type="Sprite2D" parent="."]
+position = Vector2(609, 321)
+scale = Vector2(0.287775, 0.287775)
+texture = ExtResource("2_gkc5u")
 
-[node name="Settings" type="Button" parent="."]
-offset_left = 73.0
-offset_top = 180.0
-offset_right = 236.0
-offset_bottom = 236.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_left = -12.0
+offset_top = 4.0
+offset_right = 1148.0
+offset_bottom = 646.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "Settings"
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 73.0
-offset_top = 254.0
-offset_right = 236.0
-offset_bottom = 310.0
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

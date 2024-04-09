@@ -52,6 +52,12 @@ func _input(event):
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
 
+
+func _on_resume_pressed():
+	$Camera2D/PauseMenu.hide()
+	get_tree().paused = false
+	
+
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):
 	if is_on_wall() and !is_on_floor():
