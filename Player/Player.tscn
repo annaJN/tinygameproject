@@ -83,7 +83,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qlfjm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_rloiv")
 
