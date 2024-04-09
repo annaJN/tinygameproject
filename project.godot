@@ -21,6 +21,10 @@ Global="*res://Global/Global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Actionable="*res://Helpers/Actionable.gd"
 
+[dialogue_manager]
+
+general/balloon_path="res://Dialogue/balloon.tscn"
+
 [dotnet]
 
 project/assembly_name="Tinygameproject"
