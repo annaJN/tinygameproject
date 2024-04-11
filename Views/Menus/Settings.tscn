@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2vt8dvkbu118"]
+
+[ext_resource type="Script" path="res://Views/Menus/Settings.gd" id="1_j2rwk"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_j2rwk")
+
+[node name="Header" type="Label" parent="."]
+offset_left = 394.0
+offset_top = 64.0
+offset_right = 456.0
+offset_bottom = 87.0
+text = "Settings"
+
+[node name="Return" type="Button" parent="."]
+offset_left = 362.0
+offset_top = 151.0
+offset_right = 552.0
+offset_bottom = 219.0
+text = "Back"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
