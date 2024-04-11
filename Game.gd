@@ -7,6 +7,7 @@ func _init():
 	tmpPlayer.position = Vector2(SaveGame.positionX, SaveGame.positionY)
 	add_child(tmpPlayer)
 
+
 func _input(event):
 	# a tmp way to turn off the game by pressing Q
 	if event is InputEventKey and event.pressed:

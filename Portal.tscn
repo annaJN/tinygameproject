@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://btdhlu33mv53v"]
+[gd_scene load_steps=15 format=3 uid="uid://baky1wdr1erax"]
 
 [ext_resource type="Script" path="res://Portal.gd" id="1_2mpwr"]
 [ext_resource type="Texture2D" uid="uid://s27d8ydt5m2i" path="res://tmp/PlayerSprites/cherry/cherry-1.png" id="2_gm5h8"]
