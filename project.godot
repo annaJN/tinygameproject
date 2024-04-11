@@ -49,7 +49,7 @@ Pause={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/frogTemp.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/frogTemp.dialogue", "res://Snorlax.dialogue", "res://Dialogue/Snorlax.dialogue")
 
 [layer_names]
 

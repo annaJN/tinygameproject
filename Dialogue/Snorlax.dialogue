@@ -1,0 +1,25 @@
+~ snorlax_first_meet
+if snorlax_woken_violently
+	Snorlax: [#angry, #surprised] !...
+	- [#action] Stare silently => snorlax_standoff
+	- Sorry, I did not mean to hurt you
+	- Get moving you silly goose
+		Conscience: Are you sure?
+		- [#evil, #happy] Yes
+		- [#evil] Of course
+			Conscience: Like[wait=1.0], really sure?
+			- [#annoyed] Yes
+			- [#annoyed] Fine, no
+		- [#kind] No
+
+~ snorlax_standoff
+%4 Snorlax: [#action] Stares silentlier
+- [#action] Stare silently => snorlax_standoff
+- [#action] Blink
+- Hi!
+%1 Snorlax: .[wait=0.5].[wait=0.5].[wait=0.5] [#angry]Fine[wait=1], be like that
+
+~ snorlax_slighted_permanently
+Snorlax: [#action] Turns away from you => END
+
+~ End

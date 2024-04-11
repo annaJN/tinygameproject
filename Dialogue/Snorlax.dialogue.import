@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bpn6ugbeenk2k"
+path="res://.godot/imported/Snorlax.dialogue-4559ab32fb3cc437684402274fe96e59.tres"
+
+[deps]
+
+source_file="res://Dialogue/Snorlax.dialogue"
+dest_files=["res://.godot/imported/Snorlax.dialogue-4559ab32fb3cc437684402274fe96e59.tres"]
+
+[params]
+
+defaults=true
