@@ -110,29 +110,45 @@ limit_bottom = 647
 [node name="PauseMenu" type="MenuBar" parent="Camera2D"]
 process_mode = 2
 visible = false
-offset_left = -406.0
-offset_top = -230.0
-offset_right = 414.0
-offset_bottom = 233.0
+offset_left = -414.0
+offset_top = -383.0
+offset_right = 406.0
+offset_bottom = 80.0
 
 [node name="Label" type="Label" parent="Camera2D/PauseMenu"]
 layout_mode = 0
 offset_left = 284.0
-offset_top = 218.0
+offset_top = 139.0
 offset_right = 532.0
-offset_bottom = 241.0
+offset_bottom = 162.0
 text = "THIS IS THE PAUSE MENU TEXT!!!"
 
 [node name="Resume" type="Button" parent="Camera2D/PauseMenu"]
 layout_mode = 0
 offset_left = 349.0
-offset_top = 252.0
+offset_top = 173.0
 offset_right = 478.0
-offset_bottom = 310.0
+offset_bottom = 231.0
 text = "Resume"
 
+[node name="Save" type="Button" parent="Camera2D/PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 236.0
+offset_right = 478.0
+offset_bottom = 294.0
+text = "Save Game"
+
+[node name="MainMenu" type="Button" parent="Camera2D/PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 300.0
+offset_right = 478.0
+offset_bottom = 358.0
+text = "Main Menu"
+
 [node name="ActionableFinder" parent="." instance=ExtResource("6_36tvk")]
-position = Vector2(12, 6)
+position = Vector2(12, 69)
 collision_layer = 0
 collision_mask = 16
 script = null
@@ -141,3 +157,5 @@ script = null
 shape = SubResource("CircleShape2D_fh5e2")
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Camera2D/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
