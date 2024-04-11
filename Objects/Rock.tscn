@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b603lyw63yslm"]
+
+[ext_resource type="Texture2D" uid="uid://dccwig2ibtw7b" path="res://Assets/tmp/rock.webp" id="1_nd57j"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 10.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 1, 0, -33, 14, -27, 26, -14, 33, 18, 30, 24, 11, 31, -14, 31, -30, 21, -34, 15, -32, 2, -21, -17, -12, -29, 0, -33)
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(-4, -3)
+scale = Vector2(0.26875, 0.26875)
+texture = ExtResource("1_nd57j")
