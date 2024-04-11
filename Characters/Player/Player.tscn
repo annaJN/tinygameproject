@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://c5vd8x40yfoan"]
 
-[ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_qlfjm"]
-[ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_nbver"]
-[ext_resource type="Texture2D" uid="uid://cfrdapyev4k1h" path="res://Assets/tmp/PlayerSprites/idle/player-idle-2.png" id="3_dtu3v"]
-[ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://Assets/tmp/PlayerSprites/idle/player-idle-3.png" id="4_sqglj"]
-[ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_vfs56"]
-[ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_36tvk"]
+[ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
+[ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
+[ext_resource type="Texture2D" uid="uid://cfrdapyev4k1h" path="res://Assets/tmp/PlayerSprites/idle/player-idle-2.png" id="3_42ejr"]
+[ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://Assets/tmp/PlayerSprites/idle/player-idle-3.png" id="4_oaq0y"]
+[ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_kp6c6"]
+[ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_4fov4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
 radius = 7.0
@@ -15,16 +15,16 @@ height = 22.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nbver")
+"texture": ExtResource("2_hc6q0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_dtu3v")
+"texture": ExtResource("3_42ejr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sqglj")
+"texture": ExtResource("4_oaq0y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_vfs56")
+"texture": ExtResource("5_kp6c6")
 }],
 "loop": true,
 "name": &"Idle",
@@ -85,7 +85,7 @@ _data = {
 radius = 14.1421
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_qlfjm")
+script = ExtResource("1_7pauv")
 
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -147,13 +147,14 @@ offset_right = 478.0
 offset_bottom = 358.0
 text = "Main Menu"
 
-[node name="ActionableFinder" parent="." instance=ExtResource("6_36tvk")]
+[node name="ActionableFinder" parent="." instance=ExtResource("6_4fov4")]
 position = Vector2(12, 69)
 collision_layer = 0
 collision_mask = 16
 script = null
 
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
+position = Vector2(2, -64)
 shape = SubResource("CircleShape2D_fh5e2")
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=81 format=3 uid="uid://hukgge0g7vn0"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/Game.gd" id="1_oyxqv"]
+[ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_oyxqv"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_48nqo"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_6x6vj"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_hy8ae"]

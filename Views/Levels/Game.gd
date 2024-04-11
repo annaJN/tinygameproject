@@ -1,6 +1,6 @@
 extends Node2D
 
-var Player = preload("res://Player/Player.tscn")
+var Player = preload("res://Characters/Player/Player.tscn")
 
 func _init():
 	var tmpPlayer = Player.instantiate()
