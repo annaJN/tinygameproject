@@ -9,8 +9,10 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_av5j0"]
 [ext_resource type="PackedScene" uid="uid://c5vd8x40yfoan" path="res://Player/Player.tscn" id="8_jd6vj"]
 [ext_resource type="Texture2D" uid="uid://de3iwha7bbl28" path="res://tmp/Untitled2.png" id="9_q0wrf"]
-[ext_resource type="PackedScene" uid="uid://btdhlu33mv53v" path="res://Portal.tscn" id="10_emjyh"]
+[ext_resource type="PackedScene" uid="uid://btdhlu33mv53v" uid="uid://baky1wdr1erax" path="res://Portal.tscn" id="10_emjyh"]
 [ext_resource type="PackedScene" uid="uid://dpkbfwro3pgnp" path="res://NPC/npc.tscn" id="11_b5s1t"]
+[ext_resource type="PackedScene" uid="uid://dy554mc30v0sj" path="res://Ball.tscn" id="11_r85l2"]
+[ext_resource type="PackedScene" uid="uid://b603lyw63yslm" path="res://Rock.tscn" id="12_eexod"]
 
 [sub_resource type="Resource" id="Resource_s4aa7"]
 script = ExtResource("3_6x6vj")
@@ -560,7 +562,7 @@ text = "Game Scene"
 position = Vector2(409, 394)
 
 [node name="Portal" parent="." instance=ExtResource("10_emjyh")]
-position = Vector2(730, 491)
+position = Vector2(929, 539)
 
 [node name="Crashables" type="Node2D" parent="."]
 
@@ -703,3 +705,9 @@ polygon = PackedVector2Array(1.45324, -73.7686, 1.51903, 829.471, -189.428, 799.
 
 [node name="NPC" parent="." instance=ExtResource("11_b5s1t")]
 position = Vector2(633, 544)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("11_r85l2")]
+position = Vector2(516, 540)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("12_eexod")]
+position = Vector2(229, 569)
