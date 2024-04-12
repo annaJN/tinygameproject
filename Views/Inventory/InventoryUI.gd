@@ -9,6 +9,14 @@ func _ready():
 #Update inventory UI
 func _on_inventory_updated():
 	clear_grid_container()
+	# Add slots for each inventory position
+	for item in Global.inventory:
+		var slot = Global.inventory_slot_scene.instantiate()
+		grid_container.add_child(slot)
+		if item != null:
+			slot.set_item(item)
+		else:
+			slot.set_empty()
 
 func clear_grid_container():
 	while grid_container.get_child_count() > 0:

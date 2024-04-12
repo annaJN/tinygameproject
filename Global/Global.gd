@@ -4,7 +4,7 @@ var currentScene
 
 var inventory = []
 var player_node: Node = null
-
+const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 #Custom signals
 signal inventory_updated
 
@@ -24,7 +24,7 @@ func add_item(item):
 			inventory_updated.emit()
 			print("add_item first of same type")
 			return true
-		return false
+	return false
 	
 func remove_item():
 	inventory_updated.emit()
