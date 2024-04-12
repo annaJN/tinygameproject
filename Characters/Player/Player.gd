@@ -16,11 +16,17 @@ var max_jumps = 2
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
+@onready var interact_ui = $InteractUI
+
 var push_force = 80.0
 
 const wall_jump_push = 100
 const wall_slide_gravity = 50
 var is_wall_sliding = false
+
+func _ready():
+	# Set this node as the player node
+	Global.set_player_reference(self)
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("interact"):
