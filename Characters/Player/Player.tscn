@@ -91,7 +91,7 @@ load_path = "res://.godot/imported/Background.png-893b380afbd832f4b20f85510500a4
 script = ExtResource("1_7pauv")
 
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
-position = Vector2(36, 55)
+position = Vector2(32, 61)
 shape = SubResource("CapsuleShape2D_rloiv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
