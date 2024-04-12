@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://hukgge0g7vn0"]
+[gd_scene load_steps=86 format=3 uid="uid://hukgge0g7vn0"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_oyxqv"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_48nqo"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dpkbfwro3pgnp" path="res://Characters/NPC/npc.tscn" id="11_b5s1t"]
 [ext_resource type="PackedScene" uid="uid://dy554mc30v0sj" path="res://Objects/Ball.tscn" id="11_r85l2"]
 [ext_resource type="PackedScene" uid="uid://b603lyw63yslm" path="res://Objects/Rock.tscn" id="12_eexod"]
+[ext_resource type="PackedScene" uid="uid://b6emo5ljrppfu" path="res://Objects/InventoryItem.tscn" id="13_vbqge"]
+[ext_resource type="Texture2D" uid="uid://s27d8ydt5m2i" path="res://Assets/tmp/cherry/cherry-1.png" id="14_pgq0t"]
+[ext_resource type="Texture2D" uid="uid://c1dglqc4g52qw" path="res://Assets/tmp/cherry/cherry-7.png" id="15_xgfxy"]
 
 [sub_resource type="Resource" id="Resource_b85ao"]
 script = ExtResource("3_6x6vj")
@@ -707,3 +710,24 @@ position = Vector2(516, 540)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("12_eexod")]
 position = Vector2(229, 569)
+
+[node name="InventoryItem" parent="." instance=ExtResource("13_vbqge")]
+position = Vector2(410, 589)
+item_type = "Potion"
+item_name = "Cherry"
+item_texture = ExtResource("14_pgq0t")
+item_effect = "Health"
+
+[node name="InventoryItem2" parent="." instance=ExtResource("13_vbqge")]
+position = Vector2(345, 473)
+item_type = "Potion"
+item_name = "Cherry"
+item_texture = ExtResource("14_pgq0t")
+item_effect = "Health"
+
+[node name="InventoryItem3" parent="." instance=ExtResource("13_vbqge")]
+position = Vector2(302, 584)
+item_type = "Consumable"
+item_name = "Apple"
+item_texture = ExtResource("15_xgfxy")
+item_effect = "Potion"

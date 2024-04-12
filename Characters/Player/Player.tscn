@@ -161,10 +161,10 @@ shape = SubResource("CircleShape2D_fh5e2")
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="InteractUI"]
-offset_left = 637.0
-offset_top = 178.0
-offset_right = 804.0
-offset_bottom = 218.0
+offset_left = 306.0
+offset_top = -13.0
+offset_right = 473.0
+offset_bottom = 27.0
 color = Color(0.254902, 0.368627, 0.266667, 0.517647)
 
 [node name="Label" type="Label" parent="InteractUI/ColorRect"]

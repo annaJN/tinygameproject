@@ -24,18 +24,20 @@ func _process(delta):
 		icon_sprite.texture = item_texture
 	
 	if player_in_range and Input.is_action_just_pressed("ui_add"):
+		print("i am in range")
 		pickup_item()
 
 func pickup_item():
 	var item = {
 		"quantity" : 1,
-		"item_type" : item_type,
-		"item_name" : item_name,
-		"item_texture" : item_texture,
-		"item_effect" : item_effect,
-		"scene_path" : scene_path,
+		"type" : item_type,
+		"name" : item_name,
+		"effect" : item_effect,
+		"texture" : item_texture,
+		"scene_path" : scene_path
 	}
 	if Global.player_node:
+		print("i got to pickup_item")
 		Global.add_item(item)
 		self.queue_free()
 		
