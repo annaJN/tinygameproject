@@ -10,9 +10,10 @@ script = ExtResource("1_uwfb4")
 
 [node name="Back" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(8192, 3510)
+motion_mirroring = Vector2(2457.6, 1053)
 
 [node name="Background" type="Sprite2D" parent="Back"]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_1tj18")
 centered = false
 
