@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=48 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="PackedScene" uid="uid://dosa6tyyat1xd" path="res://Assets/backgrounds/Background.tscn" id="2_usjvv"]
@@ -6,7 +6,12 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="5_5t0x4"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="6_ldgbf"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_px6i0"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="7_xm1hr"]
+[ext_resource type="Texture2D" uid="uid://cst0plq8r3hfr" path="res://Assets/Environment/groundEdgeMiddle.png" id="8_qhkn4"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_kgkf5"]
+[ext_resource type="Texture2D" uid="uid://caipy1pwe06dm" path="res://Assets/Environment/Ground-corner-right (2).png" id="9_ympix"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="10_tdmv7"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="11_dt58r"]
 
 [sub_resource type="Resource" id="Resource_me38d"]
 script = ExtResource("5_5t0x4")
@@ -151,18 +156,18 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_hb7uf")
 
-[sub_resource type="Resource" id="Resource_016yf"]
+[sub_resource type="Resource" id="Resource_v0mhl"]
 script = ExtResource("5_5t0x4")
-texture_idx = 0
+texture_idx = 46
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_tlq2r"]
 script = ExtResource("6_ldgbf")
-position = Vector2(127691, 10922.8)
+position = Vector2(128698, 1821.61)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_016yf")
+properties = SubResource("Resource_v0mhl")
 
 [sub_resource type="Resource" id="Resource_ab3l2"]
 script = ExtResource("5_5t0x4")
@@ -229,9 +234,37 @@ Array[int]([0, 14]): 15
 _next_key = 15
 _material_overrides = {}
 
+[sub_resource type="Resource" id="Resource_1r0ex"]
+script = ExtResource("7_xm1hr")
+textures = Array[Texture2D]([ExtResource("8_qhkn4")])
+textures_corner_outer = Array[Texture2D]([ExtResource("9_ympix")])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([])
+textures_taper_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 1
+
+[sub_resource type="Resource" id="Resource_e6syo"]
+script = ExtResource("10_tdmv7")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_4pq81"]
+script = ExtResource("11_dt58r")
+edge_material = SubResource("Resource_1r0ex")
+normal_range = SubResource("Resource_e6syo")
+weld = true
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.4
+
 [sub_resource type="Resource" id="Resource_6ceri"]
 script = ExtResource("9_kgkf5")
-_edge_meta_materials = Array[Resource("res://addons/rmsmartshape/materials/edge_material_metadata.gd")]([])
+_edge_meta_materials = Array[ExtResource("11_dt58r")]([SubResource("Resource_4pq81")])
 fill_textures = Array[Texture2D]([])
 fill_texture_z_index = -10
 fill_texture_show_behind_parent = false
