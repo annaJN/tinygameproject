@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dosa6tyyat1xd"]
 
 [ext_resource type="Script" path="res://Assets/backgrounds/Background.gd" id="1_uwfb4"]
-[ext_resource type="Texture2D" uid="uid://37k6idmm6rsj" path="res://Assets/Environment/Background.png" id="2_1tj18"]
-[ext_resource type="Texture2D" uid="uid://dwc8oa5xbbegc" path="res://Assets/Environment/BG-1.png" id="2_nnm2x"]
-[ext_resource type="Texture2D" uid="uid://wsfhh4cu0okk" path="res://Assets/Environment/BG-2.png" id="3_y4o1f"]
+[ext_resource type="Texture2D" uid="uid://37k6idmm6rsj" path="res://Assets/Environment/Background/Background.png" id="2_1tj18"]
+[ext_resource type="Texture2D" uid="uid://dwc8oa5xbbegc" path="res://Assets/Environment/Background/BG-1.png" id="2_nnm2x"]
+[ext_resource type="Texture2D" uid="uid://wsfhh4cu0okk" path="res://Assets/Environment/Background/BG-2.png" id="3_y4o1f"]
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource("1_uwfb4")
