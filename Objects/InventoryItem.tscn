@@ -1,23 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://we0l4hsa38l5"]
+[gd_scene load_steps=4 format=3 uid="uid://b6emo5ljrppfu"]
 
-[ext_resource type="Script" path="res://Objects/InventoryItem.gd" id="1_82bva"]
-[ext_resource type="Texture2D" uid="uid://s27d8ydt5m2i" path="res://Assets/tmp/cherry/cherry-1.png" id="2_dh8i5"]
+[ext_resource type="Texture2D" uid="uid://bt3ulmmo875p8" path="res://Assets/tmp/ball.png" id="1_1p3qm"]
+[ext_resource type="Script" path="res://Objects/InventoryItem.gd" id="1_7ceyk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_14f5c"]
-radius = 22.4722
+[sub_resource type="CircleShape2D" id="CircleShape2D_87b5d"]
 
-[node name="InventoryItem" type="Node2D" groups=["Items"]]
-script = ExtResource("1_82bva")
-item_texture = Object(GDScriptNativeClass,"script":null)
-
+[node name="InventoryItem" type="Node2D"]
+script = ExtResource("1_7ceyk")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_14f5c")
+shape = SubResource("CircleShape2D_87b5d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dh8i5")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+texture = ExtResource("1_1p3qm")
