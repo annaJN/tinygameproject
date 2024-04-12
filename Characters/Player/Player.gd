@@ -17,6 +17,7 @@ var max_jumps = 2
 @onready var actionableFinder: Area2D = $ActionableFinder
 
 @onready var interact_ui = $InteractUI
+@onready var inventory_ui = $InventoryUI
 
 var push_force = 80.0
 
@@ -74,6 +75,9 @@ func _input(event):
 			# self.position.x += 50
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):
