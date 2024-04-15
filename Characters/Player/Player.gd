@@ -94,6 +94,7 @@ func wall_jump():
 ## Pause menu functionality
 ##
 func _on_resume_pressed():
+	$Camera2D/PauseMenu/Save.modulate = Color(1,1,1,1)	
 	$Camera2D/PauseMenu.hide()
 	get_tree().paused = false
 
@@ -102,6 +103,8 @@ func _on_save_pressed():
 	SaveGame.positionY = self.position.y
 	SaveGame.sceneActive = get_tree().current_scene.name
 	SaveGame.saveGame()
+	#get_node("Camera2D/PauseMenu/Save").modulate = Color(0,1,0)
+	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 	
 
 func _on_main_menu_pressed():

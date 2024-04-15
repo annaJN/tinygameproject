@@ -19,7 +19,6 @@ func _input(event):
 		get_tree().paused = true
 		$Player/Camera2D/PauseMenu.show()
 
-
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		SaveGame.health -= 5
