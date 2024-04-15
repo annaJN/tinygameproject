@@ -98,7 +98,6 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	#SaveGame.health = health
 	SaveGame.positionX = self.position.x
 	SaveGame.positionY = self.position.y
 	SaveGame.sceneActive = get_tree().current_scene.name
@@ -106,5 +105,5 @@ func _on_save_pressed():
 	
 
 func _on_main_menu_pressed():
-	_on_resume_pressed()
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Main.tscn")

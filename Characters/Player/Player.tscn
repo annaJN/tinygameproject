@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=13 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
@@ -84,9 +84,6 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
 radius = 14.1421
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2wf26"]
-load_path = "res://.godot/imported/Background.png-893b380afbd832f4b20f85510500a4e4.ctex"
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7pauv")
 
@@ -162,17 +159,6 @@ script = null
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(85, -11)
 shape = SubResource("CircleShape2D_fh5e2")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(7000, 3000)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = SubResource("CompressedTexture2D_2wf26")
-centered = false
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
