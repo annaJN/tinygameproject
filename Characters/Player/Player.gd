@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = Global.SPEED_PLAYER
 const JUMP_VELOCITY = -500.0
 
@@ -105,6 +104,14 @@ func wall_jump():
 		velocity.y = JUMP_VELOCITY
 		velocity.x = wall_jump_push
 
+#handles effects from items
+func apply_item_effect(item):
+	match item["effect"]:
+		"Health": 
+			Global.change_health(5)
+		_:
+			print("There is no effect for this item")
+			
 ## 
 ## Pause menu functionality
 ##

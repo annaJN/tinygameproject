@@ -115,7 +115,6 @@ drag_vertical_enabled = true
 [node name="PauseMenu" type="MenuBar" parent="Camera2D"]
 process_mode = 2
 visible = false
-z_index = 7
 offset_left = -414.0
 offset_top = -383.0
 offset_right = 406.0
