@@ -86,7 +86,6 @@ _data = {
 radius = 14.1421
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-process_mode = 3
 z_index = 5
 script = ExtResource("1_7pauv")
 
@@ -116,6 +115,7 @@ drag_vertical_enabled = true
 [node name="PauseMenu" type="MenuBar" parent="Camera2D"]
 process_mode = 2
 visible = false
+z_index = 7
 offset_left = -414.0
 offset_top = -383.0
 offset_right = 406.0
