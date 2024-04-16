@@ -46,6 +46,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_3c7w3")
 
 [node name="ItemQuantity" type="Label" parent="InnerBorder"]
+layout_mode = 0
 offset_left = 5.0
 offset_right = 45.0
 offset_bottom = 35.0

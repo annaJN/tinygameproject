@@ -15,4 +15,6 @@ script = ExtResource("1_ff2e4")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
 columns = 9
