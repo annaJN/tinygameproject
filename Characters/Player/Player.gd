@@ -77,7 +77,12 @@ func _input(event):
 			tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !inventory_ui.visible
+		if inventory_ui.visible:
+			self.process_mode = 3
+		else:
+			self.process_mode = 1
 		get_tree().paused = !get_tree().paused
+		
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):
@@ -113,7 +118,6 @@ func _on_save_pressed():
 	SaveGame.positionY = self.position.y
 	SaveGame.sceneActive = get_tree().current_scene.name
 	SaveGame.saveGame()
-	#get_node("Camera2D/PauseMenu/Save").modulate = Color(0,1,0)
 	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 	
 

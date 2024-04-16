@@ -16,7 +16,9 @@ func _input(event):
 	
 	# function for pauseing the game
 	if Input.is_action_just_pressed("ui_cancel"):
+		print(get_tree().paused)
 		get_tree().paused = true
+		print(get_tree().paused)
 		$Player/Camera2D/PauseMenu.show()
 
 func _on_area_2d_body_entered(body):
