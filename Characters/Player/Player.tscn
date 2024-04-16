@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=15 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
@@ -84,6 +84,9 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
 radius = 14.1421
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odi81"]
+size = Vector2(125, 56)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
@@ -201,6 +204,15 @@ offset_bottom = 125.0
 text = "Inventory"
 
 [node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("7_xkypv")]
+
+[node name="ObjectDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetector"]
+position = Vector2(34.5, 57)
+shape = SubResource("RectangleShape2D_odi81")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(40, 16)
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
