@@ -1,0 +1,38 @@
+~ berriesCreature_Start
+if hasRedBerries #Kom ihåg att sätta denna variablen!!
+	=> has_berries
+else
+	=> does_not_have_berries
+
+
+~ has_berries 
+Creature: Oh Hello! 
+Creature: [wave amp=25 freq=5]*sniff sniff*[/wave]
+Creature: [wave amp=25 freq=5]*SNIFF*[/wave]
+Creature: Do you have some Goop berries?! 
+Creature: Can I have some please! 
+Creature: [speed=1.6] [shake rate=20 level=10]Please please please.[/shake]
+- No, I ate them all. 
+- Yes. Do you want some?
+- Yes, they are mine.
+- (Lie) No. 
+- ...
+
+=> END
+
+~ does_not_have_berries
+Creature: Oh Hello! 
+
+~ this_is_a_node_title
+
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => this_is_a_node_title
+- End the conversation => END
+Nathan: For more information see the online documentation.
+
+=> END
