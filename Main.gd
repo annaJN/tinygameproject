@@ -1,9 +1,10 @@
 extends Node2D
 
 func _on_start_pressed():
+	SaveGame.health = 50
 	SaveGame.positionX = 75
 	SaveGame.positionY = 500
-	get_tree().change_scene_to_file("res://Views/Levels/Game.tscn")
+	get_tree().change_scene_to_file("res://Views/Levels/Home.tscn")
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://Views/Menus/Settings.tscn")
