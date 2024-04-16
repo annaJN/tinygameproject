@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddiw2co6c3646"
-path="res://.godot/imported/innerEdge.png-239065e1db3199e64cb5e0dfdb88a620.ctex"
+uid="uid://lymeeb2ek8jw"
+path="res://.godot/imported/ground_micro_left.png-b651bae63d11aec8b54dddd3bbcef835.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/innerEdge.png"
-dest_files=["res://.godot/imported/innerEdge.png-239065e1db3199e64cb5e0dfdb88a620.ctex"]
+source_file="res://Assets/Environment/Ground/ground_micro_left.png"
+dest_files=["res://.godot/imported/ground_micro_left.png-b651bae63d11aec8b54dddd3bbcef835.ctex"]
 
 [params]
 

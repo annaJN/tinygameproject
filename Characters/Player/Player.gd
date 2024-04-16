@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = Global.SPEED_PLAYER
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -500.0
 
 #var health = 50
 

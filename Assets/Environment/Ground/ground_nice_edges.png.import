@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caipy1pwe06dm"
-path="res://.godot/imported/Ground-corner-right (2).png-195c96ff0ce9574b378d4ad805f13438.ctex"
+uid="uid://bliftdufwbqis"
+path="res://.godot/imported/ground_nice_edges.png-87b9a7bb5ef1f53a2288d53320072adc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/Ground-corner-right (2).png"
-dest_files=["res://.godot/imported/Ground-corner-right (2).png-195c96ff0ce9574b378d4ad805f13438.ctex"]
+source_file="res://Assets/Environment/Ground/ground_nice_edges.png"
+dest_files=["res://.godot/imported/ground_nice_edges.png-87b9a7bb5ef1f53a2288d53320072adc.ctex"]
 
 [params]
 
