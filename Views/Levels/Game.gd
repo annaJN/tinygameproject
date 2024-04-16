@@ -18,3 +18,12 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().paused = true
 		$Player/Camera2D/PauseMenu.show()
+
+func _on_area_2d_body_entered(body):
+	if body.name == "Player":
+		SaveGame.health -= 5
+
+func _process(delta):
+	# A game over of sorts, if the health is 0 or less the game will return to the home page
+	if SaveGame.health <= 0:
+		get_tree().change_scene_to_file("res://Main.tscn")

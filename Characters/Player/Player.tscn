@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
-radius = 7.0
-height = 22.0
+radius = 27.0
+height = 64.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6jd1w"]
 animations = [{
@@ -87,15 +87,19 @@ radius = 14.1421
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 process_mode = 3
+z_index = 5
 script = ExtResource("1_7pauv")
 
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(32, 61)
 shape = SubResource("CapsuleShape2D_rloiv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(39.7031, 38.5)
+scale = Vector2(3.40625, 3.40625)
 sprite_frames = SubResource("SpriteFrames_6jd1w")
 animation = &"Idle"
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -104,10 +108,10 @@ libraries = {
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.4, 1.4)
+offset = Vector2(0, -200)
 limit_left = 0
-limit_right = 1152
-limit_bottom = 647
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="PauseMenu" type="MenuBar" parent="Camera2D"]
 process_mode = 2
@@ -156,7 +160,7 @@ collision_mask = 16
 script = null
 
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
-position = Vector2(2, -64)
+position = Vector2(85, -11)
 shape = SubResource("CircleShape2D_fh5e2")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]

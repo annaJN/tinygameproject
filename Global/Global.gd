@@ -2,6 +2,8 @@ extends Node
 
 var currentScene
 
+const SPEED_PLAYER = 1000.0
+
 var inventory = []
 var player_node: Node = null
 const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
