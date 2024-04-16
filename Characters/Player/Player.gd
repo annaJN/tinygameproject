@@ -16,11 +16,18 @@ var max_jumps = 2
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
+@onready var interact_ui = $InteractUI
+@onready var inventory_ui = $InventoryUI
+
 var push_force = 80.0
 
 const wall_jump_push = 100
 const wall_slide_gravity = 50
 var is_wall_sliding = false
+
+func _ready():
+	# Set this node as the player node
+	Global.set_player_reference(self)
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("interact"):
@@ -68,6 +75,9 @@ func _input(event):
 			# self.position.x += 50
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=14 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://Assets/tmp/PlayerSprites/idle/player-idle-3.png" id="4_oaq0y"]
 [ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_kp6c6"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_4fov4"]
+[ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
 radius = 27.0
@@ -84,7 +85,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
 radius = 14.1421
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+process_mode = 3
 z_index = 5
 script = ExtResource("1_7pauv")
 
@@ -160,6 +162,45 @@ script = null
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(85, -11)
 shape = SubResource("CircleShape2D_fh5e2")
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+offset_left = 306.0
+offset_top = -13.0
+offset_right = 473.0
+offset_bottom = 27.0
+color = Color(0.254902, 0.368627, 0.266667, 0.517647)
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 161.0
+offset_bottom = 32.0
+text = "Press \"F\" to pick up"
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.588235, 0.321569, 1)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 102.0
+offset_right = 588.0
+offset_bottom = 125.0
+text = "Inventory"
+
+[node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("7_xkypv")]
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
