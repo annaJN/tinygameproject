@@ -17,22 +17,19 @@ Creature: [speed=1.6] [shake rate=20 level=10]Please please please.[/shake]
 - Yes, they are mine.
 - (Lie) No. 
 - ...
-
 => END
 
 ~ does_not_have_berries
 Creature: Oh Hello! 
-
-~ this_is_a_node_title
-
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
-
-=> END
+Creature: [shake rate=20 level=10]*rumble*[/shake]
+Creature: Im really hungry. Have you seen any goop berries?
+- No. 
+	Creature: Oh...
+	Creature: Well if you find any and want to share I'll be here. 
+	Creature: I even have something I can give in return. 
+	Creature: But thats a secret! [wave amp=25 freq=5]Hehehehe.[/wave]
+	=> END
+- ...
+	Creature: ...
+	Creature: Okay then.
+	=> END
