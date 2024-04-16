@@ -3,7 +3,7 @@ extends Node2D
 
 @export var item_type = ""
 @export var item_name = ""
-@export var item_texture = Texture
+@export var item_texture : Texture
 @export var item_effect = ""
 
 var scene_path: String = "res://Objects/InventoryItem.tscn"
