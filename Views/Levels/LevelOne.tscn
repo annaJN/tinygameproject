@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=103 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="PackedScene" uid="uid://dosa6tyyat1xd" path="res://Assets/backgrounds/Background.tscn" id="2_usjvv"]
@@ -22,8 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d4hiuk33q1508" path="res://Assets/Environment/Ground/ground_micro_right.png" id="17_xdpnj"]
 [ext_resource type="Texture2D" uid="uid://fm183yuo3lin" path="res://Assets/Environment/Ground/inner_corner_tiny.png" id="18_4hlct"]
 [ext_resource type="Texture2D" uid="uid://c25vemi4bk2au" path="res://Assets/Environment/Ground/ground_innerfill.png" id="19_qjrur"]
-[ext_resource type="PackedScene" uid="uid://b6emo5ljrppfu" path="res://Objects/InventoryItem.tscn" id="23_v3uge"]
-[ext_resource type="Texture2D" uid="uid://s27d8ydt5m2i" path="res://Assets/tmp/cherry/cherry-1.png" id="24_k61uw"]
+[ext_resource type="PackedScene" uid="uid://ouwodje2bf0s" path="res://Objects/BlueberryBush.tscn" id="23_0b58q"]
 
 [sub_resource type="Resource" id="Resource_fnm0l"]
 script = ExtResource("5_5t0x4")
@@ -698,11 +697,7 @@ script = ExtResource("4_flud5")
 _points = SubResource("Resource_wj0eb")
 shape_material = SubResource("Resource_ti4l4")
 
-[node name="InventoryItem" parent="." instance=ExtResource("23_v3uge")]
-position = Vector2(1197, 663)
-item_type = "Food"
-item_name = "Cherry"
-item_texture = ExtResource("24_k61uw")
-item_effect = "Health"
+[node name="Blueberry bush" parent="." instance=ExtResource("23_0b58q")]
+position = Vector2(1561, 724)
 
 [connection signal="body_entered" from="Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
