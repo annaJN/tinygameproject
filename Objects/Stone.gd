@@ -1,14 +1,13 @@
 extends RigidBody2D
 
 var picked = false
-const player = "res://Characters/Player/Player.gd"
+# const player = "res://Characters/Player/Player.tscn"
 
 func _physics_process(delta):
 	#print("physics process")
 	if picked == true:
-		# self.position = get_node("res://Characters/Player/Player.tscn/Marker2D").global_position
-		# print(get_node("res://Characters/Player/Player.tscn/Marker2D").global_position)
-		pass
+		self.position = get_node("../Player/Marker2D").global_position
+		
 		
 
 func _input(event):
