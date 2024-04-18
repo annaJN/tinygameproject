@@ -212,7 +212,7 @@ position = Vector2(34.5, 57)
 shape = SubResource("RectangleShape2D_odi81")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(40, 16)
+position = Vector2(86, 58)
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
