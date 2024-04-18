@@ -5,6 +5,7 @@ const SPEED = Global.SPEED_PLAYER
 const JUMP_VELOCITY = -500.0
 
 #var health = 50
+var carrying = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -35,7 +36,10 @@ func _unhandled_input(event):
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
-
+	
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_P:
+			print("p is pressed")
 
 func _physics_process(delta):
 	# Add the gravity.
