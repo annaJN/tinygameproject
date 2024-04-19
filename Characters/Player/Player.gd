@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = Global.SPEED_PLAYER
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -700.0
 
 #var health = 50
 var carrying = false
@@ -51,7 +51,7 @@ func _physics_process(delta):
 		jump_count = 0
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
-		if jump_count < max_jumps:
+		if jump_count < max_jumps && Global.isCarrying == false:
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 		wall_jump()
