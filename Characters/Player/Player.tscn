@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=21 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://Assets/tmp/PlayerSprites/idle/player-idle-3.png" id="4_oaq0y"]
 [ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_kp6c6"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_4fov4"]
+[ext_resource type="Texture2D" uid="uid://dqa8kbbjvs723" path="res://Assets/tmp/PlayerSprites/hurt/player-hurt-1.png" id="6_w7vo4"]
+[ext_resource type="Texture2D" uid="uid://cmfctkmu88olf" path="res://Assets/tmp/PlayerSprites/hurt/player-hurt-2.png" id="7_byq43"]
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
+[ext_resource type="Texture2D" uid="uid://c87xymff6fcf6" path="res://Assets/tmp/PlayerSprites/jump/player-jump-1.png" id="8_ug083"]
+[ext_resource type="Texture2D" uid="uid://bd65hrslftp2x" path="res://Assets/tmp/PlayerSprites/jump/player-jump-2.png" id="9_by50p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
 radius = 27.0
@@ -29,6 +33,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w7vo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_byq43")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ug083")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_by50p")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }]
 
@@ -75,11 +101,67 @@ tracks/0/keys = {
 "update": 1,
 "values": []
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+
+[sub_resource type="Animation" id="Animation_2w7ht"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_0xxxv"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w87xx"]
 _data = {
 "Idle": SubResource("Animation_ju7dc"),
-"RESET": SubResource("Animation_u5uxy")
+"RESET": SubResource("Animation_u5uxy"),
+"hurt": SubResource("Animation_0xxxv"),
+"jump": SubResource("Animation_2w7ht")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
@@ -100,7 +182,8 @@ shape = SubResource("CapsuleShape2D_rloiv")
 position = Vector2(39.7031, 38.5)
 scale = Vector2(3.40625, 3.40625)
 sprite_frames = SubResource("SpriteFrames_6jd1w")
-animation = &"Idle"
+animation = &"jump"
+autoplay = "Idle"
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

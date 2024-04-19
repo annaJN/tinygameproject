@@ -88,7 +88,7 @@ func _input(event):
 		get_tree().paused = !get_tree().paused
 		
 	if (event.is_action_pressed("ui_down") && is_on_floor()):
-		position.y += 1
+		position.y += 15
 		
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall

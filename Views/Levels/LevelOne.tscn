@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=102 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="PackedScene" uid="uid://dosa6tyyat1xd" path="res://Assets/backgrounds/Background.tscn" id="2_usjvv"]
@@ -24,6 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://b4ylkntqjs4cl" path="res://Assets/Environment/Woodsy/branch1.png" id="25_egl4o"]
 [ext_resource type="Texture2D" uid="uid://cjqa87nwoko3g" path="res://Assets/Environment/Ground/spikyRight.png" id="25_esgml"]
 [ext_resource type="Texture2D" uid="uid://ctm25ci2fs86f" path="res://Assets/Environment/Woodsy/branch2.png" id="26_acr75"]
+[ext_resource type="Texture2D" uid="uid://d7444hrl20u8" path="res://Assets/Environment/Woodsy/branch1m.png" id="26_gi5k1"]
+[ext_resource type="Texture2D" uid="uid://b14n77up8xmv3" path="res://Assets/Environment/Woodsy/branch2m.png" id="27_cowl3"]
+[ext_resource type="Texture2D" uid="uid://bkeudvvy436u5" path="res://Assets/Environment/Woodsy/branch3.png" id="27_lrlbm"]
+[ext_resource type="Texture2D" uid="uid://gqd0a254tkmh" path="res://Assets/Environment/Woodsy/branch3m.png" id="28_p0gp5"]
+[ext_resource type="Texture2D" uid="uid://fla4hyjgufj0" path="res://Assets/Environment/Woodsy/bush.png" id="29_n7ai8"]
 
 [sub_resource type="Resource" id="Resource_q7amb"]
 script = ExtResource("5_5t0x4")
@@ -553,17 +558,12 @@ render_offset = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywpcb"]
 size = Vector2(104, 1083)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_etsqe"]
-size = Vector2(226, 26.5766)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jutmt"]
+size = Vector2(144.5, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_os8xd"]
-size = Vector2(55, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnvma"]
-size = Vector2(157.874, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsulg"]
-size = Vector2(96.8079, 20)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_63qu5"]
+a = Vector2(-371, -151)
+b = Vector2(-117, 627)
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_l4e1y")
@@ -639,6 +639,8 @@ polygon = PackedVector2Array(1183.84, 555.272, 1474.73, 615.698, 1468.22, 647.02
 position = Vector2(1331, 407)
 
 [node name="TreeOne" type="Node2D" parent="."]
+position = Vector2(2764, 2107)
+metadata/_edit_group_ = true
 
 [node name="Trunk" type="StaticBody2D" parent="TreeOne"]
 
@@ -652,43 +654,248 @@ shape_material = SubResource("Resource_65xm6")
 position = Vector2(2686, 425.5)
 shape = SubResource("RectangleShape2D_ywpcb")
 
-[node name="Branch1a" type="StaticBody2D" parent="TreeOne"]
-position = Vector2(2768, 654)
-
-[node name="Branch1" type="Sprite2D" parent="TreeOne/Branch1a"]
-position = Vector2(288, 24)
-texture = ExtResource("25_egl4o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeOne/Branch1a"]
-visible = false
-position = Vector2(358, -20)
-rotation = -0.307178
-shape = SubResource("RectangleShape2D_etsqe")
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TreeOne/Branch1a"]
-visible = false
-position = Vector2(225, 9)
-rotation = 0.305433
-shape = SubResource("RectangleShape2D_os8xd")
-one_way_collision = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="TreeOne/Branch1a"]
-visible = false
-position = Vector2(123.588, 5.561)
-rotation = -0.0872665
-shape = SubResource("RectangleShape2D_tnvma")
-one_way_collision = true
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="TreeOne/Branch1a"]
-visible = false
-position = Vector2(7, 18)
-rotation = -0.436332
-shape = SubResource("RectangleShape2D_xsulg")
-one_way_collision = true
-
-[node name="Branch2" type="Sprite2D" parent="."]
+[node name="Branch2" type="Sprite2D" parent="TreeOne"]
 position = Vector2(3195, 485)
 texture = ExtResource("26_acr75")
+
+[node name="Branch1" type="Sprite2D" parent="TreeOne"]
+position = Vector2(2994, 659)
+texture = ExtResource("25_egl4o")
+
+[node name="Branch3" type="Sprite2D" parent="TreeOne"]
+position = Vector2(3241, 857)
+texture = ExtResource("27_lrlbm")
+
+[node name="Branch1m" type="Sprite2D" parent="TreeOne"]
+position = Vector2(2300, 287)
+texture = ExtResource("26_gi5k1")
+
+[node name="Branch2m" type="Sprite2D" parent="TreeOne"]
+position = Vector2(2421, 530)
+scale = Vector2(0.451219, 0.451219)
+texture = ExtResource("27_cowl3")
+
+[node name="Branch3m" type="Sprite2D" parent="TreeOne"]
+position = Vector2(2375, 629)
+rotation = 0.153589
+scale = Vector2(0.541308, 0.541308)
+texture = ExtResource("28_p0gp5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TreeOne"]
+visible = false
+position = Vector2(2563, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeOne/StaticBody2D"]
+shape = SubResource("RectangleShape2D_jutmt")
+one_way_collision = true
+
+[node name="BigBush" type="Node2D" parent="."]
+position = Vector2(2173, 225)
+metadata/_edit_lock_ = true
+
+[node name="Bush" type="Sprite2D" parent="BigBush"]
+scale = Vector2(0.4805, 0.4805)
+texture = ExtResource("29_n7ai8")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BigBush"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BigBush/StaticBody2D"]
+position = Vector2(100, 0)
+shape = SubResource("SegmentShape2D_63qu5")
+metadata/_edit_lock_ = true
+
+[node name="b1" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-230, 459)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b1"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b1"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b2" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-520, 381)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b2"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b2"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b3" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-324, 242)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b3"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b3"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b4" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-555, 139)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b4"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b4"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b5" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-346, 48)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b5"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b5"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b6" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-237, -143)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b6"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b6"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b7" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-468, -100)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b7"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b7"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b8" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-99, 11)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b8"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b8"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b9" type="StaticBody2D" parent="BigBush"]
+position = Vector2(120, -71)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b9"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b9"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b10" type="StaticBody2D" parent="BigBush"]
+position = Vector2(388, 7)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b10"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b10"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b11" type="StaticBody2D" parent="BigBush"]
+position = Vector2(500, 163)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b11"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b11"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b12" type="StaticBody2D" parent="BigBush"]
+position = Vector2(170, 160)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b12"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b12"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b13" type="StaticBody2D" parent="BigBush"]
+position = Vector2(-2, 272)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b13"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b13"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b14" type="StaticBody2D" parent="BigBush"]
+position = Vector2(148, 431)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b14"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b14"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b15" type="StaticBody2D" parent="BigBush"]
+position = Vector2(362, 344)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b15"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b15"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
+
+[node name="b16" type="StaticBody2D" parent="BigBush"]
+position = Vector2(407, 504)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="BigBush/b16"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush/b16"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
 
 [connection signal="body_entered" from="Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
