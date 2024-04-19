@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=15 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_kp6c6"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_4fov4"]
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
+[ext_resource type="PackedScene" uid="uid://fpj1qhbv6wry" path="res://Assets/CharacterSpine/animations_godot/animations.tscn" id="8_tq302"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
 radius = 27.0
@@ -94,6 +95,7 @@ position = Vector2(32, 61)
 shape = SubResource("CapsuleShape2D_rloiv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(39.7031, 38.5)
 scale = Vector2(3.40625, 3.40625)
 sprite_frames = SubResource("SpriteFrames_6jd1w")
@@ -201,6 +203,9 @@ offset_bottom = 125.0
 text = "Inventory"
 
 [node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("7_xkypv")]
+
+[node name="Node2D" parent="." instance=ExtResource("8_tq302")]
+position = Vector2(392, 289)
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
