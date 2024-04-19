@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d4hiuk33q1508" path="res://Assets/Environment/Ground/ground_micro_right.png" id="17_xdpnj"]
 [ext_resource type="Texture2D" uid="uid://fm183yuo3lin" path="res://Assets/Environment/Ground/inner_corner_tiny.png" id="18_4hlct"]
 [ext_resource type="Texture2D" uid="uid://c25vemi4bk2au" path="res://Assets/Environment/Ground/ground_innerfill.png" id="19_qjrur"]
+[ext_resource type="PackedScene" uid="uid://ouwodje2bf0s" path="res://Objects/BlueberryBush.tscn" id="23_0b58q"]
 [ext_resource type="PackedScene" uid="uid://beku4bvieqd05" path="res://Objects/Stone.tscn" id="23_naswe"]
 [ext_resource type="PackedScene" uid="uid://dy554mc30v0sj" path="res://Objects/Ball.tscn" id="24_c2eel"]
 
@@ -676,6 +677,7 @@ position = Vector2(10, 3.8147e-06)
 shape = SubResource("SegmentShape2D_yfjbp")
 
 [node name="UI" parent="." instance=ExtResource("15_jvokw")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 z_index = -10
@@ -704,5 +706,8 @@ position = Vector2(1331, 407)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("24_c2eel")]
 position = Vector2(454, 613)
+
+[node name="Blueberry bush" parent="." instance=ExtResource("23_0b58q")]
+position = Vector2(1561, 724)
 
 [connection signal="body_entered" from="Thorns/Area2D" to="." method="_on_area_2d_body_entered"]

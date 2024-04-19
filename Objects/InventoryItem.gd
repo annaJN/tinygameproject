@@ -5,6 +5,7 @@ extends Node2D
 @export var item_name = ""
 @export var item_texture : Texture
 @export var item_effect = ""
+@export var icon_texture : Texture
 
 var scene_path: String = "res://Objects/InventoryItem.tscn"
 
@@ -34,7 +35,8 @@ func pickup_item():
 		"name" : item_name,
 		"effect" : item_effect,
 		"texture" : item_texture,
-		"scene_path" : scene_path
+		"scene_path" : scene_path,
+		"icon_texture": icon_texture
 	}
 	if Global.player_node:
 		print("i got to pickup_item")

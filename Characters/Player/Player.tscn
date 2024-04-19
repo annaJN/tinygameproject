@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://Assets/tmp/PlayerSprites/idle/player-idle-3.png" id="4_oaq0y"]
 [ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_kp6c6"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_4fov4"]
+[ext_resource type="FontFile" uid="uid://cjgo8gf0cp441" path="res://addons/rmsmartshape/assets/SourceCodeVariable-Roman.ttf" id="7_p7dcj"]
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
@@ -84,6 +85,16 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
 radius = 14.1421
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu51c"]
+bg_color = Color(0.6, 0.6, 0.6, 0.760784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uasi3"]
+bg_color = Color(0.607843, 0.623529, 0.34902, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odi81"]
 size = Vector2(125, 56)
@@ -187,23 +198,43 @@ text = "Press \"F\" to pick up"
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.4, 0.588235, 0.321569, 1)
+[node name="Panel2" type="Panel" parent="InventoryUI"]
+offset_right = 2616.0
+offset_bottom = 1433.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pu51c")
 
-[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+[node name="Panel" type="Panel" parent="InventoryUI"]
+offset_left = 561.0
+offset_top = 183.0
+offset_right = 1399.0
+offset_bottom = 832.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uasi3")
+
+[node name="Label" type="Label" parent="InventoryUI/Panel"]
 layout_mode = 0
-offset_left = 513.0
-offset_top = 102.0
-offset_right = 588.0
-offset_bottom = 125.0
+offset_left = 324.0
+offset_top = 37.0
+offset_right = 522.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("7_p7dcj")
+theme_override_font_sizes/font_size = 36
 text = "Inventory"
 
-[node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("7_xkypv")]
+[node name="InventoryUI" parent="InventoryUI/Panel" instance=ExtResource("7_xkypv")]
+offset_left = 97.0
+offset_top = 96.0
+offset_right = 748.0
+offset_bottom = 571.0
+
+[node name="HP" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="HP"]
+offset_left = 38.0
+offset_top = 29.0
+offset_right = 78.0
+offset_bottom = 52.0
+text = "HP
+"
 
 [node name="ObjectDetector" type="Area2D" parent="."]
 

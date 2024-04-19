@@ -2,7 +2,6 @@ extends Node
 
 const SAVE_PATH = "res://savegame.bin"
 
-var health
 var positionX
 var positionY
 var sceneActive
@@ -10,7 +9,7 @@ var sceneActive
 func saveGame():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var data: Dictionary = {
-		"playerHealth": health,
+		"playerHealth": Global.health,
 		"xPosition": positionX,
 		"yPosition": positionY,
 		"activeScene": sceneActive,
@@ -25,7 +24,7 @@ func loadGame():
 		if not file.eof_reached():
 			var current_line = JSON.parse_string(file.get_line())
 			if current_line:
-				health = current_line["playerHealth"]
+				Global.health = current_line["playerHealth"]
 				positionX = current_line["xPosition"]
 				positionY = current_line["yPosition"]
 				sceneActive = current_line["activeScene"]

@@ -23,9 +23,9 @@ func _input(event):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		SaveGame.health -= 5
+		Global.change_health(-5)
 
-func _process(delta):
+#func _process(delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
-	if SaveGame.health <= 0:
-		get_tree().change_scene_to_file("res://Main.tscn")
+#	if SaveGame.health <= 0:
+#		get_tree().change_scene_to_file("res://Main.tscn")
