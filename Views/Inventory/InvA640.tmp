@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chsaxixlsjik3"]
 
 [ext_resource type="Script" path="res://Views/Inventory/InventorySlot.gd" id="1_iy40g"]
-[ext_resource type="Texture2D" uid="uid://bwglwivrpg7e2" path="res://Assets/Environment/Woodsy/blueberry.png" id="2_vu7yr"]
+[ext_resource type="Texture2D" uid="uid://s27d8ydt5m2i" path="res://Assets/tmp/cherry/cherry-1.png" id="2_3c7w3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmhjq"]
 
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.380392, 0.54902, 0.172549, 1)
+color = Color(0.266667, 0.564706, 0.294118, 1)
 
 [node name="InnerBorder" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(140, 140)
@@ -38,12 +38,12 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.709804, 0.811765, 0.431373, 1)
+color = Color(0.694118, 0.807843, 0.564706, 1)
 
 [node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
-position = Vector2(70, 66)
-scale = Vector2(0.253, 0.253)
-texture = ExtResource("2_vu7yr")
+position = Vector2(70, 70)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_3c7w3")
 
 [node name="ItemQuantity" type="Label" parent="InnerBorder"]
 layout_mode = 0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ouwodje2bf0s"]
+[gd_scene load_steps=10 format=3 uid="uid://ouwodje2bf0s"]
 
 [ext_resource type="Texture2D" uid="uid://c0gvdgdhpss3q" path="res://Assets/Environment/Woodsy/thorns.png" id="1_s5wud"]
 [ext_resource type="Texture2D" uid="uid://uffo02bqrkwq" path="res://Assets/Environment/Woodsy/leaves.png" id="2_m0uv2"]
 [ext_resource type="PackedScene" uid="uid://b6emo5ljrppfu" path="res://Objects/InventoryItem.tscn" id="3_vynq2"]
 [ext_resource type="Texture2D" uid="uid://ccb6tkvh88gk" path="res://Assets/Environment/Woodsy/blueberries 1.png" id="4_rcqsp"]
+[ext_resource type="Texture2D" uid="uid://bwglwivrpg7e2" path="res://Assets/Environment/Woodsy/blueberry.png" id="5_86beu"]
 [ext_resource type="Texture2D" uid="uid://cuafui6umnrn0" path="res://Assets/Environment/Woodsy/blueberries 2.png" id="5_otxbg"]
 [ext_resource type="Texture2D" uid="uid://cwmve6jdhn52q" path="res://Assets/Environment/Woodsy/blueberries 3.png" id="6_5kqrl"]
 [ext_resource type="Texture2D" uid="uid://djl2kadv8frfr" path="res://Assets/Environment/Woodsy/blueberries 4.png" id="7_okg08"]
@@ -29,6 +30,7 @@ item_type = "Food"
 item_name = "Blueberry"
 item_texture = ExtResource("4_rcqsp")
 item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
 
 [node name="Blueberry2" parent="." instance=ExtResource("3_vynq2")]
 position = Vector2(147, -199)
@@ -37,6 +39,7 @@ item_type = "Food"
 item_name = "Blueberry"
 item_texture = ExtResource("5_otxbg")
 item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
 
 [node name="Blueberry3" parent="." instance=ExtResource("3_vynq2")]
 position = Vector2(150, -144)
@@ -45,6 +48,7 @@ item_type = "Food"
 item_name = "Blueberry"
 item_texture = ExtResource("6_5kqrl")
 item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
 
 [node name="Blueberry4" parent="." instance=ExtResource("3_vynq2")]
 position = Vector2(227, -217)
@@ -53,6 +57,7 @@ item_type = "Food"
 item_name = "Blueberry"
 item_texture = ExtResource("7_okg08")
 item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
 
 [node name="Blueberry5" parent="." instance=ExtResource("3_vynq2")]
 position = Vector2(174, -87)
@@ -61,3 +66,4 @@ item_type = "Food"
 item_name = "Blueberry"
 item_texture = ExtResource("8_bne82")
 item_effect = "Health"
+icon_texture = ExtResource("5_86beu")

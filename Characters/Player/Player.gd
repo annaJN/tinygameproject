@@ -17,6 +17,9 @@ var max_jumps = 2
 
 @onready var interact_ui = $InteractUI
 @onready var inventory_ui = $InventoryUI
+@onready var hp = $HP/HP
+@onready var animation_player = $AnimationPlayer
+
 
 var push_force = 80.0
 
@@ -56,7 +59,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction and !get_tree().paused:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -67,6 +70,9 @@ func _physics_process(delta):
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+			
+func _process(delta):
+	hp.text = "HP " + str(Global.health)
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -78,8 +84,11 @@ func _input(event):
 		inventory_ui.visible = !inventory_ui.visible
 		if inventory_ui.visible:
 			self.process_mode = 3
+			animation_player.stop(false)
+			
 		else:
 			self.process_mode = 1
+			animation_player.play()
 		get_tree().paused = !get_tree().paused
 		
 

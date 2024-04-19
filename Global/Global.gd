@@ -13,7 +13,7 @@ const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 signal inventory_updated
 
 func _ready():
-	inventory.resize(30)
+	inventory.resize(12)
 	
 #Inventory stuff
 func add_item(item):
