@@ -1,0 +1,90 @@
+
+jump_spritesheet.png
+size: 4736,3628
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-jump_00
+  rotate: false
+  xy: 1, 1
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_01
+  rotate: false
+  xy: 948, 1
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_02
+  rotate: false
+  xy: 1895, 1
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_03
+  rotate: false
+  xy: 2842, 1
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_04
+  rotate: false
+  xy: 3789, 1
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_05
+  rotate: false
+  xy: 1, 1210
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_06
+  rotate: false
+  xy: 948, 1210
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_07
+  rotate: false
+  xy: 1895, 1210
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_08
+  rotate: false
+  xy: 2842, 1210
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_09
+  rotate: false
+  xy: 3789, 1210
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_10
+  rotate: false
+  xy: 1, 2419
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1
+skeleton-jump_11
+  rotate: false
+  xy: 948, 2419
+  size: 946, 1208
+  orig: 946, 1208
+  offset: 0, 0
+  index: -1

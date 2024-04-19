@@ -1,0 +1,69 @@
+
+land_spritesheet.png
+size: 5515,2409
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-land_0
+  rotate: false
+  xy: 1, 1
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_1
+  rotate: false
+  xy: 920, 1
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_2
+  rotate: false
+  xy: 1839, 1
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_3
+  rotate: false
+  xy: 2758, 1
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_4
+  rotate: false
+  xy: 3677, 1
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_5
+  rotate: false
+  xy: 4596, 1
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_6
+  rotate: false
+  xy: 1, 1205
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_7
+  rotate: false
+  xy: 920, 1205
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
+skeleton-land_8
+  rotate: false
+  xy: 1839, 1205
+  size: 918, 1203
+  orig: 918, 1203
+  offset: 0, 0
+  index: -1
