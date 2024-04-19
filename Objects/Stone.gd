@@ -26,3 +26,4 @@ func _input(event):
 			Global.isCarrying = false
 			apply_impulse(Vector2(), Vector2(self.position.x+10, self.position.y))
 		
+

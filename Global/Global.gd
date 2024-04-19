@@ -12,6 +12,8 @@ const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 #Custom signals
 signal inventory_updated
 
+var isCarrying = false
+
 func _ready():
 	inventory.resize(12)
 	

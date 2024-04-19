@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://beku4bvieqd05"]
+
+[ext_resource type="Texture2D" uid="uid://b6w4iqjpjrsnq" path="res://Assets/Environment/Woodsy/rock.png" id="1_w7get"]
+[ext_resource type="Script" path="res://Objects/Stone.gd" id="1_x2hkd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4c2j"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7w2h"]
+radius = 40.0125
+
+[node name="Stone" type="RigidBody2D" groups=["Stone"]]
+mass = 1000.0
+lock_rotation = true
+script = ExtResource("1_x2hkd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(0.0218333, 0.0218333)
+texture = ExtResource("1_w7get")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3)
+shape = SubResource("CircleShape2D_m4c2j")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 3)
+shape = SubResource("CircleShape2D_u7w2h")
