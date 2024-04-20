@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=103 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="PackedScene" uid="uid://dosa6tyyat1xd" path="res://Assets/backgrounds/Background.tscn" id="2_usjvv"]
@@ -565,6 +565,9 @@ size = Vector2(144.5, 20)
 a = Vector2(-371, -151)
 b = Vector2(-117, 627)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_milg7"]
+size = Vector2(50, 828.274)
+
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_l4e1y")
 
@@ -705,6 +708,17 @@ metadata/_edit_lock_ = true
 position = Vector2(100, 0)
 shape = SubResource("SegmentShape2D_63qu5")
 metadata/_edit_lock_ = true
+
+[node name="Branch2" type="Sprite2D" parent="BigBush/StaticBody2D"]
+position = Vector2(-120, 243)
+rotation = -1.91986
+scale = Vector2(0.864627, 0.864627)
+texture = ExtResource("26_acr75")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BigBush/StaticBody2D"]
+position = Vector2(-143.789, 262.398)
+rotation = -0.296706
+shape = SubResource("RectangleShape2D_milg7")
 
 [node name="b1" type="StaticBody2D" parent="BigBush"]
 position = Vector2(-230, 459)
@@ -851,7 +865,7 @@ polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7
 one_way_collision = true
 
 [node name="b13" type="StaticBody2D" parent="BigBush"]
-position = Vector2(-2, 272)
+position = Vector2(27, 280)
 metadata/_edit_group_ = true
 
 [node name="Branch1m" type="Sprite2D" parent="BigBush/b13"]
@@ -1011,7 +1025,7 @@ polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7
 one_way_collision = true
 
 [node name="b13" type="StaticBody2D" parent="BigBush2"]
-position = Vector2(-2, 272)
+position = Vector2(27, 279)
 metadata/_edit_group_ = true
 
 [node name="Branch1m" type="Sprite2D" parent="BigBush2/b13"]
@@ -1057,5 +1071,11 @@ texture = ExtResource("26_gi5k1")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigBush2/b16"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
+
+[node name="Branch3" type="Sprite2D" parent="BigBush2"]
+position = Vector2(-122, 249)
+rotation = -1.91986
+scale = Vector2(0.864627, 0.864627)
+texture = ExtResource("26_acr75")
 
 [connection signal="body_entered" from="Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
