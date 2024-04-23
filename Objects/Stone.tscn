@@ -10,7 +10,6 @@ radius = 18.0
 radius = 40.0125
 
 [node name="Stone" type="RigidBody2D" groups=["Stone"]]
-mass = 1000.0
 lock_rotation = true
 script = ExtResource("1_x2hkd")
 

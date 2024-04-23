@@ -20,10 +20,18 @@ func _input(event):
 					print("picking up item")
 					picked = true
 					Global.isCarrying = true
+					self.freeze = true
+					get_node("CollisionPolygon2D").disabled = true
+					get_node("Area2D/CollisionShape2D").disabled = true
+
+					
 		if event.keycode == KEY_V and picked == true:
 			print("dropping item")
 			picked = false
 			Global.isCarrying = false
 			apply_impulse(Vector2(), Vector2(self.position.x+10, self.position.y))
+			self.freeze = false
+			get_node("CollisionPolygon2D").disabled = false
+			get_node("Area2D/CollisionShape2D").disabled = false
 		
 
