@@ -4,6 +4,10 @@ extends CharacterBody2D
 const SPEED = Global.SPEED_PLAYER
 const JUMP_VELOCITY = -500.0
 
+#anim.play("Run")
+#get_node("AnimatedSprite2D").flip_h = true
+@onready var anim = get_node("AnimationPlayer")
+
 #var health = 50
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -58,6 +62,10 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
+		if direction == -1:
+			get_node("AnimatedSprite2D").flip_h = false
+		else:
+			get_node("AnimatedSprite2D").flip_h = true
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
