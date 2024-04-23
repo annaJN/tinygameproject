@@ -40,7 +40,7 @@ func set_empty():
 
 func set_item(new_item):
 	item = new_item
-	icon.texture = new_item["texture"]
+	icon.texture = new_item["icon_texture"]
 	quantity_label.text = str(item["quantity"])
 	item_name.text = str(item["name"])
 	item_type.text = str(item["type"])
@@ -50,3 +50,11 @@ func set_item(new_item):
 		item_effect.text = ""
 
 
+
+
+func _on_use_button_pressed():
+	usage_panel.visible = false
+	if item != null and item["effect"] != "":
+		if Global.player_node:
+			Global.player_node.apply_item_effect(item)
+			Global.remove_item(item["type"], item["effect"])

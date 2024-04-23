@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://ouwodje2bf0s"]
+
+[ext_resource type="Texture2D" uid="uid://c0gvdgdhpss3q" path="res://Assets/Environment/Woodsy/thorns.png" id="1_s5wud"]
+[ext_resource type="Texture2D" uid="uid://uffo02bqrkwq" path="res://Assets/Environment/Woodsy/leaves.png" id="2_m0uv2"]
+[ext_resource type="PackedScene" uid="uid://b6emo5ljrppfu" path="res://Objects/InventoryItem.tscn" id="3_vynq2"]
+[ext_resource type="Texture2D" uid="uid://ccb6tkvh88gk" path="res://Assets/Environment/Woodsy/blueberries 1.png" id="4_rcqsp"]
+[ext_resource type="Texture2D" uid="uid://bwglwivrpg7e2" path="res://Assets/Environment/Woodsy/blueberry.png" id="5_86beu"]
+[ext_resource type="Texture2D" uid="uid://cuafui6umnrn0" path="res://Assets/Environment/Woodsy/blueberries 2.png" id="5_otxbg"]
+[ext_resource type="Texture2D" uid="uid://cwmve6jdhn52q" path="res://Assets/Environment/Woodsy/blueberries 3.png" id="6_5kqrl"]
+[ext_resource type="Texture2D" uid="uid://djl2kadv8frfr" path="res://Assets/Environment/Woodsy/blueberries 4.png" id="7_okg08"]
+[ext_resource type="Texture2D" uid="uid://bexjq8xjmo1pc" path="res://Assets/Environment/Woodsy/blueberries 5.png" id="8_bne82"]
+
+[node name="Blueberry bush" type="Node2D"]
+position = Vector2(13, -9)
+
+[node name="Thorns" type="Sprite2D" parent="."]
+position = Vector2(347.167, -175.5)
+scale = Vector2(0.138333, 0.138333)
+texture = ExtResource("1_s5wud")
+
+[node name="Leaves" type="Sprite2D" parent="."]
+position = Vector2(344.5, -162.5)
+scale = Vector2(0.141, 0.141)
+texture = ExtResource("2_m0uv2")
+
+[node name="Blueberry1" parent="." instance=ExtResource("3_vynq2")]
+position = Vector2(89.0001, -147)
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Blueberry"
+item_texture = ExtResource("4_rcqsp")
+item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
+
+[node name="Blueberry2" parent="." instance=ExtResource("3_vynq2")]
+position = Vector2(147, -199)
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Blueberry"
+item_texture = ExtResource("5_otxbg")
+item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
+
+[node name="Blueberry3" parent="." instance=ExtResource("3_vynq2")]
+position = Vector2(150, -144)
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Blueberry"
+item_texture = ExtResource("6_5kqrl")
+item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
+
+[node name="Blueberry4" parent="." instance=ExtResource("3_vynq2")]
+position = Vector2(227, -217)
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Blueberry"
+item_texture = ExtResource("7_okg08")
+item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
+
+[node name="Blueberry5" parent="." instance=ExtResource("3_vynq2")]
+position = Vector2(174, -87)
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Blueberry"
+item_texture = ExtResource("8_bne82")
+item_effect = "Health"
+icon_texture = ExtResource("5_86beu")
