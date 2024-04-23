@@ -17,6 +17,7 @@ var jump_count = 0
 # could be increased if we want a power up or for accessibly purposes
 #if we don't want to have double jump, change it to 1
 var max_jumps = 2
+var in_air = false
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
@@ -49,11 +50,17 @@ func _physics_process(delta):
 	# Makes sure the jump count is reset when the player is on the floor
 	if is_on_floor():
 		jump_count = 0
+		#anim.play("jump")
+		#in_air = false
+		
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
 		if jump_count < max_jumps:
+			anim.play("jump")
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
+			in_air = true
+		
 		wall_jump()
 		
 	wall_sliding(delta)	
@@ -66,6 +73,9 @@ func _physics_process(delta):
 			get_node("AnimatedSprite2D").flip_h = false
 		else:
 			get_node("AnimatedSprite2D").flip_h = true
+		
+		# Starts the running animation
+		anim.play("running")
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -76,6 +86,16 @@ func _physics_process(delta):
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+			
+	
+	##
+	## Animates the landing
+	##
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider().name == "Ground" and in_air == true:
+			anim.play("landing")
+			in_air = false
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -107,11 +127,23 @@ func wall_sliding(delta):
 #handles wall jumping, makes it so you can jump (for now infinitely) on a wall
 func wall_jump():
 	if Input.is_action_pressed("ui_right") and is_on_wall():
+		anim.play("jump")		
 		velocity.y = JUMP_VELOCITY
 		velocity.x = -wall_jump_push
 	if Input.is_action_pressed("ui_left") and is_on_wall():
+		anim.play("jump")		
 		velocity.y = JUMP_VELOCITY
 		velocity.x = wall_jump_push
+
+func _process(delta):
+	#if velocity.y < 0:
+		#anim.play("jump")
+	if velocity.y > 0:
+		anim.play("falling")
+	
+	
+
+
 
 ## 
 ## Pause menu functionality
