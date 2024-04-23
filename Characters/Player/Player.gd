@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 const SPEED = Global.SPEED_PLAYER
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -700.0
 
 #var health = 50
 var carrying = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var ground
 var jump_count = 0
 # could be increased if we want a power up or for accessibly purposes
@@ -53,7 +53,7 @@ func _physics_process(delta):
 		jump_count = 0
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
-		if jump_count < max_jumps:
+		if jump_count < max_jumps && Global.isCarrying == false:
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 		wall_jump()
@@ -94,6 +94,9 @@ func _input(event):
 			self.process_mode = 1
 			animation_player.play()
 		get_tree().paused = !get_tree().paused
+		
+	if (event.is_action_pressed("ui_down") && is_on_floor()):
+		position.y += 15
 		
 
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall

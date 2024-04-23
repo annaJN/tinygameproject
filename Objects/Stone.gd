@@ -6,6 +6,8 @@ var picked = false
 func _physics_process(delta):
 	#print("physics process")
 	if picked == true:
+		print(get_node("../Player/Marker2D"))
+		print(get_node("res://Characters/Player/Player.tscn"))
 		self.position = get_node("../Player/Marker2D").global_position
 		
 		
