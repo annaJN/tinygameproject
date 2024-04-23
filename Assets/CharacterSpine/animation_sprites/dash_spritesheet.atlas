@@ -1,0 +1,62 @@
+
+dash_spritesheet.png
+size: 5101,2401
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-dash_0
+  rotate: false
+  xy: 1, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_1
+  rotate: false
+  xy: 1, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_7
+  rotate: false
+  xy: 1, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_2
+  rotate: false
+  xy: 1021, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_3
+  rotate: false
+  xy: 2041, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_4
+  rotate: false
+  xy: 3061, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_5
+  rotate: false
+  xy: 4081, 1
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1
+skeleton-dash_6
+  rotate: false
+  xy: 1, 1201
+  size: 1019, 1199
+  orig: 1019, 1199
+  offset: 0, 0
+  index: -1

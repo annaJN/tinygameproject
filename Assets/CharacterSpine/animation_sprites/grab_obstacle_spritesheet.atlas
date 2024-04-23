@@ -1,0 +1,27 @@
+
+grab_obstacle_spritesheet.png
+size: 3310,1202
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-grab_boulder_0
+  rotate: false
+  xy: 1, 1
+  size: 1102, 1200
+  orig: 1102, 1200
+  offset: 0, 0
+  index: -1
+skeleton-grab_boulder_1
+  rotate: false
+  xy: 1104, 1
+  size: 1102, 1200
+  orig: 1102, 1200
+  offset: 0, 0
+  index: -1
+skeleton-grab_boulder_2
+  rotate: false
+  xy: 2207, 1
+  size: 1102, 1200
+  orig: 1102, 1200
+  offset: 0, 0
+  index: -1
