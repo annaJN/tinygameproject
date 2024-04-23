@@ -1,35 +1,63 @@
 ~ berriesCreature_Start
-if hasRedBerries #Kom ihåg att sätta denna variablen!!
-	=> has_berries
-else
-	=> does_not_have_berries
+#if  #Add function that checks if the player has any goop berries
+=> has_berries
+#else
+#=> does_not_have_berries
 
 
 ~ has_berries 
 Creature: Oh Hello! 
 Creature: [wave amp=25 freq=5]*sniff sniff*[/wave]
-Creature: [wave amp=25 freq=5]*SNIFF*[/wave]
+Creature: [wave amp=50 freq=5]*SNIFF*[/wave]
 Creature: Do you have some Goop berries?! 
 Creature: Can I have some please! 
 Creature: [speed=1.6] [shake rate=20 level=10]Please please please.[/shake]
 - No, I ate them all. 
-- Yes. Do you want some?
-- Yes, they are mine.
-- (Lie) No. 
+	Creature: Lucky you. 
+	Creature: [shake rate=20 level=10]*rumble*[/shake]
+	Creature: If you find any more and want to share I'll be here. 
+- Yes. Here you go. 
+	=> got_berry
+- No, they are mine.
+Creature: Oh. Will you trade me? 
+- *Give them berry.*
+	=> got_berry
+- No. 
+	Creature: Okay, if you change your mind I'll be here. 
+	Creature: [shake rate=20 level=10]*rumble*[/shake]
+	
 - ...
+	Creature: I'll give you something in return. Of course!
+	- *Give them a berry.*
+		=> got_berry
+	- *Leave.*
 => END
+
+~ got_berry 
+#Add function that removes one goop berry from the inventory
+Creature: [shake rate=20 level=20][speed=0.2]YEEEEEEEEEEES[/shake]'
+Creature: Thank you friend!
+Creature: *Munch munch munch*
+#add function that gives them something. 
+Creature: Here! Its one of my favorites. 
+#Add something that shows what they got?
+=> END 
+
 
 ~ does_not_have_berries
 Creature: Oh Hello! 
 Creature: [shake rate=20 level=10]*rumble*[/shake]
 Creature: Im really hungry. Have you seen any goop berries?
+- What are goop berries? 
+	Creature: They are just the very best and the tastiest! 
+	Creature: They look like a cluster of tiny ball and grow on bushes.
+	Creature: If you find any I will trade you something neat for them. 
 - No. 
 	Creature: Oh...
 	Creature: Well if you find any and want to share I'll be here. 
 	Creature: I even have something I can give in return. 
 	Creature: But thats a secret! [wave amp=25 freq=5]Hehehehe.[/wave]
-	=> END
 - ...
 	Creature: ...
 	Creature: Okay then.
-	=> END
+=> END
