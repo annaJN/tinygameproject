@@ -1,25 +1,90 @@
+#Why is the snorlax away from its village?
+	#likes the solitude
+	#on a mission
+		#What?
+			#To scavange for the berries
+				#It ate the berries and fell asleep (they have a tranquilizing effect that is potent when raw, easy overconsumption)
+				#It has a secret spot and uses it to underreport the amount of berries it can find
+				#The village makes a communal brew with it
+			#To find a creature that has gone missing
+			#Guarding the edges of their territory
+#name = Bulmi
+
+~ snorlax_start
+if not Dialogue.snorlax_state_angry_at_player
+	=>< snorlax_violent_start
+	Snorlax: EASTER EGG!!!
+else
+	=>< snorlax_peaceful_start
+	Snorlax: Easter egg???
+=> END!
+
+~ snorlax_introduction
+???: Nice to meet you, you can call me Bulmi. Who are you?
+- *Boombastic side eye* [if Global.player_has_spoken == false]
+- *something else* [if Global.player_has_spoken]
+- My name is... (pick a name) =>< name_picker
+	Bulmi: Sure thing {{Global.player_name}}. What are you doing here? => player_exposition
+- *shrug*
+	Bulmi: ...
+- *blank stare*
+	Bulmi: ...
+- I don't know...
+{{Global.snorlax_name}}: Guess I'll call you [shake rate=20 level=10]Spot[/shake] then.
+- *Roll your eyes*
+	{{Global.snorlax_name}}: fine, but I gotta call you something
+- That works i guess
+{{Global.snorlax_name}}: 
+{{Global.snorlax_name}}: So {{Global.player_name}}, what are you doing here?
+~ player_exposition
+
+~ name_picker
+- Bob
+	set Global.player_name = "Bob" #gotta love bob #petitionToMakeBobGenderNeutral
+- Uhm... Travis
+	set Global.player_name = "Umbravis" #sammanskrivning av latin för skuggfågel
+#please add more names
+
 ~ snorlax_first_meet
-if snorlax_woken_violently
-	Snorlax: [#angry, #surprised] !...
-	- [#action] Stare silently => snorlax_standoff
+if Global.snorlax_awoken_violently
+	{{Global.snorlax_name}}: [wave amp=25 freq=5]!!![/wave]
+	- *Stare silently* => snorlax_standoff
 	- Sorry, I did not mean to hurt you
 	- Get moving you silly goose
-		Conscience: Are you sure?
-		- [#evil, #happy] Yes
-		- [#evil] Of course
-			Conscience: Like[wait=1.0], really sure?
-			- [#annoyed] Yes
-			- [#annoyed] Fine, no
-		- [#kind] No
+
+~ snorlax_peaceful_start
+???: *Groggy* Huh!?
+???: *Looks around and spots you standing there*
+???: *locks eyes with you*
+- *Stare back*
+- Hi!
+???: How long have I been out?
+- *shrug*
+- I don't know
+
+
+
+~ snorlax_violent_start
+???: [shake rate=20 level=10]!!![/shake][next=auto]
+???: [shake rate=20 level=10]What in the[speed=0.2]...[/shake]
+???: *Eyes dart around the treeline frantically*
+- *Stay silent*
+- *Approach the creature*
+- Hi!
 
 ~ snorlax_standoff
-%4 Snorlax: [#action] Stares silentlier
-- [#action] Stare silently => snorlax_standoff
-- [#action] Blink
+???: *Stares silentlier back at you*
+- *Stare silently* 
+	=> snorlax_standoff
+- *Blink*
+	???: Hah!
+	???: Well? => END!
+	=> END!
 - Hi!
-%1 Snorlax: .[wait=0.5].[wait=0.5].[wait=0.5] [#angry]Fine[wait=1], be like that
+???: [speed=0.1]...[speed=1.0][#angry]Fine[wait=1], be like that
 
-~ snorlax_slighted_permanently
-Snorlax: [#action] Turns away from you => END
 
-~ End
+~ snorlax_exposition_tree
+- Who are you?
+- Why were you sleeping on the ground?
+- *Leave* => END!

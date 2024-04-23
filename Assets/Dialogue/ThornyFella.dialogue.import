@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bmcqsycjr11hc"
+path="res://.godot/imported/ThornyFella.dialogue-6e235f0350427a57b58a29c04516e187.tres"
+
+[deps]
+
+source_file="res://Assets/Dialogue/ThornyFella.dialogue"
+dest_files=["res://.godot/imported/ThornyFella.dialogue-6e235f0350427a57b58a29c04516e187.tres"]
+
+[params]
+
+defaults=true

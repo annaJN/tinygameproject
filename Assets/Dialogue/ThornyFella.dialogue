@@ -1,0 +1,45 @@
+# Thornbush dweller
+# Utilizes the bushes like a spider utilizes its web
+# Likes to cooperate with others to hunt more food
+# Is a bit of a cleptomaniac, likes its treasurehoard
+# Dragonesque but a bit shy
+# refuses to leave its domain as it only feels safe within the bushes
+# Is essentially frightened but is a bit of a control freak
+
+
+~ this_is_a_node_title
+???: Well this is a surprise, never seen one like you before.
+- You: *Stay silent*
+	???: 
+- You: I could say the same to you!
+	???: No you couldn't, you don't even see me.
+	- You: How would you know?
+	- You: Yes I can!
+		???: [speed=0.2]...
+		???: You know that it's rude to lie in the home of other's
+
+???: Well none the matter, you caught me in a generous mood.
+???: It's quite embarrasing really. I seem to have lost track of my [#thing].
+???: I could help make your journey through here easier if you would be willing to help me.
+???: I so happen to know where it went but I have some trouble retrieving it myself.
+???: Simply drop it off here and I'll see what I can do about the bushes.
+- You: *Back away silently* => END
+
+
+
+	
+~ thorny_exposition_dialogue_tree
+- You: Tell me about yourself =>< thorny_biography
+- You: What is this place? =>< bushes_explanation
+- You: *Stick hand into the thorny bush*
+	Your best judgement: Are you sure?
+	- You: Yeah => END
+	- You: Maybe not => thorny_exposition_dialogue_tree
+- You: *Leave* => END
+=> thorny_exposition_dialogue_tree
+
+~ thorny_biography
+
+~ bushes_explanation
+
+=> END
