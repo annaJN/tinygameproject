@@ -523,20 +523,17 @@ position = Vector2(1331, 407)
 
 [node name="BigBush" type="Node2D" parent="."]
 position = Vector2(2173, 225)
-metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Bush" type="Sprite2D" parent="BigBush"]
 scale = Vector2(0.4805, 0.4805)
 texture = ExtResource("29_n7ai8")
-metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BigBush"]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BigBush/StaticBody2D"]
 position = Vector2(100, 0)
 shape = SubResource("SegmentShape2D_63qu5")
-metadata/_edit_lock_ = true
 
 [node name="Branch2" type="Sprite2D" parent="BigBush/StaticBody2D"]
 position = Vector2(-120, 243)
@@ -743,6 +740,7 @@ one_way_collision = true
 
 [node name="BigBush2" type="Node2D" parent="."]
 position = Vector2(3531, 211)
+metadata/_edit_group_ = true
 
 [node name="Bush" type="Sprite2D" parent="BigBush2"]
 scale = Vector2(0.4805, 0.4805)
