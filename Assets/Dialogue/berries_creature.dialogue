@@ -35,7 +35,7 @@ Creature: Oh. Will you trade me?
 
 ~ got_berry 
 #Add function that removes one goop berry from the inventory
-Creature: [shake rate=20 level=20][speed=0.2]YEEEEEEEEEEES[/shake]'
+Creature: [shake rate=20 level=20][speed=0.2]YEEEEEEEEEEES[/shake]
 Creature: Thank you friend!
 Creature: *Munch munch munch*
 #add function that gives them something. 
