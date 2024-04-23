@@ -1,0 +1,13 @@
+
+wall_climb_still_spritesheet.png
+size: 730,1001
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wall_climb_still_0
+  rotate: false
+  xy: 1, 1
+  size: 728, 999
+  orig: 728, 999
+  offset: 0, 0
+  index: -1
