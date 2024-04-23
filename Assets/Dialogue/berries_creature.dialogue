@@ -12,12 +12,13 @@ Creature: [wave amp=50 freq=5]*SNIFF*[/wave]
 Creature: Do you have some Goop berries?! 
 Creature: Can I have some please! 
 Creature: [speed=1.6] [shake rate=20 level=10]Please please please.[/shake]
+- Yes. Here you go. 
+	=> got_berry
 - No, I ate them all. 
 	Creature: Lucky you. 
 	Creature: [shake rate=20 level=10]*rumble*[/shake]
 	Creature: If you find any more and want to share I'll be here. 
-- Yes. Here you go. 
-	=> got_berry
+	=> END
 - No, they are mine.
 Creature: Oh. Will you trade me? 
 - *Give them berry.*
