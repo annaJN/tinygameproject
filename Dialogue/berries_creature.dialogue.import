@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://wjdicn8m2xp4"
+path="res://.godot/imported/berries_creature.dialogue-cfbea05d03cde7cdf2bb808658a6cadb.tres"
+
+[deps]
+
+source_file="res://Dialogue/berries_creature.dialogue"
+dest_files=["res://.godot/imported/berries_creature.dialogue-cfbea05d03cde7cdf2bb808658a6cadb.tres"]
+
+[params]
+
+defaults=true
