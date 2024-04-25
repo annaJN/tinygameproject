@@ -22,6 +22,7 @@ var max_jumps = 2
 @onready var animation_player = $AnimationPlayer
 
 @onready var anim = get_node("AnimationPlayer")
+var on_ground = 0
 
 var push_force = 80.0
 
@@ -58,28 +59,35 @@ func _physics_process(delta):
 		in_air = true
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
-		if jump_count < max_jumps && Global.isCarrying == false:
-			anim.play("jump")
+		if jump_count < max_jumps:# && Global.isCarrying == false:
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
+			on_ground = 0
+			anim.play("jump")
 			#in_air = true
 		wall_jump()
 		
-	wall_sliding(delta)	
+	wall_sliding(delta)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction and !get_tree().paused:
+		##
+		## Rotates the character depending on direction
 		if direction == -1:
 			get_node("AnimatedSprite2D").flip_h = false
 		else:
-			get_node("AnimatedSprite2D").flip_h = false
+			get_node("AnimatedSprite2D").flip_h = true
 		velocity.x = direction * SPEED
-		if is_on_floor():
+		##
+		## Start the running animation
+		if is_on_floor() and !in_air and on_ground > 5:
 			anim.play("running")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and on_ground > 2:
+			anim.play("idle")
 
 	move_and_slide()
 	
@@ -90,15 +98,17 @@ func _physics_process(delta):
 			
 	##
 	## Animates the landing
-	##
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
 		if collision.get_collider().is_in_group("Landing") and in_air:
 			anim.play("landing")
 			in_air = false
 
-func _process(delta):
+func _process(_delta):
 	hp.text = "HP " + str(Global.health)
+	
+	if is_on_floor():
+		on_ground += 1
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
