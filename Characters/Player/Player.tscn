@@ -1,17 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=16 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
-[ext_resource type="Texture2D" uid="uid://bxr4xe40r158e" path="res://Assets/tmp/PlayerSprites/idle/player-idle-1.png" id="2_hc6q0"]
-[ext_resource type="Texture2D" uid="uid://cfrdapyev4k1h" path="res://Assets/tmp/PlayerSprites/idle/player-idle-2.png" id="3_42ejr"]
-[ext_resource type="Texture2D" uid="uid://bh7yj8n3kiyk" path="res://Assets/tmp/PlayerSprites/idle/player-idle-3.png" id="4_oaq0y"]
-[ext_resource type="Texture2D" uid="uid://dw0k6h8y2ayfe" path="res://Assets/tmp/PlayerSprites/idle/player-idle-4.png" id="5_kp6c6"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="6_4fov4"]
-[ext_resource type="Texture2D" uid="uid://dqa8kbbjvs723" path="res://Assets/tmp/PlayerSprites/hurt/player-hurt-1.png" id="6_w7vo4"]
-[ext_resource type="Texture2D" uid="uid://cmfctkmu88olf" path="res://Assets/tmp/PlayerSprites/hurt/player-hurt-2.png" id="7_byq43"]
 [ext_resource type="FontFile" uid="uid://cjgo8gf0cp441" path="res://addons/rmsmartshape/assets/SourceCodeVariable-Roman.ttf" id="7_p7dcj"]
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
-[ext_resource type="Texture2D" uid="uid://c87xymff6fcf6" path="res://Assets/tmp/PlayerSprites/jump/player-jump-1.png" id="8_ug083"]
-[ext_resource type="Texture2D" uid="uid://bd65hrslftp2x" path="res://Assets/tmp/PlayerSprites/jump/player-jump-2.png" id="9_by50p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rloiv"]
 radius = 27.0
@@ -19,43 +11,24 @@ height = 64.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6jd1w"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_hc6q0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_42ejr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_oaq0y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_kp6c6")
-}],
+"frames": [],
 "loop": true,
-"name": &"Idle",
+"name": &"idle",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_w7vo4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_byq43")
-}],
-"loop": true,
-"name": &"hurt",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_ug083")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_by50p")
-}],
+"frames": [],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"landing",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"running",
 "speed": 5.0
 }]
 
@@ -194,8 +167,6 @@ position = Vector2(39.7031, 38.5)
 scale = Vector2(3.40625, 3.40625)
 sprite_frames = SubResource("SpriteFrames_6jd1w")
 animation = &"jump"
-autoplay = "Idle"
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

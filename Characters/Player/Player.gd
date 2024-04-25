@@ -21,12 +21,15 @@ var max_jumps = 2
 @onready var hp = $HP/HP
 @onready var animation_player = $AnimationPlayer
 
+@onready var anim = get_node("AnimationPlayer")
 
 var push_force = 80.0
 
 const wall_jump_push = 100
 const wall_slide_gravity = 50
 var is_wall_sliding = false
+
+var in_air = false
 
 func _ready():
 	# Set this node as the player node
@@ -51,11 +54,15 @@ func _physics_process(delta):
 	# Makes sure the jump count is reset when the player is on the floor
 	if is_on_floor():
 		jump_count = 0
+	else:
+		in_air = true
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
 		if jump_count < max_jumps && Global.isCarrying == false:
+			anim.play("jump")
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
+			#in_air = true
 		wall_jump()
 		
 	wall_sliding(delta)	
@@ -64,7 +71,13 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction and !get_tree().paused:
+		if direction == -1:
+			get_node("AnimatedSprite2D").flip_h = false
+		else:
+			get_node("AnimatedSprite2D").flip_h = false
 		velocity.x = direction * SPEED
+		if is_on_floor():
+			anim.play("running")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -75,6 +88,15 @@ func _physics_process(delta):
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 			
+	##
+	## Animates the landing
+	##
+	for index in get_slide_collision_count():
+		var collision = get_slide_collision(index)
+		if collision.get_collider().is_in_group("Landing") and in_air:
+			anim.play("landing")
+			in_air = false
+
 func _process(delta):
 	hp.text = "HP " + str(Global.health)
 
