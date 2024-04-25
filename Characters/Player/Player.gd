@@ -59,7 +59,7 @@ func _physics_process(delta):
 		in_air = true
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
-		if jump_count < max_jumps:# && Global.isCarrying == false:
+		if jump_count < max_jumps && Global.isCarrying == false:
 			anim.play("jump")
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
