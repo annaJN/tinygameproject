@@ -50,16 +50,15 @@ func _physics_process(delta):
 	# Makes sure the jump count is reset when the player is on the floor
 	if is_on_floor():
 		jump_count = 0
-		#anim.play("jump")
-		#in_air = false
-		
+	else:
+		in_air = true
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
 		if jump_count < max_jumps:
 			anim.play("jump")
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
-			in_air = true
+			#in_air = true
 		
 		wall_jump()
 		
@@ -73,9 +72,9 @@ func _physics_process(delta):
 			get_node("AnimatedSprite2D").flip_h = false
 		else:
 			get_node("AnimatedSprite2D").flip_h = true
-		
-		# Starts the running animation
-		anim.play("running")
+		if is_on_floor():
+			# Starts the running animation
+			anim.play("running")
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -93,7 +92,7 @@ func _physics_process(delta):
 	##
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
-		if collision.get_collider().name == "Ground" and in_air == true:
+		if collision.get_collider().is_in_group("Landing") and in_air == true:
 			anim.play("landing")
 			in_air = false
 
@@ -142,7 +141,6 @@ func _process(delta):
 		anim.play("falling")
 	
 	
-
 
 
 ## 

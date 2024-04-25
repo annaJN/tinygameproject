@@ -2,7 +2,7 @@ extends Node
 
 var currentScene
 
-const SPEED_PLAYER = 1000.0
+const SPEED_PLAYER = 200.0
 
 var inventory = []
 var player_node: Node = null
