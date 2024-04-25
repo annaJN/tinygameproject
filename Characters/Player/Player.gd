@@ -61,7 +61,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if jump_count < max_jumps:# && Global.isCarrying == false:
 			anim.play("jump")
-			print("JUMPING" + str(jump_count))
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 			time_on_ground = 0
