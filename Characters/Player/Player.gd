@@ -22,7 +22,7 @@ var max_jumps = 2
 @onready var animation_player = $AnimationPlayer
 
 @onready var anim = get_node("AnimationPlayer")
-var on_ground = 0
+var time_on_ground = 0
 
 var push_force = 80.0
 
@@ -60,11 +60,11 @@ func _physics_process(delta):
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
 		if jump_count < max_jumps:# && Global.isCarrying == false:
+			anim.play("jump")
+			print("JUMPING" + str(jump_count))
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
-			on_ground = 0
-			anim.play("jump")
-			#in_air = true
+			time_on_ground = 0
 		wall_jump()
 		
 	wall_sliding(delta)
@@ -82,11 +82,11 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		##
 		## Start the running animation
-		if is_on_floor() and !in_air and on_ground > 5:
+		if is_on_floor() and !in_air and time_on_ground > 5:
 			anim.play("running")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and on_ground > 2:
+		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and time_on_ground > 5:
 			anim.play("idle")
 
 	move_and_slide()
@@ -108,7 +108,7 @@ func _process(_delta):
 	hp.text = "HP " + str(Global.health)
 	
 	if is_on_floor():
-		on_ground += 1
+		time_on_ground += 1
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
