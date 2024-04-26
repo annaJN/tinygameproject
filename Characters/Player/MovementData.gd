@@ -1,7 +1,7 @@
 class_name PlayerMovementData
 extends Resource
 
-@export var speed = Global.SPEED_PLAYER
+@export var speed = 400.0 #Global.SPEED_PLAYER
 @export var jump_velocity = -700.0
 @export var acceleration = 900.0
 @export var friction = 2000.0

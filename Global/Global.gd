@@ -2,7 +2,9 @@ extends Node
 
 var currentScene
 
-const SPEED_PLAYER = 400.0
+var movement = "res://Characters/Player/DefaultMovementData.tres"
+
+#const SPEED_PLAYER = 400.0
 var health
 const MAX_HEALTH = 50
 

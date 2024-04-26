@@ -28,6 +28,7 @@ var in_air = false
 func _ready():
 	# Set this node as the player node
 	Global.set_player_reference(self)
+	movement_data = load(Global.movement)
 
 func _process(_delta):
 	## Display the health of the player by a label

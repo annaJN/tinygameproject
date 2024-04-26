@@ -13,10 +13,24 @@ offset_bottom = 87.0
 text = "Settings"
 
 [node name="Return" type="Button" parent="."]
-offset_left = 362.0
-offset_top = 151.0
-offset_right = 552.0
-offset_bottom = 219.0
+offset_left = 367.0
+offset_top = 316.0
+offset_right = 557.0
+offset_bottom = 384.0
 text = "Back"
 
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 370.0
+offset_top = 193.0
+offset_right = 414.0
+offset_bottom = 217.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 424.0
+offset_top = 192.0
+offset_right = 464.0
+offset_bottom = 215.0
+text = "Accessible movement settings"
+
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
