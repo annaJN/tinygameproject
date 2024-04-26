@@ -2,6 +2,13 @@ extends CharacterBody2D
 
 const SPEED = Global.SPEED_PLAYER
 const JUMP_VELOCITY = -700.0
+const ACCELERATION = 900.0
+const FRICTION = 2000.0
+var push_force = 80.0
+
+const wall_jump_push = 1000
+const wall_slide_gravity = 50
+var is_wall_sliding = false
 
 #var health = 50
 var carrying = false
@@ -22,11 +29,7 @@ var max_jumps = 2
 @onready var animation_player = $AnimationPlayer
 
 
-var push_force = 80.0
 
-const wall_jump_push = 100
-const wall_slide_gravity = 50
-var is_wall_sliding = false
 
 func _ready():
 	# Set this node as the player node
@@ -58,15 +61,17 @@ func _physics_process(delta):
 			jump_count += 1
 		wall_jump()
 		
-	wall_sliding(delta)	
+	#wall_sliding(delta)	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
+	
+	#makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x,SPEED * direction,ACCELERATION * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 
 	move_and_slide()
 	
@@ -113,12 +118,23 @@ func wall_sliding(delta):
 	
 #handles wall jumping, makes it so you can jump (for now infinitely) on a wall
 func wall_jump():
-	if Input.is_action_pressed("ui_right") and is_on_wall():
+	var wall_normal = get_wall_normal()
+	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
+	print(left_angle)
+	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
+	print(right_angle)
+	print("wall_normal" + str(wall_normal))
+	print("is_on_wall?"+str(is_on_wall()))
+	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall():
+		print("i am right jumping"+str(wall_normal))
 		velocity.y = JUMP_VELOCITY
-		velocity.x = -wall_jump_push
-	if Input.is_action_pressed("ui_left") and is_on_wall():
+		velocity.x = wall_normal.x * SPEED
+		
+	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall():
+		print("i am left jumping"+str(wall_normal))
 		velocity.y = JUMP_VELOCITY
-		velocity.x = wall_jump_push
+		velocity.x = wall_normal.x * SPEED
+
 
 #handles effects from items
 func apply_item_effect(item):
