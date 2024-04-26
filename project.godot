@@ -64,7 +64,7 @@ ui_add={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Assets/Dialogue/frogTemp.dialogue", "res://Assets/Dialogue/Snorlax.dialogue", "res://Assets/Dialogue/SnorlaxOther.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Assets/Dialogue/frogTemp.dialogue", "res://Assets/Dialogue/Snorlax.dialogue", "res://Assets/Dialogue/SnorlaxOther.dialogue", "res://Assets/Dialogue/berries_creature.dialogue", "res://Assets/Dialogue/ThornyFella.dialogue")
 
 [layer_names]
 

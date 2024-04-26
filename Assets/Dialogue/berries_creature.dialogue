@@ -1,17 +1,17 @@
 ~ berries_Start
-#if  #Add function that checks if the player has any cluster berries
-=> has_berries
-#ifelse false
-#=> does_not_have_berries
-#else
-#=> berry_facts
+if  check_item_in_inventory(Clusterberry)
+	=> has_berries
+elif check_item_in_inventory(Clusterberry) == false 
+	=> does_not_have_berries
+elif has_given_berry
+	=> berry_facts
 
 ~ has_berries 
 Berry collector: Oh Hello! 
 Berry collector: [wave amp=25 freq=5]*sniff sniff*[/wave]
 Berry collector: [wave amp=50 freq=5]*SNIFF*[/wave]
 Berry collector: Do you have some Cluster berries?! 
-Berry collector: Can I have some please! 
+Berry collector: Can I have one please! 
 Berry collector: [speed=1.6] [shake rate=20 level=10]Please please please.[/shake]
 - Yes. Here you go. 
 	=> got_berry
@@ -36,13 +36,14 @@ Berry collector: Oh. Will you trade me?
 => END
 
 ~ got_berry 
-#Add function that removes one cluster berry from the inventory
+{{remove_item("Food","Health")}}
 Berry collector: [shake rate=20 level=20][speed=0.2]YEEEEEEEEEEES[/shake]
 Berry collector: Thank you friend!
 Berry collector: *Munch munch munch*
-#add function that gives them something. 
 Berry collector: Here! Its one of my favorites. 
+#add function that gives them something. 
 #Add something that shows what they got?
+{{has_given_Starberry = true}}
 => END 
 
 
@@ -64,13 +65,22 @@ Berry collector: Im really hungry. Have you seen any cluster berries?
 	Berry collector: Okay then.
 => END
 
-#Random grejen fungerar inte
+#Den verkar fungera nu.
 ~ berry_facts
-% Berry collector: Did you know that you can use star berries to fall asleep easier? 
-	Berry collector: When they are a bit fermented, which can easily happen if they have been lying on the forest floor, they produce a substance that makes one sleepy. 
-	Berry collector: So be careful about eating them if you do not want to fall asleep in the middle of the woods.  
-% Berry collector: Did you know that cluster berries are used to dye clothing? 
-	Berry collector: Some of my own clothes have been dyed with them. 
-% Berry collector: Berry 1
-% Berry collector: Berry 3
-% Berry collector: Berry 2
+% => Starberry
+% => Clusterberry
+#% Berry collector: Berry 1
+#% Berry collector: Berry 2
+#% Berry collector: Berry 3
+=> END
+
+~ Starberry
+Berry collector: Did you know that you can use star berries to fall asleep easier? 
+Berry collector: When they are a bit fermented, which can easily happen if they have been lying on the forest floor, they produce a substance that makes one sleepy. 
+Berry collector: So be careful about eating them if you do not want to fall asleep in the middle of the woods.  
+=> END
+
+~ Clusterberry 
+Berry collector: Did you know that in addition to being delicious, cluster berries are used to dye clothing? 
+Berry collector: Some of my own clothes have been dyed with them. 
+=> END
