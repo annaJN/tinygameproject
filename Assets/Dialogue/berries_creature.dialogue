@@ -42,6 +42,7 @@ Berry collector: Thank you friend!
 Berry collector: *Munch munch munch*
 Berry collector: Here! Its one of my favorites. 
 #add function that gives them something. 
+do Global.add_item(Global.acorn)
 #Add something that shows what they got?
 set Global.has_given_Starberry = true
 => END 

@@ -17,6 +17,16 @@ signal inventory_updated
 
 var isCarrying = false
 
+var acorn = {
+		"quantity" : 1,
+		"type" : "Collectible",
+		"name" : "Acorn",
+		"effect" : "",
+		"texture" : load("res://Assets/Environment/Woodsy/acorn.png"),
+		"scene_path" : "res://Objects/InventoryItem.tscn",
+		"icon_texture": load("res://Assets/Environment/Woodsy/acorn.png")
+	}
+
 func _ready():
 	inventory.resize(12)
 	
