@@ -557,7 +557,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
-radius = 14.1421
+radius = 81.0062
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu51c"]
 bg_color = Color(0.6, 0.6, 0.6, 0.760784)

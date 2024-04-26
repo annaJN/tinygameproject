@@ -65,6 +65,8 @@ func change_health(amount):
 #Global function for checking if the player has a certain item in their inventory
 #Takes item_name 
 func check_item_in_inventory(item_name):
+	print(inventory)
+	print(item_name)
 	for i in range(inventory.size()):
 		if(inventory[i]["name"] == item_name):
 			return true

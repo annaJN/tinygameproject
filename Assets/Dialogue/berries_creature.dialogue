@@ -1,7 +1,7 @@
 ~ berries_Start
-if  check_item_in_inventory(Clusterberry)
+if  Global.check_item_in_inventory("Clusterberry")
 	=> has_berries
-elif check_item_in_inventory(Clusterberry) == false 
+elif Global.check_item_in_inventory("Clusterberry") == false 
 	=> does_not_have_berries
 elif has_given_berry
 	=> berry_facts
@@ -36,14 +36,14 @@ Berry collector: Oh. Will you trade me?
 => END
 
 ~ got_berry 
-{{remove_item("Food","Health")}}
+do Global.remove_item("Food","Health")
 Berry collector: [shake rate=20 level=20][speed=0.2]YEEEEEEEEEEES[/shake]
 Berry collector: Thank you friend!
 Berry collector: *Munch munch munch*
 Berry collector: Here! Its one of my favorites. 
 #add function that gives them something. 
 #Add something that shows what they got?
-{{has_given_Starberry = true}}
+set Global.has_given_Starberry = true
 => END 
 
 
