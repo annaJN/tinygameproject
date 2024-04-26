@@ -3,7 +3,7 @@ extends RigidBody2D
 var picked = false
 # const player = "res://Characters/Player/Player.tscn"
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#print("physics process")
 	if picked == true:
 		print(get_node("../Player/Marker2D"))
