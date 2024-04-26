@@ -1,10 +1,10 @@
 ~ berries_Start
-if  Global.check_item_in_inventory("Clusterberry")
-	=> has_berries
-elif Global.check_item_in_inventory("Clusterberry") == false 
-	=> does_not_have_berries
-elif has_given_berry
+if has_given_berry
 	=> berry_facts
+elif Global.check_item_in_inventory("Clusterberry")
+	=> has_berries
+else
+	=> does_not_have_berries
 
 ~ has_berries 
 Berry collector: Oh Hello! 
