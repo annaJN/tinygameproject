@@ -1,0 +1,493 @@
+
+wake_up.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_00
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_01
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_02
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_03
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_04
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_05
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up2.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_06
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_07
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_08
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_09
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_10
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_11
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up3.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_12
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_13
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_14
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_15
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_16
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_17
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up4.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_18
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_19
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_20
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_21
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_22
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_23
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up5.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_24
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_25
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_26
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_27
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_28
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_29
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up6.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_30
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_31
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_32
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_33
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_34
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_35
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up7.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_36
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_37
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_38
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_39
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_40
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_41
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up8.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_42
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_43
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_44
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_45
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_46
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_47
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up9.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_48
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_49
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_50
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_51
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_52
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_53
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up10.png
+size: 3743,5428
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_54
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_55
+  rotate: false
+  xy: 1872, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_56
+  rotate: false
+  xy: 1, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_57
+  rotate: false
+  xy: 1872, 1810
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_58
+  rotate: false
+  xy: 1, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_59
+  rotate: false
+  xy: 1872, 3619
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1
+
+wake_up11.png
+size: 1872,1810
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_60
+  rotate: false
+  xy: 1, 1
+  size: 1870, 1808
+  orig: 1870, 1808
+  offset: 0, 0
+  index: -1

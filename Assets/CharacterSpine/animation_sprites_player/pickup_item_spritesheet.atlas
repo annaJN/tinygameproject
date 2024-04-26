@@ -1,0 +1,41 @@
+
+pickup_item_spritesheet.png
+size: 4376,1202
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-pickup_item_0
+  rotate: false
+  xy: 1, 1
+  size: 874, 1200
+  orig: 874, 1200
+  offset: 0, 0
+  index: -1
+skeleton-pickup_item_1
+  rotate: false
+  xy: 876, 1
+  size: 874, 1200
+  orig: 874, 1200
+  offset: 0, 0
+  index: -1
+skeleton-pickup_item_2
+  rotate: false
+  xy: 1751, 1
+  size: 874, 1200
+  orig: 874, 1200
+  offset: 0, 0
+  index: -1
+skeleton-pickup_item_3
+  rotate: false
+  xy: 2626, 1
+  size: 874, 1200
+  orig: 874, 1200
+  offset: 0, 0
+  index: -1
+skeleton-pickup_item_4
+  rotate: false
+  xy: 3501, 1
+  size: 874, 1200
+  orig: 874, 1200
+  offset: 0, 0
+  index: -1
