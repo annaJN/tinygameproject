@@ -1,5 +1,5 @@
 ~ berries_Start
-if has_given_berry
+if Global.has_given_Starberry
 	=> berry_facts
 elif Global.check_item_in_inventory("Clusterberry")
 	=> has_berries

@@ -68,6 +68,6 @@ func check_item_in_inventory(item_name):
 	print(inventory)
 	print(item_name)
 	for i in range(inventory.size()):
-		if(inventory[i]["name"] == item_name):
+		if(inventory[i] != null and inventory[i]["name"] == item_name):
 			return true
 	return false
