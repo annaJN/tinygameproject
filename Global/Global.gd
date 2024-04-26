@@ -1,5 +1,8 @@
 extends Node
 
+#dialogue variables 
+var has_given_Starberry = false
+
 var currentScene
 
 const SPEED_PLAYER = 400.0
@@ -59,3 +62,10 @@ func change_health(amount):
 	else:
 		health += amount
 	
+#Global function for checking if the player has a certain item in their inventory
+#Takes item_name 
+func check_item_in_inventory(item_name):
+	for i in range(inventory.size()):
+		if(inventory[i]["name"] == item_name):
+			return true
+	return false
