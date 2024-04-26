@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerMovementData" load_steps=2 format=3 uid="uid://dfcuwug504nex"]
+
+[ext_resource type="Script" path="res://Characters/Player/MovementData.gd" id="1_ktg42"]
+
+[resource]
+script = ExtResource("1_ktg42")
+speed = 400.0
+jump_velocity = -700.0
+acceleration = 900.0
+friction = 2000.0
+push_force = 80.0
+wall_jump_push = 1000
+wall_slide_gravity = 50
