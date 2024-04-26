@@ -1,7 +1,8 @@
-[gd_scene load_steps=74 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=75 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://c5lcgiw2xmxw8" path="res://Assets/Spritesheets/idle_spritesheet.png" id="2_dm87t"]
+[ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
 [ext_resource type="Texture2D" uid="uid://dnbtnx1n7cbqa" path="res://Assets/Spritesheets/jump_spritesheet.png" id="3_cg4xs"]
 [ext_resource type="Texture2D" uid="uid://c3krc80wr17nt" path="res://Assets/Spritesheets/land_spritesheet.png" id="4_0rml1"]
 [ext_resource type="Texture2D" uid="uid://df657xwmv7qks" path="res://Assets/Spritesheets/running_spritesheet.png" id="5_gujq4"]
@@ -576,8 +577,9 @@ size = Vector2(125, 56)
 z_index = 5
 floor_stop_on_slope = false
 floor_constant_speed = true
-floor_snap_length = 2.0
+floor_snap_length = 4.0
 script = ExtResource("1_7pauv")
+movement_data = ExtResource("2_j7a2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(38, 40)

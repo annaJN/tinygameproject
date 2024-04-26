@@ -1,13 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = Global.SPEED_PLAYER
-const JUMP_VELOCITY = -700.0
-const ACCELERATION = 900.0
-const FRICTION = 2000.0
-var push_force = 80.0
+@export var movement_data : PlayerMovementData
 
-const wall_jump_push = 1000
-const wall_slide_gravity = 50
 var is_wall_sliding = false
 
 #var health = 50
@@ -68,14 +62,14 @@ func _physics_process(delta):
 		## Rotates the character depending on direction
 		rotateCharacter(direction)
 		
-		velocity.x = move_toward(velocity.x,SPEED * direction,ACCELERATION * delta)
+		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
 			anim.play("running")
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		velocity.x = move_toward(velocity.x, 0, movement_data.friction * delta)
 		# Play idle animation
 		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and time_on_ground > 5:
 			anim.play("idle")
@@ -95,7 +89,7 @@ func _input(event):
 	if (event.is_action_pressed("ui_down") and is_on_floor()):
 		position.y += 15
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
@@ -130,7 +124,7 @@ func landing():
 func jumpHandling():
 	if jump_count < max_jumps && Global.isCarrying == false:
 		anim.play("jump")
-		velocity.y = JUMP_VELOCITY
+		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0
 	wall_jump()
@@ -144,8 +138,8 @@ func wall_sliding(delta):
 			is_wall_sliding = false
 		
 		if is_wall_sliding:
-			velocity.y += (wall_slide_gravity*delta)
-			velocity.y = min(velocity.y, wall_slide_gravity)
+			velocity.y += (movement_data.wall_slide_gravity*delta)
+			velocity.y = min(velocity.y, movement_data.wall_slide_gravity)
 
 #handles wall jumping, makes it so you can jump (for now infinitely) on a wall
 func wall_jump():
@@ -158,19 +152,19 @@ func wall_jump():
 	print("is_on_wall?"+str(is_on_wall()))
 	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall():
 		print("i am right jumping"+str(wall_normal))
-		velocity.y = JUMP_VELOCITY
-		velocity.x = wall_normal.x * SPEED
+		velocity.y = movement_data.jump_velocity
+		velocity.x = wall_normal.x * movement_data.speed
 		
 	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall():
 		print("i am left jumping"+str(wall_normal))
-		velocity.y = JUMP_VELOCITY
-		velocity.x = wall_normal.x * SPEED
+		velocity.y = movement_data.jump_velocity
+		velocity.x = wall_normal.x * movement_data.speed
 
 func slideCollision():
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+			c.get_collider().apply_central_impulse(-c.get_normal() * movement_data.push_force)
 
 #handles effects from items
 func apply_item_effect(item):
