@@ -574,6 +574,9 @@ size = Vector2(125, 56)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_snap_length = 2.0
 script = ExtResource("1_7pauv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

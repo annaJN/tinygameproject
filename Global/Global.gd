@@ -2,7 +2,7 @@ extends Node
 
 var currentScene
 
-const SPEED_PLAYER = 200.0
+const SPEED_PLAYER = 400.0
 var health
 const MAX_HEALTH = 50
 

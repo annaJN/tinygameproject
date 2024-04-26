@@ -452,6 +452,34 @@ b = Vector2(-117, 627)
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_l4e1y")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(5071, 145)
+
+[node name="Branch2" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(3.15479, 221.252)
+rotation = -1.64385
+scale = Vector2(0.864627, 0.864627)
+texture = ExtResource("26_acr75")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-20.6348, 240.65)
+rotation = -0.0206938
+shape = SubResource("RectangleShape2D_milg7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(4919, 39)
+
+[node name="Branch2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3.15478, 221.252)
+rotation = -1.64385
+scale = Vector2(0.864627, 0.864627)
+texture = ExtResource("26_acr75")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-20.6343, 240.65)
+rotation = -0.0206938
+shape = SubResource("RectangleShape2D_milg7")
+
 [node name="Background" parent="." instance=ExtResource("2_usjvv")]
 
 [node name="Header" type="Label" parent="."]
