@@ -1,5 +1,6 @@
 extends Node
 
+var accessible : bool
 var currentScene
 
 var movement = "res://Characters/Player/DefaultMovementData.tres"

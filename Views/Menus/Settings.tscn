@@ -6,10 +6,10 @@
 script = ExtResource("1_j2rwk")
 
 [node name="Header" type="Label" parent="."]
-offset_left = 394.0
-offset_top = 64.0
-offset_right = 456.0
-offset_bottom = 87.0
+offset_left = 441.0
+offset_top = 96.0
+offset_right = 503.0
+offset_bottom = 119.0
 text = "Settings"
 
 [node name="Return" type="Button" parent="."]
@@ -19,18 +19,27 @@ offset_right = 557.0
 offset_bottom = 384.0
 text = "Back"
 
-[node name="CheckButton" type="CheckButton" parent="."]
-offset_left = 370.0
-offset_top = 193.0
-offset_right = 414.0
-offset_bottom = 217.0
-
 [node name="Label" type="Label" parent="."]
-offset_left = 424.0
-offset_top = 192.0
-offset_right = 464.0
-offset_bottom = 215.0
+offset_left = 703.0
+offset_top = 216.0
+offset_right = 936.0
+offset_bottom = 239.0
 text = "Accessible movement settings"
 
+[node name="DefaultActive" type="Button" parent="."]
+offset_left = 281.0
+offset_top = 172.0
+offset_right = 460.0
+offset_bottom = 277.0
+text = "Default Movement"
+
+[node name="AccessibleActive" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 172.0
+offset_right = 660.0
+offset_bottom = 277.0
+text = "Accessible Movement"
+
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
-[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="DefaultActive" to="." method="_on_default_active_pressed"]
+[connection signal="pressed" from="AccessibleActive" to="." method="_on_accessible_active_pressed"]
