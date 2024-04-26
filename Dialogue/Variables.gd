@@ -11,7 +11,9 @@ var player_state_has_spoken = false
 
 
 var snorlax_player_knows_name = false
-var snorlax_attribute_name = "Bulmi"
+var snorlax_owned_up_to_it = false
+const snorlax_actual_name = "Bulmi"
+var snorlax_name = "Sleepy Stranger"
 var snorlax_hasInfo_player_name = false
 var snorlax_state_has_heard_player = false
 var snorlax_state_angry_at_player = false
