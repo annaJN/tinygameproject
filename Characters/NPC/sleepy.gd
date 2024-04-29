@@ -13,12 +13,18 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.name == "Player": # and $AnimationPlayer.get_current_animation() != "idle":
+	##
+	## Way to check what animation is currently playing:
+	## $AnimationPlayer.get_current_animation()
+	
+	if body.name == "Player":
 		$AnimatedSprite2D.position.y = 0
-		anim.play("idle")
+		anim.play("wake_up")
+		anim.queue("idle")
+		
 
 
 func _on_area_2d_body_exited(body):
-	if body.name == "Player": # and $AnimationPlayer.get_current_animation() != "sleeping":
+	if body.name == "Player":
 		$AnimatedSprite2D.position.y = 70
 		anim.play("sleeping")
