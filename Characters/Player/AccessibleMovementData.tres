@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerMovementData" load_steps=2 format=3 uid="uid://bxv55eajywmn4"]
+
+[ext_resource type="Script" path="res://Characters/Player/MovementData.gd" id="1_cvjjm"]
+
+[resource]
+script = ExtResource("1_cvjjm")
+speed = 1000.0
+jump_velocity = -1000.0
+acceleration = 900.0
+friction = 2000.0
+push_force = 100.0
+wall_jump_push = 2000
+wall_slide_gravity = 50

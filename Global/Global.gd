@@ -3,9 +3,15 @@ extends Node
 #dialogue variables 
 var has_given_Starberry = false
 
+#dialogue variables 
+var has_given_Starberry = false
+
+var accessible : bool
 var currentScene
 
-const SPEED_PLAYER = 400.0
+var movement = "res://Characters/Player/DefaultMovementData.tres"
+
+#const SPEED_PLAYER = 400.0
 var health
 const MAX_HEALTH = 50
 
