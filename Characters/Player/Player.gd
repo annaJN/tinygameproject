@@ -27,6 +27,7 @@ var max_jumps = 2
 @onready var inventory_ui = $InventoryUI
 @onready var hp = $HP/HP
 @onready var animation_player = $AnimationPlayer
+@onready var new_item_ui = $NewItemUI
 
 @onready var anim = get_node("AnimationPlayer")
 var time_on_ground = 0
@@ -62,6 +63,7 @@ func _physics_process(delta):
 		in_air = true
 	# Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
+		#new_item_ui.visible = false
 		if jump_count < max_jumps && Global.isCarrying == false:
 			anim.play("jump")
 			velocity.y = JUMP_VELOCITY
@@ -151,11 +153,7 @@ func wall_sliding(delta):
 func wall_jump():
 	var wall_normal = get_wall_normal()
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
-	print(left_angle)
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
-	print(right_angle)
-	print("wall_normal" + str(wall_normal))
-	print("is_on_wall?"+str(is_on_wall()))
 	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall():
 		print("i am right jumping"+str(wall_normal))
 		velocity.y = JUMP_VELOCITY
@@ -175,6 +173,12 @@ func apply_item_effect(item):
 		_:
 			print("There is no effect for this item")
 			
+			
+#handles new item ui
+func show_new_item_ui(item):
+	new_item_ui.set_item(item)
+	new_item_ui.visible = true
+	
 ## 
 ## Pause menu functionality
 ##
