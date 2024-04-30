@@ -1,0 +1,88 @@
+~ berries_Start
+if Global.has_given_Starberry
+	=> berry_facts
+elif Global.check_item_in_inventory("Clusterberry")
+	=> has_berries
+else
+	=> does_not_have_berries
+
+~ has_berries 
+Berry collector: Oh Hello! 
+Berry collector: [wave amp=25 freq=5]*sniff sniff*[/wave]
+Berry collector: [wave amp=50 freq=5]*SNIFF*[/wave]
+Berry collector: Do you have some Cluster berries?! 
+Berry collector: Can I have one please! 
+Berry collector: [speed=1.6] [shake rate=20 level=10]Please please please.[/shake]
+- Yes. Here you go. 
+	=> got_berry
+- No, I ate them all. 
+	Berry collector: Lucky you. 
+	Berry collector: [shake rate=20 level=10]*rumble*[/shake]
+	Berry collector: If you find any more and want to share I'll be here. 
+	=> END
+- No, they are mine.
+Berry collector: Oh. Will you trade me? 
+- *Give them berry.*
+	=> got_berry
+- No. 
+	Berry collector: Okay, if you change your mind I'll be here. 
+	Berry collector: [shake rate=20 level=10]*rumble*[/shake]
+	
+- ...
+	Berry collector: I'll give you something in return. Of course!
+	- *Give them a berry.*
+		=> got_berry
+	- *Leave.*
+=> END
+
+~ got_berry 
+do Global.remove_item("Food","Health")
+Berry collector: [shake rate=20 level=20][speed=0.2]YEEEEEEEEEEES[/shake]
+Berry collector: Thank you friend!
+Berry collector: *Munch munch munch*
+Berry collector: Here! Its one of my favorites. 
+#add function that gives them something. 
+do Global.add_item(Global.acorn)
+do Global.new_item_ui(Global.acorn)
+#Add something that shows what they got?
+set Global.has_given_Starberry = true
+=> END 
+
+
+~ does_not_have_berries
+Berry collector: Oh Hello! 
+Berry collector: [shake rate=20 level=10]*rumble*[/shake]
+Berry collector: Im really hungry. Have you seen any cluster berries?
+- What are cluster berries? 
+	Berry collector: They are just the very best and the tastiest! 
+	Berry collector: They look like a cluster of tiny ball and grow on bushes.
+	Berry collector: If you find any I will trade you something neat for them. 
+- No. 
+	Berry collector: Oh...
+	Berry collector: Well if you find any and want to share I'll be here. 
+	Berry collector: I even have something I can give in return. 
+	Berry collector: But thats a secret! [wave amp=25 freq=5]Hehehehe.[/wave]
+- ...
+	Berry collector: ...
+	Berry collector: Okay then.
+=> END
+
+#Den verkar fungera nu.
+~ berry_facts
+% => Starberry
+% => Clusterberry
+#% Berry collector: Berry 1
+#% Berry collector: Berry 2
+#% Berry collector: Berry 3
+=> END
+
+~ Starberry
+Berry collector: Did you know that you can use star berries to fall asleep easier? 
+Berry collector: When they are a bit fermented, which can easily happen if they have been lying on the forest floor, they produce a substance that makes one sleepy. 
+Berry collector: So be careful about eating them if you do not want to fall asleep in the middle of the woods.  
+=> END
+
+~ Clusterberry 
+Berry collector: Did you know that in addition to being delicious, cluster berries are used to dye clothing? 
+Berry collector: Some of my own clothes have been dyed with them. 
+=> END

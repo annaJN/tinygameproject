@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=76 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://df657xwmv7qks" path="res://Assets/Spritesheets/Player/running_spritesheet.png" id="6_mn4nm"]
 [ext_resource type="FontFile" uid="uid://cjgo8gf0cp441" path="res://addons/rmsmartshape/assets/SourceCodeVariable-Roman.ttf" id="7_p7dcj"]
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
+[ext_resource type="PackedScene" uid="uid://btv5pouptlf5k" path="res://Views/Inventory/NewItemUI.tscn" id="9_0uwsx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynava"]
 atlas = ExtResource("3_s6ghr")
@@ -558,7 +559,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
-radius = 14.1421
+radius = 81.0062
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu51c"]
 bg_color = Color(0.6, 0.6, 0.6, 0.760784)
@@ -723,6 +724,9 @@ shape = SubResource("RectangleShape2D_odi81")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(86, 58)
+
+[node name="NewItemUI" parent="." instance=ExtResource("9_0uwsx")]
+visible = false
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]

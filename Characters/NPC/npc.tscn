@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://eqfgd6fmnphp" path="res://Assets/tmp/Frog/idle/frog-idle-1.png" id="1_i7qon"]
 [ext_resource type="Texture2D" uid="uid://ddgouall7d21f" path="res://Assets/tmp/Frog/idle/frog-idle-2.png" id="2_3e4vk"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="2_nnkhn"]
-[ext_resource type="Resource" uid="uid://3bew6xpf7avq" path="res://Assets/Dialogue/frogTemp.dialogue" id="3_0chhi"]
 [ext_resource type="Texture2D" uid="uid://d2l1gnork2cu3" path="res://Assets/tmp/Frog/idle/frog-idle-3.png" id="3_1qwvm"]
+[ext_resource type="Resource" uid="uid://caug8e57pthct" path="res://Assets/Dialogue/berries_creature.dialogue" id="3_j0b5j"]
 [ext_resource type="Texture2D" uid="uid://vcbher7xvbi1" path="res://Assets/tmp/Frog/idle/frog-idle-4.png" id="4_vhk0f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_na0o7"]
-radius = 16.0
+radius = 64.0703
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6uo4n"]
 animations = [{
@@ -100,7 +100,8 @@ script = ExtResource("1_adjsa")
 
 [node name="Actionable" parent="." instance=ExtResource("2_nnkhn")]
 position = Vector2(342.514, 421.982)
-dialogue_resources = ExtResource("3_0chhi")
+dialogue_resources = ExtResource("3_j0b5j")
+dialogue_start = "berries_Start"
 
 [node name="CollisionActionable" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(-354.514, -423.982)
