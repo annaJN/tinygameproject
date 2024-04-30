@@ -3,9 +3,6 @@ extends Node
 #dialogue variables 
 var has_given_Starberry = false
 
-#dialogue variables 
-var has_given_Starberry = false
-
 var accessible : bool
 var currentScene
 
@@ -18,11 +15,14 @@ const MAX_HEALTH = 50
 var inventory = []
 var player_node: Node = null
 const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
-#Custom signals
-signal inventory_updated
+#Custom signalssignal inventory_updated
 
 var isCarrying = false
 
+
+signal inventory_updated
+
+  
 var acorn = {
 		"quantity" : 1,
 		"type" : "Collectible",

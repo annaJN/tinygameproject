@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=76 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
