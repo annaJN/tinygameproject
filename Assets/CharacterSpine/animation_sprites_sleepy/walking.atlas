@@ -1,0 +1,524 @@
+
+walking.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_00
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_67
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_01
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_02
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_03
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_04
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_05
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_06
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_07
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_08
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking2.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_09
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_10
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_11
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_12
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_13
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_14
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_15
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_16
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_17
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking3.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_18
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_19
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_20
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_21
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_22
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_23
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_24
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_25
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_26
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking4.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_27
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_28
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_29
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_30
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_31
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_32
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_33
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_34
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_35
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking5.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_36
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_37
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_38
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_39
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_40
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_41
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_42
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_43
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_44
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking6.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_45
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_46
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_47
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_48
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_49
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_50
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_51
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_52
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_53
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking7.png
+size: 4447,5833
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_54
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_55
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_56
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_57
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_58
+  rotate: false
+  xy: 1483, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_59
+  rotate: false
+  xy: 2965, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_60
+  rotate: false
+  xy: 1, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_61
+  rotate: false
+  xy: 1483, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_62
+  rotate: false
+  xy: 2965, 3889
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+
+walking8.png
+size: 4447,3889
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-Walking_63
+  rotate: false
+  xy: 1, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_64
+  rotate: false
+  xy: 1483, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_65
+  rotate: false
+  xy: 2965, 1
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
+skeleton-Walking_66
+  rotate: false
+  xy: 1, 1945
+  size: 1481, 1943
+  orig: 1481, 1943
+  offset: 0, 0
+  index: -1
