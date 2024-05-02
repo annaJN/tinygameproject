@@ -7,10 +7,10 @@
 radius = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7w2h"]
-radius = 40.0125
+radius = 48.0104
 
 [node name="Stone" type="RigidBody2D" groups=["Stone"]]
-mass = 1000.0
+collision_layer = 8
 lock_rotation = true
 script = ExtResource("1_x2hkd")
 
@@ -24,6 +24,8 @@ position = Vector2(-2, 3)
 shape = SubResource("CircleShape2D_m4c2j")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2, 3)
