@@ -1,0 +1,37 @@
+~ dragon_start
+
+=> END
+
+~ dragon_first
+Dragon: Hello strange one. 
+Dragon: I have not seen one quite like you before.
+Dragon: Where do you come from?
+- Home. 
+	Dragon: Home. Hmmm.
+	Dragon: Are you looking for a way back. 
+	- Yes.
+		Dragon: What could i do to help?
+	- Nod.
+		Dragon: I see. 
+- Not here. 
+	Dragon: That I could guess. 
+	Dragon: I keep watch over this forest. 
+	Dragon: I know all inhabitants, all trees, all rocks, all[speed=0.2]... [speed=1] everything. 
+	Dragon: ...
+	Dragon: Where do you come from?  
+- I don't know. 
+	Dragon: Hmm... [wait=1] Do you know how to get back?   
+	- No. 
+	- *Shake your head.*
+	- ... 
+
+=> END
+
+~ help_home
+	
+
+=> END
+
+~ dragon_quest 
+
+=> END
