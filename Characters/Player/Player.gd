@@ -156,7 +156,7 @@ func landing():
 			in_air = false
 
 func jumpHandling():
-	if jump_count < max_jumps && Global.isCarrying == false:
+	if jump_count < max_jumps and !carrying:
 		anim.play("jump")
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1

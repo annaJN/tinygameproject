@@ -936,4 +936,22 @@ position = Vector2(2813, 770)
 [node name="Pine" parent="cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(6619, 662)
 
+[node name="Pine2" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(7030, 575)
+
+[node name="Pine3" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(7202, 651)
+
+[node name="Pine4" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(6573, 432)
+
+[node name="Pine5" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(6903, 305)
+
+[node name="Pine6" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(6786, 556)
+
+[node name="Pine7" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(6456, 619)
+
 [connection signal="body_entered" from="Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
