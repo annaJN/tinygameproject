@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp86y7yvi1son"
-path="res://.godot/imported/running_spritesheet.png-0eb2f0b3e870df1748e02fa4e0b6db7b.ctex"
+path="res://.godot/imported/running_spritesheet.png-3e03d9b73be441c01869204ffb545df1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterSpine/animation_sprites/running_spritesheet.png"
-dest_files=["res://.godot/imported/running_spritesheet.png-0eb2f0b3e870df1748e02fa4e0b6db7b.ctex"]
+source_file="res://Assets/CharacterSpine/animation_sprites_player/running_spritesheet.png"
+dest_files=["res://.godot/imported/running_spritesheet.png-3e03d9b73be441c01869204ffb545df1.ctex"]
 
 [params]
 

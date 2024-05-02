@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c4jq4lbkfnbd4"
+path="res://.godot/imported/wake_up.atlas-1ac602765275b666189ce57003053d4b.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_sleepy/wake_up.atlas"
+dest_files=["res://.godot/imported/wake_up.atlas-1ac602765275b666189ce57003053d4b.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7fc4hnl3jlik"
-path="res://.godot/imported/land_spritesheet.png-6367dc51263c692cac7c20ba9d9251c5.ctex"
+path="res://.godot/imported/land_spritesheet.png-33ff5876e04d0ca54afb42b9b3d22521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterSpine/animation_sprites/land_spritesheet.png"
-dest_files=["res://.godot/imported/land_spritesheet.png-6367dc51263c692cac7c20ba9d9251c5.ctex"]
+source_file="res://Assets/CharacterSpine/animation_sprites_player/land_spritesheet.png"
+dest_files=["res://.godot/imported/land_spritesheet.png-33ff5876e04d0ca54afb42b9b3d22521.ctex"]
 
 [params]
 

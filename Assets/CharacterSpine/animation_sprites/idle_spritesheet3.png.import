@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0uyxqya8oeb"
-path="res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"
+uid="uid://4ll8wx6wtct6"
+path="res://.godot/imported/idle_spritesheet3.png-f30bdccedceb6e72b8cc820b2df7c082.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterSpine/animation_sprites_player/running_initiation_spritesheet.png"
-dest_files=["res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"]
+source_file="res://Assets/CharacterSpine/animation_sprites/idle_spritesheet3.png"
+dest_files=["res://.godot/imported/idle_spritesheet3.png-f30bdccedceb6e72b8cc820b2df7c082.ctex"]
 
 [params]
 

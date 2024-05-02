@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c2q524e1rc470"
+path="res://.godot/imported/idle.atlas-6329944192ee40da1d676a874b7b78e0.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_sleepy/idle.atlas"
+dest_files=["res://.godot/imported/idle.atlas-6329944192ee40da1d676a874b7b78e0.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

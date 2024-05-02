@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://dgmjxhmn2q5me"
+path="res://.godot/imported/land_spritesheet.atlas-ee4793c9ca403ac65a94d1d07b59d30a.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/land_spritesheet.atlas"
+dest_files=["res://.godot/imported/land_spritesheet.atlas-ee4793c9ca403ac65a94d1d07b59d30a.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0uyxqya8oeb"
-path="res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"
+uid="uid://uqd8h7eovnde"
+path="res://.godot/imported/drag_object_spritesheet.png-cf8b14f9967aee59adc924381ea78a0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterSpine/animation_sprites_player/running_initiation_spritesheet.png"
-dest_files=["res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"]
+source_file="res://Assets/CharacterSpine/animation_sprites_player/drag_object_spritesheet.png"
+dest_files=["res://.godot/imported/drag_object_spritesheet.png-cf8b14f9967aee59adc924381ea78a0b.ctex"]
 
 [params]
 

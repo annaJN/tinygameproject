@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bpxg2dwmpejvu"
+path="res://.godot/imported/running_initiation_spritesheet.atlas-383ddb7d113c79217338558456f88c26.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/running_initiation_spritesheet.atlas"
+dest_files=["res://.godot/imported/running_initiation_spritesheet.atlas-383ddb7d113c79217338558456f88c26.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

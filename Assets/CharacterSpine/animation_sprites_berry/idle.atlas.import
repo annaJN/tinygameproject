@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bxvmgtxjgsu1c"
+path="res://.godot/imported/idle.atlas-64313bf3c935d9a572f06d5bd3cc24fc.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_berry/idle.atlas"
+dest_files=["res://.godot/imported/idle.atlas-64313bf3c935d9a572f06d5bd3cc24fc.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

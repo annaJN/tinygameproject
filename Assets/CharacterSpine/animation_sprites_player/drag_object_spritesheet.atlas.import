@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cwdff3f42d15n"
+path="res://.godot/imported/drag_object_spritesheet.atlas-0cd9a7fd01a4f1a39717b4b16e4b714d.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/drag_object_spritesheet.atlas"
+dest_files=["res://.godot/imported/drag_object_spritesheet.atlas-0cd9a7fd01a4f1a39717b4b16e4b714d.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

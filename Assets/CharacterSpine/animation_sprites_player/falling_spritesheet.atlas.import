@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://htyc4kt5n7fp"
+path="res://.godot/imported/falling_spritesheet.atlas-16e38ef3a1b302eb53333ba6ae95a154.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/falling_spritesheet.atlas"
+dest_files=["res://.godot/imported/falling_spritesheet.atlas-16e38ef3a1b302eb53333ba6ae95a154.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

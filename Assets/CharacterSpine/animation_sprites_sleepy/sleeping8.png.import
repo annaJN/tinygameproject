@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0uyxqya8oeb"
-path="res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"
+uid="uid://dg5kyvd7ledxh"
+path="res://.godot/imported/sleeping8.png-4dba1c971d497a152cacdab632d7cbab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterSpine/animation_sprites_player/running_initiation_spritesheet.png"
-dest_files=["res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"]
+source_file="res://Assets/CharacterSpine/animation_sprites_sleepy/sleeping8.png"
+dest_files=["res://.godot/imported/sleeping8.png-4dba1c971d497a152cacdab632d7cbab.ctex"]
 
 [params]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bj14iulbd2mge"
+path="res://.godot/imported/wall_climb_still_spritesheet.atlas-084a7c6d73f5d6a173254484e2827a7b.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/wall_climb_still_spritesheet.atlas"
+dest_files=["res://.godot/imported/wall_climb_still_spritesheet.atlas-084a7c6d73f5d6a173254484e2827a7b.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

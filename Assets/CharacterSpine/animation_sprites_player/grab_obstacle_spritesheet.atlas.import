@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cbcvnbpmoa3ch"
+path="res://.godot/imported/grab_obstacle_spritesheet.atlas-1a728ac593e31ed5ba6cb7f4057d3251.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/grab_obstacle_spritesheet.atlas"
+dest_files=["res://.godot/imported/grab_obstacle_spritesheet.atlas-1a728ac593e31ed5ba6cb7f4057d3251.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

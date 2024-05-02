@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cl2wgmht8oywt"
+path="res://.godot/imported/walking.atlas-8180735e3ad8bc2a6d5170120a4b8cd0.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_sleepy/walking.atlas"
+dest_files=["res://.godot/imported/walking.atlas-8180735e3ad8bc2a6d5170120a4b8cd0.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

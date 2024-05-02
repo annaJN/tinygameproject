@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://hltlv230u81y"
+path="res://.godot/imported/jump_spritesheet.atlas-727876f22e859dd1e15eeab13caed276.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/jump_spritesheet.atlas"
+dest_files=["res://.godot/imported/jump_spritesheet.atlas-727876f22e859dd1e15eeab13caed276.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

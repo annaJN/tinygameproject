@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0uyxqya8oeb"
-path="res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"
+uid="uid://bhr2fdqjw01qt"
+path="res://.godot/imported/Berry-8.png-22fcca480fc7c3927ba25df3247e414e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterSpine/animation_sprites_player/running_initiation_spritesheet.png"
-dest_files=["res://.godot/imported/running_initiation_spritesheet.png-424bef6a08913c1b06453b862993f86a.ctex"]
+source_file="res://Assets/CharacterSpine/berrySpine/Berry-8.png"
+dest_files=["res://.godot/imported/Berry-8.png-22fcca480fc7c3927ba25df3247e414e.ctex"]
 
 [params]
 

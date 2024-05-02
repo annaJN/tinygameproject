@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://b60yxr2diy032"
+path="res://.godot/imported/dash_spritesheet.atlas-06438634abf684644466f38b96bd76ed.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_player/dash_spritesheet.atlas"
+dest_files=["res://.godot/imported/dash_spritesheet.atlas-06438634abf684644466f38b96bd76ed.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
