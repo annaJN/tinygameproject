@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://djgixkioxay6u"]
+
+[ext_resource type="Texture2D" uid="uid://5avagmi7puib" path="res://Assets/Environment/Woodsy/pine.png" id="1_r53b3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6oxmd"]
+radius = 54.0
+
+[node name="Pine" type="RigidBody2D"]
+z_index = 2
+collision_layer = 8
+collision_mask = 3
+
+[node name="Pine" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -9.53674e-07)
+scale = Vector2(0.0433333, 0.0433333)
+texture = ExtResource("1_r53b3")
+
+[node name="cool" type="CollisionPolygon2D" parent="."]
+position = Vector2(3, 5)
+scale = Vector2(0.107409, 0.107409)
+polygon = PackedVector2Array(4, -453, 161, -418, 256, -237, 369, 72, 251, 304, 105, 408, -79, 406, -243, 308, -385, 82, -293, -188, -99, -412)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_6oxmd")

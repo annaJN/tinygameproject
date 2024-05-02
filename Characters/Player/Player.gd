@@ -83,7 +83,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	slideCollision()
+	#slideCollision()
 	landing()
 	
 	
@@ -104,26 +104,24 @@ func _unhandled_input(_event):
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+
 	if Input.is_action_just_pressed("Pickup"):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
-			print("dropping item")
 			carrying = false
 			carryingBody.apply_impulse(Vector2(), Vector2(carryingBody.position.x+10, carryingBody.position.y))
+			carryingBody.freeze = false
+			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
 			return
 		
 		for body in bodies:
-			print(body.name)
 			if !carrying and body is RigidBody2D:
-				#print("Body " + str(body.name))
-				#print(Global.isCarrying)
-				print("picking up item")
 				carrying = true
 				carryingBody = body
-				#body.position = $Marker2D.global_position
-				#Global.isCarrying = true
-			
+				carryingBody.freeze = true
+				carryingBody.get_node("cool").disabled = true
+				
 
 
 func inventory():

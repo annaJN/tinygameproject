@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=68 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="PackedScene" uid="uid://dosa6tyyat1xd" path="res://Assets/backgrounds/Background.tscn" id="2_usjvv"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://da204pwrqtm3f" path="res://Assets/Environment/Ground/outer_corner.png" id="10_vid2u"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="11_dt58r"]
 [ext_resource type="Texture2D" uid="uid://bliftdufwbqis" path="res://Assets/Environment/Ground/ground_nice_edges.png" id="14_02urc"]
+[ext_resource type="Texture2D" uid="uid://c25vemi4bk2au" path="res://Assets/Environment/Ground/ground_innerfill.png" id="14_cdn0e"]
 [ext_resource type="Texture2D" uid="uid://c0gvdgdhpss3q" path="res://Assets/Environment/Woodsy/thorns.png" id="14_xs8uy"]
 [ext_resource type="PackedScene" uid="uid://k68adrh44p37" path="res://Views/Levels/UI.tscn" id="15_jvokw"]
 [ext_resource type="Texture2D" uid="uid://dr50bhrtk2u7h" path="res://Assets/Environment/Ground/outer_corner_tiny.png" id="15_yps32"]
@@ -24,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkbfwro3pgnp" path="res://Characters/NPC/npc.tscn" id="25_ryfjs"]
 [ext_resource type="Texture2D" uid="uid://ctm25ci2fs86f" path="res://Assets/Environment/Woodsy/branch2.png" id="26_acr75"]
 [ext_resource type="Texture2D" uid="uid://d7444hrl20u8" path="res://Assets/Environment/Woodsy/branch1m.png" id="26_gi5k1"]
+[ext_resource type="PackedScene" uid="uid://djgixkioxay6u" path="res://Objects/pine.tscn" id="27_pgrnc"]
 [ext_resource type="Texture2D" uid="uid://fla4hyjgufj0" path="res://Assets/Environment/Woodsy/bush.png" id="29_n7ai8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_milg7"]
@@ -146,9 +148,9 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_kdgqc")
 
-[sub_resource type="Resource" id="Resource_8pyt6"]
+[sub_resource type="Resource" id="Resource_uru71"]
 script = ExtResource("5_5t0x4")
-texture_idx = 0
+texture_idx = 4
 flip = false
 width = 1.0
 
@@ -157,7 +159,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(18650.7, 6552.37)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_8pyt6")
+properties = SubResource("Resource_uru71")
 
 [sub_resource type="Resource" id="Resource_hgxxo"]
 script = ExtResource("5_5t0x4")
@@ -225,7 +227,7 @@ offset = -0.4
 [sub_resource type="Resource" id="Resource_6ceri"]
 script = ExtResource("9_kgkf5")
 _edge_meta_materials = Array[ExtResource("11_dt58r")]([SubResource("Resource_4pq81")])
-fill_textures = Array[Texture2D]([])
+fill_textures = Array[Texture2D]([ExtResource("14_cdn0e")])
 fill_texture_z_index = -10
 fill_texture_show_behind_parent = false
 fill_texture_scale = 1.0
@@ -928,5 +930,10 @@ position = Vector2(3677, 465)
 
 [node name="Sleepy" parent="." instance=ExtResource("24_4eqf6")]
 position = Vector2(2813, 770)
+
+[node name="cones" type="Node2D" parent="."]
+
+[node name="Pine" parent="cones" instance=ExtResource("27_pgrnc")]
+position = Vector2(6619, 662)
 
 [connection signal="body_entered" from="Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
