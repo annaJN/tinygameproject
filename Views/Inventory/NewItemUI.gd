@@ -12,7 +12,7 @@ func set_item(item):
 	label.text = str(item["name"])
 	icon.texture = item["icon_texture"]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
