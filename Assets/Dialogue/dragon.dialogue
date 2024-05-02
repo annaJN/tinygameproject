@@ -10,9 +10,9 @@ Dragon: Where do you come from?
 	Dragon: Home. Hmmm.
 	Dragon: Are you looking for a way back. 
 	- Yes.
-		Dragon: What could i do to help?
-	- Nod.
-		Dragon: I see. 
+	- *Nod.*
+		Dragon: I see.
+		=> help_home 
 - Not here. 
 	Dragon: That I could guess. 
 	Dragon: I keep watch over this forest. 
@@ -24,11 +24,17 @@ Dragon: Where do you come from?
 	- No. 
 	- *Shake your head.*
 	- ... 
+	Dragon: 
 
 => END
 
 ~ help_home
-	
+Dragon: You came here to get help then, am I correct? 
+- Yes.
+- *Nod.*
+Dragon: I do not know where you come from and neither do you. 
+Dragon: Hmmmmm. 
+Dragon: I can not send you home but I can send you forward.
 
 => END
 
