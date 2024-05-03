@@ -51,14 +51,14 @@ func _physics_process(delta):
 		in_air = true
 	
 	## Handle jump (including double jump)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("Jump"):
 		jumpHandling()
 
 	#wall_sliding(delta)	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
@@ -94,7 +94,7 @@ func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory()
 		
-	if (event.is_action_pressed("ui_down") and is_on_floor()):
+	if (event.is_action_pressed("Down") and is_on_floor()):
 		position.y += 15
 
 func _unhandled_input(_event):
@@ -165,7 +165,7 @@ func jumpHandling():
 #handles wall sliding, makes it so gravity is slower when you are climbing a wall
 func wall_sliding(delta):
 	if is_on_wall() and !is_on_floor():
-		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
 			is_wall_sliding=true
 		else:
 			is_wall_sliding = false
@@ -179,12 +179,12 @@ func wall_jump():
 	var wall_normal = get_wall_normal()
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall():
 		print("i am right jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall():
 		print("i am left jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
