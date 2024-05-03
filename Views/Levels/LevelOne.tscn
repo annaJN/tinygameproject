@@ -360,14 +360,6 @@ shape = SubResource("RectangleShape2D_milg7")
 [node name="Background" parent="." instance=ExtResource("2_usjvv")]
 scroll_offset = Vector2(0, 185.669)
 
-[node name="Header" type="Label" parent="."]
-offset_left = 388.0
-offset_top = 90.0
-offset_right = 483.0
-offset_bottom = 113.0
-text = "Level 1"
-metadata/_edit_use_anchors_ = true
-
 [node name="Ground" type="StaticBody2D" parent="." groups=["Landing"]]
 position = Vector2(-12898, 45)
 collision_mask = 5
@@ -397,7 +389,7 @@ position = Vector2(45735, -247)
 shape = SubResource("RectangleShape2D_go8ta")
 
 [node name="Thorns" type="Sprite2D" parent="."]
-position = Vector2(3304, 2344)
+position = Vector2(11052, 366)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("14_xs8uy")
 
