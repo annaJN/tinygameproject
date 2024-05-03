@@ -110,7 +110,8 @@ func _unhandled_input(_event):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
 			carrying = false
-			carryingBody.apply_force(Vector2(), Vector2(carryingBody.position.x+10, carryingBody.position.y))
+			carryingBody.translate(velocity/7)
+			carryingBody.apply_central_impulse(velocity*movement_data.strength)
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
@@ -173,10 +174,9 @@ func wall_sliding_handler(delta):
 #returns if the player fullfills the conditions to be wall sliding
 func wall_sliding_check() :
 	#guarding clauses and universal constants
-	
 	var degree_threshold = 10.0
 	var wall_normal = get_wall_normal()
-	if not is_on_wall_only():
+	if not is_on_wall_only() || velocity.y < 0:
 		return false
 	if Input.is_action_pressed("ui_right"):
 		var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
@@ -192,12 +192,12 @@ func wall_jump():
 	var wall_normal = get_wall_normal()
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall():
+	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only():
 		print("i am right jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall():
+	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only():
 		print("i am left jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed

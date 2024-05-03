@@ -6,6 +6,7 @@ extends Resource
 @export var acceleration = 900.0
 @export var friction = 2000.0
 @export var push_force = 80.0
+@export var strength = 20000
 
 @export var wall_jump_push = 1000
-@export var wall_slide_gravity = 500
+@export var wall_slide_gravity = 5000
