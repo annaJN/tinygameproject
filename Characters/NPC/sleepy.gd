@@ -24,6 +24,8 @@ func _physics_process(delta):
 			waking = false
 	else:
 		$AnimatedSprite2D.position.y = 0
+		$AnimatedSprite2D.position.x = 70
+		
 		
 	
 	if Global.sleepyDone and !sleepyDisappear:

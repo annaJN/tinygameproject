@@ -404,13 +404,13 @@ shape = SubResource("SegmentShape2D_yfjbp")
 visible = false
 
 [node name="Stone" parent="." instance=ExtResource("23_naswe")]
-position = Vector2(2650, 472)
+position = Vector2(2650, 424)
 
 [node name="platforms" type="Node2D" parent="."]
 
 [node name="HallelujahMountain" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(1329, -59)
+position = Vector2(1330, -105)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain"]
 texture_repeat = 2
