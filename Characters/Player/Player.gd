@@ -52,11 +52,11 @@ func _physics_process(delta):
 	
 	wall_sliding_handler(delta)
 	## Handle jump (including double jump)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("Jump"):
 		jumpHandling()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
@@ -96,7 +96,7 @@ func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory()
 		
-	if (event.is_action_pressed("ui_down") and is_on_floor()):
+	if (event.is_action_pressed("Down") and is_on_floor()):
 		position.y += 15
 
 func _unhandled_input(_event):
