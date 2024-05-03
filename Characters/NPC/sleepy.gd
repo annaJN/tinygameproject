@@ -14,17 +14,13 @@ const DIRECTION = -1
 func _physics_process(delta):
 	if not self.is_on_floor():
 		velocity.y += gravity * delta
-	#print($AnimationPlayer.get_current_animation())
 	
-	#if walk_time:
-		#timelaps += delta
-	#if timelaps >= 5:
-		#walk_away(delta)
-	#if timelaps >= 6:
-		#walk_time = false
-		#velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
-		#_on_area_2d_body_exited(self)
+	if $AnimationPlayer.get_current_animation() == "sleeping":
+		$AnimatedSprite2D.position.y = 150
+	else:
+		$AnimatedSprite2D.position.y = 0
 		
+	
 	if Global.sleepyDone and !sleepyDisappear:
 		get_node("AnimatedSprite2D").flip_h = true
 		velocity.x = move_toward(velocity.x, SPEED * DIRECTION * -1, ACCELERATION * delta)
@@ -45,7 +41,9 @@ func _on_stone_on_head_collision_body_entered(body):
 	## $AnimationPlayer.get_current_animation()
 	
 	if body is RigidBody2D:
-		startAnimation("wake_up")
+		#startAnimation("wake_up")
+		anim.play("wake_up")
+		anim.queue("idle")
 	
 	#if body.name == "Player":
 		#$AnimatedSprite2D.position.y = 0
@@ -69,5 +67,5 @@ func _on_area_2d_body_exited(_body):
 
 func startAnimation(animation : String):
 	anim.play(animation)
-	if animation == "wake_up":
-		Global.sleepyDone = true
+	#if animation == "wake_up":
+		#Global.sleepyDone = true

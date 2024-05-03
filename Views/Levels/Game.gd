@@ -11,7 +11,7 @@ func _init():
 	add_child(tmpPlayer)
 	
 	tmpSleepy = Sleepy.instantiate()
-	tmpSleepy.position = Vector2(2813, 770)
+	tmpSleepy.position = Vector2(2813, 761)
 	add_child(tmpSleepy)
 
 func _input(event):
