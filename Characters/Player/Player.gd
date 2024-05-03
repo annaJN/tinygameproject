@@ -6,6 +6,7 @@ var is_wall_sliding = false
 
 #var health = 50
 var carrying = false
+var carryingBody : RigidBody2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
@@ -76,10 +77,15 @@ func _physics_process(delta):
 		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and time_on_ground > 5:
 			anim.play("idle")
 
+	if carrying:
+		carryingBody.position = $Marker2D.global_position
+
 	move_and_slide()
 	
-	slideCollision()
+	#slideCollision()
 	landing()
+	
+	
 
 func _input(event):
 	if event.is_action_pressed("Dash"):
@@ -98,6 +104,24 @@ func _unhandled_input(_event):
 			actionables[0].action()
 			return
 
+	if Input.is_action_just_pressed("Pickup"):
+		var bodies = $ObjectFinder.get_overlapping_bodies()
+		if carrying:
+			carrying = false
+			carryingBody.apply_force(Vector2(), Vector2(carryingBody.position.x+10, carryingBody.position.y))
+			carryingBody.freeze = false
+			carryingBody.get_node("cool").disabled = false
+			carryingBody = null
+			return
+		
+		for body in bodies:
+			if !carrying and body is RigidBody2D:
+				carrying = true
+				carryingBody = body
+				carryingBody.freeze = true
+				carryingBody.get_node("cool").disabled = true
+				
+
 
 func inventory():
 	inventory_ui.visible = !inventory_ui.visible
@@ -112,8 +136,15 @@ func inventory():
 func rotateCharacter(direction):
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = false
+		$ActionableFinder.position.x = -100
+		$ObjectFinder.position.x = -52
+		
+		$Marker2D.position.x = -10
 	else:
 		get_node("AnimatedSprite2D").flip_h = true
+		$ActionableFinder.position.x = 12
+		$ObjectFinder.position.x = 0
+		$Marker2D.position.x = 96
 
 func landing():
 	## Animates the landing
@@ -124,7 +155,7 @@ func landing():
 			in_air = false
 
 func jumpHandling():
-	if jump_count < max_jumps && Global.isCarrying == false:
+	if jump_count < max_jumps and !carrying:
 		anim.play("jump")
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1

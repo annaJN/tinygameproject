@@ -17,8 +17,6 @@ var player_node: Node = null
 const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 #Custom signalssignal inventory_updated
 
-var isCarrying = false
-
 
 signal inventory_updated
 
