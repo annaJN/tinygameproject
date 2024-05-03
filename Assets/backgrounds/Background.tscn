@@ -28,3 +28,8 @@ visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_y4o1f")
 centered = false
+
+[node name="Bg-1" type="Sprite2D" parent="."]
+position = Vector2(2467.17, 1066.5)
+scale = Vector2(0.706333, 0.706333)
+texture = ExtResource("2_nnm2x")

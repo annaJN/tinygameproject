@@ -1,4 +1,4 @@
-[gd_scene load_steps=395 format=3 uid="uid://4k06bluihf6a"]
+[gd_scene load_steps=397 format=3 uid="uid://4k06bluihf6a"]
 
 [ext_resource type="Script" path="res://Characters/NPC/sleepy.gd" id="1_gcycl"]
 [ext_resource type="Texture2D" uid="uid://cngvw346kvvfy" path="res://Assets/Spritesheets/Sleepy/Idle/idle.png" id="1_wc0sg"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://4b8gsochu17w" path="res://Assets/Spritesheets/Sleepy/walking/walking6.png" id="42_fn578"]
 [ext_resource type="Texture2D" uid="uid://t3rv7u33rkxe" path="res://Assets/Spritesheets/Sleepy/walking/walking7.png" id="43_8u168"]
 [ext_resource type="Texture2D" uid="uid://c5yfbxkguily5" path="res://Assets/Spritesheets/Sleepy/walking/walking8.png" id="44_cokke"]
+[ext_resource type="Resource" uid="uid://caug8e57pthct" path="res://Assets/Dialogue/berries_creature.dialogue" id="46_0exlp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k77ab"]
 atlas = ExtResource("1_wc0sg")
@@ -2602,12 +2603,16 @@ radius = 80.0
 height = 240.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgdu5"]
-radius = 262.0
+radius = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfh1"]
+size = Vector2(480, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4fj8"]
 radius = 221.472
 
 [node name="Sleepy" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_gcycl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -2624,11 +2629,24 @@ libraries = {
 shape = SubResource("CapsuleShape2D_t7cbh")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_qgdu5")
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-208, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-160, 24)
+shape = SubResource("RectangleShape2D_pvfh1")
+
 [node name="Actionable" parent="." instance=ExtResource("37_s7qe1")]
+visible = false
+dialogue_resources = ExtResource("46_0exlp")
 dialogue_start = "berries_Start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
