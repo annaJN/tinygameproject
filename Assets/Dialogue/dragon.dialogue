@@ -1,0 +1,69 @@
+~ dragon_start
+
+=> END
+
+~ dragon_first
+Dragon: Hello strange one. 
+Dragon: I have not seen one quite like you before.
+Dragon: Where do you come from?
+- Home. 
+	=> dragon_home
+- Not here. 
+	Dragon: That I could guess. 
+	Dragon: I keep watch over this forest. 
+	Dragon: I know all inhabitants, all trees, all rocks, all[speed=0.2]... [speed=1] everything. 
+	Dragon: ...
+	Dragon: Where do you come from?  
+	- Home.
+		=> dragon_home
+	- I don't know.  
+		=> dragon_dont_know
+- I don't know. 
+	=> dragon_dont_know
+
+=> END
+
+~ dragon_home
+Dragon: Home. Hmmm.
+Dragon: Are you looking for a way back. 
+- Yes.
+- *Nod.*
+	Dragon: I see.
+	=> help_home 
+=> END
+
+~ dragon_dont_know
+Dragon: Hmm... [wait=1] Do you know how to get back?   
+- No. 
+- *Shake your head.*
+- ... 
+Dragon: Hmm..
+Dragon: Are you looking for a way back?
+- Yes.
+- *Nod.*
+=> help_home
+=> END
+
+
+~ help_home
+Dragon: You came here to get help then, am I correct? 
+- Yes.
+- *Nod.*
+Dragon: I do not know where you come from and neither do you. 
+Dragon: Hmmmmm. 
+Dragon: I can not send you home,[wait=1] but I can send you forward.
+- What do you mean?
+- How?
+Dragon: There have been other travelers who have passed through here. 
+Dragon: None like you, but perhaps you can use their way of traveling. 
+Dragon: If your home is not here, you can travel to another place and continue your search there. 
+Dragon: There exists a fairy ring further into the woods. 
+Dragon: You can not get there as of now however. Worry not. I will help. 
+#Insert spore animation 
+Dragon: There, now you should be able to reach it. 
+Dragon: I'll be here have you any questions or if you just want to chat. 
+=> END
+
+~ dragon_quest 
+
+=> END
