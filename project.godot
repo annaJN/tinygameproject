@@ -21,7 +21,6 @@ Global="*res://Global/Global.gd"
 SaveGame="*res://Global/SaveGame.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Actionable="*res://Helpers/Actionable.gd"
-Dialogue="*res://Dialogue/Variables.gd"
 
 [dialogue_manager]
 
