@@ -22,6 +22,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.position.y -= 75 * delta
 		if $AnimationPlayer.get_current_animation() == "idle":
 			waking = false
+			Global.sleepyDone = true
 	else:
 		$AnimatedSprite2D.position.y = 0
 		$AnimatedSprite2D.position.x = 70
