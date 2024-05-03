@@ -35,7 +35,10 @@ func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 	
 	if Global.removeSleepy:
-		remove_child(tmpSleepy)
+		print("REMOVING SLEEPY")
+		get_node("Sleepy").queue_free()
+		Global.removeSleepy = false
+		
 	
 	#if SaveGame.health <= 0:
 		#get_tree().change_scene_to_file("res://Main.tscn")
