@@ -1249,7 +1249,6 @@ autoplay = "idle"
 offset = Vector2(0, -200)
 limit_left = 0
 drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="PauseMenu" type="MenuBar" parent="Camera2D"]
 process_mode = 2
