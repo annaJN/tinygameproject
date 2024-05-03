@@ -2603,7 +2603,7 @@ radius = 80.0
 height = 240.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgdu5"]
-radius = 80.0
+radius = 56.5685
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfh1"]
 size = Vector2(480, 50)
@@ -2612,6 +2612,7 @@ size = Vector2(480, 50)
 radius = 221.472
 
 [node name="Sleepy" type="CharacterBody2D"]
+z_index = -2
 collision_layer = 4
 script = ExtResource("1_gcycl")
 
@@ -2624,23 +2625,25 @@ animation = &"sleeping"
 libraries = {
 "": SubResource("AnimationLibrary_wqaes")
 }
+autoplay = "sleeping"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_t7cbh")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StoneOnHeadCollision" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneOnHeadCollision"]
 shape = SubResource("CircleShape2D_qgdu5")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="StoneOnTheSideCollision" type="Area2D" parent="."]
 position = Vector2(-208, 0)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneOnTheSideCollision"]
 position = Vector2(-160, 24)
 shape = SubResource("RectangleShape2D_pvfh1")
 
@@ -2652,5 +2655,5 @@ dialogue_start = "berries_Start"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_o4fj8")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="StoneOnHeadCollision" to="." method="_on_stone_on_head_collision_body_entered"]
+[connection signal="body_entered" from="StoneOnTheSideCollision" to="." method="_on_stone_on_the_side_collision_body_entered"]

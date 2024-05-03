@@ -1,12 +1,18 @@
 extends Node2D
 
 var Player = preload("res://Characters/Player/Player.tscn")
+var Sleepy = preload("res://Characters/NPC/sleepy.tscn")
+
+var tmpSleepy
 
 func _init():
 	var tmpPlayer = Player.instantiate()
 	tmpPlayer.position = Vector2(SaveGame.positionX, SaveGame.positionY)
 	add_child(tmpPlayer)
-
+	
+	tmpSleepy = Sleepy.instantiate()
+	tmpSleepy.position = Vector2(2813, 770)
+	add_child(tmpSleepy)
 
 func _input(event):
 	# a tmp way to turn off the game by pressing Q
@@ -25,7 +31,11 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		Global.change_health(-5)
 
-#func _process(_delta):
+func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
-#	if SaveGame.health <= 0:
-#		get_tree().change_scene_to_file("res://Main.tscn")
+	
+	if Global.removeSleepy:
+		remove_child(tmpSleepy)
+	
+	#if SaveGame.health <= 0:
+		#get_tree().change_scene_to_file("res://Main.tscn")
