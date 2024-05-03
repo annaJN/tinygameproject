@@ -8,4 +8,4 @@ extends Resource
 @export var push_force = 80.0
 
 @export var wall_jump_push = 1000
-@export var wall_slide_gravity = 50
+@export var wall_slide_gravity = 500

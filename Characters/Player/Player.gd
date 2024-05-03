@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
 
@@ -50,12 +50,10 @@ func _physics_process(delta):
 	else:
 		in_air = true
 	
+	wall_sliding_handler(delta)
 	## Handle jump (including double jump)
 	if Input.is_action_just_pressed("ui_accept"):
 		jumpHandling()
-
-	#wall_sliding(delta)	
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -79,10 +77,14 @@ func _physics_process(delta):
 
 	if carrying:
 		carryingBody.position = $Marker2D.global_position
-
+	
+	
+	
 	move_and_slide()
 	
 	#slideCollision()
+	
+	
 	landing()
 	
 	
@@ -162,17 +164,28 @@ func jumpHandling():
 		time_on_ground = 0
 	wall_jump()
 
-#handles wall sliding, makes it so gravity is slower when you are climbing a wall
-func wall_sliding(delta):
-	if is_on_wall() and !is_on_floor():
-		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-			is_wall_sliding=true
-		else:
-			is_wall_sliding = false
-		
-		if is_wall_sliding:
-			velocity.y += (movement_data.wall_slide_gravity*delta)
-			velocity.y = min(velocity.y, movement_data.wall_slide_gravity)
+func wall_sliding_handler(delta):
+	var should_slide : bool = wall_sliding_check()
+	if not should_slide:
+		return
+	velocity.y = movement_data.wall_slide_gravity * delta
+
+#returns if the player fullfills the conditions to be wall sliding
+func wall_sliding_check() :
+	#guarding clauses and universal constants
+	
+	var degree_threshold = 10.0
+	var wall_normal = get_wall_normal()
+	if not is_on_wall_only():
+		return false
+	if Input.is_action_pressed("ui_right"):
+		var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
+		return wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < degree_threshold
+	elif Input.is_action_pressed("ui_left"):
+		var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
+		return wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < degree_threshold
+	return false
+
 
 #handles wall jumping, makes it so you can jump (for now infinitely) on a wall
 func wall_jump():
