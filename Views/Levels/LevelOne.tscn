@@ -331,7 +331,7 @@ b = Vector2(-117, 627)
 script = ExtResource("1_l4e1y")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(9682, -1389)
+position = Vector2(9440, 64)
 
 [node name="Branch2" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(3.15479, 221.252)
@@ -345,7 +345,7 @@ rotation = -0.0206938
 shape = SubResource("RectangleShape2D_milg7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(9530, -1495)
+position = Vector2(9268, -77)
 
 [node name="Branch2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(3.15478, 221.252)
@@ -413,13 +413,13 @@ shape = SubResource("SegmentShape2D_yfjbp")
 visible = false
 
 [node name="Stone" parent="." instance=ExtResource("23_naswe")]
-position = Vector2(2649, 495)
+position = Vector2(2650, 472)
 
 [node name="platforms" type="Node2D" parent="."]
 
 [node name="HallelujahMountain" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(1329, 27)
+position = Vector2(1329, -59)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain"]
 texture_repeat = 2
@@ -432,10 +432,11 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(1183.84, 555.272, 1441.31, 561.937, 1440.48, 593.926, 1183.01, 587.261)
+one_way_collision = true
 
 [node name="HallelujahMountain2" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(961, 95)
+position = Vector2(897, 30)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain2"]
 texture_repeat = 2
@@ -448,10 +449,11 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(1183.84, 555.272, 1441.31, 561.937, 1440.48, 593.926, 1183.01, 587.261)
+one_way_collision = true
 
 [node name="HallelujahMountain3" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(1811, -324)
+position = Vector2(1816, -304)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain3"]
 texture_repeat = 2
@@ -465,10 +467,11 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(251.84, 508.272, 509.306, 514.937, 508.478, 546.926, 251.012, 540.261)
+one_way_collision = true
 
 [node name="HallelujahMountain4" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(937, -119)
+position = Vector2(982, -67)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain4"]
 texture_repeat = 2
@@ -482,10 +485,11 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(251.84, 508.272, 509.306, 514.937, 508.478, 546.926, 251.012, 540.261)
+one_way_collision = true
 
 [node name="HallelujahMountain5" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(257, -127)
+position = Vector2(215, -90)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain5"]
 texture_repeat = 2
@@ -499,10 +503,11 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(251.84, 508.272, 509.306, 514.937, 508.478, 546.926, 251.012, 540.261)
+one_way_collision = true
 
 [node name="HallelujahMountain6" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(623, 29)
+position = Vector2(600, 48)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain6"]
 texture_repeat = 2
@@ -516,10 +521,11 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(251.84, 508.272, 509.306, 514.937, 508.478, 546.926, 251.012, 540.261)
+one_way_collision = true
 
 [node name="HallelujahMountain7" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(1402, -199)
+position = Vector2(1391, -199)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain7"]
 texture_repeat = 2
@@ -533,6 +539,19 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(251.84, 508.272, 509.306, 514.937, 508.478, 546.926, 251.012, 540.261)
+one_way_collision = true
+
+[node name="b5" type="StaticBody2D" parent="." groups=["Landing"]]
+position = Vector2(9547, -31)
+metadata/_edit_group_ = true
+
+[node name="Branch1m" type="Sprite2D" parent="b5"]
+scale = Vector2(0.335366, 0.335366)
+texture = ExtResource("26_gi5k1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="b5"]
+polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
+one_way_collision = true
 
 [node name="BigBush" type="Node2D" parent="."]
 z_index = -1
@@ -922,7 +941,7 @@ rotation = -0.296706
 shape = SubResource("RectangleShape2D_milg7")
 
 [node name="Blueberry bush" parent="." instance=ExtResource("23_0b58q")]
-position = Vector2(1205, 413)
+position = Vector2(1248, 452)
 
 [node name="NPC" parent="." instance=ExtResource("25_ryfjs")]
 z_index = -1

@@ -78,7 +78,6 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	if carrying:
-		
 		carryingBody.position = $Marker2D.global_position
 
 	move_and_slide()
@@ -109,7 +108,7 @@ func _unhandled_input(_event):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
 			carrying = false
-			carryingBody.apply_impulse(Vector2(), Vector2(carryingBody.position.x+10, carryingBody.position.y))
+			carryingBody.apply_force(Vector2(), Vector2(carryingBody.position.x+10, carryingBody.position.y))
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
