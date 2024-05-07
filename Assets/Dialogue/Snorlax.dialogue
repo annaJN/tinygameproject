@@ -10,9 +10,19 @@
 			#Guarding the edges of their territory
 
 ~ snorlax_start
-if Dialogue.snorlax_state_angry_at_player
+if Global.snorlax_state_angry_at_player
 	=> snorlax_angry_start
+elif Global.sleepy_awaken
+	=> sleepy_awake
 
+Creature: [wave amp=50 freq=3]ZZZzzzzz[/wave] 
+=> END
+
+~ sleepy_awake 
+Sleepy: You awoke me! 
+=> END
+
+~ temp1 
 {{Dialogue.snorlax_name}}: [wave amp=20 freq=2]Huh!?[/wave]
 {{Dialogue.snorlax_name}}: *sits up and looks around*
 - Hi there!
@@ -81,6 +91,11 @@ do Dialogue.snorlax_name = Dialogue.snorlax_actual_name
 - *Leave* => END
 
 ~ snorlax_angry_start
+Sleepy: Ah you hit me! I'm angry!! 
+do Global.sleepy_dialogue_done = true
+=> END
+
+~ temp2 
 do Dialogue.snorlax_name = "Acutely Awake Stranger"
 {{Dialogue.snorlax_name}}: [shake rate=20 level=10]!!![/shake][next=auto]
 {{Dialogue.snorlax_name}}: [shake rate=20 level=10]What in the[speed=0.2]...[/shake]

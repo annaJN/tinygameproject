@@ -1,12 +1,12 @@
 extends Node2D
 
-var Player = preload("res://Characters/Player/Player.tscn")
+var PlayerSomething = preload("res://Characters/Player/Player.tscn")
 var Sleepy = preload("res://Characters/NPC/sleepy.tscn")
 
 var tmpSleepy
 
 func _init():
-	var tmpPlayer = Player.instantiate()
+	var tmpPlayer = PlayerSomething.instantiate()
 	tmpPlayer.position = Vector2(SaveGame.positionX, SaveGame.positionY)
 	add_child(tmpPlayer)
 	

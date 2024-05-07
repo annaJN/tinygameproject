@@ -20,6 +20,10 @@ const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 var sleepyDone = false
 var removeSleepy = false
 
+var snorlax_state_angry_at_player = false
+var sleepy_awaken = false
+var sleepy_dialogue_done = false
+
 
 signal inventory_updated
 
