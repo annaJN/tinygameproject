@@ -7,8 +7,8 @@ var is_wall_sliding = false
 #var health = 50
 var carrying = false
 var carryingBody : RigidBody2D
-var marker_offset = 0
-const marker_original_offset = 40
+var marker_offset : float = 0
+var marker_original_offset = 40
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var jump_count = 0
@@ -130,6 +130,23 @@ func _unhandled_input(_event):
 						marker_offset = tmp_node.get_shape().radius
 					"CollisionPolygon2D" :
 						marker_offset = 40
+						var minX = 1000000000
+						#var minY = -1000000000
+						var maxX = -1000000000
+						#var maxY = 1000000000
+						for vec in tmp_node.polygon:
+							var x = vec.x
+							if (x < minX) :
+								minX = vec.x
+							if (x > maxX) :
+								maxX = vec.x
+							#if (vec.y > maxY) :
+							#	maxY = vec.y
+							#if (vec.y < minY) :
+							#	minY = vec.y
+						minX *= tmp_node.transform.get_scale().x
+						maxX *= tmp_node.transform.get_scale().x
+						marker_offset = (maxX - minX)/2.0
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
 						print("Womp womp, object picked up is not of correct class")
