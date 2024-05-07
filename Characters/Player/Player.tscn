@@ -1355,7 +1355,7 @@ text = "HP
 "
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-50, 0)
+position = Vector2(-40, 0)
 
 [node name="NewItemUI" parent="." instance=ExtResource("9_0uwsx")]
 visible = false

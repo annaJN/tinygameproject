@@ -7,7 +7,8 @@ var is_wall_sliding = false
 #var health = 50
 var carrying = false
 var carryingBody : RigidBody2D
-
+var marker_offset = 0
+const marker_original_offset = 40
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var jump_count = 0
@@ -114,15 +115,26 @@ func _unhandled_input(_event):
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
+			marker_offset = 0
 			return
-		
+			
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
 				carrying = true
 				carryingBody = body
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
-				
+				var tmp_node = carryingBody.get_node("cool")
+				match tmp_node.get_class() :
+					"CollisionShape2D" :
+						marker_offset = tmp_node.get_shape().radius
+					"CollisionPolygon2D" :
+						marker_offset = 40
+						#TODO find a way to get the width of a collisionpolygon2d
+					_ :
+						print("Womp womp, object picked up is not of correct class")
+						marker_offset = 0
+				return
 
 
 func inventory():
@@ -140,12 +152,12 @@ func rotateCharacter(direction):
 		get_node("AnimatedSprite2D").flip_h = false
 		$ActionableFinder.position.x = -50
 		$ObjectFinder.position.x = -50
-		$Marker2D.position.x = -80
+		$Marker2D.position.x = -abs(marker_original_offset + marker_offset)
 	else:
 		get_node("AnimatedSprite2D").flip_h = true
 		$ActionableFinder.position.x = 50
 		$ObjectFinder.position.x = 50
-		$Marker2D.position.x = 80
+		$Marker2D.position.x = abs(marker_original_offset + marker_offset)
 
 func landing():
 	## Animates the landing
