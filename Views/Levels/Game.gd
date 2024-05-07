@@ -29,3 +29,4 @@ func _on_area_2d_body_entered(body):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 #	if SaveGame.health <= 0:
 #		get_tree().change_scene_to_file("res://Main.tscn")
+
