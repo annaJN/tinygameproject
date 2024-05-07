@@ -122,7 +122,7 @@ func _unhandled_input(_event):
 				carryingBody = body
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
-				carryingBody.global_translate($Marker2D.position)
+				
 
 
 func inventory():
@@ -138,14 +138,14 @@ func inventory():
 func rotateCharacter(direction):
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = false
-		$ActionableFinder.position.x = -100
-		$ObjectFinder.position.x = -52
-		$Marker2D.position.x = -10# -40
+		$ActionableFinder.position.x = -50
+		$ObjectFinder.position.x = -50
+		$Marker2D.position.x = -80
 	else:
 		get_node("AnimatedSprite2D").flip_h = true
-		$ActionableFinder.position.x = 12
-		$ObjectFinder.position.x = 0
-		$Marker2D.position.x = 96# + 34
+		$ActionableFinder.position.x = 50
+		$ObjectFinder.position.x = 50
+		$Marker2D.position.x = 80
 
 func landing():
 	## Animates the landing
