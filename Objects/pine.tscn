@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://djgixkioxay6u"]
+[gd_scene load_steps=5 format=3 uid="uid://djgixkioxay6u"]
 
+[ext_resource type="Script" path="res://Objects/PickableObject.gd" id="1_pknt7"]
 [ext_resource type="Texture2D" uid="uid://5avagmi7puib" path="res://Assets/Environment/Woodsy/pine.png" id="1_r53b3"]
+[ext_resource type="PackedScene" uid="uid://iqlcpw3d31xh" path="res://Objects/highlight.tscn" id="2_6creq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6oxmd"]
 radius = 54.0
@@ -9,8 +11,11 @@ radius = 54.0
 z_index = 2
 collision_layer = 8
 collision_mask = 11
+script = ExtResource("1_pknt7")
 
-[node name="Pine" type="Sprite2D" parent="."]
+[node name="Highlight" parent="." instance=ExtResource("2_6creq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.76837e-07, -9.53674e-07)
 scale = Vector2(0.0433333, 0.0433333)
 texture = ExtResource("1_r53b3")

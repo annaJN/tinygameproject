@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6emo5ljrppfu"]
+[gd_scene load_steps=5 format=3 uid="uid://b6emo5ljrppfu"]
 
 [ext_resource type="Script" path="res://Objects/InventoryItem.gd" id="1_7ceyk"]
+[ext_resource type="PackedScene" uid="uid://iqlcpw3d31xh" path="res://Objects/highlight.tscn" id="2_pywsx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkqsc"]
-radius = 214.457
+radius = 141.877
 
-[node name="InventoryItem" type="Node2D" groups=["Items"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hq01p"]
+radius = 22.561
+
+[node name="InventoryItem" type="StaticBody2D" groups=["Items"]]
+collision_layer = 8
 script = ExtResource("1_7ceyk")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -15,7 +20,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_hkqsc")
 
+[node name="Highlight" parent="." instance=ExtResource("2_pywsx")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hq01p")
