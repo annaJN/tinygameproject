@@ -76,9 +76,20 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	if carrying:
-		carryingBody.position = $Marker2D.global_position
-	
-	
+		if carryingBody.is_in_group("Heavy"):
+			#var platforms = $WorldCollision.get_collision()
+			#for platform in platforms:
+				#if platform.name.begins_with("HallelujahMountain"):
+					#print("ON A PLATFORM")
+			carryingBody.position.x = $Marker2D.global_position.x
+			var bodies = carryingBody.get_colliding_bodies()
+			for body in bodies:
+				if body.name == "Ground":
+					carrying = false
+					Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+					return
+		else:
+			carryingBody.position = $Marker2D.global_position
 	
 	move_and_slide()
 	
@@ -115,15 +126,20 @@ func _unhandled_input(_event):
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
+			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
 			return
 		
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
 				carrying = true
 				carryingBody = body
+				
+				if body.is_in_group("Heavy"):
+					Global.movement = "res://Characters/Player/DragMovement.tres"
+					return
+				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
-				
 
 
 func inventory():

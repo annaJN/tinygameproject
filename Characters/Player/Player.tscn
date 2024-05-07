@@ -1370,6 +1370,9 @@ shape = SubResource("RectangleShape2D_odi81")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(96, 58)
 
+[node name="HeavyMarker" type="Marker2D" parent="."]
+position = Vector2(96, 89)
+
 [node name="NewItemUI" parent="." instance=ExtResource("9_0uwsx")]
 visible = false
 
