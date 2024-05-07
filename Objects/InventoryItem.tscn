@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6emo5ljrppfu"]
+[gd_scene load_steps=5 format=3 uid="uid://b6emo5ljrppfu"]
 
 [ext_resource type="Script" path="res://Objects/InventoryItem.gd" id="1_7ceyk"]
-[ext_resource type="Texture2D" uid="uid://ccb6tkvh88gk" path="res://Assets/Environment/Woodsy/blueberries 1.png" id="2_5jv23"]
 [ext_resource type="PackedScene" uid="uid://iqlcpw3d31xh" path="res://Objects/highlight.tscn" id="2_pywsx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkqsc"]
@@ -27,7 +26,3 @@ shape = SubResource("CircleShape2D_hkqsc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hq01p")
-
-[node name="Blueberries1" type="Sprite2D" parent="."]
-position = Vector2(-3, 7)
-texture = ExtResource("2_5jv23")

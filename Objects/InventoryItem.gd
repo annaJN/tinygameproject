@@ -45,6 +45,9 @@ func pickup_item():
 		self.queue_free()
 		
 func set_highlight_item(state):
+	highlight.texture = icon_sprite.texture
+	highlight.scale.x = icon_sprite.scale.x + 0.3
+	highlight.scale.y = icon_sprite.scale.y + 0.3
 	highlight.visible = state
 		
 
