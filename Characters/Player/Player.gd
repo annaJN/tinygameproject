@@ -17,6 +17,8 @@ var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
 
+var currentGround : String
+
 @onready var actionableFinder: Area2D = $ActionableFinder
 
 @onready var interact_ui = $InteractUI
@@ -77,10 +79,8 @@ func _physics_process(delta):
 
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
-			#var platforms = $WorldCollision.get_collision()
-			#for platform in platforms:
-				#if platform.name.begins_with("HallelujahMountain"):
-					#print("ON A PLATFORM")
+			if currentGround.begins_with("Hallelujah"):
+				print("ON A PLATFORM")
 			carryingBody.position.x = $Marker2D.global_position.x
 			var bodies = carryingBody.get_colliding_bodies()
 			for body in bodies:
@@ -260,3 +260,6 @@ func dashing():
 	self.position.x += 50
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
+
+func _on_area_2d_body_entered(body):
+	currentGround = body.name

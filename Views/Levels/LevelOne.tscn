@@ -389,6 +389,7 @@ position = Vector2(45735, -247)
 shape = SubResource("RectangleShape2D_go8ta")
 
 [node name="Thorns" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(11052, 366)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("14_xs8uy")
@@ -411,6 +412,7 @@ position = Vector2(2650, 424)
 [node name="HallelujahMountain" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
 position = Vector2(1330, -105)
+collision_mask = 3
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain"]
 texture_repeat = 2
