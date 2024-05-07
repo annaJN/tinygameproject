@@ -10,7 +10,7 @@ radius = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7w2h"]
 radius = 48.0104
 
-[node name="Stone" type="RigidBody2D" groups=["Stone"]]
+[node name="Stone" type="RigidBody2D" groups=["Landing", "Stone"]]
 collision_layer = 8
 lock_rotation = true
 script = ExtResource("2_fifhu")

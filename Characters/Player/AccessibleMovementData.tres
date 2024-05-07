@@ -10,4 +10,4 @@ acceleration = 900.0
 friction = 2000.0
 push_force = 100.0
 wall_jump_push = 2000
-wall_slide_gravity = 50
+wall_slide_gravity = 100
