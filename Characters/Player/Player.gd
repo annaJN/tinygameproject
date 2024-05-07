@@ -110,8 +110,7 @@ func _unhandled_input(_event):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
 			carrying = false
-			carryingBody.translate(velocity/7)
-			carryingBody.apply_central_impulse(velocity*movement_data.strength)
+			carryingBody.set_axis_velocity(velocity)
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
@@ -123,7 +122,7 @@ func _unhandled_input(_event):
 				carryingBody = body
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
-				
+				carryingBody.global_translate($Marker2D.position)
 
 
 func inventory():
@@ -141,13 +140,12 @@ func rotateCharacter(direction):
 		get_node("AnimatedSprite2D").flip_h = false
 		$ActionableFinder.position.x = -100
 		$ObjectFinder.position.x = -52
-		
-		$Marker2D.position.x = -10
+		$Marker2D.position.x = -10# -40
 	else:
 		get_node("AnimatedSprite2D").flip_h = true
 		$ActionableFinder.position.x = 12
 		$ObjectFinder.position.x = 0
-		$Marker2D.position.x = 96
+		$Marker2D.position.x = 96# + 34
 
 func landing():
 	## Animates the landing
