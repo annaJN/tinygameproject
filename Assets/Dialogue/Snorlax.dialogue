@@ -67,9 +67,15 @@ Dena: Guess I'll call you [wait=0.5][shake rate=20 level=10]Little one[/shake] t
 	Dena: Yeah, I know. But I gotta call you something
 Dena: Nice to meet you little one. Tell me, what are you doing here?
 - I just got out of that circle over there. You wouldn't know if that works both ways? I'd like to get back.
-	Dena:
+	Dena: Hmm. 
+	Dena: I haven't seen that here before. 
+	Dena: I'm sorry, I can't help you.
 - Just exploring the surroundings
-	Dena: Well, then don't go to far,
+	Dena: Well, then don't go to far.
+	Dena: The woods get more treacherous the further in you go. 
+Dena: If you come by my village come say hi will you.
+=> leave
+=> END 
 
 ~ snorlax_exposition_tree
 - Who are you?
@@ -87,9 +93,23 @@ Sleepy Creature: [shake rate=20 level=10]What in the[speed=0.2]...[/shake]
 Sleepy Creature: *looks around and locks eyes with you*
 Sleepy Creature: [shake rate=20 level=10]Did you do that[/shake]
 - Yes, sorry, it just slipped out of my hands.
-		Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. None the matter, I have to get back to the village.
-	=> END
+		Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. 
+		Sleepy Creature: None the matter, I have to get back to the village.
+	=> leave
 - No, it just fell from the tree.
+	Sleepy Creature: *snort*
+	Sleepy Creature: If you say so. 
 - *blink* *blink*
-- *shrug*
+	Sleepy Creature: Well?
+	- I'm sorry. I didn't mean to hit you. 
+		Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. 
+		Sleepy Creature: None the matter, I have to get back to the village.
+		=> leave
+	- ...
+		Sleepy Creature: *snort*
+		=> leave
+=> END
 
+~ leave 
+# add variable here that makes him leave
+=> END
