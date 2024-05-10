@@ -1,6 +1,6 @@
 extends Node2D
 
-var Player = preload("res://Characters/Player/Player.tscn")
+var PlayerSomething = preload("res://Characters/Player/Player.tscn")
 var Sleepy = preload("res://Characters/NPC/sleepy.tscn")
 var Dragon = preload("res://Characters/NPC/dragon.tscn")
 
@@ -9,7 +9,7 @@ var tmpDragon
 var dragonInstantiated = false
 
 func _init():
-	var tmpPlayer = Player.instantiate()
+	var tmpPlayer = PlayerSomething.instantiate()
 	tmpPlayer.position = Vector2(SaveGame.positionX, SaveGame.positionY)
 	add_child(tmpPlayer)
 	
@@ -46,7 +46,6 @@ func _process(_delta):
 		dragonInstantiated = true
 	
 	if Global.removeSleepy:
-		print("REMOVING SLEEPY")
 		get_node("Sleepy").queue_free()
 		Global.removeSleepy = false
 		

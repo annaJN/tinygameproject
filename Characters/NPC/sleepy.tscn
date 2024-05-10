@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Characters/NPC/sleepy.gd" id="1_gcycl"]
 [ext_resource type="Texture2D" uid="uid://bksq41rj0dvse" path="res://Assets/Spritesheets/Sleepy/all_animations_compressed.png" id="2_ju1ms"]
 [ext_resource type="Texture2D" uid="uid://dsym8o1r2lbb7" path="res://Assets/Spritesheets/Sleepy/all_animations_compressed2.png" id="3_rokwu"]
+[ext_resource type="Resource" uid="uid://bpn6ugbeenk2k" path="res://Assets/Dialogue/Snorlax.dialogue" id="5_5oi7u"]
 [ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="37_s7qe1"]
-[ext_resource type="Resource" uid="uid://caug8e57pthct" path="res://Assets/Dialogue/berries_creature.dialogue" id="46_0exlp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pmwb"]
 atlas = ExtResource("2_ju1ms")
@@ -2615,8 +2615,8 @@ shape = SubResource("RectangleShape2D_pvfh1")
 
 [node name="Actionable" parent="." instance=ExtResource("37_s7qe1")]
 visible = false
-dialogue_resources = ExtResource("46_0exlp")
-dialogue_start = "berries_Start"
+dialogue_resources = ExtResource("5_5oi7u")
+dialogue_start = "snorlax_start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_o4fj8")
