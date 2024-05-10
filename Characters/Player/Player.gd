@@ -91,12 +91,12 @@ func _physics_process(delta):
 				elif self.position.x >= currentGround.position.x + 160:
 					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
-			var bodies = carryingBody.get_colliding_bodies()
-			for body in bodies:
-				if body.name == "Ground":
-					carrying = false
-					Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-					return
+			#var bodies = carryingBody.get_colliding_bodies()
+			#for body in bodies:
+				#if body.name == "Ground":
+					#carrying = false
+					#Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+					#return
 		else:
 			carryingBody.position = $Marker2D.global_position
 	
