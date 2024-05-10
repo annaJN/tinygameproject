@@ -18,6 +18,7 @@ var time_on_ground = 0
 var in_air = false
 
 var currentGround : String
+var direction
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
@@ -56,9 +57,14 @@ func _physics_process(delta):
 	## Handle jump (including double jump)
 	if Input.is_action_just_pressed("Jump"):
 		jumpHandling()
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("Left", "Right")
+	
+	if carrying and carryingBody.is_in_group("Heavy") and get_node("AnimatedSprite2D").flip_h:
+		direction = Input.get_action_strength("Right")
+	elif carrying and carryingBody.is_in_group("Heavy") and !get_node("AnimatedSprite2D").flip_h:
+		direction = 0 - Input.get_action_strength("Left")
+	else:
+		# Get the input direction and handle the movement/deceleration.
+		direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
@@ -79,8 +85,8 @@ func _physics_process(delta):
 
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
-			if currentGround.begins_with("Hallelujah"):
-				print("ON A PLATFORM")
+			#if currentGround.begins_with("Hallelujah"):
+				#print("ON A PLATFORM")
 			carryingBody.position.x = $Marker2D.global_position.x
 			var bodies = carryingBody.get_colliding_bodies()
 			for body in bodies:
@@ -153,6 +159,8 @@ func inventory():
 	get_tree().paused = !get_tree().paused
 
 func rotateCharacter(direction):
+	if carrying and carryingBody.is_in_group("Heavy"):
+		return
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = false
 		$ActionableFinder.position.x = -100
