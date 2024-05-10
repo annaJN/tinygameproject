@@ -118,13 +118,6 @@ func _input(event):
 		
 	if (event.is_action_pressed("Down") and is_on_floor()):
 		position.y += 15
-		
-	if (event.is_action_pressed("ui_add")):
-		var items = $ObjectFinder.get_overlapping_bodies()
-		for item in items:
-			item.pickup_item()
-			return
-	
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
@@ -242,7 +235,6 @@ func slideCollision():
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * movement_data.push_force)
 
-
 #handles effects from items
 func apply_item_effect(item):
 	match item["effect"]:
@@ -279,20 +271,6 @@ func dashing():
 	self.position.x += 50
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
-
-
-func _on_object_finder_body_entered(body):
-	interact_ui.visible = true
-	var items = $ObjectFinder.get_overlapping_bodies()
-	for item in items:
-		item.set_highlight_item(true)
-		return
-	
-
-
-func _on_object_finder_body_exited(body):
-	interact_ui.visible = false
-	body.set_highlight_item(false)
 
 func _on_area_2d_body_entered(body):
 	currentGround = body
