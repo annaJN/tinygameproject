@@ -243,31 +243,31 @@ size = Vector2(164, 1238)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yfjbp"]
 b = Vector2(400, 500)
 
-[sub_resource type="Resource" id="Resource_mhgcq"]
+[sub_resource type="Resource" id="Resource_k8ss8"]
 script = ExtResource("5_5t0x4")
-texture_idx = 0
+texture_idx = 6
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_ps8sj"]
 script = ExtResource("6_ldgbf")
-position = Vector2(1183.84, 555.272)
+position = Vector2(0.00512695, -0.000518799)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_mhgcq")
+properties = SubResource("Resource_k8ss8")
 
-[sub_resource type="Resource" id="Resource_5cirp"]
+[sub_resource type="Resource" id="Resource_h11l7"]
 script = ExtResource("5_5t0x4")
-texture_idx = -5
+texture_idx = 4
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_2utm8"]
 script = ExtResource("6_ldgbf")
-position = Vector2(1441.31, 561.937)
+position = Vector2(239.998, 0.00151253)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_5cirp")
+properties = SubResource("Resource_h11l7")
 
 [sub_resource type="Resource" id="Resource_f06ck"]
 script = ExtResource("7_px6i0")
@@ -411,7 +411,7 @@ position = Vector2(2650, 424)
 
 [node name="HallelujahMountain" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(1330, -105)
+position = Vector2(2544, 452)
 collision_mask = 3
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain"]
@@ -422,14 +422,98 @@ shape_material = SubResource("Resource_jnhk1")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain"]
-visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(1183.84, 555.272, 1441.31, 561.937, 1440.48, 593.926, 1183.01, 587.261)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
+one_way_collision = true
+
+[node name="HallelujahMountain3" type="StaticBody2D" parent="platforms" groups=["Landing"]]
+z_index = -10
+position = Vector2(1240, 430)
+collision_mask = 3
+
+[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain3"]
+texture_repeat = 2
+script = ExtResource("16_ykx52")
+_points = SubResource("Resource_f06ck")
+shape_material = SubResource("Resource_jnhk1")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain3"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
+one_way_collision = true
+
+[node name="HallelujahMountain4" type="StaticBody2D" parent="platforms" groups=["Landing"]]
+z_index = -10
+position = Vector2(912, 584)
+collision_mask = 3
+
+[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain4"]
+texture_repeat = 2
+script = ExtResource("16_ykx52")
+_points = SubResource("Resource_f06ck")
+shape_material = SubResource("Resource_jnhk1")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain4"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
+one_way_collision = true
+
+[node name="HallelujahMountain5" type="StaticBody2D" parent="platforms" groups=["Landing"]]
+z_index = -10
+position = Vector2(1688, 370)
+collision_mask = 3
+
+[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain5"]
+texture_repeat = 2
+script = ExtResource("16_ykx52")
+_points = SubResource("Resource_f06ck")
+shape_material = SubResource("Resource_jnhk1")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain5"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
+one_way_collision = true
+
+[node name="HallelujahMountain6" type="StaticBody2D" parent="platforms" groups=["Landing"]]
+z_index = -10
+position = Vector2(608, 440)
+collision_mask = 3
+
+[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain6"]
+texture_repeat = 2
+script = ExtResource("16_ykx52")
+_points = SubResource("Resource_f06ck")
+shape_material = SubResource("Resource_jnhk1")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain6"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
+one_way_collision = true
+
+[node name="HallelujahMountain7" type="StaticBody2D" parent="platforms" groups=["Landing"]]
+z_index = -10
+position = Vector2(2144, 320)
+collision_mask = 3
+
+[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain7"]
+texture_repeat = 2
+script = ExtResource("16_ykx52")
+_points = SubResource("Resource_f06ck")
+shape_material = SubResource("Resource_jnhk1")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain7"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
 one_way_collision = true
 
 [node name="HallelujahMountain2" type="StaticBody2D" parent="platforms" groups=["Landing"]]
 z_index = -10
-position = Vector2(897, 30)
+position = Vector2(2200, 604)
 
 [node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain2"]
 texture_repeat = 2
@@ -439,99 +523,8 @@ shape_material = SubResource("Resource_jnhk1")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain2"]
-visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(1183.84, 555.272, 1441.31, 561.937, 1440.48, 593.926, 1183.01, 587.261)
-one_way_collision = true
-
-[node name="HallelujahMountain3" type="StaticBody2D" parent="platforms" groups=["Landing"]]
-z_index = -10
-position = Vector2(1816, -304)
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain3"]
-texture_repeat = 2
-position = Vector2(-932, -47)
-script = ExtResource("16_ykx52")
-_points = SubResource("Resource_f06ck")
-shape_material = SubResource("Resource_jnhk1")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain3"]
-visible = false
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(251.84, 508.272, 509.31, 514.937, 508.482, 546.926, 251.012, 540.261)
-one_way_collision = true
-
-[node name="HallelujahMountain4" type="StaticBody2D" parent="platforms" groups=["Landing"]]
-z_index = -10
-position = Vector2(982, -67)
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain4"]
-texture_repeat = 2
-position = Vector2(-932, -47)
-script = ExtResource("16_ykx52")
-_points = SubResource("Resource_f06ck")
-shape_material = SubResource("Resource_jnhk1")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain4"]
-visible = false
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(251.84, 508.272, 509.31, 514.937, 508.482, 546.926, 251.012, 540.261)
-one_way_collision = true
-
-[node name="HallelujahMountain5" type="StaticBody2D" parent="platforms" groups=["Landing"]]
-z_index = -10
-position = Vector2(215, -90)
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain5"]
-texture_repeat = 2
-position = Vector2(-932, -47)
-script = ExtResource("16_ykx52")
-_points = SubResource("Resource_f06ck")
-shape_material = SubResource("Resource_jnhk1")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain5"]
-visible = false
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(251.84, 508.272, 509.31, 514.937, 508.482, 546.926, 251.012, 540.261)
-one_way_collision = true
-
-[node name="HallelujahMountain6" type="StaticBody2D" parent="platforms" groups=["Landing"]]
-z_index = -10
-position = Vector2(600, 48)
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain6"]
-texture_repeat = 2
-position = Vector2(-932, -47)
-script = ExtResource("16_ykx52")
-_points = SubResource("Resource_f06ck")
-shape_material = SubResource("Resource_jnhk1")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain6"]
-visible = false
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(251.84, 508.272, 509.31, 514.937, 508.482, 546.926, 251.012, 540.261)
-one_way_collision = true
-
-[node name="HallelujahMountain7" type="StaticBody2D" parent="platforms" groups=["Landing"]]
-z_index = -10
-position = Vector2(1391, -199)
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="platforms/HallelujahMountain7"]
-texture_repeat = 2
-position = Vector2(-932, -47)
-script = ExtResource("16_ykx52")
-_points = SubResource("Resource_f06ck")
-shape_material = SubResource("Resource_jnhk1")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platforms/HallelujahMountain7"]
-visible = false
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(251.84, 508.272, 509.31, 514.937, 508.482, 546.926, 251.012, 540.261)
+polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
 one_way_collision = true
 
 [node name="b5" type="StaticBody2D" parent="." groups=["Landing"]]
@@ -934,7 +927,7 @@ rotation = -0.296706
 shape = SubResource("RectangleShape2D_milg7")
 
 [node name="Blueberry bush" parent="." instance=ExtResource("23_0b58q")]
-position = Vector2(1248, 452)
+position = Vector2(2152, 333)
 
 [node name="NPC" parent="." instance=ExtResource("25_ryfjs")]
 z_index = -1

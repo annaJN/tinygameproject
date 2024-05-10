@@ -30,6 +30,3 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2, 3)
 shape = SubResource("CircleShape2D_u7w2h")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-44, 0)

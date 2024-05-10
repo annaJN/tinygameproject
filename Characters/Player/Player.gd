@@ -17,7 +17,7 @@ var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
 
-var currentGround : String
+var currentGround : StaticBody2D
 var direction
 
 @onready var actionableFinder: Area2D = $ActionableFinder
@@ -85,8 +85,11 @@ func _physics_process(delta):
 
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
-			#if currentGround.begins_with("Hallelujah"):
-				#print("ON A PLATFORM")
+			if currentGround.name.begins_with("Hallelujah"):
+				if self.position.x <= currentGround.position.x:
+					carrying = false
+				elif self.position.x >= currentGround.position.x + 160:
+					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
 			var bodies = carryingBody.get_colliding_bodies()
 			for body in bodies:
@@ -158,10 +161,10 @@ func inventory():
 		animation_player.play()
 	get_tree().paused = !get_tree().paused
 
-func rotateCharacter(direction):
+func rotateCharacter(directioning):
 	if carrying and carryingBody.is_in_group("Heavy"):
 		return
-	if direction == -1:
+	if directioning == -1:
 		get_node("AnimatedSprite2D").flip_h = false
 		$ActionableFinder.position.x = -100
 		$ObjectFinder.position.x = -52
@@ -270,4 +273,4 @@ func dashing():
 	tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
 
 func _on_area_2d_body_entered(body):
-	currentGround = body.name
+	currentGround = body
