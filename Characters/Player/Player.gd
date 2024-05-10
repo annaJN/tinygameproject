@@ -17,6 +17,9 @@ var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
 
+var currentGround : StaticBody2D
+var direction
+
 @onready var actionableFinder: Area2D = $ActionableFinder
 
 @onready var interact_ui = $InteractUI
@@ -54,9 +57,14 @@ func _physics_process(delta):
 	## Handle jump (including double jump)
 	if Input.is_action_just_pressed("Jump"):
 		jumpHandling()
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("Left", "Right")
+	
+	if carrying and carryingBody.is_in_group("Heavy") and get_node("AnimatedSprite2D").flip_h:
+		direction = Input.get_action_strength("Right")
+	elif carrying and carryingBody.is_in_group("Heavy") and !get_node("AnimatedSprite2D").flip_h:
+		direction = 0 - Input.get_action_strength("Left")
+	else:
+		# Get the input direction and handle the movement/deceleration.
+		direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
@@ -76,9 +84,21 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	if carrying:
-		carryingBody.position = $Marker2D.global_position
-	
-	
+		if carryingBody.is_in_group("Heavy"):
+			if currentGround.name.begins_with("Hallelujah"):
+				if self.position.x <= currentGround.position.x:
+					carrying = false
+				elif self.position.x >= currentGround.position.x + 160:
+					carrying = false
+			carryingBody.position.x = $Marker2D.global_position.x
+			#var bodies = carryingBody.get_colliding_bodies()
+			#for body in bodies:
+				#if body.name == "Ground":
+					#carrying = false
+					#Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+					#return
+		else:
+			carryingBody.position = $Marker2D.global_position
 	
 	move_and_slide()
 	
@@ -115,15 +135,20 @@ func _unhandled_input(_event):
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
+			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
 			return
 		
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
 				carrying = true
 				carryingBody = body
+				
+				if body.is_in_group("Heavy"):
+					Global.movement = "res://Characters/Player/DragMovement.tres"
+					return
+				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
-				
 
 
 func inventory():
@@ -136,8 +161,10 @@ func inventory():
 		animation_player.play()
 	get_tree().paused = !get_tree().paused
 
-func rotateCharacter(direction):
-	if direction == -1:
+func rotateCharacter(directioning):
+	if carrying and carryingBody.is_in_group("Heavy"):
+		return
+	if directioning == -1:
 		get_node("AnimatedSprite2D").flip_h = false
 		$ActionableFinder.position.x = -100
 		$ObjectFinder.position.x = -52
@@ -244,3 +271,6 @@ func dashing():
 	self.position.x += 50
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
+
+func _on_area_2d_body_entered(body):
+	currentGround = body
