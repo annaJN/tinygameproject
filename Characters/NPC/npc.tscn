@@ -96,6 +96,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trg4w"]
 
 [node name="NPC" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_adjsa")
 
 [node name="Actionable" parent="." instance=ExtResource("2_nnkhn")]
