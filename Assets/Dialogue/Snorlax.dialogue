@@ -111,5 +111,6 @@ Sleepy Creature: [shake rate=20 level=10]Did you do that[/shake]
 => END
 
 ~ leave 
-# add variable here that makes him leave
+do Global.sleepy_dialogue_done = true
+
 => END

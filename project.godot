@@ -94,7 +94,7 @@ Down={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Assets/Dialogue/frogTemp.dialogue", "res://Assets/Dialogue/Snorlax.dialogue", "res://Assets/Dialogue/SnorlaxOther.dialogue", "res://Assets/Dialogue/berries_creature.dialogue", "res://Assets/Dialogue/dragon.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Assets/Dialogue/frogTemp.dialogue", "res://Assets/Dialogue/Snorlax.dialogue", "res://Assets/Dialogue/berries_creature.dialogue", "res://Assets/Dialogue/dragon.dialogue")
 
 [layer_names]
 

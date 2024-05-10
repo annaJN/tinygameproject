@@ -35,7 +35,6 @@ func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 	
 	if Global.removeSleepy:
-		print("REMOVING SLEEPY")
 		get_node("Sleepy").queue_free()
 		Global.removeSleepy = false
 		
