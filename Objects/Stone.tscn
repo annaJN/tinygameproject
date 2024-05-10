@@ -8,11 +8,12 @@ radius = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7w2h"]
 radius = 48.0104
 
-[node name="Stone" type="RigidBody2D" groups=["Heavy", "Landing"]]
+[node name="Stone" type="RigidBody2D" groups=["Landing", "Stone"]]
 collision_layer = 8
 lock_rotation = true
-max_contacts_reported = 2
-contact_monitor = true
+script = ExtResource("2_fifhu")
+
+[node name="Highlight" parent="." instance=ExtResource("1_nttgd")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 9.53674e-07)
