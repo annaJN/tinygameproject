@@ -205,10 +205,10 @@ func wall_sliding_check() :
 	var wall_normal = get_wall_normal()
 	if not is_on_wall_only() || velocity.y < 0:
 		return false
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("Right"):
 		var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
 		return wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < degree_threshold
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("Left"):
 		var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 		return wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < degree_threshold
 	return false
