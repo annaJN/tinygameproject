@@ -32,8 +32,8 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
-			Global.dialogue_is_playing = false
 			queue_free()
+			Global.dialogue_is_playing = false
 			return
 
 		# If the node isn't ready yet then none of the labels will be ready yet either
