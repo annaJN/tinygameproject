@@ -146,6 +146,7 @@ Dena: ...!
 	Dena: *snort* 
 	Dena: You are forgiven. 
 	Dena: It wasn't the best nap spot. 
+	do Global.snorlax_state_angry_at_player = false 
 	- What is that tree?
 	Dena: Oh, thats where the dragon lives.
 	Dena: They have been here forever, know all there is about this world. 
