@@ -1250,47 +1250,6 @@ offset = Vector2(0, -200)
 limit_left = 0
 drag_horizontal_enabled = true
 
-[node name="PauseMenu" type="MenuBar" parent="Camera2D"]
-process_mode = 2
-visible = false
-z_index = 7
-offset_left = -414.0
-offset_top = -383.0
-offset_right = 406.0
-offset_bottom = 80.0
-
-[node name="Label" type="Label" parent="Camera2D/PauseMenu"]
-layout_mode = 0
-offset_left = 284.0
-offset_top = 139.0
-offset_right = 532.0
-offset_bottom = 162.0
-text = "THIS IS THE PAUSE MENU TEXT!!!"
-
-[node name="Resume" type="Button" parent="Camera2D/PauseMenu"]
-layout_mode = 0
-offset_left = 349.0
-offset_top = 173.0
-offset_right = 478.0
-offset_bottom = 231.0
-text = "Resume"
-
-[node name="Save" type="Button" parent="Camera2D/PauseMenu"]
-layout_mode = 0
-offset_left = 349.0
-offset_top = 236.0
-offset_right = 478.0
-offset_bottom = 294.0
-text = "Save Game"
-
-[node name="MainMenu" type="Button" parent="Camera2D/PauseMenu"]
-layout_mode = 0
-offset_left = 349.0
-offset_top = 300.0
-offset_right = 478.0
-offset_bottom = 358.0
-text = "Main Menu"
-
 [node name="ActionableFinder" parent="." instance=ExtResource("6_4fov4")]
 position = Vector2(12, 69)
 collision_layer = 0
@@ -1300,6 +1259,47 @@ script = null
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(85, -11)
 shape = SubResource("CircleShape2D_fh5e2")
+
+[node name="PauseMenu" type="MenuBar" parent="."]
+process_mode = 2
+visible = false
+z_index = 7
+offset_left = -414.0
+offset_top = -383.0
+offset_right = 406.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 139.0
+offset_right = 532.0
+offset_bottom = 162.0
+text = "THIS IS THE PAUSE MENU TEXT!!!"
+
+[node name="Resume" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 173.0
+offset_right = 478.0
+offset_bottom = 231.0
+text = "Resume"
+
+[node name="Save" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 236.0
+offset_right = 478.0
+offset_bottom = 294.0
+text = "Save Game"
+
+[node name="MainMenu" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 300.0
+offset_right = 478.0
+offset_bottom = 358.0
+text = "Main Menu"
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
 visible = false
@@ -1383,7 +1383,7 @@ shape = SubResource("RectangleShape2D_fed2t")
 position = Vector2(35, 120)
 shape = SubResource("RectangleShape2D_4emgs")
 
-[connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="Camera2D/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

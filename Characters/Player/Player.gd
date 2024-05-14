@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
 
+
 var is_wall_sliding = false
 
 #var health = 50
@@ -55,7 +56,7 @@ func _physics_process(delta):
 	
 	wall_sliding_handler(delta)
 	## Handle jump (including double jump)
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_just_pressed("Jump") and !Global.dialogue_is_playing:
 		jumpHandling()
 	
 	if carrying and carryingBody.is_in_group("Heavy") and get_node("AnimatedSprite2D").flip_h:
@@ -67,7 +68,7 @@ func _physics_process(delta):
 		direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
-	if direction and !get_tree().paused:
+	if direction and !get_tree().paused and !Global.dialogue_is_playing:
 		## Rotates the character depending on direction
 		rotateCharacter(direction)
 		
@@ -123,6 +124,7 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
+			Global.dialogue_is_playing = true
 			actionables[0].action()
 			return
 
@@ -220,12 +222,10 @@ func wall_jump():
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
 	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only():
-		print("i am right jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
 	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only():
-		print("i am left jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 
@@ -252,8 +252,8 @@ func show_new_item_ui(item):
 ## 
 ## Pause menu functionality
 func _on_resume_pressed():
-	$Camera2D/PauseMenu/Save.modulate = Color(1,1,1,1)	
-	$Camera2D/PauseMenu.hide()
+	$PauseMenu/Save.modulate = Color(1,1,1,1)	
+	$PauseMenu.hide()
 	get_tree().paused = false
 
 func _on_save_pressed():
@@ -261,7 +261,7 @@ func _on_save_pressed():
 	SaveGame.positionY = self.position.y
 	SaveGame.sceneActive = get_tree().current_scene.name
 	SaveGame.saveGame()
-	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	$PauseMenu/Save.modulate = Color(0,1,0,0.5)
 
 func _on_main_menu_pressed():
 	get_tree().paused = false
