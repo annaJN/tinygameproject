@@ -87,9 +87,9 @@ func _physics_process(delta):
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
-				if self.position.x <= currentGround.position.x + 32:
+				if self.position.x <= currentGround.position.x + 32 and !get_node("AnimatedSprite2D").flip_h:
 					carrying = false
-				elif self.position.x >= currentGround.position.x + 208:
+				elif self.position.x >= currentGround.position.x + 208 and get_node("AnimatedSprite2D").flip_h:
 					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
 		else:
@@ -99,9 +99,7 @@ func _physics_process(delta):
 	
 	#slideCollision()
 	
-	
 	landing()
-	
 	
 
 func _input(event):
