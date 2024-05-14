@@ -20,6 +20,7 @@ var in_air = false
 
 var currentGround : StaticBody2D
 var direction
+var wallBody : bool
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
@@ -237,12 +238,12 @@ func wall_jump():
 	var wall_normal = get_wall_normal()
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
-	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only() and wallBody:
 		print("i am right jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
-	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only() and wallBody:
 		print("i am left jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
@@ -252,6 +253,16 @@ func slideCollision():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * movement_data.push_force)
+
+func checkwall():
+	return true
+	#for bodies in get_slide_collision_count():
+		#var body = get_slide_collision(bodies)
+		#print("WALLINGS")
+		#print(body.name)
+		#if body is StaticBody2D and body.is_in_group("WallJump"):
+			#return true
+	#return false
 
 #handles effects from items
 func apply_item_effect(item):
@@ -292,3 +303,12 @@ func dashing():
 
 func _on_area_2d_body_entered(body):
 	currentGround = body
+
+
+func _on_object_finder_body_entered(body):
+	if body.is_in_group("WallJump"):
+		wallBody = true
+
+
+func _on_object_finder_body_exited(body):
+	wallBody = false
