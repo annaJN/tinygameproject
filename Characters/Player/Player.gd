@@ -20,7 +20,7 @@ var in_air = false
 
 var currentGround : StaticBody2D
 var direction
-var wallBody : bool
+var wallBody = false
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
@@ -254,16 +254,6 @@ func slideCollision():
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * movement_data.push_force)
 
-func checkwall():
-	return true
-	#for bodies in get_slide_collision_count():
-		#var body = get_slide_collision(bodies)
-		#print("WALLINGS")
-		#print(body.name)
-		#if body is StaticBody2D and body.is_in_group("WallJump"):
-			#return true
-	#return false
-
 #handles effects from items
 func apply_item_effect(item):
 	match item["effect"]:
@@ -306,7 +296,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_object_finder_body_entered(body):
-	if body.is_in_group("WallJump"):
+	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
 
 
