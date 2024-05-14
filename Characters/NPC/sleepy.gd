@@ -46,11 +46,16 @@ func _on_stone_on_head_collision_body_entered(body):
 		## ska vakna upp mer aggresivt när den landar på huvudet vilket är denna funktionen
 		wakeUp("wake_up")
 		Global.snorlax_state_angry_at_player = true
+		playSound(body)
 
 func _on_stone_on_the_side_collision_body_entered(body):
 	if body is RigidBody2D:
 		wakeUp("wake_up")
 		Global.sleepy_awaken = true
+		playSound(body)
+
+func playSound(bodyn):
+	bodyn.get_node("AudioStreamPlayer").play()
 
 func wakeUp(animation):
 	waking = true
