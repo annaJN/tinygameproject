@@ -1,43 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://blqfu67pm8yq3"]
+[gd_scene load_steps=5 format=3 uid="uid://blqfu67pm8yq3"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_pki7g"]
 [ext_resource type="Texture2D" uid="uid://bkp2ud52syqfn" path="res://Assets/backgrounds/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" id="2_gkc5u"]
+[ext_resource type="Texture2D" uid="uid://di3jnefwt6276" path="res://Assets/backgrounds/mushroomRingBackground.png" id="3_4iryg"]
 [ext_resource type="AudioStream" uid="uid://dl7s5ans5sm1v" path="res://Assets/Sound/Music/menu.mp3" id="3_an4bf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pki7g")
 
 [node name="Johannes-plenio-rwHv7LgeC7s-unsplash" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(609, 321)
 scale = Vector2(0.287775, 0.287775)
 texture = ExtResource("2_gkc5u")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-offset_left = -12.0
-offset_top = 4.0
-offset_right = 1148.0
-offset_bottom = 646.0
+[node name="MushroomRingBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_4iryg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MushroomRingBackground"]
+offset_left = -628.0
+offset_top = -374.0
+offset_right = 532.0
+offset_bottom = 268.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MushroomRingBackground/CenterContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Start New Game"
 
-[node name="Load" type="Button" parent="CenterContainer/VBoxContainer" groups=["Saves"]]
+[node name="Load" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer" groups=["Saves"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Resume Game"
 
-[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Settings"
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Quit"
@@ -46,7 +52,7 @@ text = "Quit"
 stream = ExtResource("3_an4bf")
 autoplay = true
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

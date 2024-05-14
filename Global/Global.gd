@@ -23,7 +23,8 @@ var removeSleepy = false
 var snorlax_state_angry_at_player = false
 var sleepy_awaken = false
 var sleepy_dialogue_done = false
-
+var dena_in_village = false
+var dena_not_met = false
 
 signal inventory_updated
 
