@@ -1,0 +1,125 @@
+
+wake_up_fast.png
+size: 4061,761
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wake_up_fast_00
+  rotate: false
+  xy: 1, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_01
+  rotate: false
+  xy: 291, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_02
+  rotate: false
+  xy: 581, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_03
+  rotate: false
+  xy: 871, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_04
+  rotate: false
+  xy: 1161, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_05
+  rotate: false
+  xy: 1451, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_06
+  rotate: false
+  xy: 1741, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_07
+  rotate: false
+  xy: 2031, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_08
+  rotate: false
+  xy: 2321, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_09
+  rotate: false
+  xy: 2611, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_10
+  rotate: false
+  xy: 2901, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_11
+  rotate: false
+  xy: 3191, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_12
+  rotate: false
+  xy: 3481, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_13
+  rotate: false
+  xy: 3771, 1
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_14
+  rotate: false
+  xy: 1, 381
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_15
+  rotate: false
+  xy: 291, 381
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
+skeleton-wake_up_fast_16
+  rotate: false
+  xy: 581, 381
+  size: 289, 379
+  orig: 289, 379
+  offset: 0, 0
+  index: -1
