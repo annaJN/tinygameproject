@@ -170,9 +170,11 @@ func _unhandled_input(_event):
 func inventory():
 	inventory_ui.visible = !inventory_ui.visible
 	if inventory_ui.visible:
+		$Sounds/CloseInventory.play()
 		self.process_mode = 3
 		animation_player.stop(false)
 	else:
+		$Sounds/OpenInventory.play()
 		self.process_mode = 1
 		animation_player.play()
 	get_tree().paused = !get_tree().paused
@@ -232,12 +234,12 @@ func wall_jump():
 	var wall_normal = get_wall_normal()
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only():
 		print("i am right jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only():
 		print("i am left jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
