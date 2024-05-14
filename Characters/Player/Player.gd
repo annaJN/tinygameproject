@@ -87,17 +87,11 @@ func _physics_process(delta):
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
-				if self.position.x <= currentGround.position.x:
+				if self.position.x <= currentGround.position.x + 32:
 					carrying = false
-				elif self.position.x >= currentGround.position.x + 160:
+				elif self.position.x >= currentGround.position.x + 208:
 					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
-			#var bodies = carryingBody.get_colliding_bodies()
-			#for body in bodies:
-				#if body.name == "Ground":
-					#carrying = false
-					#Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-					#return
 		else:
 			carryingBody.position = $Marker2D.global_position
 	
@@ -144,39 +138,34 @@ func _unhandled_input(_event):
 				carrying = true
 				carryingBody = body
 				
-				if body.is_in_group("Heavy"):
-					Global.movement = "res://Characters/Player/DragMovement.tres"
-					return
-				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
 				var tmp_node = carryingBody.get_node("cool")
 				match tmp_node.get_class() :
 					"CollisionShape2D" :
-						marker_offset = tmp_node.get_shape().radius
+						marker_offset = tmp_node.get_shape().radius + marker_original_offset
 					"CollisionPolygon2D" :
-						marker_offset = 40
 						var minX = 1000000000
-						#var minY = -1000000000
 						var maxX = -1000000000
-						#var maxY = 1000000000
 						for vec in tmp_node.polygon:
 							var x = vec.x
 							if (x < minX) :
 								minX = vec.x
 							if (x > maxX) :
 								maxX = vec.x
-							#if (vec.y > maxY) :
-							#	maxY = vec.y
-							#if (vec.y < minY) :
-							#	minY = vec.y
 						minX *= tmp_node.transform.get_scale().x
 						maxX *= tmp_node.transform.get_scale().x
-						marker_offset = (maxX - minX)/2.0
+						marker_offset = (maxX - minX)/2.0 + marker_original_offset
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
 						print("Womp womp, object picked up is not of correct class")
-						marker_offset = 0
+				if not get_node("AnimatedSprite2D").flip_h :
+					marker_offset *= -1
+				$Marker2D.position.x = marker_offset
+				if body.is_in_group("Heavy"):
+					Global.movement = "res://Characters/Player/DragMovement.tres"
+					carryingBody.freeze = false
+					carryingBody.get_node("cool").disabled = false
 				return
 
 
@@ -193,16 +182,14 @@ func inventory():
 func rotateCharacter(directioning):
 	if carrying and carryingBody.is_in_group("Heavy"):
 		return
-	if directioning == -1:
-		get_node("AnimatedSprite2D").flip_h = false
-		$ActionableFinder.position.x = -50
-		$ObjectFinder.position.x = -50
-		$Marker2D.position.x = -abs(marker_original_offset + marker_offset)
+	get_node("AnimatedSprite2D").flip_h = directioning == 1
+	$ActionableFinder.position.x = 50 * directioning
+	$ObjectFinder.position.x = 50 * directioning
+	if marker_offset * directioning < 0 :
+		$Marker2D.position.x = marker_offset * directioning
 	else:
-		get_node("AnimatedSprite2D").flip_h = true
-		$ActionableFinder.position.x = 50
-		$ObjectFinder.position.x = 50
-		$Marker2D.position.x = abs(marker_original_offset + marker_offset)
+		$Marker2D.position.x = marker_offset
+	return
 
 func landing():
 	## Animates the landing

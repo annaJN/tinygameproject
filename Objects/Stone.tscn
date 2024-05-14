@@ -18,9 +18,9 @@ contact_monitor = true
 position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(0.0218333, 0.0218333)
 texture = ExtResource("1_w7get")
+offset = Vector2(100, -180)
 
 [node name="cool" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 3)
 shape = SubResource("CircleShape2D_m4c2j")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -28,5 +28,5 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, 3)
 shape = SubResource("CircleShape2D_u7w2h")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
