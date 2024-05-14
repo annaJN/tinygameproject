@@ -2572,7 +2572,7 @@ height = 224.0
 radius = 72.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfh1"]
-size = Vector2(480, 50)
+size = Vector2(288, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4fj8"]
 radius = 221.472
@@ -2600,7 +2600,7 @@ shape = SubResource("CapsuleShape2D_t7cbh")
 collision_layer = 4
 collision_mask = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneOnHeadCollision"]
+[node name="coollision" type="CollisionShape2D" parent="StoneOnHeadCollision"]
 position = Vector2(-56, -40)
 shape = SubResource("CircleShape2D_qgdu5")
 
@@ -2609,8 +2609,8 @@ position = Vector2(-208, 0)
 collision_layer = 4
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneOnTheSideCollision"]
-position = Vector2(-48, 104)
+[node name="coolision" type="CollisionShape2D" parent="StoneOnTheSideCollision"]
+position = Vector2(-144, 104)
 shape = SubResource("RectangleShape2D_pvfh1")
 
 [node name="Actionable" parent="." instance=ExtResource("37_s7qe1")]
