@@ -1,0 +1,209 @@
+
+push_boulder.png
+size: 5437,5081
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-push_boulder_00
+  rotate: false
+  xy: 1, 1
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_01
+  rotate: false
+  xy: 907, 1
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_02
+  rotate: false
+  xy: 1813, 1
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_03
+  rotate: false
+  xy: 2719, 1
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_04
+  rotate: false
+  xy: 3625, 1
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_05
+  rotate: false
+  xy: 4531, 1
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_06
+  rotate: false
+  xy: 1, 1017
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_07
+  rotate: false
+  xy: 907, 1017
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_08
+  rotate: false
+  xy: 1813, 1017
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_09
+  rotate: false
+  xy: 2719, 1017
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_10
+  rotate: false
+  xy: 3625, 1017
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_11
+  rotate: false
+  xy: 4531, 1017
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_12
+  rotate: false
+  xy: 1, 2033
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_13
+  rotate: false
+  xy: 907, 2033
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_14
+  rotate: false
+  xy: 1813, 2033
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_15
+  rotate: false
+  xy: 2719, 2033
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_16
+  rotate: false
+  xy: 3625, 2033
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_17
+  rotate: false
+  xy: 4531, 2033
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_18
+  rotate: false
+  xy: 1, 3049
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_19
+  rotate: false
+  xy: 907, 3049
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_20
+  rotate: false
+  xy: 1813, 3049
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_21
+  rotate: false
+  xy: 2719, 3049
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_22
+  rotate: false
+  xy: 3625, 3049
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_23
+  rotate: false
+  xy: 4531, 3049
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_24
+  rotate: false
+  xy: 1, 4065
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_25
+  rotate: false
+  xy: 907, 4065
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_26
+  rotate: false
+  xy: 1813, 4065
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_27
+  rotate: false
+  xy: 2719, 4065
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1
+skeleton-push_boulder_28
+  rotate: false
+  xy: 3625, 4065
+  size: 905, 1015
+  orig: 905, 1015
+  offset: 0, 0
+  index: -1

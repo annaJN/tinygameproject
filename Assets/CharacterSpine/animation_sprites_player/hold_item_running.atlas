@@ -1,0 +1,153 @@
+
+hold_item_running.png
+size: 4945,4917
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-hold_item_running_00
+  rotate: false
+  xy: 1, 1
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_01
+  rotate: false
+  xy: 825, 1
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_02
+  rotate: false
+  xy: 1649, 1
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_03
+  rotate: false
+  xy: 2473, 1
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_04
+  rotate: false
+  xy: 3297, 1
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_05
+  rotate: false
+  xy: 4121, 1
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_06
+  rotate: false
+  xy: 1, 1230
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_07
+  rotate: false
+  xy: 825, 1230
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_08
+  rotate: false
+  xy: 1649, 1230
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_09
+  rotate: false
+  xy: 2473, 1230
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_10
+  rotate: false
+  xy: 3297, 1230
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_11
+  rotate: false
+  xy: 4121, 1230
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_12
+  rotate: false
+  xy: 1, 2459
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_13
+  rotate: false
+  xy: 825, 2459
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_14
+  rotate: false
+  xy: 1649, 2459
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_15
+  rotate: false
+  xy: 2473, 2459
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_16
+  rotate: false
+  xy: 3297, 2459
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_17
+  rotate: false
+  xy: 4121, 2459
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_18
+  rotate: false
+  xy: 1, 3688
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_19
+  rotate: false
+  xy: 825, 3688
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1
+skeleton-hold_item_running_20
+  rotate: false
+  xy: 1649, 3688
+  size: 823, 1228
+  orig: 823, 1228
+  offset: 0, 0
+  index: -1

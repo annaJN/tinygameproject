@@ -1,0 +1,27 @@
+
+push_boulder_initiate.png
+size: 3064,1201
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-push_bolder_initiate_0
+  rotate: false
+  xy: 1, 1
+  size: 1020, 1199
+  orig: 1020, 1199
+  offset: 0, 0
+  index: -1
+skeleton-push_bolder_initiate_1
+  rotate: false
+  xy: 1022, 1
+  size: 1020, 1199
+  orig: 1020, 1199
+  offset: 0, 0
+  index: -1
+skeleton-push_bolder_initiate_2
+  rotate: false
+  xy: 2043, 1
+  size: 1020, 1199
+  orig: 1020, 1199
+  offset: 0, 0
+  index: -1

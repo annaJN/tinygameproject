@@ -1,0 +1,13 @@
+
+hold_item.png
+size: 766,1201
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-hold_item_0
+  rotate: false
+  xy: 1, 1
+  size: 764, 1199
+  orig: 764, 1199
+  offset: 0, 0
+  index: -1
