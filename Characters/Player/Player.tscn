@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=170 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
@@ -1214,7 +1214,7 @@ corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fed2t"]
-size = Vector2(96, 34)
+size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4emgs"]
 size = Vector2(20, 106)
@@ -1230,13 +1230,11 @@ script = ExtResource("1_7pauv")
 movement_data = ExtResource("2_j7a2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(38, 40)
 scale = Vector2(0.122198, 0.122198)
 sprite_frames = SubResource("SpriteFrames_6jd1w")
 animation = &"running"
 
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
-position = Vector2(38, 40)
 shape = SubResource("CapsuleShape2D_rloiv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1292,13 +1290,12 @@ offset_bottom = 358.0
 text = "Main Menu"
 
 [node name="ActionableFinder" parent="." instance=ExtResource("6_4fov4")]
-position = Vector2(12, 69)
+position = Vector2(-55, 0)
 collision_layer = 0
 collision_mask = 16
 script = null
 
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
-position = Vector2(85, -11)
 shape = SubResource("CircleShape2D_fh5e2")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
@@ -1361,7 +1358,7 @@ text = "HP
 "
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(96, 58)
+position = Vector2(-40, 0)
 
 [node name="HeavyMarker" type="Marker2D" parent="."]
 position = Vector2(96, 89)
@@ -1370,11 +1367,11 @@ position = Vector2(96, 89)
 visible = false
 
 [node name="ObjectFinder" type="Area2D" parent="."]
+position = Vector2(-50, 0)
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectFinder"]
-position = Vector2(64, 89)
 shape = SubResource("RectangleShape2D_fed2t")
 
 [node name="Area2D" type="Area2D" parent="."]

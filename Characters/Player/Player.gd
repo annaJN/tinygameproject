@@ -7,7 +7,8 @@ var is_wall_sliding = false
 #var health = 50
 var carrying = false
 var carryingBody : RigidBody2D
-
+var marker_offset : float = 0
+var marker_original_offset = 40
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var jump_count = 0
@@ -130,14 +131,14 @@ func _unhandled_input(_event):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
 			carrying = false
-			carryingBody.translate(velocity/7)
-			carryingBody.apply_central_impulse(velocity*movement_data.strength)
+			carryingBody.set_axis_velocity(velocity)
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
+			marker_offset = 0
 			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
 			return
-		
+			
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
 				carrying = true
@@ -149,6 +150,34 @@ func _unhandled_input(_event):
 				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
+				var tmp_node = carryingBody.get_node("cool")
+				match tmp_node.get_class() :
+					"CollisionShape2D" :
+						marker_offset = tmp_node.get_shape().radius
+					"CollisionPolygon2D" :
+						marker_offset = 40
+						var minX = 1000000000
+						#var minY = -1000000000
+						var maxX = -1000000000
+						#var maxY = 1000000000
+						for vec in tmp_node.polygon:
+							var x = vec.x
+							if (x < minX) :
+								minX = vec.x
+							if (x > maxX) :
+								maxX = vec.x
+							#if (vec.y > maxY) :
+							#	maxY = vec.y
+							#if (vec.y < minY) :
+							#	minY = vec.y
+						minX *= tmp_node.transform.get_scale().x
+						maxX *= tmp_node.transform.get_scale().x
+						marker_offset = (maxX - minX)/2.0
+						#TODO find a way to get the width of a collisionpolygon2d
+					_ :
+						print("Womp womp, object picked up is not of correct class")
+						marker_offset = 0
+				return
 
 
 func inventory():
@@ -166,15 +195,14 @@ func rotateCharacter(directioning):
 		return
 	if directioning == -1:
 		get_node("AnimatedSprite2D").flip_h = false
-		$ActionableFinder.position.x = -100
-		$ObjectFinder.position.x = -52
-		
-		$Marker2D.position.x = -10
+		$ActionableFinder.position.x = -50
+		$ObjectFinder.position.x = -50
+		$Marker2D.position.x = -abs(marker_original_offset + marker_offset)
 	else:
 		get_node("AnimatedSprite2D").flip_h = true
-		$ActionableFinder.position.x = 12
-		$ObjectFinder.position.x = 0
-		$Marker2D.position.x = 96
+		$ActionableFinder.position.x = 50
+		$ObjectFinder.position.x = 50
+		$Marker2D.position.x = abs(marker_original_offset + marker_offset)
 
 func landing():
 	## Animates the landing
