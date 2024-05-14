@@ -201,6 +201,9 @@ func landing():
 
 func jumpHandling():
 	if jump_count < max_jumps and !carrying:
+		if is_on_floor():
+			$Sounds/JumpGround.play()
+		$Sounds/JumpAir.play()
 		anim.play("jump")
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1

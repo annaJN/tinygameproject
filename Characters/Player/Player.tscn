@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=175 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cy4uqdjh2nme0" path="res://Assets/Spritesheets/Player/running_spritesheet2.png" id="9_711yp"]
 [ext_resource type="AudioStream" uid="uid://d1bvjpskbrmbm" path="res://Assets/Sound/SFX/recharge/ritsch.wav" id="14_yg73y"]
 [ext_resource type="AudioStream" uid="uid://bqbaqr8veaoy0" path="res://Assets/Sound/SFX/recharge/ratsch.wav" id="15_bqtvt"]
+[ext_resource type="AudioStream" uid="uid://k2cj37i8vx18" path="res://Assets/Sound/SFX/jump/jump_ground.wav" id="16_tkrnc"]
+[ext_resource type="AudioStream" uid="uid://cdrwk0vit88ko" path="res://Assets/Sound/SFX/jump/jump_mid_air.wav" id="17_pjjmp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7radb"]
 atlas = ExtResource("3_xiy85")
@@ -1389,6 +1391,12 @@ stream = ExtResource("14_yg73y")
 
 [node name="CloseInventory" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("15_bqtvt")
+
+[node name="JumpGround" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("16_tkrnc")
+
+[node name="JumpAir" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("17_pjjmp")
 
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]

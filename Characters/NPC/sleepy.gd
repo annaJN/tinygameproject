@@ -49,14 +49,12 @@ func _on_stone_on_head_collision_body_entered(body):
 		wakeUp("wake_up")
 		Global.snorlax_state_angry_at_player = true
 		playSound(body)
-		#disableHitBoxes()
 
 func _on_stone_on_the_side_collision_body_entered(body):
 	if body is RigidBody2D:
 		wakeUp("wake_up")
 		Global.sleepy_awaken = true
 		playSound(body)
-		#disableHitBoxes()
 
 func playSound(bodyn):
 	bodyn.get_node("AudioStreamPlayer").play()
