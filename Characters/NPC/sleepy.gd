@@ -22,7 +22,6 @@ func _physics_process(delta):
 		$AnimatedSprite2D.position.y -= 75 * delta
 		if $AnimationPlayer.get_current_animation() == "idle":
 			waking = false
-			#Global.sleepyDone = true
 	else:
 		$AnimatedSprite2D.position.y = 0
 		$AnimatedSprite2D.position.x = 70
@@ -39,6 +38,9 @@ func _physics_process(delta):
 			Global.removeSleepy = true
 		
 	move_and_slide()
+	
+	if $AnimationPlayer.get_current_animation() == "wake_up" and !get_node("StoneOnHeadCollision/coollision").is_disabled():
+		disableHitBoxes()
 
 func _on_stone_on_head_collision_body_entered(body):
 	if body is RigidBody2D:
@@ -46,11 +48,20 @@ func _on_stone_on_head_collision_body_entered(body):
 		## ska vakna upp mer aggresivt när den landar på huvudet vilket är denna funktionen
 		wakeUp("wake_up")
 		Global.snorlax_state_angry_at_player = true
+		playSound(body)
 
 func _on_stone_on_the_side_collision_body_entered(body):
 	if body is RigidBody2D:
 		wakeUp("wake_up")
 		Global.sleepy_awaken = true
+		playSound(body)
+
+func playSound(bodyn):
+	bodyn.get_node("AudioStreamPlayer").play()
+
+func disableHitBoxes():
+	get_node("StoneOnHeadCollision/coollision").set_disabled(true)
+	get_node("StoneOnTheSideCollision/coolision").set_disabled(true)
 
 func wakeUp(animation):
 	waking = true
