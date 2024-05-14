@@ -10,7 +10,9 @@
 			#Guarding the edges of their territory
 
 ~ snorlax_start
-if Global.snorlax_state_angry_at_player
+if Global.dena_in_village
+	=> dena_in_village
+elif Global.snorlax_state_angry_at_player
 	=> snorlax_angry_start
 elif Global.sleepy_awaken
 	=> sleepy_awake
@@ -31,6 +33,7 @@ Sleepy Creature: *sits up and looks around*
 		Sleepy Creature: Oh, well hello there. 
 => snorlax_introduction
 - *Sneak away*
+		do Global.dena_not_met = true
 		=> END
 - *Try to hide in the grass*
 	do Dialogue.Snorlax_spotted_you = true
@@ -70,6 +73,7 @@ Dena: Nice to meet you little one. Tell me, what are you doing here?
 	Dena: Hmm. 
 	Dena: I haven't seen that here before. 
 	Dena: I'm sorry, I can't help you.
+	Dena: Perhaps the dragon can help you. They reside in my village and know much about this world.
 - Just exploring the surroundings
 	Dena: Well, then don't go to far.
 	Dena: The woods get more treacherous the further in you go. 
@@ -86,8 +90,9 @@ Dena: If you come by my village come say hi will you.
 	Dena:
 - *Leave* => END
 
-#Needs to be fixed
+
 ~ snorlax_angry_start
+
 Sleepy Creature: [shake rate=20 level=10]!!![/shake][next=auto]
 Sleepy Creature: [shake rate=20 level=10]What in the[speed=0.2]...[/shake]
 Sleepy Creature: *looks around and locks eyes with you*
@@ -104,6 +109,7 @@ Sleepy Creature: [shake rate=20 level=10]Did you do that[/shake]
 	- I'm sorry. I didn't mean to hit you. 
 		Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. 
 		Sleepy Creature: None the matter, I have to get back to the village.
+		do Global.snorlax_state_angry_at_player = false 
 		=> leave
 	- ...
 		Sleepy Creature: *snort*
@@ -111,6 +117,48 @@ Sleepy Creature: [shake rate=20 level=10]Did you do that[/shake]
 => END
 
 ~ leave 
+do Global.dena_in_village = true
 do Global.sleepy_dialogue_done = true
+=> END
 
+
+~ dena_in_village
+if snorlax_state_angry_at_player
+	=> dena_village_mad
+elif dena_not_met 
+	=> village_first
+else 
+	=> dena_village_nice
+
+~ dena_village_nice
+Dena: Hello! We meet again. 
+- Hello
+	*Dena smiles at you.
+- What is that tree?
+	Dena: Oh, thats where the dragon lives.
+	Dena: They have been here forever, know all there is about this world. 
+=> END
+
+~ dena_village_mad
+Dena: ...
+Dena: ...!
+- Hello, sorry about before. 
+	Dena: *snort* 
+	Dena: You are forgiven. 
+	Dena: It wasn't the best nap spot. 
+	- What is that tree?
+	Dena: Oh, thats where the dragon lives.
+	Dena: They have been here forever, know all there is about this world. 
+- ...
+=> END
+
+~ village_first
+Creature: Hello! I'm Dena. 
+Dena: Hmm, you smell familiar. Ah never mind me. Who are you? 
+- I'm me. 
+	Dena: Ah, Hello [wave amp=25 freq=3]me[/wave].
+	Dena: Nice to meet you.
+- ... 
+Dena: ...
+do Global.dena_not_met = false
 => END
