@@ -2600,7 +2600,7 @@ shape = SubResource("CapsuleShape2D_t7cbh")
 collision_layer = 4
 collision_mask = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneOnHeadCollision"]
+[node name="coollision" type="CollisionShape2D" parent="StoneOnHeadCollision"]
 position = Vector2(-56, -40)
 shape = SubResource("CircleShape2D_qgdu5")
 
@@ -2609,7 +2609,7 @@ position = Vector2(-208, 0)
 collision_layer = 4
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneOnTheSideCollision"]
+[node name="coolision" type="CollisionShape2D" parent="StoneOnTheSideCollision"]
 position = Vector2(-144, 104)
 shape = SubResource("RectangleShape2D_pvfh1")
 
