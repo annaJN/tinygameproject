@@ -1216,6 +1216,9 @@ corner_radius_bottom_left = 40
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fed2t"]
 size = Vector2(100, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4emgs"]
+size = Vector2(20, 106)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 collision_layer = 2
@@ -1357,6 +1360,9 @@ text = "HP
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-40, 0)
 
+[node name="HeavyMarker" type="Marker2D" parent="."]
+position = Vector2(96, 89)
+
 [node name="NewItemUI" parent="." instance=ExtResource("9_0uwsx")]
 visible = false
 
@@ -1368,6 +1374,13 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectFinder"]
 shape = SubResource("RectangleShape2D_fed2t")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="groundDefinition" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(35, 120)
+shape = SubResource("RectangleShape2D_4emgs")
+
 [connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Camera2D/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

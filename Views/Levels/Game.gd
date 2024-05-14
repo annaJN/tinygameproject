@@ -1,18 +1,25 @@
 extends Node2D
 
-var Player = preload("res://Characters/Player/Player.tscn")
+var PlayerSomething = preload("res://Characters/Player/Player.tscn")
 var Sleepy = preload("res://Characters/NPC/sleepy.tscn")
+var Dragon = preload("res://Characters/NPC/dragon.tscn")
 
 var tmpSleepy
+var tmpDragon
+var dragonInstantiated = false
 
 func _init():
-	var tmpPlayer = Player.instantiate()
+	var tmpPlayer = PlayerSomething.instantiate()
 	tmpPlayer.position = Vector2(SaveGame.positionX, SaveGame.positionY)
 	add_child(tmpPlayer)
 	
 	tmpSleepy = Sleepy.instantiate()
 	tmpSleepy.position = Vector2(2813, 761)
 	add_child(tmpSleepy)
+	
+	tmpDragon = Dragon.instantiate()
+	tmpDragon.position = Vector2(11000, 60)
+	#add_child(tmpDragon)
 
 func _input(event):
 	# a tmp way to turn off the game by pressing Q
@@ -34,11 +41,16 @@ func _on_area_2d_body_entered(body):
 func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 	
+	if !dragonInstantiated and get_node("Player").position.x >= 9500:
+		add_child(tmpDragon)
+		dragonInstantiated = true
+	
 	if Global.removeSleepy:
-		print("REMOVING SLEEPY")
 		get_node("Sleepy").queue_free()
 		Global.removeSleepy = false
 		
+	
+	
 	
 	#if SaveGame.health <= 0:
 		#get_tree().change_scene_to_file("res://Main.tscn")
