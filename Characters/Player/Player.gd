@@ -276,11 +276,13 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	SaveGame.positionX = self.position.x
-	SaveGame.positionY = self.position.y
-	SaveGame.sceneActive = get_tree().current_scene.name
+	Global.positionX = self.position.x
+	Global.positionY = self.position.y
+	Global.savedGame = true
 	SaveGame.saveGame()
+	Global.savedGame = true
 	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	Global.justSaved = true
 
 func _on_main_menu_pressed():
 	get_tree().paused = false
@@ -300,5 +302,5 @@ func _on_object_finder_body_entered(body):
 		wallBody = true
 
 
-func _on_object_finder_body_exited(body):
+func _on_object_finder_body_exited(_body):
 	wallBody = false
