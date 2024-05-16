@@ -281,6 +281,7 @@ func _on_resume_pressed():
 func _on_save_pressed():
 	Global.positionX = self.position.x
 	Global.positionY = self.position.y
+	Global.savedGame = true
 	SaveGame.saveGame()
 	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 

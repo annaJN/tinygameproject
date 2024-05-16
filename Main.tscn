@@ -57,6 +57,14 @@ text = "Quit"
 stream = ExtResource("3_an4bf")
 autoplay = true
 
+[node name="Message" type="Label" parent="."]
+offset_left = 738.0
+offset_top = 238.0
+offset_right = 1064.0
+offset_bottom = 316.0
+theme_override_font_sizes/font_size = 50
+text = "A Message"
+
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Halfway" to="." method="_on_halfway_pressed"]
