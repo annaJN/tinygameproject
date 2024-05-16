@@ -349,7 +349,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_8frmr"]
 script = ExtResource("6_ldgbf")
-position = Vector2(4152.56, 880.144)
+position = Vector2(4193.17, 1136.57)
 point_in = Vector2(-1265.43, 5.33936)
 point_out = Vector2(1265.43, -5.33936)
 properties = SubResource("Resource_8oeef")
@@ -362,7 +362,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_0xn0t"]
 script = ExtResource("6_ldgbf")
-position = Vector2(6712.23, 1235.98)
+position = Vector2(6636.63, 1150.3)
 point_in = Vector2(-491.221, -74.751)
 point_out = Vector2(491.221, 74.751)
 properties = SubResource("Resource_u7uou")
@@ -770,6 +770,7 @@ script = ExtResource("1_l4e1y")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Back" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -374)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1375, 0)
 
@@ -788,9 +789,8 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(122, -52)
+position = Vector2(224, -403)
 motion_scale = Vector2(0.2, 0.2)
-metadata/_edit_lock_ = true
 
 [node name="BlurryTree7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(1, 1, 1, 0.580392)
@@ -887,9 +887,8 @@ texture = ExtResource("4_s3inw")
 flip_h = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(369, 9)
+position = Vector2(369, -296)
 motion_scale = Vector2(0.4, 0.4)
-metadata/_edit_lock_ = true
 
 [node name="BlurryTree2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(499, 141)
@@ -971,8 +970,8 @@ shape_material = SubResource("Resource_4ufgc")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(38, -284)
 motion_scale = Vector2(0.7, 0.7)
-metadata/_edit_lock_ = true
 
 [node name="UntitledArtwork7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(-28, -630)
@@ -1009,7 +1008,6 @@ scroll_offset = Vector2(0, 185.669)
 motion_offset = Vector2(0, 1.43)
 
 [node name="Interactables" type="Node2D" parent="."]
-position = Vector2(0, 305)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Interactables"]
 position = Vector2(9440, 64)
@@ -1708,7 +1706,7 @@ position = Vector2(6456, 619)
 visible = false
 
 [node name="LeafyBranch" type="Sprite2D" parent="."]
-position = Vector2(650, 353)
+position = Vector2(692, -7.00003)
 scale = Vector2(0.570892, 0.570892)
 texture = ExtResource("45_0gwmh")
 
