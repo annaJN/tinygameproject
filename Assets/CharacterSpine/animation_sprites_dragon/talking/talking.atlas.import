@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cb5we2x6qk5tu"
+path="res://.godot/imported/talking.atlas-c7e8586c0be50a1a343af265bb844ade.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_dragon/talking/talking.atlas"
+dest_files=["res://.godot/imported/talking.atlas-c7e8586c0be50a1a343af265bb844ade.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

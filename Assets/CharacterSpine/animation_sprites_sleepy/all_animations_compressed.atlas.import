@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c4vvstvd5li5j"
+path="res://.godot/imported/all_animations_compressed.atlas-1d17e70e769cb9f417c01348a40681fc.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_sleepy/all_animations_compressed.atlas"
+dest_files=["res://.godot/imported/all_animations_compressed.atlas-1d17e70e769cb9f417c01348a40681fc.spatlas"]
+
+[params]
+
+normal_map_prefix="n"

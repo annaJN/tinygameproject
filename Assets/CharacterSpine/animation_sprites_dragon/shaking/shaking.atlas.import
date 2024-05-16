@@ -1,0 +1,15 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://xykkvdhrcgln"
+path="res://.godot/imported/shaking.atlas-d1024a1612a2ab1b3aaa91bd1d76bcac.spatlas"
+
+[deps]
+
+source_file="res://Assets/CharacterSpine/animation_sprites_dragon/shaking/shaking.atlas"
+dest_files=["res://.godot/imported/shaking.atlas-d1024a1612a2ab1b3aaa91bd1d76bcac.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
