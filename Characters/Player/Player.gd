@@ -300,5 +300,5 @@ func _on_object_finder_body_entered(body):
 		wallBody = true
 
 
-func _on_object_finder_body_exited(body):
+func _on_object_finder_body_exited(_body):
 	wallBody = false
