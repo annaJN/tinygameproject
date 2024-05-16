@@ -2,11 +2,14 @@ extends Node2D
 
 var PlayerSomething = preload("res://Characters/Player/Player.tscn")
 var Sleepy = preload("res://Characters/NPC/sleepy.tscn")
+var BerryPicker = preload("res://Characters/NPC/berry_picker.tscn")
 var Dragon = preload("res://Characters/NPC/dragon.tscn")
 var Mushroom = preload("res://Objects/save_point.tscn")
 
 var tmpSleepy
+var tmpPicker
 var tmpDragon
+var pickerInstantiated = false
 var dragonInstantiated = false
 
 func _init():
@@ -43,6 +46,12 @@ func _on_area_2d_body_entered(body):
 func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 	var tmpPlayerPos = get_node("Player").position.x
+	
+	if !pickerInstantiated and tmpPlayerPos >= 7600:
+		tmpPicker = BerryPicker.instantiate()
+		tmpPicker.position = Vector2(8650, 720)
+		add_child(tmpPicker)
+		pickerInstantiated = true
 	
 	if !dragonInstantiated and tmpPlayerPos >= 9500:
 		tmpDragon = Dragon.instantiate()
