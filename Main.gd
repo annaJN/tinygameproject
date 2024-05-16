@@ -26,8 +26,9 @@ func _on_halfway_pressed():
 		$Message.text = "You have yet to pass the halfway savepoint"
 		return
 	#ändra till riktiga värden!!!
-	Global.positionX = 2000
-	Global.positionY = 2000
+	Global.passedHalfway = false
+	Global.positionX = 2050
+	Global.positionY = 750
 	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
 
 func _on_settings_pressed():

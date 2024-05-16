@@ -40,9 +40,6 @@ func _ready():
 func _process(_delta):
 	## Display the health of the player by a label
 	hp.text = "HP " + str(Global.health)
-	
-	if position.x > 500:
-		Global.passedHalfway = true
 
 func _physics_process(delta):
 	## Add the gravity to the player
