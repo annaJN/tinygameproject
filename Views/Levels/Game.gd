@@ -10,16 +10,12 @@ var dragonInstantiated = false
 
 func _init():
 	var tmpPlayer = PlayerSomething.instantiate()
-	tmpPlayer.position = Vector2(SaveGame.positionX, SaveGame.positionY)
+	tmpPlayer.position = Vector2(Global.positionX, Global.positionY)
 	add_child(tmpPlayer)
 	
 	tmpSleepy = Sleepy.instantiate()
 	tmpSleepy.position = Vector2(2813, 761)
 	add_child(tmpSleepy)
-	
-	tmpDragon = Dragon.instantiate()
-	tmpDragon.position = Vector2(11000, 60)
-	#add_child(tmpDragon)
 
 func _input(event):
 	# a tmp way to turn off the game by pressing Q
@@ -42,6 +38,8 @@ func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 	
 	if !dragonInstantiated and get_node("Player").position.x >= 9500:
+		tmpDragon = Dragon.instantiate()
+		tmpDragon.position = Vector2(11000, 60)
 		add_child(tmpDragon)
 		dragonInstantiated = true
 	

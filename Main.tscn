@@ -38,6 +38,11 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Resume Game"
 
+[node name="Halfway" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer" groups=["Saves"]]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Resume halfway"
+
 [node name="Settings" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
@@ -54,5 +59,6 @@ autoplay = true
 
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Halfway" to="." method="_on_halfway_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

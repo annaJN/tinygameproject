@@ -40,6 +40,9 @@ func _ready():
 func _process(_delta):
 	## Display the health of the player by a label
 	hp.text = "HP " + str(Global.health)
+	
+	if position.x > 500:
+		Global.passedHalfway = true
 
 func _physics_process(delta):
 	## Add the gravity to the player
@@ -276,9 +279,8 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	SaveGame.positionX = self.position.x
-	SaveGame.positionY = self.position.y
-	SaveGame.sceneActive = get_tree().current_scene.name
+	Global.positionX = self.position.x
+	Global.positionY = self.position.y
 	SaveGame.saveGame()
 	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 
