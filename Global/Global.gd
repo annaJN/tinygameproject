@@ -9,6 +9,7 @@ var accessible : bool
 var positionX
 var positionY
 var savedGame
+var justSaved
 var passedHalfway
 
 var movement = "res://Characters/Player/DefaultMovementData.tres"

@@ -3,6 +3,7 @@ extends Node2D
 var PlayerSomething = preload("res://Characters/Player/Player.tscn")
 var Sleepy = preload("res://Characters/NPC/sleepy.tscn")
 var Dragon = preload("res://Characters/NPC/dragon.tscn")
+var Mushroom = preload("res://Objects/save_point.tscn")
 
 var tmpSleepy
 var tmpDragon
@@ -16,6 +17,13 @@ func _init():
 	tmpSleepy = Sleepy.instantiate()
 	tmpSleepy.position = Vector2(2813, 761)
 	add_child(tmpSleepy)
+	
+	var tmpMushroom = Mushroom.instantiate()
+	tmpMushroom.position = Vector2(Global.positionX, Global.positionY)
+	add_child(tmpMushroom)
+	if !Global.savedGame:
+		tmpMushroom.set_visible(false)
+	
 
 func _input(event):
 	# a tmp way to turn off the game by pressing Q
@@ -48,6 +56,11 @@ func _process(_delta):
 		Global.removeSleepy = false
 		
 	
+	if Global.justSaved:
+		var mushroom = get_node("SavePoint")
+		mushroom.position = get_node("Player").position
+		mushroom.set_visible(true)
+		Global.justSaved = false
 	
 	
 	#if SaveGame.health <= 0:

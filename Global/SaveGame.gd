@@ -2,18 +2,14 @@ extends Node
 
 const SAVE_PATH = "res://savegame.bin"
 
-#var positionX
-#var positionY
-#var sceneActive
-var halfway
-
 func saveGame():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var data: Dictionary = {
 		"playerHealth": Global.health,
 		"xPosition": Global.positionX,
 		"yPosition": Global.positionY,
-		"test": Global.passedHalfway,
+		"halfway": Global.passedHalfway,
+		"gameSaved": Global.savedGame,
 	}
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
@@ -28,6 +24,7 @@ func loadGame():
 				Global.health = current_line["playerHealth"]
 				Global.positionX = current_line["xPosition"]
 				Global.positionY = current_line["yPosition"]
-				Global.passedHalfway = current_line["test"]
+				Global.passedHalfway = current_line["halfway"]
+				Global.savedGame = current_line["gameSaved"]
 				
 

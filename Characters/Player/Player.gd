@@ -283,7 +283,9 @@ func _on_save_pressed():
 	Global.positionY = self.position.y
 	Global.savedGame = true
 	SaveGame.saveGame()
+	Global.savedGame = true
 	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	Global.justSaved = true
 
 func _on_main_menu_pressed():
 	get_tree().paused = false

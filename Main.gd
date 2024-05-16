@@ -1,6 +1,7 @@
 extends Node2D
 
 func _on_start_pressed():
+	$Message.text = "Starting Game!"
 	Global.health = 50
 	Global.positionX = 100
 	Global.positionY = 650
@@ -11,6 +12,7 @@ func _on_start_pressed():
 
 ## A button to start the last loaded game (hopefully)
 func _on_load_pressed():
+	SaveGame.loadGame()
 	if !Global.savedGame:
 		$Message.text = "No saved game available"
 		return
