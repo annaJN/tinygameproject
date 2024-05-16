@@ -6,5 +6,5 @@
 z_index = -11
 
 [node name="Mushroom" type="Sprite2D" parent="."]
-position = Vector2(0, -150)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_mly6v")
