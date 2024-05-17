@@ -281,8 +281,8 @@ func show_new_item_ui(item):
 ## 
 ## Pause menu functionality
 func _on_resume_pressed():
-	$PauseMenu/Save.modulate = Color(1,1,1,1)	
-	$PauseMenu.hide()
+	$PauseMenuUI/PauseMenu/Save.modulate = Color(1,1,1,1)	
+	$PauseMenuUI.hide()
 	get_tree().paused = false
 
 func _on_save_pressed():
@@ -291,7 +291,7 @@ func _on_save_pressed():
 	Global.savedGame = true
 	SaveGame.saveGame()
 	Global.savedGame = true
-	$PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	$PauseMenuUI/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 	Global.justSaved = true
 
 func _on_main_menu_pressed():
