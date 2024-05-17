@@ -842,7 +842,7 @@ script = ExtResource("1_l4e1y")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -50
 follow_viewport_scale = 0.001
-scroll_offset = Vector2(-6.45068, -116.79)
+scroll_offset = Vector2(-3254.09, -785.349)
 
 [node name="Back" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, -374)
@@ -1056,7 +1056,7 @@ texture = ExtResource("24_ldbxk")
 metadata/_edit_lock_ = true
 
 [node name="Tree3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(3769.5, -49.694)
+position = Vector2(4072, -35)
 scale = Vector2(3.6866, 3.6866)
 texture = ExtResource("24_qhepy")
 metadata/_edit_lock_ = true
@@ -1912,6 +1912,7 @@ visible = false
 
 [node name="Foreground" type="ParallaxBackground" parent="."]
 layer = 2
+scroll_offset = Vector2(-3254.09, -785.349)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground"]
 motion_scale = Vector2(1.2, 1.2)
