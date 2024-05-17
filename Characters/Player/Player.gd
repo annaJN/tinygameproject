@@ -133,8 +133,8 @@ func _unhandled_input(_event):
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
-			marker_offset = 0
 			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+			$Marker2D.location.x = marker_original_offset * self.get_scale().x
 			return
 			
 		for body in bodies:
@@ -164,9 +164,6 @@ func _unhandled_input(_event):
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
 						print("Womp womp, object picked up is not of correct class")
-				if not get_node("AnimatedSprite2D").flip_h :
-					marker_offset *= -1
-				$Marker2D.position.x = marker_offset
 				if body.is_in_group("Heavy"):
 					Global.movement = "res://Characters/Player/DragMovement.tres"
 					carryingBody.freeze = false
