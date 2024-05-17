@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://csvjprnmnh1p" path="res://Assets/Environment/Branches/branch_platform.png" id="51_enn0w"]
 [ext_resource type="Texture2D" uid="uid://cbvu6jx02bfue" path="res://Assets/Environment/Branches/moss6.png" id="59_pk7me"]
 
-[sub_resource type="Resource" id="Resource_xc6wx"]
+[sub_resource type="Resource" id="Resource_sdcra"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -73,9 +73,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(-439.319, 877.702)
 point_in = Vector2(-705.556, 35.2778)
 point_out = Vector2(705.556, -35.2778)
-properties = SubResource("Resource_xc6wx")
+properties = SubResource("Resource_sdcra")
 
-[sub_resource type="Resource" id="Resource_owa40"]
+[sub_resource type="Resource" id="Resource_esx4k"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -86,9 +86,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(1508.48, 1178.77)
 point_in = Vector2(-735.794, -15.1191)
 point_out = Vector2(539.246, -5.03955)
-properties = SubResource("Resource_owa40")
+properties = SubResource("Resource_esx4k")
 
-[sub_resource type="Resource" id="Resource_wftvs"]
+[sub_resource type="Resource" id="Resource_2xye5"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -99,9 +99,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(3101.02, 972.145)
 point_in = Vector2(-448.532, -5.03967)
 point_out = Vector2(448.532, 5.03967)
-properties = SubResource("Resource_wftvs")
+properties = SubResource("Resource_2xye5")
 
-[sub_resource type="Resource" id="Resource_tqf35"]
+[sub_resource type="Resource" id="Resource_d1och"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -112,7 +112,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(4612.93, 1566.83)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_tqf35")
+properties = SubResource("Resource_d1och")
 
 [sub_resource type="Resource" id="Resource_c077h"]
 script = ExtResource("7_px6i0")
@@ -169,7 +169,7 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Resource" id="Resource_61wm3"]
+[sub_resource type="Resource" id="Resource_ghnr7"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -180,9 +180,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(-573.354, 855.245)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_61wm3")
+properties = SubResource("Resource_ghnr7")
 
-[sub_resource type="Resource" id="Resource_f1mvn"]
+[sub_resource type="Resource" id="Resource_xkund"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -193,9 +193,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(937.512, 1108.22)
 point_in = Vector2(-543.058, 5.65698)
 point_out = Vector2(543.058, -5.65698)
-properties = SubResource("Resource_f1mvn")
+properties = SubResource("Resource_xkund")
 
-[sub_resource type="Resource" id="Resource_d052a"]
+[sub_resource type="Resource" id="Resource_1dmlf"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -206,9 +206,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(2462.22, 1189.36)
 point_in = Vector2(-758.018, -28.2842)
 point_out = Vector2(758.018, 28.2842)
-properties = SubResource("Resource_d052a")
+properties = SubResource("Resource_1dmlf")
 
-[sub_resource type="Resource" id="Resource_igtyi"]
+[sub_resource type="Resource" id="Resource_43cde"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -219,9 +219,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(4729.32, 1055.16)
 point_in = Vector2(-623.296, 65.9257)
 point_out = Vector2(623.296, -65.9257)
-properties = SubResource("Resource_igtyi")
+properties = SubResource("Resource_43cde")
 
-[sub_resource type="Resource" id="Resource_oadpu"]
+[sub_resource type="Resource" id="Resource_i5jt8"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -232,9 +232,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(7515.48, 1172.6)
 point_in = Vector2(-978.636, -124.451)
 point_out = Vector2(978.636, 124.451)
-properties = SubResource("Resource_oadpu")
+properties = SubResource("Resource_i5jt8")
 
-[sub_resource type="Resource" id="Resource_dfbma"]
+[sub_resource type="Resource" id="Resource_xw8kt"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -245,9 +245,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(10303.4, 1600.45)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_dfbma")
+properties = SubResource("Resource_xw8kt")
 
-[sub_resource type="Resource" id="Resource_kj5ml"]
+[sub_resource type="Resource" id="Resource_5jf6a"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -258,7 +258,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(-171.618, 925)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_kj5ml")
+properties = SubResource("Resource_5jf6a")
 
 [sub_resource type="Resource" id="Resource_fso2a"]
 script = ExtResource("7_px6i0")
@@ -318,7 +318,7 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Resource" id="Resource_1xmso"]
+[sub_resource type="Resource" id="Resource_33qhw"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -329,9 +329,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(-170.864, 1022.82)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_1xmso")
+properties = SubResource("Resource_33qhw")
 
-[sub_resource type="Resource" id="Resource_lp20j"]
+[sub_resource type="Resource" id="Resource_536bq"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -342,9 +342,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(849.89, 1139.67)
 point_in = Vector2(-352.398, -5.33936)
 point_out = Vector2(352.398, 5.33936)
-properties = SubResource("Resource_lp20j")
+properties = SubResource("Resource_536bq")
 
-[sub_resource type="Resource" id="Resource_af548"]
+[sub_resource type="Resource" id="Resource_q6d3q"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -355,9 +355,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(1738.34, 1109.03)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_af548")
+properties = SubResource("Resource_q6d3q")
 
-[sub_resource type="Resource" id="Resource_nlc0p"]
+[sub_resource type="Resource" id="Resource_hftfq"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -368,9 +368,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(4193.17, 1136.57)
 point_in = Vector2(-1265.43, 5.33936)
 point_out = Vector2(1265.43, -5.33936)
-properties = SubResource("Resource_nlc0p")
+properties = SubResource("Resource_hftfq")
 
-[sub_resource type="Resource" id="Resource_akihj"]
+[sub_resource type="Resource" id="Resource_6npax"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -381,9 +381,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(6097.38, 1215.82)
 point_in = Vector2(-491.221, -74.751)
 point_out = Vector2(491.221, 74.751)
-properties = SubResource("Resource_akihj")
+properties = SubResource("Resource_6npax")
 
-[sub_resource type="Resource" id="Resource_f17oi"]
+[sub_resource type="Resource" id="Resource_6qel2"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -394,9 +394,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(7539.51, 1561.26)
 point_in = Vector2(-453.846, 5.33936)
 point_out = Vector2(453.846, -5.33936)
-properties = SubResource("Resource_f17oi")
+properties = SubResource("Resource_6qel2")
 
-[sub_resource type="Resource" id="Resource_14jup"]
+[sub_resource type="Resource" id="Resource_qkuap"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -407,9 +407,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(10240, 710.808)
 point_in = Vector2(-555.293, 149.502)
 point_out = Vector2(555.293, -149.502)
-properties = SubResource("Resource_14jup")
+properties = SubResource("Resource_qkuap")
 
-[sub_resource type="Resource" id="Resource_ygh7g"]
+[sub_resource type="Resource" id="Resource_oeb7q"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -420,7 +420,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(11814.8, 545.718)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_ygh7g")
+properties = SubResource("Resource_oeb7q")
 
 [sub_resource type="Resource" id="Resource_f4n3h"]
 script = ExtResource("7_px6i0")
@@ -481,7 +481,7 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Resource" id="Resource_8bjnc"]
+[sub_resource type="Resource" id="Resource_5oil4"]
 script = ExtResource("5_5t0x4")
 texture_idx = -1
 flip = false
@@ -492,9 +492,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(10027, 6385.45)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_8bjnc")
+properties = SubResource("Resource_5oil4")
 
-[sub_resource type="Resource" id="Resource_dox2p"]
+[sub_resource type="Resource" id="Resource_iu3np"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -505,9 +505,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(36563.4, 3795.76)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_dox2p")
+properties = SubResource("Resource_iu3np")
 
-[sub_resource type="Resource" id="Resource_bcsvr"]
+[sub_resource type="Resource" id="Resource_7yvan"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -518,9 +518,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(43135.2, 6013.22)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_bcsvr")
+properties = SubResource("Resource_7yvan")
 
-[sub_resource type="Resource" id="Resource_teupj"]
+[sub_resource type="Resource" id="Resource_n71d5"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -531,9 +531,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(43336.8, 12262.4)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_teupj")
+properties = SubResource("Resource_n71d5")
 
-[sub_resource type="Resource" id="Resource_j8usu"]
+[sub_resource type="Resource" id="Resource_abnh5"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -544,9 +544,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(10057.1, 10812.3)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_j8usu")
+properties = SubResource("Resource_abnh5")
 
-[sub_resource type="Resource" id="Resource_gsxn3"]
+[sub_resource type="Resource" id="Resource_y4n8d"]
 script = ExtResource("5_5t0x4")
 texture_idx = -1
 flip = false
@@ -557,9 +557,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(10027, 6385.45)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_gsxn3")
+properties = SubResource("Resource_y4n8d")
 
-[sub_resource type="Resource" id="Resource_smx3v"]
+[sub_resource type="Resource" id="Resource_wvp87"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -570,9 +570,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(13541.3, 6496.35)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_smx3v")
+properties = SubResource("Resource_wvp87")
 
-[sub_resource type="Resource" id="Resource_oxclv"]
+[sub_resource type="Resource" id="Resource_b21bb"]
 script = ExtResource("5_5t0x4")
 texture_idx = -7
 flip = false
@@ -583,9 +583,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(17572.5, 6545.3)
 point_in = Vector2(-443.993, -134.543)
 point_out = Vector2(218.633, 67.2715)
-properties = SubResource("Resource_oxclv")
+properties = SubResource("Resource_b21bb")
 
-[sub_resource type="Resource" id="Resource_3pyqt"]
+[sub_resource type="Resource" id="Resource_gwvt0"]
 script = ExtResource("5_5t0x4")
 texture_idx = 7
 flip = false
@@ -596,9 +596,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(18603.9, 6868.69)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_3pyqt")
+properties = SubResource("Resource_gwvt0")
 
-[sub_resource type="Resource" id="Resource_djn14"]
+[sub_resource type="Resource" id="Resource_fe4ka"]
 script = ExtResource("5_5t0x4")
 texture_idx = -2
 flip = false
@@ -609,9 +609,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(18657, 6484.11)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_djn14")
+properties = SubResource("Resource_fe4ka")
 
-[sub_resource type="Resource" id="Resource_jby6p"]
+[sub_resource type="Resource" id="Resource_c7jbg"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -622,9 +622,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(18005.9, 6731.2)
 point_in = Vector2(-159.77, -68.9531)
 point_out = Vector2(158.088, 104.271)
-properties = SubResource("Resource_jby6p")
+properties = SubResource("Resource_c7jbg")
 
-[sub_resource type="Resource" id="Resource_cvfet"]
+[sub_resource type="Resource" id="Resource_k8go3"]
 script = ExtResource("5_5t0x4")
 texture_idx = -1
 flip = false
@@ -635,9 +635,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(18720.9, 6796.84)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_cvfet")
+properties = SubResource("Resource_k8go3")
 
-[sub_resource type="Resource" id="Resource_upxm2"]
+[sub_resource type="Resource" id="Resource_77i0s"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -648,7 +648,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(25103, 5442.9)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_upxm2")
+properties = SubResource("Resource_77i0s")
 
 [sub_resource type="Resource" id="Resource_5b5g5"]
 script = ExtResource("7_px6i0")
@@ -729,7 +729,7 @@ size = Vector2(50, 828.274)
 a = Vector2(-371, -151)
 b = Vector2(-117, 627)
 
-[sub_resource type="Resource" id="Resource_guqph"]
+[sub_resource type="Resource" id="Resource_mamnq"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -740,9 +740,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(-316.458, 881.213)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_guqph")
+properties = SubResource("Resource_mamnq")
 
-[sub_resource type="Resource" id="Resource_5rcdr"]
+[sub_resource type="Resource" id="Resource_5umt4"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -753,9 +753,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(3078.98, 1140.8)
 point_in = Vector2(-1693.38, 35.7917)
 point_out = Vector2(846.667, 40.3174)
-properties = SubResource("Resource_5rcdr")
+properties = SubResource("Resource_5umt4")
 
-[sub_resource type="Resource" id="Resource_gwyyn"]
+[sub_resource type="Resource" id="Resource_6kxvg"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -766,9 +766,9 @@ script = ExtResource("6_ldgbf")
 position = Vector2(8130.6, 1300.42)
 point_in = Vector2(-1682.41, -269.366)
 point_out = Vector2(1723.57, 423.333)
-properties = SubResource("Resource_gwyyn")
+properties = SubResource("Resource_6kxvg")
 
-[sub_resource type="Resource" id="Resource_rfl05"]
+[sub_resource type="Resource" id="Resource_2kgib"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -779,7 +779,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(10259.5, 1544.43)
 point_in = Vector2(-594.684, 80.6348)
 point_out = Vector2(594.684, -80.6348)
-properties = SubResource("Resource_rfl05")
+properties = SubResource("Resource_2kgib")
 
 [sub_resource type="Resource" id="Resource_thb0y"]
 script = ExtResource("7_px6i0")
@@ -1095,13 +1095,13 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="Level" type="Node2D" parent="."]
+[node name="Interactables" type="Node2D" parent="."]
 
-[node name="Ground" type="StaticBody2D" parent="Level" groups=["Landing"]]
+[node name="Ground" type="StaticBody2D" parent="Interactables" groups=["Landing"]]
 position = Vector2(-12898, 45)
 collision_mask = 5
 
-[node name="SS2D_Shape_Closed" type="Node2D" parent="Level/Ground"]
+[node name="SS2D_Shape_Closed" type="Node2D" parent="Interactables/Ground"]
 z_index = -10
 texture_repeat = 2
 position = Vector2(2668, -5728)
@@ -1110,84 +1110,83 @@ _points = SubResource("Resource_5b5g5")
 shape_material = SubResource("Resource_6ceri")
 collision_polygon_node_path = NodePath("../GroundCollision")
 
-[node name="GroundCollision" type="CollisionPolygon2D" parent="Level/Ground"]
+[node name="GroundCollision" type="CollisionPolygon2D" parent="Interactables/Ground"]
 visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(12694.9, 657.34, 16209.3, 768.35, 19423.3, 752.891, 19939.8, 776.568, 20122.1, 794.578, 20189.9, 805.321, 20240.5, 817.299, 20378, 865.03, 20479.3, 909.62, 20673.9, 1003.2, 20706.7, 1021.93, 20745, 1039.04, 20834, 1068.67, 21032.2, 1111.05, 21271.9, 1140.66, 21388.8, 1068.81, 21324.9, 756.024, 27771, -285.104, 39231.4, -1932.25, 45803.3, 285.166, 46004.9, 6534.51, 12725, 5084.4)
+polygon = PackedVector2Array(12694.9, 657.34, 16209.3, 768.35, 19423.3, 752.891, 19939.8, 776.568, 20122.1, 794.578, 20189.9, 805.321, 20240.5, 817.299, 20378, 865.03, 20479.3, 909.62, 20673.9, 1003.2, 20706.7, 1021.93, 20745, 1039.04, 20834, 1068.67, 21032.2, 1111.05, 21271.9, 1140.66, 21388.8, 1068.8, 21324.9, 756.022, 27771, -285.1, 39231.4, -1932.25, 45803.3, 285.166, 46004.9, 6534.51, 12725, 5084.4)
 
-[node name="LeftWall" type="CollisionShape2D" parent="Level/Ground"]
+[node name="LeftWall" type="CollisionShape2D" parent="Interactables/Ground"]
 visible = false
 position = Vector2(12817, 227)
 shape = SubResource("RectangleShape2D_go8ta")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/Ground"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Ground"]
 visible = false
 position = Vector2(45735, -247)
 shape = SubResource("RectangleShape2D_go8ta")
 
-[node name="Thorns" type="Sprite2D" parent="Level"]
+[node name="Thorns" type="Sprite2D" parent="Interactables"]
 visible = false
 position = Vector2(11052, 366)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("14_xs8uy")
 
-[node name="Area2D" type="Area2D" parent="Level/Thorns"]
+[node name="Area2D" type="Area2D" parent="Interactables/Thorns"]
 position = Vector2(-2270, 150)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Thorns/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Thorns/Area2D"]
 position = Vector2(10, 3.8147e-06)
 shape = SubResource("SegmentShape2D_yfjbp")
 
-[node name="Stone" parent="Level" instance=ExtResource("23_naswe")]
+[node name="Stone" parent="Interactables" instance=ExtResource("23_naswe")]
 position = Vector2(2650, 424)
 
-[node name="BigTree" type="Node2D" parent="Level"]
+[node name="BigTree" type="Node2D" parent="Interactables"]
 
-[node name="BackBranch" type="Sprite2D" parent="Level/BigTree"]
+[node name="BackBranch" type="Sprite2D" parent="Interactables/BigTree"]
 z_index = -19
 position = Vector2(1054, 678)
 rotation = 0.247763
 scale = Vector2(0.445055, 0.445055)
 texture = ExtResource("50_6g2ed")
 
-[node name="BigDead" type="Sprite2D" parent="Level/BigTree"]
+[node name="BigDead" type="Sprite2D" parent="Interactables/BigTree"]
 modulate = Color(0.741176, 0.737255, 0.666667, 1)
 z_index = -20
 position = Vector2(1589, 611)
 rotation = -0.194513
-scale = Vector2(1, 1)
 texture = ExtResource("29_hviyj")
 
-[node name="Moss4" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss4" type="Sprite2D" parent="Interactables/BigTree"]
 modulate = Color(0.74902, 0.74902, 0.74902, 1)
 z_index = -18
 position = Vector2(1809, 520)
 texture = ExtResource("38_4ghns")
 
-[node name="Moss" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss" type="Sprite2D" parent="Interactables/BigTree"]
 modulate = Color(0.74902, 0.74902, 0.74902, 1)
 z_index = -18
 position = Vector2(2168, 567)
 texture = ExtResource("39_woyai")
 
-[node name="Moss5" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss5" type="Sprite2D" parent="Interactables/BigTree"]
 modulate = Color(0.74902, 0.74902, 0.74902, 1)
 z_index = -18
 position = Vector2(1347, 603)
 rotation = -1.08865
 texture = ExtResource("40_doty2")
 
-[node name="HallelujahMountain" type="StaticBody2D" parent="Level/BigTree" groups=["Landing"]]
+[node name="HallelujahMountain" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
 z_index = -10
 position = Vector2(2526, 451)
 collision_mask = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigTree/HallelujahMountain"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigTree/HallelujahMountain"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
 one_way_collision = true
 
-[node name="BackBranch3" type="Sprite2D" parent="Level/BigTree/HallelujahMountain"]
+[node name="BackBranch3" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain"]
 modulate = Color(0.901961, 0.901961, 0.901961, 1)
 z_index = -18
 position = Vector2(-191, 110)
@@ -1196,7 +1195,7 @@ scale = Vector2(0.466375, 0.493512)
 texture = ExtResource("50_6g2ed")
 flip_h = true
 
-[node name="BackBranch2" type="Sprite2D" parent="Level/BigTree/HallelujahMountain"]
+[node name="BackBranch2" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain"]
 modulate = Color(0.811765, 0.811765, 0.811765, 1)
 z_index = -5
 position = Vector2(-64, 45)
@@ -1204,23 +1203,23 @@ rotation = 0.466577
 scale = Vector2(0.419724, 0.444146)
 texture = ExtResource("50_6g2ed")
 
-[node name="BranchPlatformSmall" type="Sprite2D" parent="Level/BigTree/HallelujahMountain"]
+[node name="BranchPlatformSmall" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain"]
 position = Vector2(172, 46)
 rotation = 0.154694
 scale = Vector2(0.579289, 0.579289)
 texture = ExtResource("38_qcrgj")
 
-[node name="HallelujahMountain2" type="StaticBody2D" parent="Level/BigTree" groups=["Landing"]]
+[node name="HallelujahMountain2" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
 z_index = -10
 position = Vector2(1684, 379)
 collision_mask = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigTree/HallelujahMountain2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigTree/HallelujahMountain2"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(0.00512695, -0.000518799, 239.998, 0.00151253, 239.998, 32.0015, 0.0048561, 31.9995)
 one_way_collision = true
 
-[node name="BackBranch2" type="Sprite2D" parent="Level/BigTree/HallelujahMountain2"]
+[node name="BackBranch2" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain2"]
 modulate = Color(0.811765, 0.811765, 0.811765, 1)
 z_index = -5
 position = Vector2(-64, 45)
@@ -1228,25 +1227,25 @@ rotation = 0.466577
 scale = Vector2(0.419724, 0.444146)
 texture = ExtResource("50_6g2ed")
 
-[node name="BranchPlatformSmall" type="Sprite2D" parent="Level/BigTree/HallelujahMountain2"]
+[node name="BranchPlatformSmall" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain2"]
 position = Vector2(172, 46)
 rotation = 0.154694
 scale = Vector2(0.579289, 0.579289)
 texture = ExtResource("38_qcrgj")
 
-[node name="HallelujahMountain3" type="StaticBody2D" parent="Level/BigTree" groups=["Landing"]]
+[node name="HallelujahMountain3" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
 z_index = -10
 position = Vector2(1247, 458)
 collision_mask = 3
 
-[node name="BranchPlatformSmall2" type="Sprite2D" parent="Level/BigTree/HallelujahMountain3"]
+[node name="BranchPlatformSmall2" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain3"]
 modulate = Color(0.654902, 0.501961, 0.501961, 0.780392)
 position = Vector2(265, -21)
 rotation = -6.80695
 scale = Vector2(0.28529, 0.28529)
 texture = ExtResource("38_qcrgj")
 
-[node name="BackBranch3" type="Sprite2D" parent="Level/BigTree/HallelujahMountain3"]
+[node name="BackBranch3" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain3"]
 modulate = Color(0.901961, 0.901961, 0.901961, 1)
 z_index = -5
 position = Vector2(209, 65)
@@ -1255,75 +1254,75 @@ scale = Vector2(0.244318, 0.258534)
 texture = ExtResource("50_6g2ed")
 flip_h = true
 
-[node name="Branch3m" type="Sprite2D" parent="Level/BigTree/HallelujahMountain3"]
+[node name="Branch3m" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain3"]
 modulate = Color(1, 0.917647, 1, 1)
 position = Vector2(314, 32)
 scale = Vector2(0.284553, 0.284553)
 texture = ExtResource("39_stx2c")
 flip_h = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigTree/HallelujahMountain3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigTree/HallelujahMountain3"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(176.005, 10.9995, 415.998, 11.0015, 415.998, 43.0015, 176.005, 42.9995)
 one_way_collision = true
 
-[node name="HallelujahMountain4" type="StaticBody2D" parent="Level/BigTree" groups=["Landing"]]
+[node name="HallelujahMountain4" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
 z_index = -10
 position = Vector2(912, 584)
 collision_mask = 3
 
-[node name="BranchPlatform" type="Sprite2D" parent="Level/BigTree/HallelujahMountain4"]
+[node name="BranchPlatform" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain4"]
 position = Vector2(331, 58)
 scale = Vector2(0.3825, 0.3825)
 texture = ExtResource("51_enn0w")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigTree/HallelujahMountain4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigTree/HallelujahMountain4"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(210.005, 30.9995, 449.998, 31.0015, 449.998, 63.0015, 210.005, 62.9995)
 one_way_collision = true
 
-[node name="HallelujahMountain7" type="StaticBody2D" parent="Level/BigTree" groups=["Landing"]]
+[node name="HallelujahMountain7" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
 z_index = -10
 position = Vector2(2148, 314)
 collision_mask = 3
 
-[node name="Branch1" type="Sprite2D" parent="Level/BigTree/HallelujahMountain7"]
+[node name="Branch1" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain7"]
 modulate = Color(0.654902, 0.564706, 0.45098, 0.811765)
 position = Vector2(-29, -57)
 rotation = -1.31773
 scale = Vector2(0.261156, 0.431358)
 texture = ExtResource("42_vhchg")
 
-[node name="BranchPlatform2" type="Sprite2D" parent="Level/BigTree/HallelujahMountain7"]
+[node name="BranchPlatform2" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain7"]
 position = Vector2(205, 45)
 scale = Vector2(0.727143, 0.727143)
 texture = ExtResource("51_enn0w")
 
-[node name="Moss3" type="Sprite2D" parent="Level/BigTree/HallelujahMountain7"]
+[node name="Moss3" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain7"]
 modulate = Color(0.827451, 0.827451, 0.827451, 1)
 z_index = 1
 position = Vector2(198, 16)
 scale = Vector2(0.508264, 0.508264)
 texture = ExtResource("42_5gmqy")
 
-[node name="Moss1" type="Sprite2D" parent="Level/BigTree/HallelujahMountain7"]
+[node name="Moss1" type="Sprite2D" parent="Interactables/BigTree/HallelujahMountain7"]
 z_index = 1
 position = Vector2(-34.5, 25.5)
 scale = Vector2(0.697182, 0.658915)
 texture = ExtResource("43_8ksie")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigTree/HallelujahMountain7"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigTree/HallelujahMountain7"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(-29, -2, 431, -4, 431, 35, -33, 42)
 one_way_collision = true
 
-[node name="b17" type="StaticBody2D" parent="Level/BigTree" groups=["Landing"]]
+[node name="b17" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
 position = Vector2(2388, 640)
 rotation = 0.179268
 scale = Vector2(-1.5607, 1.52204)
 metadata/_edit_group_ = true
 
-[node name="BackBranchSmall" type="Sprite2D" parent="Level/BigTree/b17"]
+[node name="BackBranchSmall" type="Sprite2D" parent="Interactables/BigTree/b17"]
 modulate = Color(0.815686, 0.815686, 0.815686, 1)
 position = Vector2(126.758, -17.1767)
 rotation = 2.20148
@@ -1331,577 +1330,577 @@ scale = Vector2(0.259876, -0.261788)
 skew = 0.0239855
 texture = ExtResource("45_jxyu1")
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigTree/b17"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigTree/b17"]
 modulate = Color(1, 0.933333, 1, 1)
 position = Vector2(3.2603, -3.43758)
 rotation = 0.0023831
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigTree/b17"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigTree/b17"]
 position = Vector2(3.68423, -2.03094)
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="Moss6" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss6" type="Sprite2D" parent="Interactables/BigTree"]
 position = Vector2(1189, 628)
 scale = Vector2(0.40625, 0.40625)
 texture = ExtResource("38_4ghns")
 
-[node name="Moss7" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss7" type="Sprite2D" parent="Interactables/BigTree"]
 position = Vector2(1332, 623)
 scale = Vector2(0.39179, 0.39179)
 texture = ExtResource("59_pk7me")
 
-[node name="Moss1" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss1" type="Sprite2D" parent="Interactables/BigTree"]
 position = Vector2(1453, 476)
 rotation = 0.368018
 scale = Vector2(0.205426, 0.205426)
 texture = ExtResource("43_8ksie")
 
-[node name="Moss8" type="Sprite2D" parent="Level/BigTree"]
+[node name="Moss8" type="Sprite2D" parent="Interactables/BigTree"]
 position = Vector2(2659, 463)
 rotation = -0.321664
 scale = Vector2(0.298259, 0.298259)
 texture = ExtResource("40_doty2")
 
-[node name="Walljump" type="Node2D" parent="Level"]
+[node name="Walljump" type="Node2D" parent="Interactables"]
 
-[node name="b5" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b5" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9547, -31)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b5"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b5"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b5"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b6" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b6" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9087, 620)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b6"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b6"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b6"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b6"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b7" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b7" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9084, 482)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b7"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b7"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b7"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b7"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b8" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b8" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9081, 333)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b8"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b8"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b8"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b8"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b9" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b9" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9083, 193)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b9"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b9"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b9"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b9"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b10" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b10" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9069, 25)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b10"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b10"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b10"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b10"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b11" type="StaticBody2D" parent="Level/Walljump" groups=["Landing"]]
+[node name="b11" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
 position = Vector2(9067, -134)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/Walljump/b11"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b11"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Walljump/b11"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b11"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Level/Walljump"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Interactables/Walljump"]
 position = Vector2(9440, 64)
 
-[node name="Branch2" type="Sprite2D" parent="Level/Walljump/StaticBody2D2"]
+[node name="Branch2" type="Sprite2D" parent="Interactables/Walljump/StaticBody2D2"]
 position = Vector2(3.15479, 221.252)
 rotation = -1.64385
 scale = Vector2(0.864627, 0.864627)
 texture = ExtResource("26_acr75")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/Walljump/StaticBody2D2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Walljump/StaticBody2D2"]
 position = Vector2(-20.6348, 240.65)
 rotation = -0.0206938
 shape = SubResource("RectangleShape2D_milg7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Level/Walljump"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/Walljump"]
 position = Vector2(9268, -77)
 
-[node name="Branch2" type="Sprite2D" parent="Level/Walljump/StaticBody2D"]
+[node name="Branch2" type="Sprite2D" parent="Interactables/Walljump/StaticBody2D"]
 position = Vector2(3.15478, 221.252)
 rotation = -1.64385
 scale = Vector2(0.864627, 0.864627)
 texture = ExtResource("26_acr75")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/Walljump/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Walljump/StaticBody2D"]
 position = Vector2(-20.6343, 240.65)
 rotation = -0.0206938
 shape = SubResource("RectangleShape2D_milg7")
 
-[node name="BigBush" type="Node2D" parent="Level"]
+[node name="BigBush" type="Node2D" parent="Interactables"]
 z_index = -1
 position = Vector2(3930, 244)
 metadata/_edit_group_ = true
 
-[node name="Bush" type="Sprite2D" parent="Level/BigBush"]
+[node name="Bush" type="Sprite2D" parent="Interactables/BigBush"]
 scale = Vector2(0.4805, 0.4805)
 texture = ExtResource("29_n7ai8")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Level/BigBush"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/BigBush"]
 
-[node name="Branch2" type="Sprite2D" parent="Level/BigBush/StaticBody2D"]
+[node name="Branch2" type="Sprite2D" parent="Interactables/BigBush/StaticBody2D"]
 position = Vector2(-120, 243)
 rotation = -1.91986
 scale = Vector2(0.864627, 0.864627)
 texture = ExtResource("26_acr75")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/BigBush/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/BigBush/StaticBody2D"]
 position = Vector2(-143.789, 262.398)
 rotation = -0.296706
 shape = SubResource("RectangleShape2D_milg7")
 
-[node name="b1" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b1" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-230, 459)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b1"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b1"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b1"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b2" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b2" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-520, 381)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b2"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b2"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b2"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b3" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b3" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-324, 242)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b3"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b3"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b3"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b4" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b4" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-555, 139)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b4"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b4"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b4"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b5" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b5" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-346, 48)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b5"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b5"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b5"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b6" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b6" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-237, -143)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b6"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b6"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b6"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b6"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b7" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b7" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-468, -100)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b7"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b7"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b7"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b7"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b8" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b8" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(-99, 11)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b8"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b8"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b8"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b8"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b9" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b9" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(120, -71)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b9"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b9"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b9"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b9"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b10" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b10" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(388, 7)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b10"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b10"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b10"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b10"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b11" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b11" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(500, 163)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b11"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b11"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b11"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b11"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b12" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b12" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(170, 160)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b12"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b12"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b12"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b12"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b13" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b13" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(27, 280)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b13"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b13"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b13"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b13"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b14" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b14" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(148, 431)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b14"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b14"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b14"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b14"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b15" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b15" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(362, 344)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b15"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b15"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b15"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b15"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b16" type="StaticBody2D" parent="Level/BigBush" groups=["Landing"]]
+[node name="b16" type="StaticBody2D" parent="Interactables/BigBush" groups=["Landing"]]
 position = Vector2(407, 504)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush/b16"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush/b16"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush/b16"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush/b16"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="BigBush2" type="Node2D" parent="Level"]
+[node name="BigBush2" type="Node2D" parent="Interactables"]
 z_index = -1
 position = Vector2(5300, 250)
 metadata/_edit_group_ = true
 
-[node name="Bush" type="Sprite2D" parent="Level/BigBush2"]
+[node name="Bush" type="Sprite2D" parent="Interactables/BigBush2"]
 scale = Vector2(0.4805, 0.4805)
 texture = ExtResource("29_n7ai8")
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Level/BigBush2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/BigBush2"]
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/BigBush2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/BigBush2/StaticBody2D"]
 position = Vector2(100, 0)
 shape = SubResource("SegmentShape2D_63qu5")
 metadata/_edit_lock_ = true
 
-[node name="b4" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b4" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(-555, 139)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b4"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b4"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b4"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b6" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b6" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(-237, -143)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b6"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b6"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b6"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b6"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b7" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b7" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(-402, -19)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b7"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b7"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b7"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b7"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b8" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b8" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(-99, 11)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b8"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b8"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b8"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b8"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b9" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b9" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(120, -71)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b9"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b9"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b9"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b9"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b10" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b10" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(388, 7)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b10"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b10"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b10"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b10"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b11" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b11" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(500, 163)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b11"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b11"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b11"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b11"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b12" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b12" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(170, 160)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b12"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b12"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b12"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b12"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b13" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b13" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(27, 279)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b13"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b13"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b13"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b13"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b14" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b14" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(148, 431)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b14"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b14"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b14"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b14"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b15" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b15" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(362, 344)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b15"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b15"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b15"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b15"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="b16" type="StaticBody2D" parent="Level/BigBush2" groups=["Landing"]]
+[node name="b16" type="StaticBody2D" parent="Interactables/BigBush2" groups=["Landing"]]
 position = Vector2(407, 504)
 metadata/_edit_group_ = true
 
-[node name="Branch1m" type="Sprite2D" parent="Level/BigBush2/b16"]
+[node name="Branch1m" type="Sprite2D" parent="Interactables/BigBush2/b16"]
 scale = Vector2(0.335366, 0.335366)
 texture = ExtResource("26_gi5k1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/BigBush2/b16"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/BigBush2/b16"]
 polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
 one_way_collision = true
 
-[node name="Branch3" type="Sprite2D" parent="Level/BigBush2"]
+[node name="Branch3" type="Sprite2D" parent="Interactables/BigBush2"]
 position = Vector2(-122, 249)
 rotation = -1.91986
 scale = Vector2(0.864627, 0.864627)
 texture = ExtResource("26_acr75")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level/BigBush2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Interactables/BigBush2"]
 position = Vector2(-145, 259)
 rotation = -0.296706
 shape = SubResource("RectangleShape2D_milg7")
 
-[node name="UntitledArtwork-53" type="Sprite2D" parent="Level"]
+[node name="UntitledArtwork-53" type="Sprite2D" parent="Interactables"]
 position = Vector2(2227, 184)
 scale = Vector2(1.68644, 1.68644)
 texture = ExtResource("51_5sbbk")
 
-[node name="Blueberry bush" parent="Level" instance=ExtResource("23_0b58q")]
+[node name="Blueberry bush" parent="Interactables" instance=ExtResource("23_0b58q")]
 position = Vector2(2140, 333)
 
-[node name="NPC" parent="Level" instance=ExtResource("25_ryfjs")]
+[node name="NPC" parent="Interactables" instance=ExtResource("25_ryfjs")]
 z_index = -1
 position = Vector2(3677, 465)
 
-[node name="cones" type="Node2D" parent="Level"]
+[node name="cones" type="Node2D" parent="Interactables"]
 
-[node name="Pine" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="Pine" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(6619, 662)
 
-[node name="Pine2" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="Pine2" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(7030, 575)
 
-[node name="Pine4" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="Pine4" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(6573, 432)
 
-[node name="Pine5" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="Pine5" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(6903, 305)
 
-[node name="Pine6" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="Pine6" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(6786, 556)
 
-[node name="Pine7" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="Pine7" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(6456, 619)
 
-[node name="cones#Pine3" parent="Level/cones" instance=ExtResource("27_pgrnc")]
+[node name="cones#Pine3" parent="Interactables/cones" instance=ExtResource("27_pgrnc")]
 position = Vector2(9199, 661)
 
-[node name="LeafyBranch" type="Sprite2D" parent="Level"]
+[node name="LeafyBranch" type="Sprite2D" parent="Interactables"]
 position = Vector2(3008, -414)
 scale = Vector2(0.570892, 0.570892)
 texture = ExtResource("45_0gwmh")
@@ -1937,4 +1936,4 @@ script = ExtResource("16_ykx52")
 _points = SubResource("Resource_thb0y")
 shape_material = SubResource("Resource_o4873")
 
-[connection signal="body_entered" from="Level/Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Interactables/Thorns/Area2D" to="." method="_on_area_2d_body_entered"]
