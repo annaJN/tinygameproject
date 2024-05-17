@@ -18,6 +18,8 @@ var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
 
+var isFacingRight = false
+
 var currentGround : StaticBody2D
 var direction
 var wallBody = false
@@ -61,9 +63,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump"):
 		jumpHandling()
 	
-	if carrying and carryingBody.is_in_group("Heavy") and get_node("AnimatedSprite2D").flip_h:
+	if carrying and carryingBody.is_in_group("Heavy") and isFacingRight:
 		direction = Input.get_action_strength("Right")
-	elif carrying and carryingBody.is_in_group("Heavy") and !get_node("AnimatedSprite2D").flip_h:
+	elif carrying and carryingBody.is_in_group("Heavy") and !isFacingRight:
 		direction = 0 - Input.get_action_strength("Left")
 	else:
 		# Get the input direction and handle the movement/deceleration.
@@ -72,8 +74,8 @@ func _physics_process(delta):
 	# Makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
 		## Rotates the character depending on direction
-		if direction != self.get_scale().x :
-			rotateCharacter(direction)
+		#if direction != self.get_scale().x :
+		rotateCharacter(direction)
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
@@ -88,9 +90,9 @@ func _physics_process(delta):
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
-				if self.position.x <= currentGround.position.x + 32 and !get_node("AnimatedSprite2D").flip_h:
+				if self.position.x <= currentGround.position.x + 32 and !isFacingRight:
 					carrying = false
-				elif self.position.x >= currentGround.position.x + 208 and get_node("AnimatedSprite2D").flip_h:
+				elif self.position.x >= currentGround.position.x + 208 and isFacingRight:
 					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
 		else:
@@ -134,7 +136,7 @@ func _unhandled_input(_event):
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
 			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-			$Marker2D.location.x = marker_original_offset * self.get_scale().x
+			$Marker2D.position.x = marker_original_offset * self.get_scale().x
 			return
 			
 		for body in bodies:
@@ -147,20 +149,20 @@ func _unhandled_input(_event):
 				var tmp_node = carryingBody.get_node("cool")
 				match tmp_node.get_class() :
 					"CollisionShape2D" :
-						$Marker2D.location.x = self.get_scale().x * (marker_original_offset + tmp_node.get_shape().radius)
+						$Marker2D.position.x = self.get_scale().x * (marker_original_offset + tmp_node.get_shape().radius)
 					"CollisionPolygon2D" :
 						var minX = 1000000000
 						var maxX = -1000000000
 						var rot = tmp_node.transform.get_rotation()
 						for vec in tmp_node.polygon:
-							var x = vec.rotate(rot).x
+							var x = vec.rotated(rot).x
 							if (x < minX) :
 								minX = vec.x
 							if (x > maxX) :
 								maxX = vec.x
 						minX *= tmp_node.transform.get_scale().x
 						maxX *= tmp_node.transform.get_scale().x
-						$Marker2D.location.x = self.get_scale().x * (marker_original_offset + (maxX - minX)/2.0)
+						$Marker2D.position.x = self.get_scale().x * (marker_original_offset + (maxX - minX)/2.0)
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
 						print("Womp womp, object picked up is not of correct class")
@@ -186,8 +188,9 @@ func inventory():
 func rotateCharacter(directioning):
 	if carrying and carryingBody.is_in_group("Heavy"):
 		return
-	self.set_scale(Vector2(1,direction))
-	self.set_rotation(PI / 2 - (direction * PI / 2))
+	self.set_scale(Vector2(1,directioning))
+	self.set_rotation(PI / 2 - (directioning * PI / 2))
+	isFacingRight = directioning > 0
 
 func landing():
 	## Animates the landing
