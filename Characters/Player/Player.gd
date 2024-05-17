@@ -32,6 +32,8 @@ var wallBody = false
 
 @onready var anim = get_node("AnimationPlayer")
 
+@export var knockback_power : int = 1000
+
 func _ready():
 	# Set this node as the player node
 	Global.set_player_reference(self)
@@ -72,9 +74,8 @@ func _physics_process(delta):
 	if direction and !get_tree().paused:
 		## Rotates the character depending on direction
 		rotateCharacter(direction)
-		
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
-		
+		print(velocity.x)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
 			anim.play("running")
@@ -97,12 +98,17 @@ func _physics_process(delta):
 			carryingBody.position = $Marker2D.global_position
 	
 	move_and_slide()
+	#knockback = lerp(knockback, Vector2.ZERO, 0.1)
 	
 	#slideCollision()
 	
 	landing()
 	
-
+func enemy_knockback(enemy_velocity):
+	var knockbackdirection = (enemy_velocity - velocity).normalized() * knockback_power
+	velocity = knockbackdirection
+	move_and_slide()
+	
 func _input(event):
 	if event.is_action_pressed("Dash"):
 		dashing()
@@ -253,6 +259,7 @@ func slideCollision():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * movement_data.push_force)
+			
 
 #handles effects from items
 func apply_item_effect(item):
@@ -292,7 +299,8 @@ func dashing():
 	tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
 
 func _on_area_2d_body_entered(body):
-	currentGround = body
+	if body is StaticBody2D:
+		currentGround = body
 
 
 func _on_object_finder_body_entered(body):
