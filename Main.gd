@@ -37,21 +37,10 @@ func _on_halfway_pressed():
 func _process(delta):
 	if initiateGame:
 		var characterAnim = get_node("MushroomRingBackground/DummyPlayer/AnimationPlayer")
-		var character = get_node("MushroomRingBackground/DummyPlayer")
+		var character = get_node("MushroomRingBackground/DummyPlayer/AnimatedSprite2D")
 		characterAnim.play("running")
-		while character.position.x < 1200:
-			character.position.x += 20 * delta
-			print(character.position.x)
-	
-
-func initiateGames():
-	var characterAnim = get_node("MushroomRingBackground/DummyPlayer/AnimationPlayer")
-	var character = get_node("MushroomRingBackground/DummyPlayer")
-	characterAnim.play("running")
-	while character.position.x < 1200:
-		character.position.x += 1
-		print(character.position.x)
-	#await get_tree().create_timer(2).timeout
+		if character.position.x > -1250:
+			character.position.x -= 750 * delta
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://Views/Menus/Settings.tscn")
