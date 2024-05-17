@@ -1253,7 +1253,7 @@ offset = Vector2(0, -200)
 limit_left = 0
 drag_horizontal_enabled = true
 
-[node name="PauseMenu" type="MenuBar" parent="Camera2D"]
+[node name="PauseMenu" type="MenuBar" parent="."]
 process_mode = 2
 visible = false
 z_index = 7
@@ -1262,7 +1262,7 @@ offset_top = -383.0
 offset_right = 406.0
 offset_bottom = 80.0
 
-[node name="Label" type="Label" parent="Camera2D/PauseMenu"]
+[node name="Label" type="Label" parent="PauseMenu"]
 layout_mode = 0
 offset_left = 284.0
 offset_top = 139.0
@@ -1270,7 +1270,7 @@ offset_right = 532.0
 offset_bottom = 162.0
 text = "THIS IS THE PAUSE MENU TEXT!!!"
 
-[node name="Resume" type="Button" parent="Camera2D/PauseMenu"]
+[node name="Resume" type="Button" parent="PauseMenu"]
 layout_mode = 0
 offset_left = 349.0
 offset_top = 173.0
@@ -1278,7 +1278,7 @@ offset_right = 478.0
 offset_bottom = 231.0
 text = "Resume"
 
-[node name="Save" type="Button" parent="Camera2D/PauseMenu"]
+[node name="Save" type="Button" parent="PauseMenu"]
 layout_mode = 0
 offset_left = 349.0
 offset_top = 236.0
@@ -1286,7 +1286,7 @@ offset_right = 478.0
 offset_bottom = 294.0
 text = "Save Game"
 
-[node name="MainMenu" type="Button" parent="Camera2D/PauseMenu"]
+[node name="MainMenu" type="Button" parent="PauseMenu"]
 layout_mode = 0
 offset_left = 349.0
 offset_top = 300.0
@@ -1408,9 +1408,9 @@ stream = ExtResource("18_n7pv0")
 volume_db = -30.0
 autoplay = true
 
-[connection signal="pressed" from="Camera2D/PauseMenu/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Camera2D/PauseMenu/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="Camera2D/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="body_entered" from="ObjectFinder" to="." method="_on_object_finder_body_entered"]
 [connection signal="body_exited" from="ObjectFinder" to="." method="_on_object_finder_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
