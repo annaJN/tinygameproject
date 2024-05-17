@@ -17,9 +17,13 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if $AnimationPlayer.get_current_animation() == "sleeping":
-		$AnimatedSprite2D.position.y = 150
+		$AnimatedSprite2D.position.y = 140
 	elif waking:
-		$AnimatedSprite2D.position.y -= 75 * delta
+		if $AnimationPlayer.get_current_animation() == "wake_up":
+			$AnimatedSprite2D.position.y -= 10 * delta
+		elif $AnimationPlayer.get_current_animation() == "wake_up_angry":
+			#$AnimatedSprite2D.position.y -= 5
+			pass
 		if $AnimationPlayer.get_current_animation() == "idle":
 			waking = false
 	else:
@@ -46,13 +50,15 @@ func _on_stone_on_head_collision_body_entered(body):
 	if body is RigidBody2D:
 		## ska ändras till en annan animation
 		## ska vakna upp mer aggresivt när den landar på huvudet vilket är denna funktionen
-		wakeUp("wake_up")
+		wakeUp("wake_up_angry")
+		$AnimatedSprite2D.position.y = -60
 		Global.snorlax_state_angry_at_player = true
 		playSound(body)
 
 func _on_stone_on_the_side_collision_body_entered(body):
 	if body is RigidBody2D:
 		wakeUp("wake_up")
+		$AnimatedSprite2D.position.y = 15
 		Global.sleepy_awaken = true
 		playSound(body)
 
