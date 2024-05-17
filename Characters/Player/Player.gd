@@ -8,7 +8,8 @@ var is_wall_sliding = false
 #var health = 50
 var carrying = false
 var carryingBody : RigidBody2D
-
+var marker_offset : float = 0
+var marker_original_offset = 40
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var jump_count = 0
@@ -20,6 +21,7 @@ var in_air = false
 
 var currentGround : StaticBody2D
 var direction
+var wallBody = false
 
 @onready var actionableFinder: Area2D = $ActionableFinder
 
@@ -30,6 +32,7 @@ var direction
 @onready var new_item_ui = $NewItemUI
 
 @onready var anim = get_node("AnimationPlayer")
+
 
 func _ready():
 	# Set this node as the player node
@@ -71,9 +74,7 @@ func _physics_process(delta):
 	if direction and !get_tree().paused and !Global.dialogue_is_playing:
 		## Rotates the character depending on direction
 		rotateCharacter(direction)
-		
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
-		
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
 			anim.play("running")
@@ -87,29 +88,26 @@ func _physics_process(delta):
 	if carrying:
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
-				if self.position.x <= currentGround.position.x:
+				if self.position.x <= currentGround.position.x + 32 and !get_node("AnimatedSprite2D").flip_h:
 					carrying = false
-				elif self.position.x >= currentGround.position.x + 160:
+				elif self.position.x >= currentGround.position.x + 208 and get_node("AnimatedSprite2D").flip_h:
 					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
-			#var bodies = carryingBody.get_colliding_bodies()
-			#for body in bodies:
-				#if body.name == "Ground":
-					#carrying = false
-					#Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-					#return
 		else:
 			carryingBody.position = $Marker2D.global_position
 	
 	move_and_slide()
+	#knockback = lerp(knockback, Vector2.ZERO, 0.1)
 	
 	#slideCollision()
 	
-	
 	landing()
 	
+func enemy_knockback(enemy_velocity):
+	var knockbackdirection = (enemy_velocity - velocity).normalized() * movement_data.knockback_power
+	velocity = knockbackdirection
+	move_and_slide()
 	
-
 func _input(event):
 	if event.is_action_pressed("Dash"):
 		dashing()
@@ -132,33 +130,58 @@ func _unhandled_input(_event):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
 			carrying = false
-			carryingBody.translate(velocity/7)
-			carryingBody.apply_central_impulse(velocity*movement_data.strength)
+			carryingBody.set_axis_velocity(velocity)
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
+			marker_offset = 0
 			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
 			return
-		
+			
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
 				carrying = true
 				carryingBody = body
 				
-				if body.is_in_group("Heavy"):
-					Global.movement = "res://Characters/Player/DragMovement.tres"
-					return
-				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
+				var tmp_node = carryingBody.get_node("cool")
+				match tmp_node.get_class() :
+					"CollisionShape2D" :
+						marker_offset = tmp_node.get_shape().radius + marker_original_offset
+					"CollisionPolygon2D" :
+						var minX = 1000000000
+						var maxX = -1000000000
+						for vec in tmp_node.polygon:
+							var x = vec.x
+							if (x < minX) :
+								minX = vec.x
+							if (x > maxX) :
+								maxX = vec.x
+						minX *= tmp_node.transform.get_scale().x
+						maxX *= tmp_node.transform.get_scale().x
+						marker_offset = (maxX - minX)/2.0 + marker_original_offset
+						#TODO find a way to get the width of a collisionpolygon2d
+					_ :
+						print("Womp womp, object picked up is not of correct class")
+				if not get_node("AnimatedSprite2D").flip_h :
+					marker_offset *= -1
+				$Marker2D.position.x = marker_offset
+				if body.is_in_group("Heavy"):
+					Global.movement = "res://Characters/Player/DragMovement.tres"
+					carryingBody.freeze = false
+					carryingBody.get_node("cool").disabled = false
+				return
 
 
 func inventory():
 	inventory_ui.visible = !inventory_ui.visible
 	if inventory_ui.visible:
+		$Sounds/CloseInventory.play()
 		self.process_mode = 3
 		animation_player.stop(false)
 	else:
+		$Sounds/OpenInventory.play()
 		self.process_mode = 1
 		animation_player.play()
 	get_tree().paused = !get_tree().paused
@@ -166,17 +189,14 @@ func inventory():
 func rotateCharacter(directioning):
 	if carrying and carryingBody.is_in_group("Heavy"):
 		return
-	if directioning == -1:
-		get_node("AnimatedSprite2D").flip_h = false
-		$ActionableFinder.position.x = -100
-		$ObjectFinder.position.x = -52
-		
-		$Marker2D.position.x = -10
+	get_node("AnimatedSprite2D").flip_h = directioning == 1
+	$ActionableFinder.position.x = 50 * directioning
+	$ObjectFinder.position.x = 50 * directioning
+	if marker_offset * directioning < 0 :
+		$Marker2D.position.x = marker_offset * directioning
 	else:
-		get_node("AnimatedSprite2D").flip_h = true
-		$ActionableFinder.position.x = 12
-		$ObjectFinder.position.x = 0
-		$Marker2D.position.x = 96
+		$Marker2D.position.x = marker_offset
+	return
 
 func landing():
 	## Animates the landing
@@ -188,6 +208,9 @@ func landing():
 
 func jumpHandling():
 	if jump_count < max_jumps and !carrying:
+		if is_on_floor():
+			$Sounds/JumpGround.play()
+		$Sounds/JumpAir.play()
 		anim.play("jump")
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
@@ -207,10 +230,10 @@ func wall_sliding_check() :
 	var wall_normal = get_wall_normal()
 	if not is_on_wall_only() || velocity.y < 0:
 		return false
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("Right"):
 		var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
 		return wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < degree_threshold
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("Left"):
 		var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 		return wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < degree_threshold
 	return false
@@ -221,11 +244,13 @@ func wall_jump():
 	var wall_normal = get_wall_normal()
 	var left_angle = abs(wall_normal.angle_to(Vector2.LEFT))
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only() and wallBody:
+		print("i am right jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
-	if Input.is_action_just_pressed("ui_accept") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only():
+	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only() and wallBody:
+		print("i am left jumping"+str(wall_normal))
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 
@@ -234,6 +259,7 @@ func slideCollision():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * movement_data.push_force)
+			
 
 #handles effects from items
 func apply_item_effect(item):
@@ -257,11 +283,13 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	SaveGame.positionX = self.position.x
-	SaveGame.positionY = self.position.y
-	SaveGame.sceneActive = get_tree().current_scene.name
+	Global.positionX = self.position.x
+	Global.positionY = self.position.y
+	Global.savedGame = true
 	SaveGame.saveGame()
-	$PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	Global.savedGame = true
+	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	Global.justSaved = true
 
 func _on_main_menu_pressed():
 	get_tree().paused = false
@@ -273,4 +301,14 @@ func dashing():
 	tween.tween_property(self, "position", position + Vector2(50,0), 0.1)
 
 func _on_area_2d_body_entered(body):
-	currentGround = body
+	if body is StaticBody2D:
+		currentGround = body
+
+
+func _on_object_finder_body_entered(body):
+	if body.is_in_group("WallJump") and !carrying:
+		wallBody = true
+
+
+func _on_object_finder_body_exited(_body):
+	wallBody = false

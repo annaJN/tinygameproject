@@ -6,9 +6,8 @@
 mass = 10.0
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 0, 1, 0, -33, 14, -27, 26, -14, 33, 18, 30, 24, 11, 31, -14, 31, -30, 21, -34, 15, -32, 2, -21, -17, -12, -29, 0, -33)
+polygon = PackedVector2Array(15, -28, 17, -20, 29, -14, 30, -4, 35, 2, 39, 23, 25, 30, 9, 36, -6, 36, -29, 20, -29, 7, -20, -4, -18, -12, -9, -21, -1, -29)
 
 [node name="Rock" type="Sprite2D" parent="."]
-position = Vector2(-4, -3)
 scale = Vector2(0.26875, 0.26875)
 texture = ExtResource("1_nd57j")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=176 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://behjshw0m25l6" path="res://Views/Inventory/InventoryUI.tscn" id="7_xkypv"]
 [ext_resource type="PackedScene" uid="uid://btv5pouptlf5k" path="res://Views/Inventory/NewItemUI.tscn" id="9_0uwsx"]
 [ext_resource type="Texture2D" uid="uid://cy4uqdjh2nme0" path="res://Assets/Spritesheets/Player/running_spritesheet2.png" id="9_711yp"]
+[ext_resource type="AudioStream" uid="uid://d1bvjpskbrmbm" path="res://Assets/Sound/SFX/recharge/ritsch.wav" id="14_yg73y"]
+[ext_resource type="AudioStream" uid="uid://bqbaqr8veaoy0" path="res://Assets/Sound/SFX/recharge/ratsch.wav" id="15_bqtvt"]
+[ext_resource type="AudioStream" uid="uid://k2cj37i8vx18" path="res://Assets/Sound/SFX/jump/jump_ground.wav" id="16_tkrnc"]
+[ext_resource type="AudioStream" uid="uid://cdrwk0vit88ko" path="res://Assets/Sound/SFX/jump/jump_mid_air.wav" id="17_pjjmp"]
+[ext_resource type="AudioStream" uid="uid://dvtv8bku7vt4o" path="res://Assets/Sound/Music/OST_2.mp3" id="18_n7pv0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7radb"]
 atlas = ExtResource("3_xiy85")
@@ -1214,7 +1219,7 @@ corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fed2t"]
-size = Vector2(96, 34)
+size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4emgs"]
 size = Vector2(20, 106)
@@ -1230,13 +1235,11 @@ script = ExtResource("1_7pauv")
 movement_data = ExtResource("2_j7a2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(38, 40)
 scale = Vector2(0.122198, 0.122198)
 sprite_frames = SubResource("SpriteFrames_6jd1w")
 animation = &"running"
 
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
-position = Vector2(38, 40)
 shape = SubResource("CapsuleShape2D_rloiv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1301,6 +1304,15 @@ offset_right = 478.0
 offset_bottom = 358.0
 text = "Main Menu"
 
+[node name="ActionableFinder" parent="." instance=ExtResource("6_4fov4")]
+position = Vector2(-55, 0)
+collision_layer = 0
+collision_mask = 16
+script = null
+
+[node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
+shape = SubResource("CircleShape2D_fh5e2")
+
 [node name="InteractUI" type="CanvasLayer" parent="."]
 visible = false
 
@@ -1361,7 +1373,7 @@ text = "HP
 "
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(96, 58)
+position = Vector2(-40, 0)
 
 [node name="HeavyMarker" type="Marker2D" parent="."]
 position = Vector2(96, 89)
@@ -1370,11 +1382,11 @@ position = Vector2(96, 89)
 visible = false
 
 [node name="ObjectFinder" type="Area2D" parent="."]
+position = Vector2(-50, 0)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectFinder"]
-position = Vector2(64, 89)
 shape = SubResource("RectangleShape2D_fed2t")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -1383,7 +1395,28 @@ shape = SubResource("RectangleShape2D_fed2t")
 position = Vector2(35, 120)
 shape = SubResource("RectangleShape2D_4emgs")
 
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="OpenInventory" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_yg73y")
+
+[node name="CloseInventory" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_bqtvt")
+
+[node name="JumpGround" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("16_tkrnc")
+
+[node name="JumpAir" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("17_pjjmp")
+
+[node name="background_music" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("18_n7pv0")
+volume_db = -30.0
+autoplay = true
+
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="body_entered" from="ObjectFinder" to="." method="_on_object_finder_body_entered"]
+[connection signal="body_exited" from="ObjectFinder" to="." method="_on_object_finder_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

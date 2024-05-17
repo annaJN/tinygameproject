@@ -6,7 +6,13 @@ var has_given_Starberry = false
 var dialogue_is_playing = false
 
 var accessible : bool
-var currentScene
+#var currentScene
+
+var positionX
+var positionY
+var savedGame
+var justSaved
+var passedHalfway
 
 var movement = "res://Characters/Player/DefaultMovementData.tres"
 
@@ -25,7 +31,8 @@ var removeSleepy = false
 var snorlax_state_angry_at_player = false
 var sleepy_awaken = false
 var sleepy_dialogue_done = false
-
+var dena_in_village = false
+var dena_not_met = false
 
 signal inventory_updated
 
