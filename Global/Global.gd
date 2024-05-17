@@ -4,7 +4,13 @@ extends Node
 var has_given_Starberry = false
 
 var accessible : bool
-var currentScene
+#var currentScene
+
+var positionX
+var positionY
+var savedGame
+var justSaved
+var passedHalfway
 
 var movement = "res://Characters/Player/DefaultMovementData.tres"
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5857n2lgu3eg"]
+
+[ext_resource type="Texture2D" uid="uid://dxdauwj6srtph" path="res://Assets/Environment/Mushrooms/Mushroom.png" id="1_mly6v"]
+
+[node name="SavePoint" type="StaticBody2D"]
+z_index = -11
+
+[node name="Mushroom" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mly6v")
