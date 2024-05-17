@@ -41,9 +41,6 @@ func _input(event):
 		get_tree().paused = true
 		$Player/Camera2D/PauseMenu.show()
 
-func _on_area_2d_body_entered(body):
-	if body.name == "Player":
-		Global.change_health(-5)
 
 func _process(_delta):
 	# A game over of sorts, if the health is 0 or less the game will return to the home page

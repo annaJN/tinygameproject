@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbnrmk58kvbs7"
-path="res://.godot/imported/blurry_grass3.png-47fa6adf4251ef28c0e7df738e1130f1.ctex"
+uid="uid://bnraffowpyoxl"
+path="res://.godot/imported/Bottom right(1).png-0af72b5a98fe07cc2892580b14e1949a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/grass/blurry_grass3.png"
-dest_files=["res://.godot/imported/blurry_grass3.png-47fa6adf4251ef28c0e7df738e1130f1.ctex"]
+source_file="res://Assets/Environment/Ground/Bottom right(1).png"
+dest_files=["res://.godot/imported/Bottom right(1).png-0af72b5a98fe07cc2892580b14e1949a.ctex"]
 
 [params]
 

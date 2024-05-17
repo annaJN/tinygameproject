@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vj3ggcvw3cfl"
-path="res://.godot/imported/inner_corner.png-7921758060bef822223719f74104674e.ctex"
+uid="uid://phbibogsp21l"
+path="res://.godot/imported/blurry_grass3(1).png-6f23cb821001deab98fd88d363f46d95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/inner_corner.png"
-dest_files=["res://.godot/imported/inner_corner.png-7921758060bef822223719f74104674e.ctex"]
+source_file="res://Assets/Environment/Ground/grass/blurry_grass3(1).png"
+dest_files=["res://.godot/imported/blurry_grass3(1).png-6f23cb821001deab98fd88d363f46d95.ctex"]
 
 [params]
 

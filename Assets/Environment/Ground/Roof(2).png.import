@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vj3ggcvw3cfl"
-path="res://.godot/imported/inner_corner.png-7921758060bef822223719f74104674e.ctex"
+uid="uid://suu5e8gmq4me"
+path="res://.godot/imported/Roof(2).png-991ff5081a3c106029198de78ac5a03a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/inner_corner.png"
-dest_files=["res://.godot/imported/inner_corner.png-7921758060bef822223719f74104674e.ctex"]
+source_file="res://Assets/Environment/Ground/Roof(2).png"
+dest_files=["res://.godot/imported/Roof(2).png-991ff5081a3c106029198de78ac5a03a.ctex"]
 
 [params]
 
