@@ -60,7 +60,7 @@ func _physics_process(delta):
 	
 	wall_sliding_handler(delta)
 	## Handle jump (including double jump)
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_just_pressed("Jump") and !Global.dialogue_is_playing:
 		jumpHandling()
 	
 	if carrying and carryingBody.is_in_group("Heavy") and isFacingRight:
@@ -72,7 +72,7 @@ func _physics_process(delta):
 		direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
-	if direction and !get_tree().paused:
+	if direction and !get_tree().paused and !Global.dialogue_is_playing:
 		## Rotates the character depending on direction
 		#if direction != self.get_scale().x :
 		rotateCharacter(direction)
@@ -88,6 +88,7 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	if carrying:
+		carryingBody.set_highlight_item(false)
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
 				if self.position.x <= currentGround.position.x + 32 and !isFacingRight:
@@ -130,6 +131,7 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
+			Global.dialogue_is_playing = true
 			actionables[0].action()
 			return
 
@@ -279,8 +281,8 @@ func show_new_item_ui(item):
 ## 
 ## Pause menu functionality
 func _on_resume_pressed():
-	$Camera2D/PauseMenu/Save.modulate = Color(1,1,1,1)	
-	$Camera2D/PauseMenu.hide()
+	$PauseMenuUI/PauseMenu/Save.modulate = Color(1,1,1,1)	
+	$PauseMenuUI.hide()
 	get_tree().paused = false
 
 func _on_save_pressed():
@@ -289,7 +291,7 @@ func _on_save_pressed():
 	Global.savedGame = true
 	SaveGame.saveGame()
 	Global.savedGame = true
-	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	$PauseMenuUI/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 	Global.justSaved = true
 
 func _on_main_menu_pressed():
