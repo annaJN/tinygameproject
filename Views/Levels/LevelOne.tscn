@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=166 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="Texture2D" uid="uid://chi3f85sc21mt" path="res://Assets/Environment/Trees/blurry_tree5.png" id="3_42oxf"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="7_xm1hr"]
 [ext_resource type="Texture2D" uid="uid://vvr03ice2bjd" path="res://Assets/Environment/Trees/blurry_bush2.png" id="8_0n1ou"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_kgkf5"]
-[ext_resource type="Texture2D" uid="uid://c6mfgbpynnn8p" path="res://Assets/Environment/Ground/inner_corner.png" id="9_t3nfp"]
+[ext_resource type="Texture2D" uid="uid://vj3ggcvw3cfl" path="res://Assets/Environment/Ground/inner_corner.png" id="9_t3nfp"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="10_tdmv7"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="11_dt58r"]
 [ext_resource type="Texture2D" uid="uid://dhwfs1bwubw7i" path="res://Assets/Environment/Ground/grass/blurry_grass.png" id="14_5n55c"]
@@ -41,8 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://djgixkioxay6u" path="res://Objects/pine.tscn" id="27_pgrnc"]
 [ext_resource type="Texture2D" uid="uid://8kpv6mhqxlsk" path="res://Assets/Environment/Branches/big_dead.png" id="29_hviyj"]
 [ext_resource type="Texture2D" uid="uid://fla4hyjgufj0" path="res://Assets/Environment/Woodsy/bush.png" id="29_n7ai8"]
-[ext_resource type="Texture2D" uid="uid://cubuto817uiij" path="res://Assets/Environment/Ground/Roof(1).png" id="31_mweac"]
-[ext_resource type="Texture2D" uid="uid://d0ncxopf12n5g" path="res://Assets/Environment/Ground/Bottom right.png" id="33_4e2cq"]
+[ext_resource type="Texture2D" uid="uid://suu5e8gmq4me" path="res://Assets/Environment/Ground/Roof(2).png" id="31_ptwr5"]
+[ext_resource type="Texture2D" uid="uid://bnraffowpyoxl" path="res://Assets/Environment/Ground/Bottom right(1).png" id="33_3nj45"]
 [ext_resource type="Texture2D" uid="uid://8vidvr1dqhei" path="res://Assets/Environment/Branches/moss4.png" id="38_4ghns"]
 [ext_resource type="Texture2D" uid="uid://ci8swknsvdx2f" path="res://Assets/Environment/Branches/branch_platform_small.png" id="38_qcrgj"]
 [ext_resource type="Texture2D" uid="uid://gqd0a254tkmh" path="res://Assets/Environment/Woodsy/branch3m.png" id="39_stx2c"]
@@ -578,7 +578,7 @@ properties = SubResource("Resource_03xtj")
 
 [sub_resource type="Resource" id="Resource_5duse"]
 script = ExtResource("5_5t0x4")
-texture_idx = -7
+texture_idx = -11
 flip = false
 width = 1.0
 
@@ -597,7 +597,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_wa1ue"]
 script = ExtResource("6_ldgbf")
-position = Vector2(18603.9, 6868.69)
+position = Vector2(18395.1, 6850.73)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_x7718")
@@ -610,14 +610,14 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_iaihb"]
 script = ExtResource("6_ldgbf")
-position = Vector2(18657, 6484.11)
+position = Vector2(18675.2, 6523.37)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_800i2")
 
 [sub_resource type="Resource" id="Resource_l7l73"]
 script = ExtResource("5_5t0x4")
-texture_idx = 0
+texture_idx = -2
 flip = false
 width = 1.0
 
@@ -630,13 +630,13 @@ properties = SubResource("Resource_l7l73")
 
 [sub_resource type="Resource" id="Resource_3egbo"]
 script = ExtResource("5_5t0x4")
-texture_idx = -1
+texture_idx = -3
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_ysj4t"]
 script = ExtResource("6_ldgbf")
-position = Vector2(18720.9, 6796.84)
+position = Vector2(18674.5, 6840.31)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_3egbo")
@@ -654,6 +654,19 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_ps4j8")
 
+[sub_resource type="Resource" id="Resource_gsspw"]
+script = ExtResource("5_5t0x4")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_e1ykc"]
+script = ExtResource("6_ldgbf")
+position = Vector2(18840.2, 6514.3)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_gsspw")
+
 [sub_resource type="Resource" id="Resource_5b5g5"]
 script = ExtResource("7_px6i0")
 _points = {
@@ -669,25 +682,26 @@ _points = {
 40: SubResource("Resource_iaihb"),
 41: SubResource("Resource_jjax3"),
 42: SubResource("Resource_ysj4t"),
-43: SubResource("Resource_k0rw2")
+43: SubResource("Resource_k0rw2"),
+44: SubResource("Resource_e1ykc")
 }
-_point_order = Array[int]([0, 36, 37, 41, 39, 42, 40, 43, 25, 29, 30, 31, 32])
+_point_order = Array[int]([0, 36, 37, 41, 39, 42, 40, 44, 43, 25, 29, 30, 31, 32])
 _constraints = {
 Array[int]([0, 32]): 15
 }
-_next_key = 44
+_next_key = 45
 _material_overrides = {}
 
 [sub_resource type="Resource" id="Resource_1r0ex"]
 script = ExtResource("7_xm1hr")
-textures = Array[Texture2D]([ExtResource("31_mweac")])
-textures_corner_outer = Array[Texture2D]([ExtResource("33_4e2cq")])
+textures = Array[Texture2D]([ExtResource("31_ptwr5")])
+textures_corner_outer = Array[Texture2D]([ExtResource("33_3nj45")])
 textures_corner_inner = Array[Texture2D]([ExtResource("9_t3nfp")])
 textures_taper_left = Array[Texture2D]([])
 textures_taper_right = Array[Texture2D]([])
 randomize_texture = false
 use_corner_texture = true
-use_taper_texture = true
+use_taper_texture = false
 fit_mode = 1
 
 [sub_resource type="Resource" id="Resource_e6syo"]
@@ -704,7 +718,7 @@ weld = true
 render = true
 z_index = 0
 z_as_relative = true
-offset = 0.6
+offset = 0.2
 
 [sub_resource type="Resource" id="Resource_6ceri"]
 script = ExtResource("9_kgkf5")
@@ -1000,18 +1014,18 @@ flip_h = true
 metadata/_edit_lock_ = true
 
 [node name="BlurryTree6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(2854, 326)
+position = Vector2(2584.44, 335)
 texture = ExtResource("4_ecuj6")
 metadata/_edit_lock_ = true
 
 [node name="BlurryTree3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(2413, 283)
+position = Vector2(2143.44, 292)
 scale = Vector2(1.75822, 1.75822)
 texture = ExtResource("18_7ykbk")
 metadata/_edit_lock_ = true
 
 [node name="BlurryBush1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(2697, 934)
+position = Vector2(2427.44, 943)
 rotation = 0.142036
 scale = Vector2(1.87165, 1.87165)
 texture = ExtResource("20_860pp")
@@ -1019,7 +1033,7 @@ flip_h = true
 metadata/_edit_lock_ = true
 
 [node name="BlurryBush3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(2380, 960)
+position = Vector2(2110.44, 969)
 rotation = 0.142036
 scale = Vector2(1.87165, 1.87165)
 texture = ExtResource("20_860pp")
@@ -1028,13 +1042,13 @@ metadata/_edit_lock_ = true
 
 [node name="BlurryBush" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 modulate = Color(1, 0.984314, 0.835294, 1)
-position = Vector2(2786, 736)
+position = Vector2(2516.44, 745)
 scale = Vector2(1.65957, 1.65957)
 texture = ExtResource("21_064jr")
 metadata/_edit_lock_ = true
 
 [node name="BlurryTree4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(3170, 699)
+position = Vector2(2900.44, 708)
 scale = Vector2(1.79769, 1.79769)
 texture = ExtResource("19_jelav")
 flip_h = true
@@ -1145,7 +1159,7 @@ collision_polygon_node_path = NodePath("../GroundCollision")
 [node name="GroundCollision" type="CollisionPolygon2D" parent="Interactables/Ground"]
 visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(12694.9, 657.34, 16209.3, 768.35, 19423.3, 752.891, 19939.8, 776.568, 20122.1, 794.578, 20189.9, 805.321, 20240.5, 817.299, 20378, 865.03, 20479.3, 909.62, 20673.9, 1003.2, 20706.7, 1021.93, 20745, 1039.04, 20834, 1068.67, 21032.2, 1111.05, 21271.9, 1140.66, 21388.8, 1068.8, 21324.9, 756.022, 27771, -285.1, 39231.4, -1932.25, 45803.3, 285.166, 46004.9, 6534.51, 12725, 5084.4)
+polygon = PackedVector2Array(12694.9, 657.34, 16209.3, 768.35, 19423.3, 752.891, 19939.8, 776.568, 20122.1, 794.578, 20189.9, 805.321, 20240.5, 817.299, 20378, 865.03, 20479.3, 909.62, 20673.9, 1003.2, 20736, 1038.27, 20801.4, 1065.86, 20927.8, 1102.07, 21063.1, 1122.73, 21342.4, 1112.21, 21343.1, 795.272, 21508.2, 786.299, 27771, -285.101, 39231.4, -1932.25, 45803.3, 285.166, 46004.9, 6534.51, 12725, 5084.4)
 
 [node name="LeftWall" type="CollisionShape2D" parent="Interactables/Ground"]
 visible = false
