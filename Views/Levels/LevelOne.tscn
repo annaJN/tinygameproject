@@ -576,9 +576,9 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_3xbtv")
 
-[sub_resource type="Resource" id="Resource_423ll"]
+[sub_resource type="Resource" id="Resource_5lep8"]
 script = ExtResource("5_5t0x4")
-texture_idx = -7
+texture_idx = -11
 flip = false
 width = 1.0
 
@@ -587,7 +587,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(17572.5, 6545.3)
 point_in = Vector2(-443.993, -134.543)
 point_out = Vector2(218.633, 67.2715)
-properties = SubResource("Resource_423ll")
+properties = SubResource("Resource_5lep8")
 
 [sub_resource type="Resource" id="Resource_32q1h"]
 script = ExtResource("5_5t0x4")
@@ -610,7 +610,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_iaihb"]
 script = ExtResource("6_ldgbf")
-position = Vector2(18670.5, 6463.91)
+position = Vector2(18675.2, 6523.37)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_g550e")
@@ -662,7 +662,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_e1ykc"]
 script = ExtResource("6_ldgbf")
-position = Vector2(18837.9, 6461.97)
+position = Vector2(18840.2, 6514.3)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_gsspw")
@@ -1156,7 +1156,7 @@ collision_polygon_node_path = NodePath("../GroundCollision")
 [node name="GroundCollision" type="CollisionPolygon2D" parent="Interactables/Ground"]
 visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(12694.9, 657.34, 16209.3, 768.35, 19423.3, 752.891, 19939.8, 776.568, 20122.1, 794.578, 20189.9, 805.321, 20240.5, 817.299, 20378, 865.03, 20479.3, 909.62, 20673.9, 1003.2, 20736, 1038.27, 20801.4, 1065.86, 20927.8, 1102.07, 21063.1, 1122.73, 21342.4, 1112.21, 21338.4, 735.802, 21505.9, 733.974, 27771, -285.1, 39231.4, -1932.25, 45803.3, 285.166, 46004.9, 6534.51, 12725, 5084.4)
+polygon = PackedVector2Array(12694.9, 657.34, 16209.3, 768.35, 19423.3, 752.891, 19939.8, 776.568, 20122.1, 794.578, 20189.9, 805.321, 20240.5, 817.299, 20378, 865.03, 20479.3, 909.62, 20673.9, 1003.2, 20736, 1038.27, 20801.4, 1065.86, 20927.8, 1102.07, 21063.1, 1122.73, 21342.4, 1112.21, 21343.1, 795.272, 21508.2, 786.299, 27771, -285.101, 39231.4, -1932.25, 45803.3, 285.166, 46004.9, 6534.51, 12725, 5084.4)
 
 [node name="LeftWall" type="CollisionShape2D" parent="Interactables/Ground"]
 visible = false
