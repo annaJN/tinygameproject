@@ -72,7 +72,8 @@ func _physics_process(delta):
 	# Makes it so character accelerates before hitting top speed
 	if direction and !get_tree().paused:
 		## Rotates the character depending on direction
-		rotateCharacter(direction)
+		if direction != self.get_scale().x :
+			rotateCharacter(direction)
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
@@ -146,7 +147,7 @@ func _unhandled_input(_event):
 				var tmp_node = carryingBody.get_node("cool")
 				match tmp_node.get_class() :
 					"CollisionShape2D" :
-						marker_offset = tmp_node.get_shape().radius + marker_original_offset
+						$Marker2D.location.x = self.get_scale().x * (marker_original_offset + tmp_node.get_shape().radius)
 					"CollisionPolygon2D" :
 						var minX = 1000000000
 						var maxX = -1000000000
@@ -158,7 +159,9 @@ func _unhandled_input(_event):
 								maxX = vec.x
 						minX *= tmp_node.transform.get_scale().x
 						maxX *= tmp_node.transform.get_scale().x
-						marker_offset = (maxX - minX)/2.0 + marker_original_offset
+						minX *= cos(tmp_node.transform.get_rotation())
+						maxX *= cos(tmp_node.transform.get_rotation())
+						$Marker2D.location.x = self.get_scale().x * (marker_original_offset + (maxX - minX)/2.0)
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
 						print("Womp womp, object picked up is not of correct class")
@@ -187,14 +190,8 @@ func inventory():
 func rotateCharacter(directioning):
 	if carrying and carryingBody.is_in_group("Heavy"):
 		return
-	get_node("AnimatedSprite2D").flip_h = directioning == 1
-	$ActionableFinder.position.x = 50 * directioning
-	$ObjectFinder.position.x = 50 * directioning
-	if marker_offset * directioning < 0 :
-		$Marker2D.position.x = marker_offset * directioning
-	else:
-		$Marker2D.position.x = marker_offset
-	return
+	self.set_scale(Vector2(1,direction))
+	self.set_rotation(PI / 2 - (direction * PI / 2))
 
 func landing():
 	## Animates the landing
