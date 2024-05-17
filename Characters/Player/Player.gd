@@ -210,7 +210,8 @@ func jumpHandling():
 	if jump_count < max_jumps and !carrying:
 		if is_on_floor():
 			$Sounds/JumpGround.play()
-		$Sounds/JumpAir.play()
+		else:
+			$Sounds/JumpAir.play()
 		anim.play("jump")
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
@@ -283,8 +284,8 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	Global.positionX = self.position.x
-	Global.positionY = self.position.y
+	Global.savePointX = self.position.x
+	Global.savePointY = self.position.y
 	Global.savedGame = true
 	SaveGame.saveGame()
 	Global.savedGame = true
