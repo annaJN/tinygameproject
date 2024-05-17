@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ncxopf12n5g"
-path="res://.godot/imported/Bottom right.png-34a71fd335017d5628c56187677cfeab.ctex"
+uid="uid://suu5e8gmq4me"
+path="res://.godot/imported/Roof(2).png-991ff5081a3c106029198de78ac5a03a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/Bottom right.png"
-dest_files=["res://.godot/imported/Bottom right.png-34a71fd335017d5628c56187677cfeab.ctex"]
+source_file="res://Assets/Environment/Ground/Roof(2).png"
+dest_files=["res://.godot/imported/Roof(2).png-991ff5081a3c106029198de78ac5a03a.ctex"]
 
 [params]
 
