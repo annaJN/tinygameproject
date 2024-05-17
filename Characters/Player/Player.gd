@@ -276,8 +276,8 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_save_pressed():
-	Global.positionX = self.position.x
-	Global.positionY = self.position.y
+	Global.savePointX = self.position.x
+	Global.savePointY = self.position.y
 	Global.savedGame = true
 	SaveGame.saveGame()
 	Global.savedGame = true

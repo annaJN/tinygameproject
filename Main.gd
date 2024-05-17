@@ -20,7 +20,9 @@ func _on_load_pressed():
 	if !Global.savedGame:
 		$Message.text = "No saved game available"
 		return
-	SaveGame.loadGame()
+	if Global.passedHalfway:
+		Global.passedHalfway = false
+		Global.overRide = true
 	initiateGame = true
 	await get_tree().create_timer(1.8).timeout
 	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
@@ -30,7 +32,6 @@ func _on_halfway_pressed():
 	if !Global.passedHalfway:
 		$Message.text = "You have yet to pass the halfway savepoint"
 		return
-	#ändra till riktiga värden!!!
 	Global.passedHalfway = false
 	Global.positionX = 2050
 	Global.positionY = 750

@@ -26,6 +26,8 @@ func _init():
 	add_child(tmpMushroom)
 	if !Global.savedGame:
 		tmpMushroom.set_visible(false)
+	else:
+		tmpMushroom.position = Vector2(Global.savePointX, Global.savePointY)
 	
 
 func _input(event):
@@ -69,8 +71,9 @@ func _process(_delta):
 		mushroom.set_visible(true)
 		Global.justSaved = false
 	
-	if tmpPlayerPos > 2000 and !Global.passedHalfway:
+	if tmpPlayerPos > 2000 and !Global.passedHalfway or Global.overRide:
 		Global.passedHalfway = true
+		Global.overRide = false
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
 		SaveGame.saveGame()
 	
