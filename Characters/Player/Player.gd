@@ -151,16 +151,15 @@ func _unhandled_input(_event):
 					"CollisionPolygon2D" :
 						var minX = 1000000000
 						var maxX = -1000000000
+						var rot = tmp_node.transform.get_rotation()
 						for vec in tmp_node.polygon:
-							var x = vec.x
+							var x = vec.rotate(rot).x
 							if (x < minX) :
 								minX = vec.x
 							if (x > maxX) :
 								maxX = vec.x
 						minX *= tmp_node.transform.get_scale().x
 						maxX *= tmp_node.transform.get_scale().x
-						minX *= cos(tmp_node.transform.get_rotation())
-						maxX *= cos(tmp_node.transform.get_rotation())
 						$Marker2D.location.x = self.get_scale().x * (marker_original_offset + (maxX - minX)/2.0)
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
