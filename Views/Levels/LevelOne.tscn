@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=165 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="Texture2D" uid="uid://chi3f85sc21mt" path="res://Assets/Environment/Trees/blurry_tree5.png" id="3_42oxf"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://r1p4vu32yw17" path="res://Assets/Environment/Bushes/bush1.png" id="24_ldbxk"]
 [ext_resource type="Texture2D" uid="uid://cbsv54m6a3tkr" path="res://Assets/Environment/Trees/tree2.png" id="24_qhepy"]
 [ext_resource type="Texture2D" uid="uid://bym0gjdl6qgb5" path="res://Assets/Environment/Trees/Untitled_Artwork 7.png" id="24_v3qxc"]
-[ext_resource type="PackedScene" uid="uid://dpkbfwro3pgnp" path="res://Characters/NPC/npc.tscn" id="25_ryfjs"]
 [ext_resource type="Texture2D" uid="uid://ci6lacuqp64cc" path="res://Assets/Environment/Ground/grass/grass2.png" id="25_wlcjn"]
 [ext_resource type="Texture2D" uid="uid://ctm25ci2fs86f" path="res://Assets/Environment/Woodsy/branch2.png" id="26_acr75"]
 [ext_resource type="Texture2D" uid="uid://d7444hrl20u8" path="res://Assets/Environment/Woodsy/branch1m.png" id="26_gi5k1"]
@@ -1905,10 +1904,6 @@ texture = ExtResource("51_5sbbk")
 
 [node name="Blueberry bush" parent="Interactables" instance=ExtResource("23_0b58q")]
 position = Vector2(2140, 333)
-
-[node name="NPC" parent="Interactables" instance=ExtResource("25_ryfjs")]
-z_index = -1
-position = Vector2(3677, 465)
 
 [node name="cones" type="Node2D" parent="Interactables"]
 
