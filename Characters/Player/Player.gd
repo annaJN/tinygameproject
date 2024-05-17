@@ -119,6 +119,12 @@ func _input(event):
 		
 	if (event.is_action_pressed("Down") and is_on_floor()):
 		position.y += 15
+		
+	if (event.is_action_pressed("ui_add")):
+		var items = $ObjectFinder.get_overlapping_bodies()
+		for item in items:
+			item.pickup_item()
+			return
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
@@ -301,9 +307,18 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_object_finder_body_entered(body):
+	print(body.name)
 	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
+	if body.is_in_group("PickableItem"):
+		interact_ui.visible = true
+		body.set_highlight_item(true)
+		
 
 
 func _on_object_finder_body_exited(_body):
-	wallBody = false
+	if _body.is_in_group("WallJump"):
+		wallBody = false
+	elif _body.is_in_group("PickableItem"):
+		interact_ui.visible = false
+		_body.set_highlight_item(false)

@@ -1,5 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://beku4bvieqd05"]
+[gd_scene load_steps=7 format=3 uid="uid://beku4bvieqd05"]
 
+[ext_resource type="Script" path="res://Objects/PickableObject.gd" id="1_go2cc"]
+[ext_resource type="PackedScene" uid="uid://1yaoydl76xa3" path="res://Objects/Highlight.tscn" id="1_idt8m"]
 [ext_resource type="Texture2D" uid="uid://b6w4iqjpjrsnq" path="res://Assets/Environment/Woodsy/rock.png" id="1_w7get"]
 [ext_resource type="AudioStream" uid="uid://0q12o6sir2tu" path="res://Assets/Sound/SFX/diverse/impact.wav" id="2_suqid"]
 
@@ -9,11 +11,14 @@ radius = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7w2h"]
 radius = 48.0104
 
-[node name="Stone" type="RigidBody2D" groups=["Heavy", "Landing"]]
+[node name="Stone" type="RigidBody2D" groups=["Heavy", "Landing", "PickableItem"]]
 collision_layer = 8
 lock_rotation = true
 max_contacts_reported = 2
 contact_monitor = true
+script = ExtResource("1_go2cc")
+
+[node name="Highlight" parent="." instance=ExtResource("1_idt8m")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 9.53674e-07)
