@@ -25,4 +25,4 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		Global.change_health(-5)
-		body.enemy_knockback(velocity)
+		body.enemy_knockback(Vector2(_speed,0))

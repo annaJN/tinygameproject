@@ -32,7 +32,6 @@ var wallBody = false
 
 @onready var anim = get_node("AnimationPlayer")
 
-@export var knockback_power : int = 1000
 
 func _ready():
 	# Set this node as the player node
@@ -75,7 +74,6 @@ func _physics_process(delta):
 		## Rotates the character depending on direction
 		rotateCharacter(direction)
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
-		print(velocity.x)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
 			anim.play("running")
@@ -105,7 +103,7 @@ func _physics_process(delta):
 	landing()
 	
 func enemy_knockback(enemy_velocity):
-	var knockbackdirection = (enemy_velocity - velocity).normalized() * knockback_power
+	var knockbackdirection = (enemy_velocity - velocity).normalized() * movement_data.knockback_power
 	velocity = knockbackdirection
 	move_and_slide()
 	
