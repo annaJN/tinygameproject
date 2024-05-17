@@ -3,7 +3,6 @@ extends Node2D
 var initiateGame = false
 
 func _on_start_pressed():
-	initiateGame = true
 	$Message.text = "Starting Game!"
 	Global.health = 50
 	Global.positionX = 100
@@ -11,7 +10,9 @@ func _on_start_pressed():
 	Global.passedHalfway = false
 	Global.savedGame = false
 	SaveGame.saveGame()
-	#get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
+	initiateGame = true
+	await get_tree().create_timer(1.8).timeout
+	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
 
 ## A button to start the last loaded game (hopefully)
 func _on_load_pressed():
@@ -20,7 +21,8 @@ func _on_load_pressed():
 		$Message.text = "No saved game available"
 		return
 	SaveGame.loadGame()
-	#var startScene = "res://Views/Levels/" + SaveGame.sceneActive + ".tscn"
+	initiateGame = true
+	await get_tree().create_timer(1.8).timeout
 	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
 
 func _on_halfway_pressed():
@@ -32,6 +34,8 @@ func _on_halfway_pressed():
 	Global.passedHalfway = false
 	Global.positionX = 2050
 	Global.positionY = 750
+	initiateGame = true
+	await get_tree().create_timer(1.8).timeout
 	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
 
 func _process(delta):
@@ -41,6 +45,7 @@ func _process(delta):
 		characterAnim.play("running")
 		if character.position.x > -1250:
 			character.position.x -= 750 * delta
+
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://Views/Menus/Settings.tscn")
