@@ -43,7 +43,7 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
-	if $AnimationPlayer.get_current_animation() == "wake_up" and !get_node("StoneOnHeadCollision/coollision").is_disabled():
+	if $AnimationPlayer.get_current_animation() == "wake_up" or $AnimationPlayer.get_current_animation() == "wake_up_angry" and !get_node("StoneOnHeadCollision/coollision").is_disabled():
 		disableHitBoxes()
 
 func _on_stone_on_head_collision_body_entered(body):
