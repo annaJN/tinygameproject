@@ -33,6 +33,8 @@ var wallBody = false
 @onready var hp = $HP/HP
 @onready var animation_player = $AnimationPlayer
 @onready var new_item_ui = $NewItemUI
+@onready var save_point = $SavePoint
+
 
 @onready var anim = get_node("AnimationPlayer")
 
@@ -342,3 +344,13 @@ func _on_actionable_finder_area_entered(area):
 
 func _on_actionable_finder_area_exited(area):
 	interact_ui.visible = false
+
+	
+func save_ui():
+	save_point.visible = true
+	$SavePoint/Timer.start()
+	
+func _on_timer_timeout():
+	save_point.visible = false
+	print("hello the timer ran out")
+

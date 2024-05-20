@@ -1208,8 +1208,9 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu51c"]
 bg_color = Color(0.6, 0.6, 0.6, 0.760784)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fh5e2"]
-radius = 81.0062
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cygv7"]
+radius = 34.0
+height = 148.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3mpa"]
 bg_color = Color(0.352941, 0.45098, 0.321569, 0.654902)
@@ -1331,12 +1332,15 @@ collision_mask = 16
 script = null
 
 [node name="DialogueDetector" type="CollisionShape2D" parent="ActionableFinder"]
-shape = SubResource("CircleShape2D_fh5e2")
+position = Vector2(-15, 2)
+shape = SubResource("CapsuleShape2D_cygv7")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Panel" type="Panel" parent="InteractUI"]
 anchors_preset = -1
+anchor_left = -0.0321181
 anchor_right = -0.0321181
 offset_left = 907.0
 offset_top = 555.0
@@ -1346,6 +1350,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_d3mpa")
 metadata/_edit_use_anchors_ = true
 
 [node name="ActionLabel" type="Label" parent="InteractUI/Panel"]
+layout_mode = 0
 offset_left = 46.0
 offset_top = 8.0
 offset_right = 109.0
@@ -1455,6 +1460,31 @@ stream = ExtResource("18_n7pv0")
 volume_db = -30.0
 autoplay = true
 
+[node name="SavePoint" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel2" type="Panel" parent="SavePoint"]
+anchors_preset = -1
+anchor_left = -0.117188
+anchor_right = -0.117188
+offset_left = 1949.0
+offset_top = 944.0
+offset_right = 2116.0
+offset_bottom = 984.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3mpa")
+metadata/_edit_use_anchors_ = true
+
+[node name="ActionLabel" type="Label" parent="SavePoint/Panel2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 82.0
+offset_bottom = 31.0
+text = "Saving..."
+
+[node name="Timer" type="Timer" parent="SavePoint"]
+wait_time = 2.0
+
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
@@ -1463,3 +1493,4 @@ autoplay = true
 [connection signal="body_entered" from="ObjectFinder" to="." method="_on_object_finder_body_entered"]
 [connection signal="body_exited" from="ObjectFinder" to="." method="_on_object_finder_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="SavePoint/Timer" to="." method="_on_timer_timeout"]
