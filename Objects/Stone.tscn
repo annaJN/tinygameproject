@@ -11,7 +11,7 @@ radius = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7w2h"]
 radius = 48.0104
 
-[node name="Stone" type="RigidBody2D" groups=["Heavy", "Landing", "PickableItem"]]
+[node name="Stone" type="RigidBody2D" groups=["CarryItem", "Heavy", "Landing"]]
 collision_layer = 8
 lock_rotation = true
 max_contacts_reported = 2
