@@ -11,6 +11,7 @@ var tmpPicker
 var tmpDragon
 var tmpPlayer
 var pickerInstantiated = false
+var denaInstantiated = false
 var dragonInstantiated = false
 
 func _init():
@@ -53,6 +54,13 @@ func _process(_delta):
 		add_child(tmpPicker)
 		pickerInstantiated = true
 	
+	if !denaInstantiated and tmpPlayerPos >= 9000 and Global.denaRemoved:
+		tmpSleepy = Sleepy.instantiate()
+		tmpSleepy.position = Vector2(10000, 500)
+		add_child(tmpSleepy)
+		#get_node("Sleepy").animation.play("idle")
+		denaInstantiated = true
+	
 	if !dragonInstantiated and tmpPlayerPos >= 9500:
 		tmpDragon = Dragon.instantiate()
 		tmpDragon.position = Vector2(11000, 60)
@@ -62,6 +70,7 @@ func _process(_delta):
 	if Global.removeSleepy:
 		get_node("Sleepy").queue_free()
 		Global.removeSleepy = false
+		Global.denaRemoved = true
 	
 	if Global.justSaved:
 		var mushroom = get_node("SavePoint")
