@@ -142,7 +142,7 @@ func _unhandled_input(_event):
 			return
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
-				#$Sounds/ItemPickup.play()
+				$Sounds/ItemPickup.play()
 				carrying = true
 				carryingBody = body
 				carryingBody.freeze = true
@@ -182,7 +182,7 @@ func releaseItem():
 	carryingBody = null
 	Global.movement = "res://Characters/Player/DefaultMovementData.tres"
 	$Marker2D.position.x = marker_original_offset * self.get_scale().x
-	#$Sounds/ItemDrop.play()
+	$Sounds/ItemDrop.play()
 
 func inventory():
 	inventory_ui.visible = !inventory_ui.visible
