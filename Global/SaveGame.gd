@@ -6,8 +6,8 @@ func saveGame():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var data: Dictionary = {
 		"playerHealth": Global.health,
-		"xPosition": Global.positionX,
-		"yPosition": Global.positionY,
+		"xPosition": Global.savePointX,
+		"yPosition": Global.savePointY,
 		"halfway": Global.passedHalfway,
 		"gameSaved": Global.savedGame,
 	}
@@ -24,6 +24,8 @@ func loadGame():
 				Global.health = current_line["playerHealth"]
 				Global.positionX = current_line["xPosition"]
 				Global.positionY = current_line["yPosition"]
+				Global.savePointX = current_line["xPosition"]
+				Global.savePointY = current_line["yPosition"]
 				Global.passedHalfway = current_line["halfway"]
 				Global.savedGame = current_line["gameSaved"]
 				

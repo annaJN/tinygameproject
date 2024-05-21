@@ -2,15 +2,19 @@ extends Node
 
 #dialogue variables 
 var has_given_Starberry = false
+var dialogue_is_playing = false
 
 var accessible : bool
 #var currentScene
 
 var positionX
 var positionY
+var savePointX
+var savePointY
 var savedGame
 var justSaved
 var passedHalfway
+var overRide
 
 var movement = "res://Characters/Player/DefaultMovementData.tres"
 

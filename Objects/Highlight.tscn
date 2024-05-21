@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://1yaoydl76xa3"]
+
+[ext_resource type="Texture2D" uid="uid://5avagmi7puib" path="res://Assets/Environment/Woodsy/pine.png" id="1_c1gg8"]
+[ext_resource type="Texture2D" uid="uid://bj66dbqirxp68" path="res://Assets/backgrounds/white.jpg" id="2_qpenr"]
+
+[node name="Highlight" type="Sprite2D"]
+visible = false
+clip_children = 1
+scale = Vector2(0.048, 0.048)
+texture = ExtResource("1_c1gg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.992157, 0.8, 0.380392)
+position = Vector2(80, -60)
+scale = Vector2(20, 20)
+texture = ExtResource("2_qpenr")

@@ -18,6 +18,8 @@ var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
 
+var isFacingRight = false
+
 var currentGround : StaticBody2D
 var direction
 var wallBody = false
@@ -58,20 +60,21 @@ func _physics_process(delta):
 	
 	wall_sliding_handler(delta)
 	## Handle jump (including double jump)
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_just_pressed("Jump") and !Global.dialogue_is_playing:
 		jumpHandling()
 	
-	if carrying and carryingBody.is_in_group("Heavy") and get_node("AnimatedSprite2D").flip_h:
+	if carrying and carryingBody.is_in_group("Heavy") and isFacingRight:
 		direction = Input.get_action_strength("Right")
-	elif carrying and carryingBody.is_in_group("Heavy") and !get_node("AnimatedSprite2D").flip_h:
+	elif carrying and carryingBody.is_in_group("Heavy") and !isFacingRight:
 		direction = 0 - Input.get_action_strength("Left")
 	else:
 		# Get the input direction and handle the movement/deceleration.
 		direction = Input.get_axis("Left", "Right")
 	
 	# Makes it so character accelerates before hitting top speed
-	if direction and !get_tree().paused:
+	if direction and !get_tree().paused and !Global.dialogue_is_playing:
 		## Rotates the character depending on direction
+		#if direction != self.get_scale().x :
 		rotateCharacter(direction)
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		## Start the running animation
@@ -85,11 +88,12 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	if carrying:
+		carryingBody.set_highlight_item(false)
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
-				if self.position.x <= currentGround.position.x + 32 and !get_node("AnimatedSprite2D").flip_h:
+				if self.position.x <= currentGround.position.x + 32 and !isFacingRight:
 					carrying = false
-				elif self.position.x >= currentGround.position.x + 208 and get_node("AnimatedSprite2D").flip_h:
+				elif self.position.x >= currentGround.position.x + 208 and isFacingRight:
 					carrying = false
 			carryingBody.position.x = $Marker2D.global_position.x
 		else:
@@ -116,11 +120,18 @@ func _input(event):
 		
 	if (event.is_action_pressed("Down") and is_on_floor()):
 		position.y += 15
+		
+	if (event.is_action_pressed("ui_add")):
+		var items = $ObjectFinder.get_overlapping_bodies()
+		for item in items:
+			item.pickup_item()
+			return
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
+			Global.dialogue_is_playing = true
 			actionables[0].action()
 			return
 
@@ -132,8 +143,8 @@ func _unhandled_input(_event):
 			carryingBody.freeze = false
 			carryingBody.get_node("cool").disabled = false
 			carryingBody = null
-			marker_offset = 0
 			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+			$Marker2D.position.x = marker_original_offset * self.get_scale().x
 			return
 			
 		for body in bodies:
@@ -146,25 +157,23 @@ func _unhandled_input(_event):
 				var tmp_node = carryingBody.get_node("cool")
 				match tmp_node.get_class() :
 					"CollisionShape2D" :
-						marker_offset = tmp_node.get_shape().radius + marker_original_offset
+						$Marker2D.position.x = self.get_scale().x * (marker_original_offset + tmp_node.get_shape().radius)
 					"CollisionPolygon2D" :
 						var minX = 1000000000
 						var maxX = -1000000000
+						var rot = tmp_node.transform.get_rotation()
 						for vec in tmp_node.polygon:
-							var x = vec.x
+							var x = vec.rotated(rot).x
 							if (x < minX) :
 								minX = vec.x
 							if (x > maxX) :
 								maxX = vec.x
 						minX *= tmp_node.transform.get_scale().x
 						maxX *= tmp_node.transform.get_scale().x
-						marker_offset = (maxX - minX)/2.0 + marker_original_offset
+						$Marker2D.position.x = self.get_scale().x * (marker_original_offset + (maxX - minX)/2.0)
 						#TODO find a way to get the width of a collisionpolygon2d
 					_ :
 						print("Womp womp, object picked up is not of correct class")
-				if not get_node("AnimatedSprite2D").flip_h :
-					marker_offset *= -1
-				$Marker2D.position.x = marker_offset
 				if body.is_in_group("Heavy"):
 					Global.movement = "res://Characters/Player/DragMovement.tres"
 					carryingBody.freeze = false
@@ -187,14 +196,9 @@ func inventory():
 func rotateCharacter(directioning):
 	if carrying and carryingBody.is_in_group("Heavy"):
 		return
-	get_node("AnimatedSprite2D").flip_h = directioning == 1
-	$ActionableFinder.position.x = 50 * directioning
-	$ObjectFinder.position.x = 50 * directioning
-	if marker_offset * directioning < 0 :
-		$Marker2D.position.x = marker_offset * directioning
-	else:
-		$Marker2D.position.x = marker_offset
-	return
+	self.set_scale(Vector2(1,directioning))
+	self.set_rotation(PI / 2 - (directioning * PI / 2))
+	isFacingRight = directioning > 0
 
 func landing():
 	## Animates the landing
@@ -277,17 +281,17 @@ func show_new_item_ui(item):
 ## 
 ## Pause menu functionality
 func _on_resume_pressed():
-	$Camera2D/PauseMenu/Save.modulate = Color(1,1,1,1)	
-	$Camera2D/PauseMenu.hide()
+	$PauseMenuUI/PauseMenu/Save.modulate = Color(1,1,1,1)	
+	$PauseMenuUI.hide()
 	get_tree().paused = false
 
 func _on_save_pressed():
-	Global.positionX = self.position.x
-	Global.positionY = self.position.y
+	Global.savePointX = self.position.x
+	Global.savePointY = self.position.y
 	Global.savedGame = true
 	SaveGame.saveGame()
 	Global.savedGame = true
-	$Camera2D/PauseMenu/Save.modulate = Color(0,1,0,0.5)
+	$PauseMenuUI/PauseMenu/Save.modulate = Color(0,1,0,0.5)
 	Global.justSaved = true
 
 func _on_main_menu_pressed():
@@ -305,9 +309,18 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_object_finder_body_entered(body):
+	print(body.name)
 	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
+	if body.is_in_group("PickableItem"):
+		interact_ui.visible = true
+		body.set_highlight_item(true)
+		
 
 
 func _on_object_finder_body_exited(_body):
-	wallBody = false
+	if _body.is_in_group("WallJump"):
+		wallBody = false
+	elif _body.is_in_group("PickableItem"):
+		interact_ui.visible = false
+		_body.set_highlight_item(false)

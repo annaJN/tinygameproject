@@ -26,6 +26,8 @@ func _init():
 	add_child(tmpMushroom)
 	if !Global.savedGame:
 		tmpMushroom.set_visible(false)
+	else:
+		tmpMushroom.position = Vector2(Global.savePointX, Global.savePointY)
 	
 
 func _input(event):
@@ -35,9 +37,9 @@ func _input(event):
 			get_tree().quit()
 	
 	# function for pauseing the game
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and !Global.dialogue_is_playing:
 		get_tree().paused = true
-		$Player/Camera2D/PauseMenu.show()
+		$Player/PauseMenuUI.show()
 
 
 func _process(_delta):
@@ -66,8 +68,9 @@ func _process(_delta):
 		mushroom.set_visible(true)
 		Global.justSaved = false
 	
-	if tmpPlayerPos > 2000 and !Global.passedHalfway:
+	if tmpPlayerPos > 2000 and !Global.passedHalfway or Global.overRide:
 		Global.passedHalfway = true
+		Global.overRide = false
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
 		SaveGame.saveGame()
 	
