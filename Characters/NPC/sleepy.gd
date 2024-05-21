@@ -21,7 +21,8 @@ func _physics_process(delta):
 		if setUpDena:
 			anim.play("idle")
 			setUpDena = false
-		
+			get_node("StoneOnHeadCollision/coollision").set_disabled(true)
+			get_node("StoneOnTheSideCollision/coolision").set_disabled(true)
 		
 		return
 	

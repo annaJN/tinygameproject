@@ -88,13 +88,26 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
-			anim.play("running")
+			if carrying:
+				if carryingBody.is_in_group("Heavy"):
+					anim.play("pushing")
+				else:
+					anim.play("item_running")
+			else:
+				anim.play("running")
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, movement_data.friction * delta)
 		# Play idle animation
 		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and time_on_ground > 5:
-			anim.play("idle")
+			if carrying:
+				if carryingBody.is_in_group("Heavy"):
+					#print("IDLE PUSHING ANIMATION")
+					anim.play("idle_pushing")
+				else:
+					anim.play("idle_item")
+			else:
+				anim.play("idle")
 
 	if carrying:
 		carryingBody.set_highlight_item(false)
@@ -161,6 +174,11 @@ func _unhandled_input(_event):
 			if !carrying and body is RigidBody2D:
 				carrying = true
 				carryingBody = body
+				
+				if body.is_in_group("Heavy"):
+					anim.play("init_pushing")
+				else:
+					anim.play("pick_up")
 				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
