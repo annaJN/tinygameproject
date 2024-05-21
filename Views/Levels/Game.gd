@@ -9,12 +9,13 @@ var Mushroom = preload("res://Objects/save_point.tscn")
 var tmpSleepy
 var tmpPicker
 var tmpDragon
+var tmpPlayer
 var pickerInstantiated = false
 var denaInstantiated = false
 var dragonInstantiated = false
 
 func _init():
-	var tmpPlayer = PlayerSomething.instantiate()
+	tmpPlayer = PlayerSomething.instantiate()
 	tmpPlayer.position = Vector2(Global.positionX, Global.positionY)
 	add_child(tmpPlayer)
 	
@@ -81,6 +82,7 @@ func _process(_delta):
 		Global.passedHalfway = true
 		Global.overRide = false
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
+		tmpPlayer.save_ui()
 		SaveGame.saveGame()
 	
 	#if SaveGame.health <= 0:

@@ -17,6 +17,7 @@ var jump_count = 0
 var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
+var in_range_dialogue = false
 
 var isFacingRight = false
 
@@ -27,10 +28,14 @@ var wallBody = false
 @onready var actionableFinder: Area2D = $ActionableFinder
 
 @onready var interact_ui = $InteractUI
+@onready var interact_ui_action_label = $InteractUI/Panel/ActionLabel
+@onready var interact_ui_key_label = $InteractUI/Panel/Panel/KeyLabel
 @onready var inventory_ui = $InventoryUI
 @onready var hp = $HP/HP
 @onready var animation_player = $AnimationPlayer
 @onready var new_item_ui = $NewItemUI
+@onready var save_point = $SavePoint
+
 
 @onready var anim = get_node("AnimationPlayer")
 
@@ -136,6 +141,7 @@ func _unhandled_input(_event):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
 			Global.dialogue_is_playing = true
+			interact_ui.visible = false
 			actionables[0].action()
 			return
 
@@ -313,10 +319,16 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_object_finder_body_entered(body):
-	print(body.name)
 	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
-	if body.is_in_group("PickableItem"):
+	if body.is_in_group("CollectItem") and !in_range_dialogue:
+		interact_ui_action_label.text = "collect"
+		interact_ui_key_label.text = "F"
+		interact_ui.visible = true
+		body.set_highlight_item(true)
+	if body.is_in_group("CarryItem") and !in_range_dialogue:
+		interact_ui_action_label.text = "carry"
+		interact_ui_key_label.text = "C"
 		interact_ui.visible = true
 		body.set_highlight_item(true)
 		
@@ -325,6 +337,28 @@ func _on_object_finder_body_entered(body):
 func _on_object_finder_body_exited(_body):
 	if _body.is_in_group("WallJump"):
 		wallBody = false
-	elif _body.is_in_group("PickableItem"):
+	elif _body.is_in_group("CollectItem") or _body.is_in_group("CarryItem"):
 		interact_ui.visible = false
 		_body.set_highlight_item(false)
+
+
+func _on_actionable_finder_area_entered(area):
+	in_range_dialogue = true
+	interact_ui_action_label.text = "talk"
+	interact_ui_key_label.text = "E"
+	interact_ui.visible = true
+
+
+func _on_actionable_finder_area_exited(area):
+	in_range_dialogue = false
+	interact_ui.visible = false
+
+	
+func save_ui():
+	save_point.visible = true
+	$SavePoint/Timer.start()
+	
+func _on_timer_timeout():
+	save_point.visible = false
+	print("hello the timer ran out")
+
