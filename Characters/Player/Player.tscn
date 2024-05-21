@@ -2120,7 +2120,6 @@ wait_time = 2.0
 [node name="DieScreen" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 50
-visible = false
 
 [node name="Panel" type="Panel" parent="DieScreen"]
 offset_right = 2632.0
@@ -2144,7 +2143,7 @@ layout_mode = 2
 
 [node name="Message" type="Label" parent="DieScreen/MenuBar/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Game Over"
+text = "You have commited death!"
 horizontal_alignment = 1
 
 [node name="SavePoint" type="Button" parent="DieScreen/MenuBar/CenterContainer/VBoxContainer"]
