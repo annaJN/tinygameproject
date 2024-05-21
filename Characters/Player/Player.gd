@@ -17,6 +17,7 @@ var jump_count = 0
 var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
+var in_range_dialogue = false
 
 var isFacingRight = false
 
@@ -136,6 +137,7 @@ func _unhandled_input(_event):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
 			Global.dialogue_is_playing = true
+			interact_ui.visible = false
 			actionables[0].action()
 			return
 
@@ -315,12 +317,12 @@ func _on_area_2d_body_entered(body):
 func _on_object_finder_body_entered(body):
 	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
-	if body.is_in_group("CollectItem"):
+	if body.is_in_group("CollectItem") and !in_range_dialogue:
 		interact_ui_action_label.text = "collect"
 		interact_ui_key_label.text = "F"
 		interact_ui.visible = true
 		body.set_highlight_item(true)
-	if body.is_in_group("CarryItem"):
+	if body.is_in_group("CarryItem") and !in_range_dialogue:
 		interact_ui_action_label.text = "carry"
 		interact_ui_key_label.text = "C"
 		interact_ui.visible = true
@@ -337,12 +339,14 @@ func _on_object_finder_body_exited(_body):
 
 
 func _on_actionable_finder_area_entered(area):
+	in_range_dialogue = true
 	interact_ui_action_label.text = "talk"
 	interact_ui_key_label.text = "E"
 	interact_ui.visible = true
 
 
 func _on_actionable_finder_area_exited(area):
+	in_range_dialogue = false
 	interact_ui.visible = false
 
 	
