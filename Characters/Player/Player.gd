@@ -143,6 +143,7 @@ func _unhandled_input(_event):
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
 				$Sounds/ItemPickup.play()
+				max_jumps = 1
 				carrying = true
 				carryingBody = body
 				carryingBody.freeze = true
@@ -168,7 +169,6 @@ func _unhandled_input(_event):
 					_ :
 						print("Womp womp, object picked up is not of correct class")
 				if body.is_in_group("Heavy"):
-					max_jumps = 1
 					Global.movement = "res://Characters/Player/DragMovement.tres"
 					carryingBody.freeze = false
 					carryingBody.get_node("cool").disabled = false
