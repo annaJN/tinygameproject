@@ -220,14 +220,10 @@ func jumpHandling():
 		else:
 			$Sounds/JumpAir.play()
 		anim.play("jump")
-		if carrying :
-			velocity.y = movement_data.jump_velocity_burdened
-			if carryingBody.is_in_group("Heavy"):
-				velocity.y = 0
-				releaseItem()
-				velocity.y = movement_data.jump_velocity
-		else :
-			velocity.y = movement_data.jump_velocity
+		if carrying and carryingBody.is_in_group("Heavy"):
+			velocity.y = 0
+			releaseItem()
+		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0
 	wall_jump()
