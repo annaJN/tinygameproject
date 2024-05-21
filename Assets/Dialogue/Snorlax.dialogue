@@ -1,14 +1,3 @@
-#Why is the snorlax away from its village?
-	#likes the solitude
-	#on a mission
-		#What?
-			#To scavange for the berries
-				#It ate the berries and fell asleep (they have a tranquilizing effect that is potent when raw, easy overconsumption)
-				#It has a secret spot and uses it to underreport the amount of berries it can find
-				#The village makes a communal brew with it
-			#To find a creature that has gone missing
-			#Guarding the edges of their territory
-
 ~ snorlax_start
 if Global.dena_in_village
 	=> dena_in_village
@@ -33,7 +22,6 @@ Sleepy Creature: *sits up and looks around*
 		Sleepy Creature: Oh, well hello there. 
 => snorlax_introduction
 - *Sneak away*
-		do Global.dena_not_met = true
 		=> END
 - *Try to hide in the grass*
 	do Dialogue.Snorlax_spotted_you = true
@@ -56,6 +44,7 @@ Sleepy Creature: Never mind that, where are my manners.
 => snorlax_introduction
 
 ~ snorlax_introduction
+do Glocbal.dena_has_met = true
 Sleepy Creature: Pleased to meet you, my friends call me Dena and I'd like it if you did the same.
 - *stare*
 	Dena: ...
@@ -81,18 +70,8 @@ Dena: If you come by my village come say hi will you.
 => leave
 => END 
 
-~ snorlax_exposition_tree
-- Who are you?
-	Dena:
-	Dena:
-- Why were you sleeping on the ground?
-	Dena:
-	Dena:
-- *Leave* => END
-
-
 ~ snorlax_angry_start
-
+do Glocbal.dena_has_met = true
 Sleepy Creature: [shake rate=20 level=10]!!![/shake][next=auto]
 Sleepy Creature: [shake rate=20 level=10]What in the[speed=0.2]...[/shake]
 Sleepy Creature: *looks around and locks eyes with you*
@@ -125,7 +104,7 @@ do Global.sleepy_dialogue_done = true
 ~ dena_in_village
 if snorlax_state_angry_at_player
 	=> dena_village_mad
-elif dena_not_met 
+elif not dena_has_met
 	=> village_first
 else 
 	=> dena_village_nice
@@ -161,5 +140,4 @@ Dena: Hmm, you smell familiar. Ah never mind me. Who are you?
 	Dena: Nice to meet you.
 - ... 
 Dena: ...
-do Global.dena_not_met = false
 => END

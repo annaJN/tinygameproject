@@ -34,7 +34,10 @@ var snorlax_state_angry_at_player = false
 var sleepy_awaken = false
 var sleepy_dialogue_done = false
 var dena_in_village = false
-var dena_not_met = false
+var dena_has_met = false
+
+var talked_to_dragon = false
+var has_quest_item = false
 
 signal inventory_updated
 
@@ -51,6 +54,11 @@ var acorn = {
 
 func _ready():
 	inventory.resize(12)
+	
+func spore_animation():
+	#call spore animation
+	#FIX
+	return  true
 	
 #Inventory stuff
 func add_item(item):
