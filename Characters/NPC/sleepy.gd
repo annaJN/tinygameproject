@@ -16,9 +16,16 @@ const DIRECTION = -1
 func _physics_process(delta):
 	if not self.is_on_floor():
 		velocity.y += gravity * delta
+
+	#print("CURRENT ANIMATION THAT IS PLAYING " + str($AnimationPlayer.get_current_animation()))
 	
 	if Global.denaRemoved:
+		if Global.denaShouldInitiate:
+			setUpDena = true
+			Global.denaShouldInitiate = false
+		#print("DENA REMOVED IN SLEEPY")
 		if setUpDena:
+			#print("SET UP SECOND DENA")
 			anim.play("idle")
 			setUpDena = false
 			get_node("StoneOnHeadCollision/coollision").set_disabled(true)

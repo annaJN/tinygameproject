@@ -31,6 +31,7 @@ const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 var sleepyDone = false
 var removeSleepy = false
 var denaRemoved = false
+var denaShouldInitiate = true
 
 var snorlax_state_angry_at_player = false
 var sleepy_awaken = false
@@ -91,8 +92,8 @@ func set_player_reference(player):
 func change_health(amount):
 	if (health + amount) > MAX_HEALTH:
 		health = MAX_HEALTH
-	elif (health + amount) <= 0:
-		get_tree().change_scene_to_file("res://Main.tscn")
+	#elif (health + amount) <= 0:
+		#get_tree().change_scene_to_file("res://Main.tscn")
 	else:
 		health += amount
 	

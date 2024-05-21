@@ -2054,9 +2054,6 @@ text = "HP
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(40, 0)
 
-[node name="HeavyMarker" type="Marker2D" parent="."]
-position = Vector2(96, 89)
-
 [node name="NewItemUI" parent="." instance=ExtResource("9_0uwsx")]
 visible = false
 
@@ -2130,6 +2127,50 @@ text = "Saving..."
 [node name="Timer" type="Timer" parent="SavePoint"]
 wait_time = 2.0
 
+[node name="DieScreen" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 50
+
+[node name="Panel" type="Panel" parent="DieScreen"]
+offset_right = 2632.0
+offset_bottom = 1440.0
+
+[node name="MenuBar" type="MenuBar" parent="DieScreen"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="CenterContainer" type="CenterContainer" parent="DieScreen/MenuBar"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1900.0
+offset_bottom = 940.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DieScreen/MenuBar/CenterContainer"]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="DieScreen/MenuBar/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "You have commited death!"
+horizontal_alignment = 1
+
+[node name="SavePoint" type="Button" parent="DieScreen/MenuBar/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+text = "Resume from Save Point"
+
+[node name="Halfway" type="Button" parent="DieScreen/MenuBar/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Resume from Tower"
+
+[node name="MainMenu" type="Button" parent="DieScreen/MenuBar/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Quit to Main Menu"
+
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
@@ -2139,3 +2180,6 @@ wait_time = 2.0
 [connection signal="body_exited" from="ObjectFinder" to="." method="_on_object_finder_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="SavePoint/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="DieScreen/MenuBar/CenterContainer/VBoxContainer/SavePoint" to="." method="_on_save_point_pressed"]
+[connection signal="pressed" from="DieScreen/MenuBar/CenterContainer/VBoxContainer/Halfway" to="." method="_on_halfway_pressed"]
+[connection signal="pressed" from="DieScreen/MenuBar/CenterContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
