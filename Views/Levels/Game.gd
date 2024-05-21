@@ -84,6 +84,3 @@ func _process(_delta):
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
 		tmpPlayer.save_ui()
 		SaveGame.saveGame()
-	
-	#if SaveGame.health <= 0:
-		#get_tree().change_scene_to_file("res://Main.tscn")

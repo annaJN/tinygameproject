@@ -35,6 +35,7 @@ var wallBody = false
 @onready var animation_player = $AnimationPlayer
 @onready var new_item_ui = $NewItemUI
 @onready var save_point = $SavePoint
+@onready var die_screen = $DieScreen
 
 
 @onready var anim = get_node("AnimationPlayer")
@@ -52,6 +53,14 @@ func _process(_delta):
 	if self.position.x > 4000 and !Global.denaRemoved:
 		Global.removeSleepy = true
 		Global.denaRemoved = true
+	
+	if Global.health <= 0:
+		if !Global.savedGame:
+			$DieScreen/MenuBar/CenterContainer/VBoxContainer/SavePoint.set_disabled(true)
+		if !Global.passedHalfway:
+			$DieScreen/MenuBar/CenterContainer/VBoxContainer/Halfway.set_disabled(true)
+		get_tree().paused = true
+		die_screen.visible = true
 
 func _physics_process(delta):
 	## Add the gravity to the player
@@ -378,5 +387,33 @@ func save_ui():
 	
 func _on_timer_timeout():
 	save_point.visible = false
-	print("hello the timer ran out")
 
+func _on_save_point_pressed():
+	SaveGame.loadGame()
+	if !Global.savedGame:
+		$DieScreen/MenuBar/CenterContainer/VBoxContainer/Message.text = "You forgot to save :("
+		return
+	if Global.passedHalfway:
+		Global.passedHalfway = false
+		Global.overRide = true
+	die_screen.hide()
+	get_tree().paused = false
+	Global.denaRemoved = false
+	Global.denaShouldInitiate = true
+	get_tree().reload_current_scene()
+
+
+func _on_halfway_pressed():
+	print("pressing on halfway")
+	SaveGame.loadGame()
+	if !Global.passedHalfway:
+		$DieScreen/MenuBar/CenterContainer/VBoxContainer/Message.text = "Sorry, but you did not get halfway :("
+		return
+	die_screen.hide()
+	get_tree().paused = false
+	Global.passedHalfway = false
+	Global.positionX = 2050
+	Global.positionY = 750
+	Global.denaRemoved = false
+	Global.denaShouldInitiate = true
+	get_tree().reload_current_scene()
