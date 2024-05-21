@@ -9,6 +9,7 @@ extends Resource
 @export var push_force = 80.0
 @export var strength = 20000
 @export var knockback_power = 500
+@export var max_jumps = 2
 
 @export var wall_jump_push = 1000
 @export var wall_slide_gravity = 5000

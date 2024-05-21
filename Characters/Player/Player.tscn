@@ -1423,9 +1423,11 @@ autoplay = true
 
 [node name="ItemDrop" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("19_bu81v")
+volume_db = -10.0
 
 [node name="ItemPickup" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("20_t3w84")
+volume_db = -10.0
 
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Save" to="." method="_on_save_pressed"]

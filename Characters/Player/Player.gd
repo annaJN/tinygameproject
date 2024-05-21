@@ -168,6 +168,7 @@ func _unhandled_input(_event):
 					_ :
 						print("Womp womp, object picked up is not of correct class")
 				if body.is_in_group("Heavy"):
+					max_jumps = 1
 					Global.movement = "res://Characters/Player/DragMovement.tres"
 					carryingBody.freeze = false
 					carryingBody.get_node("cool").disabled = false
@@ -175,6 +176,7 @@ func _unhandled_input(_event):
 
 
 func releaseItem():
+	max_jumps = Global.movement.max_jumps
 	carrying = false
 	carryingBody.set_axis_velocity(velocity)
 	carryingBody.freeze = false
@@ -221,6 +223,7 @@ func jumpHandling():
 		if carrying :
 			velocity.y = movement_data.jump_velocity_burdened
 			if carryingBody.is_in_group("Heavy"):
+				velocity.y = 0
 				releaseItem()
 				velocity.y = movement_data.jump_velocity
 		else :
