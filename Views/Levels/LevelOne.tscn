@@ -481,9 +481,6 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_milg7"]
-size = Vector2(50, 828.274)
-
 [sub_resource type="Resource" id="Resource_d4cyj"]
 script = ExtResource("5_5t0x4")
 texture_idx = -1
@@ -735,6 +732,9 @@ render_offset = -0.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go8ta"]
 size = Vector2(164, 1238)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_milg7"]
+size = Vector2(50, 828.274)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_63qu5"]
 a = Vector2(-371, -151)
@@ -1114,34 +1114,6 @@ metadata/_edit_lock_ = true
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Interactables" groups=["WallJump"]]
-position = Vector2(9440, 64)
-
-[node name="Branch2" type="Sprite2D" parent="Interactables/StaticBody2D2"]
-position = Vector2(3.15479, 221.252)
-rotation = -1.64385
-scale = Vector2(0.864627, 0.864627)
-texture = ExtResource("26_acr75")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/StaticBody2D2"]
-position = Vector2(-20.6348, 240.65)
-rotation = -0.0206938
-shape = SubResource("RectangleShape2D_milg7")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Interactables" groups=["WallJump"]]
-position = Vector2(9268, -77)
-
-[node name="Branch2" type="Sprite2D" parent="Interactables/StaticBody2D"]
-position = Vector2(3.15478, 221.252)
-rotation = -1.64385
-scale = Vector2(0.864627, 0.864627)
-texture = ExtResource("26_acr75")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/StaticBody2D"]
-position = Vector2(-20.6343, 240.65)
-rotation = -0.0206938
-shape = SubResource("RectangleShape2D_milg7")
-
 [node name="Ground" type="StaticBody2D" parent="Interactables" groups=["Landing", "WallJump"]]
 position = Vector2(-12898, 45)
 collision_mask = 5
@@ -1397,118 +1369,6 @@ scale = Vector2(0.298259, 0.298259)
 texture = ExtResource("40_doty2")
 
 [node name="Walljump" type="Node2D" parent="Interactables"]
-
-[node name="b5" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9547, -31)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b5"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b5"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="b6" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9087, 620)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b6"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b6"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="b7" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9084, 482)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b7"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b7"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="b8" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9081, 333)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b8"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b8"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="b9" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9083, 193)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b9"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b9"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="b10" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9069, 25)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b10"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b10"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="b11" type="StaticBody2D" parent="Interactables/Walljump" groups=["Landing"]]
-position = Vector2(9067, -134)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/Walljump/b11"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Walljump/b11"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Interactables/Walljump"]
-position = Vector2(9440, 64)
-
-[node name="Branch2" type="Sprite2D" parent="Interactables/Walljump/StaticBody2D2"]
-position = Vector2(3.15479, 221.252)
-rotation = -1.64385
-scale = Vector2(0.864627, 0.864627)
-texture = ExtResource("26_acr75")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Walljump/StaticBody2D2"]
-position = Vector2(-20.6348, 240.65)
-rotation = -0.0206938
-shape = SubResource("RectangleShape2D_milg7")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Interactables/Walljump"]
-position = Vector2(9268, -77)
-
-[node name="Branch2" type="Sprite2D" parent="Interactables/Walljump/StaticBody2D"]
-position = Vector2(3.15478, 221.252)
-rotation = -1.64385
-scale = Vector2(0.864627, 0.864627)
-texture = ExtResource("26_acr75")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Walljump/StaticBody2D"]
-position = Vector2(-20.6343, 240.65)
-rotation = -0.0206938
-shape = SubResource("RectangleShape2D_milg7")
 
 [node name="BigBush" type="Node2D" parent="Interactables"]
 z_index = -1
