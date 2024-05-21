@@ -342,14 +342,14 @@ func _on_object_finder_body_exited(_body):
 		_body.set_highlight_item(false)
 
 
-func _on_actionable_finder_area_entered(area):
+func _on_actionable_finder_area_entered(_area):
 	in_range_dialogue = true
 	interact_ui_action_label.text = "talk"
 	interact_ui_key_label.text = "E"
 	interact_ui.visible = true
 
 
-func _on_actionable_finder_area_exited(area):
+func _on_actionable_finder_area_exited(_area):
 	in_range_dialogue = false
 	interact_ui.visible = false
 
