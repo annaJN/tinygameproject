@@ -2723,8 +2723,9 @@ radius = 72.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfh1"]
 size = Vector2(288, 50)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o4fj8"]
-radius = 221.472
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pkiyo"]
+radius = 89.0
+height = 278.0
 
 [node name="Sleepy" type="CharacterBody2D"]
 z_index = -2
@@ -2763,12 +2764,12 @@ position = Vector2(-144, 104)
 shape = SubResource("RectangleShape2D_pvfh1")
 
 [node name="Actionable" parent="." instance=ExtResource("37_s7qe1")]
-visible = false
 dialogue_resources = ExtResource("5_5oi7u")
 dialogue_start = "snorlax_start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-shape = SubResource("CircleShape2D_o4fj8")
+position = Vector2(-28, -15)
+shape = SubResource("CapsuleShape2D_pkiyo")
 
 [connection signal="body_entered" from="StoneOnHeadCollision" to="." method="_on_stone_on_head_collision_body_entered"]
 [connection signal="body_entered" from="StoneOnTheSideCollision" to="." method="_on_stone_on_the_side_collision_body_entered"]

@@ -17,6 +17,7 @@ var jump_count = 0
 var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
+var in_range_dialogue = false
 
 var isFacingRight = false
 
@@ -27,10 +28,14 @@ var wallBody = false
 @onready var actionableFinder: Area2D = $ActionableFinder
 
 @onready var interact_ui = $InteractUI
+@onready var interact_ui_action_label = $InteractUI/Panel/ActionLabel
+@onready var interact_ui_key_label = $InteractUI/Panel/Panel/KeyLabel
 @onready var inventory_ui = $InventoryUI
 @onready var hp = $HP/HP
 @onready var animation_player = $AnimationPlayer
 @onready var new_item_ui = $NewItemUI
+@onready var save_point = $SavePoint
+
 
 @onready var anim = get_node("AnimationPlayer")
 
@@ -43,6 +48,10 @@ func _ready():
 func _process(_delta):
 	## Display the health of the player by a label
 	hp.text = "HP " + str(Global.health)
+	
+	if self.position.x > 4000 and !Global.denaRemoved:
+		Global.removeSleepy = true
+		Global.denaRemoved = true
 
 func _physics_process(delta):
 	## Add the gravity to the player
@@ -79,13 +88,26 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
-			anim.play("running")
+			if carrying:
+				if carryingBody.is_in_group("Heavy"):
+					anim.play("pushing")
+				else:
+					anim.play("item_running")
+			else:
+				anim.play("running")
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, movement_data.friction * delta)
 		# Play idle animation
 		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and time_on_ground > 5:
-			anim.play("idle")
+			if carrying:
+				if carryingBody.is_in_group("Heavy"):
+					#print("IDLE PUSHING ANIMATION")
+					anim.play("idle_pushing")
+				else:
+					anim.play("idle_item")
+			else:
+				anim.play("idle")
 
 	if carrying:
 		carryingBody.set_highlight_item(false)
@@ -132,6 +154,7 @@ func _unhandled_input(_event):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
 			Global.dialogue_is_playing = true
+			interact_ui.visible = false
 			actionables[0].action()
 			return
 
@@ -146,6 +169,10 @@ func _unhandled_input(_event):
 				max_jumps = 1
 				carrying = true
 				carryingBody = body
+				if body.is_in_group("Heavy"):
+					anim.play("init_pushing")
+				else:
+					anim.play("pick_up")
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
 				var tmp_node = carryingBody.get_node("cool")
@@ -317,10 +344,16 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_object_finder_body_entered(body):
-	print(body.name)
 	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
-	if body.is_in_group("PickableItem"):
+	if body.is_in_group("CollectItem") and !in_range_dialogue:
+		interact_ui_action_label.text = "collect"
+		interact_ui_key_label.text = "F"
+		interact_ui.visible = true
+		body.set_highlight_item(true)
+	if body.is_in_group("CarryItem") and !in_range_dialogue:
+		interact_ui_action_label.text = "carry"
+		interact_ui_key_label.text = "C"
 		interact_ui.visible = true
 		body.set_highlight_item(true)
 		
@@ -329,6 +362,28 @@ func _on_object_finder_body_entered(body):
 func _on_object_finder_body_exited(_body):
 	if _body.is_in_group("WallJump"):
 		wallBody = false
-	elif _body.is_in_group("PickableItem"):
+	elif _body.is_in_group("CollectItem") or _body.is_in_group("CarryItem"):
 		interact_ui.visible = false
 		_body.set_highlight_item(false)
+
+
+func _on_actionable_finder_area_entered(_area):
+	in_range_dialogue = true
+	interact_ui_action_label.text = "talk"
+	interact_ui_key_label.text = "E"
+	interact_ui.visible = true
+
+
+func _on_actionable_finder_area_exited(_area):
+	in_range_dialogue = false
+	interact_ui.visible = false
+
+	
+func save_ui():
+	save_point.visible = true
+	$SavePoint/Timer.start()
+	
+func _on_timer_timeout():
+	save_point.visible = false
+	print("hello the timer ran out")
+

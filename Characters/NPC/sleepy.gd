@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var sleepyDisappear = false
 var sleeping = true
 var waking = false
+var setUpDena = true
 
 const SPEED = 200.0
 const ACCELERATION = 900.0
@@ -15,6 +16,15 @@ const DIRECTION = -1
 func _physics_process(delta):
 	if not self.is_on_floor():
 		velocity.y += gravity * delta
+	
+	if Global.denaRemoved:
+		if setUpDena:
+			anim.play("idle")
+			setUpDena = false
+			get_node("StoneOnHeadCollision/coollision").set_disabled(true)
+			get_node("StoneOnTheSideCollision/coolision").set_disabled(true)
+		
+		return
 	
 	if $AnimationPlayer.get_current_animation() == "sleeping":
 		$AnimatedSprite2D.position.y = 140
@@ -40,11 +50,13 @@ func _physics_process(delta):
 			sleepyDisappear = true
 		if sleepyDisappear:
 			Global.removeSleepy = true
+			Global.denaRemoved = true
 		
 	move_and_slide()
 	
-	if $AnimationPlayer.get_current_animation() == "wake_up" and !get_node("StoneOnHeadCollision/coollision").is_disabled():
+	if $AnimationPlayer.get_current_animation() == "wake_up" or $AnimationPlayer.get_current_animation() == "wake_up_angry" and !get_node("StoneOnHeadCollision/coollision").is_disabled():
 		disableHitBoxes()
+	
 
 func _on_stone_on_head_collision_body_entered(body):
 	if body is RigidBody2D:
@@ -74,6 +86,3 @@ func wakeUp(animation):
 	sleeping = false
 	anim.play(animation)
 	anim.queue("idle")
-##
-## Way to check what animation is currently playing:
-## $AnimationPlayer.get_current_animation()
