@@ -1419,6 +1419,10 @@ stream = ExtResource("18_n7pv0")
 volume_db = -30.0
 autoplay = true
 
+[node name="ItemDrop" type="AudioStreamPlayer" parent="Sounds"]
+
+[node name="ItemPickup" type="AudioStreamPlayer" parent="Sounds"]
+
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="PauseMenuUI/PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
