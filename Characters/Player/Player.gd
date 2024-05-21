@@ -161,25 +161,18 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("Pickup"):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
-			carrying = false
-			carryingBody.set_axis_velocity(velocity)
-			carryingBody.freeze = false
-			carryingBody.get_node("cool").disabled = false
-			carryingBody = null
-			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-			$Marker2D.position.x = marker_original_offset * self.get_scale().x
+			releaseItem()
 			return
-			
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
+				$Sounds/ItemPickup.play()
+				max_jumps = 1
 				carrying = true
 				carryingBody = body
-				
 				if body.is_in_group("Heavy"):
 					anim.play("init_pushing")
 				else:
 					anim.play("pick_up")
-				
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
 				var tmp_node = carryingBody.get_node("cool")
@@ -209,6 +202,17 @@ func _unhandled_input(_event):
 				return
 
 
+func releaseItem():
+	max_jumps = Global.movement.max_jumps
+	carrying = false
+	carryingBody.set_axis_velocity(velocity)
+	carryingBody.freeze = false
+	carryingBody.get_node("cool").disabled = false
+	carryingBody = null
+	Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+	$Marker2D.position.x = marker_original_offset * self.get_scale().x
+	$Sounds/ItemDrop.play()
+
 func inventory():
 	inventory_ui.visible = !inventory_ui.visible
 	if inventory_ui.visible:
@@ -237,12 +241,15 @@ func landing():
 			in_air = false
 
 func jumpHandling():
-	if jump_count < max_jumps and !carrying:
+	if jump_count < max_jumps:
 		if is_on_floor():
 			$Sounds/JumpGround.play()
 		else:
 			$Sounds/JumpAir.play()
 		anim.play("jump")
+		if carrying and carryingBody.is_in_group("Heavy"):
+			velocity.y = 0
+			releaseItem()
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0
