@@ -9,7 +9,7 @@ radius = 87.2812
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jnqr"]
 
-[node name="InventoryItem" type="StaticBody2D" groups=["Items", "PickableItem"]]
+[node name="InventoryItem" type="StaticBody2D" groups=["CollectItem", "Items"]]
 collision_layer = 32
 script = ExtResource("1_7ceyk")
 item_texture = ExtResource("2_wh5aj")
