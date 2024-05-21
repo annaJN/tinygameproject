@@ -16,6 +16,7 @@ var justSaved
 var passedHalfway
 var overRide
 
+
 var movement = "res://Characters/Player/DefaultMovementData.tres"
 
 #const SPEED_PLAYER = 400.0
@@ -29,11 +30,12 @@ const inventory_slot_scene = preload("res://Views/Inventory/InventorySlot.tscn")
 
 var sleepyDone = false
 var removeSleepy = false
+var denaRemoved = false
 
 var snorlax_state_angry_at_player = false
 var sleepy_awaken = false
 var sleepy_dialogue_done = false
-var dena_in_village = false
+#var dena_in_village = false
 var dena_not_met = false
 
 signal inventory_updated
