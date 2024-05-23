@@ -1321,7 +1321,7 @@ polygon = PackedVector2Array(-29, -2, 431, -4, 431, 35, -33, 42)
 one_way_collision = true
 
 [node name="b17" type="StaticBody2D" parent="Interactables/BigTree" groups=["Landing"]]
-position = Vector2(2388, 640)
+position = Vector2(2370, 640)
 rotation = 0.179268
 scale = Vector2(-1.5607, 1.52204)
 metadata/_edit_group_ = true
