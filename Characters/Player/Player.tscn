@@ -1,7 +1,6 @@
-[gd_scene load_steps=251 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=250 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
-[ext_resource type="Resource" uid="uid://dfcuwug504nex" path="res://Characters/Player/DefaultMovementData.tres" id="2_j7a2k"]
 [ext_resource type="Texture2D" uid="uid://bsous3x1vl4po" path="res://Assets/Spritesheets/Player/idle/idle_spritesheet.png" id="3_xiy85"]
 [ext_resource type="Texture2D" uid="uid://cu0vgvckijaaw" path="res://Assets/Spritesheets/Player/idle/idle_spritesheet2.png" id="4_5umqo"]
 [ext_resource type="Texture2D" uid="uid://dnbtnx1n7cbqa" path="res://Assets/Spritesheets/Player/jump_spritesheet.png" id="4_moe3t"]
@@ -1889,7 +1888,6 @@ floor_stop_on_slope = false
 floor_constant_speed = true
 floor_snap_length = 4.0
 script = ExtResource("1_7pauv")
-movement_data = ExtResource("2_j7a2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-0.122, 0.122)
