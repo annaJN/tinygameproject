@@ -39,9 +39,12 @@ var sleepy_dialogue_done = false
 #var dena_in_village = false
 var dena_not_met = false
 
+var talked_to_dragon = false
+var startSporeAnimation = false
+var talking_to_dragon = false
+
 signal inventory_updated
 
-  
 var acorn = {
 		"quantity" : 1,
 		"type" : "Collectible",
@@ -108,3 +111,6 @@ func check_item_in_inventory(item_name):
 func new_item_ui(item):
 	print("i got here")
 	player_node.show_new_item_ui(item)
+
+func spore_animation():
+	startSporeAnimation = true
