@@ -1,6 +1,7 @@
 extends Node2D
 
 var initiateGame = false
+var startUp = true
 
 func _on_start_pressed():
 	$Message.text = "Starting Game!"
@@ -46,6 +47,14 @@ func _process(delta):
 		characterAnim.play("running")
 		if character.position.x > -1250:
 			character.position.x -= 750 * delta
+	
+	if startUp:
+		SaveGame.loadGame()
+		if !Global.passedHalfway:
+			$MushroomRingBackground/CenterContainer/VBoxContainer/Halfway.set_disabled(true)
+		if !Global.savedGame:
+			$MushroomRingBackground/CenterContainer/VBoxContainer/Load.set_disabled(true)
+		startUp = false
 
 
 func _on_settings_pressed():

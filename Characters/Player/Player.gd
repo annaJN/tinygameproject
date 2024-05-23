@@ -123,9 +123,11 @@ func _physics_process(delta):
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
 				if self.position.x <= currentGround.position.x + 32 and !isFacingRight:
-					carrying = false
+					releaseItem()
+					return
 				elif self.position.x >= currentGround.position.x + 208 and isFacingRight:
-					carrying = false
+					releaseItem()
+					return
 			carryingBody.position.x = $Marker2D.global_position.x
 		else:
 			carryingBody.position = $Marker2D.global_position
