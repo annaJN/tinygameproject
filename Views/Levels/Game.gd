@@ -62,7 +62,7 @@ func _process(_delta):
 	
 	if !dragonInstantiated and tmpPlayerPos >= 9500:
 		tmpDragon = Dragon.instantiate()
-		tmpDragon.position = Vector2(11500, 60)
+		tmpDragon.position = Vector2(13000, -900)
 		add_child(tmpDragon)
 		dragonInstantiated = true
 	
@@ -83,3 +83,16 @@ func _process(_delta):
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
 		tmpPlayer.save_ui()
 		SaveGame.saveGame()
+
+func _on_in_tree_body_entered(body):
+	if body.name == "Player":
+		print("entering")
+		$PlatformTree1.set_visible(false)
+		$BigGren/PlatformTree6.set_modulate(150)
+
+
+func _on_in_tree_body_exited(body):
+	print("exiting")
+	if body.name == "Player":
+		$PlatformTree1.set_visible(true)
+		$BigGren/PlatformTree6.set_modulate(255)
