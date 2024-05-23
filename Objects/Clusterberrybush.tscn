@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://n4pq4e626okk"]
+[gd_scene load_steps=6 format=3 uid="uid://n4pq4e626okk"]
 
 [ext_resource type="Texture2D" uid="uid://c0gvdgdhpss3q" path="res://Assets/Environment/Woodsy/thorns.png" id="1_nlqjs"]
 [ext_resource type="Texture2D" uid="uid://uffo02bqrkwq" path="res://Assets/Environment/Woodsy/leaves.png" id="2_lc2pm"]
 [ext_resource type="PackedScene" uid="uid://b6emo5ljrppfu" path="res://Objects/InventoryItem.tscn" id="3_ybofj"]
 [ext_resource type="Texture2D" uid="uid://5r781xyke57v" path="res://Assets/Environment/Woodsy/clusterberry.png" id="4_jjp3w"]
+[ext_resource type="Texture2D" uid="uid://m1so76xxwpoh" path="res://Assets/Environment/Woodsy/clusterberryIcon.png" id="5_ewxrb"]
 
 [node name="Clusterberry bush" type="Node2D"]
 position = Vector2(13, -9)
@@ -25,8 +26,7 @@ scale = Vector2(0.3, 0.3)
 item_type = "Food"
 item_name = "Clusterberry"
 item_texture = ExtResource("4_jjp3w")
-item_effect = "Health"
-icon_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
 
 [node name="Blueberry2" parent="." instance=ExtResource("3_ybofj")]
 position = Vector2(147, -199)
@@ -35,8 +35,7 @@ scale = Vector2(0.3, 0.3)
 item_type = "Food"
 item_name = "Clusterberry"
 item_texture = ExtResource("4_jjp3w")
-item_effect = "Health"
-icon_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
 
 [node name="Blueberry3" parent="." instance=ExtResource("3_ybofj")]
 position = Vector2(150, -144)
@@ -45,8 +44,7 @@ scale = Vector2(0.3, 0.3)
 item_type = "Food"
 item_name = "Clusterberry"
 item_texture = ExtResource("4_jjp3w")
-item_effect = "Health"
-icon_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
 
 [node name="Blueberry4" parent="." instance=ExtResource("3_ybofj")]
 position = Vector2(227, -217)
@@ -55,8 +53,7 @@ scale = Vector2(0.3, 0.3)
 item_type = "Food"
 item_name = "Clusterberry"
 item_texture = ExtResource("4_jjp3w")
-item_effect = "Health"
-icon_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
 
 [node name="Blueberry5" parent="." instance=ExtResource("3_ybofj")]
 position = Vector2(174, -87)
@@ -65,5 +62,4 @@ scale = Vector2(0.3, 0.3)
 item_type = "Food"
 item_name = "Clusterberry"
 item_texture = ExtResource("4_jjp3w")
-item_effect = "Health"
-icon_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
