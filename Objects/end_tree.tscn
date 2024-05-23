@@ -178,10 +178,15 @@ shape = SubResource("SegmentShape2D_3xy4v")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_dwjli")
 
-[node name="BigGren" type="StaticBody2D" parent="."]
+[node name="BigGren" type="StaticBody2D" parent="." groups=["Landing"]]
 position = Vector2(736, 90)
 
 [node name="PlatformTree6" type="Sprite2D" parent="BigGren"]
+modulate = Color(1, 1, 1, 0.588235)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_03pb3")
+
+[node name="PlatformTree7" type="Sprite2D" parent="BigGren"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_03pb3")
 

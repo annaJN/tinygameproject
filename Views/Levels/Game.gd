@@ -86,13 +86,11 @@ func _process(_delta):
 
 func _on_in_tree_body_entered(body):
 	if body.name == "Player":
-		print("entering")
 		$PlatformTree1.set_visible(false)
-		$BigGren/PlatformTree6.set_modulate(150)
+		$BigGren/PlatformTree7.set_visible(false)
 
 
 func _on_in_tree_body_exited(body):
-	print("exiting")
 	if body.name == "Player":
 		$PlatformTree1.set_visible(true)
-		$BigGren/PlatformTree6.set_modulate(255)
+		$BigGren/PlatformTree7.set_visible(true)

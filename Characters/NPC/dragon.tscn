@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c45cwrfjhrktm" path="res://Assets/Spritesheets/Dragon/talking.png" id="6_81otr"]
 [ext_resource type="Texture2D" uid="uid://cygm4t1nxoahw" path="res://Assets/Spritesheets/Dragon/talking2.png" id="7_5t3k3"]
 [ext_resource type="Texture2D" uid="uid://bnvf0u33lmk0" path="res://Assets/Spritesheets/Dragon/talking3.png" id="8_240bm"]
-[ext_resource type="Script" path="res://Helpers/Actionable.gd" id="9_k8c7a"]
+[ext_resource type="PackedScene" uid="uid://ryx20pxvdxmo" path="res://Helpers/Actionable.tscn" id="9_nwd54"]
 [ext_resource type="Resource" uid="uid://b7ie4uf7otijx" path="res://Assets/Dialogue/dragon.dialogue" id="10_l75u4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhgua"]
@@ -2330,10 +2330,11 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv6nl"]
-size = Vector2(608, 780)
+size = Vector2(1213, 1549)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y6pij"]
-radius = 1438.09
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra4h1"]
+radius = 744.0
+height = 2220.0
 
 [node name="Dragon" type="CharacterBody2D"]
 z_index = -15
@@ -2354,15 +2355,12 @@ autoplay = "idle"
 
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-2, 16)
+position = Vector2(11.5, 35.5)
 shape = SubResource("RectangleShape2D_xv6nl")
 
-[node name="Actionable" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 16
-script = ExtResource("9_k8c7a")
+[node name="Actionable" parent="." instance=ExtResource("9_nwd54")]
 dialogue_resources = ExtResource("10_l75u4")
 dialogue_start = "dragon_start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-shape = SubResource("CircleShape2D_y6pij")
+shape = SubResource("CapsuleShape2D_ra4h1")
