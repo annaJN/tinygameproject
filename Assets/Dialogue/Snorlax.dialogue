@@ -100,7 +100,7 @@ Sleepy Creature: [shake rate=20 level=10]Did you do that[/shake]
 - Yes, sorry, it just slipped out of my hands.
 		Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. 
 		Sleepy Creature: None the matter, I have to get back to the village.
-	=> leave
+		=> leave
 - No, it just fell from the tree.
 	Sleepy Creature: *snort*
 	Sleepy Creature: If you say so. 
