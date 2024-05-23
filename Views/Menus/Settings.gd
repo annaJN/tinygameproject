@@ -17,8 +17,6 @@ func _on_return_pressed():
 
 func _on_default_active_pressed():
 	Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-	#$AccessibleActive.modulate = Color(0,1,0,0.5)
-	#set_color($DefaultActive, 0,1,0,0.5)
 	Global.accessible = false
 	
 
@@ -28,5 +26,4 @@ func _on_accessible_active_pressed():
 	Global.movement = "res://Characters/Player/AccessibleMovementData.tres"
 
 func set_color(node, a, b, c, d):
-	#checkbuttonen = true
 	node.modulate = Color(a,b,c,d)

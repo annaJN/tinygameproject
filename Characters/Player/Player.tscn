@@ -2130,6 +2130,7 @@ wait_time = 2.0
 [node name="DieScreen" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 50
+visible = false
 
 [node name="Panel" type="Panel" parent="DieScreen"]
 offset_right = 2632.0

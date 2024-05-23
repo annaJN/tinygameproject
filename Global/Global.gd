@@ -41,7 +41,6 @@ var dena_not_met = false
 
 signal inventory_updated
 
-  
 var acorn = {
 		"quantity" : 1,
 		"type" : "Collectible",

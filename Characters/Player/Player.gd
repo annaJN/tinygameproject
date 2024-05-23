@@ -212,7 +212,8 @@ func _unhandled_input(_event):
 
 
 func releaseItem():
-	max_jumps = Global.movement.max_jumps
+	max_jumps = movement_data.max_jumps
+	#print("MAX JUMPS " + str(Global.movement.max_jumps))
 	carrying = false
 	carryingBody.set_axis_velocity(velocity)
 	carryingBody.freeze = false

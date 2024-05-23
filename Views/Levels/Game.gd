@@ -58,12 +58,11 @@ func _process(_delta):
 		tmpSleepy = Sleepy.instantiate()
 		tmpSleepy.position = Vector2(10000, 500)
 		add_child(tmpSleepy)
-		#get_node("Sleepy").animation.play("idle")
 		denaInstantiated = true
 	
 	if !dragonInstantiated and tmpPlayerPos >= 9500:
 		tmpDragon = Dragon.instantiate()
-		tmpDragon.position = Vector2(11000, 60)
+		tmpDragon.position = Vector2(11500, 60)
 		add_child(tmpDragon)
 		dragonInstantiated = true
 	
