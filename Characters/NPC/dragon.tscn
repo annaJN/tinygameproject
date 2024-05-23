@@ -1,4 +1,4 @@
-[gd_scene load_steps=329 format=3 uid="uid://djil0cots4ghk"]
+[gd_scene load_steps=330 format=3 uid="uid://djil0cots4ghk"]
 
 [ext_resource type="Script" path="res://Characters/NPC/dragon.gd" id="1_sdsas"]
 [ext_resource type="Texture2D" uid="uid://i7a6i88vask1" path="res://Assets/Spritesheets/Dragon/idle.png" id="1_ywang"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c45cwrfjhrktm" path="res://Assets/Spritesheets/Dragon/talking.png" id="6_81otr"]
 [ext_resource type="Texture2D" uid="uid://cygm4t1nxoahw" path="res://Assets/Spritesheets/Dragon/talking2.png" id="7_5t3k3"]
 [ext_resource type="Texture2D" uid="uid://bnvf0u33lmk0" path="res://Assets/Spritesheets/Dragon/talking3.png" id="8_240bm"]
+[ext_resource type="Script" path="res://Helpers/Actionable.gd" id="9_k8c7a"]
+[ext_resource type="Resource" uid="uid://b7ie4uf7otijx" path="res://Assets/Dialogue/dragon.dialogue" id="10_l75u4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhgua"]
 atlas = ExtResource("1_ywang")
@@ -2331,10 +2333,7 @@ _data = {
 size = Vector2(608, 780)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6pij"]
-radius = 471.239
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ggg6p"]
-radius = 318.025
+radius = 1438.09
 
 [node name="Dragon" type="CharacterBody2D"]
 z_index = -15
@@ -2359,19 +2358,11 @@ position = Vector2(-2, 16)
 shape = SubResource("RectangleShape2D_xv6nl")
 
 [node name="Actionable" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 16
+script = ExtResource("9_k8c7a")
+dialogue_resources = ExtResource("10_l75u4")
+dialogue_start = "dragon_start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_y6pij")
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_ggg6p")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
