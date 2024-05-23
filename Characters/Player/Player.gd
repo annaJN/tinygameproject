@@ -212,7 +212,7 @@ func _unhandled_input(_event):
 
 
 func releaseItem():
-	max_jumps = Global.movement.max_jumps
+	max_jumps = movement_data.max_jumps
 	carrying = false
 	carryingBody.set_axis_velocity(velocity)
 	carryingBody.freeze = false
@@ -419,8 +419,8 @@ func _on_halfway_pressed():
 	die_screen.hide()
 	get_tree().paused = false
 	Global.passedHalfway = false
-	Global.positionX = 2050
-	Global.positionY = 750
+	Global.positionX = 7288
+	Global.positionY = 558
 	Global.denaRemoved = false
 	Global.denaShouldInitiate = true
 	get_tree().reload_current_scene()

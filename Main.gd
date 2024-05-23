@@ -33,8 +33,8 @@ func _on_halfway_pressed():
 		$Message.text = "You have yet to pass the halfway savepoint"
 		return
 	Global.passedHalfway = false
-	Global.positionX = 2050
-	Global.positionY = 750
+	Global.positionX = 7288
+	Global.positionY = 558
 	initiateGame = true
 	await get_tree().create_timer(1.8).timeout
 	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")

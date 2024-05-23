@@ -78,7 +78,7 @@ func _process(_delta):
 		mushroom.set_visible(true)
 		Global.justSaved = false
 	
-	if tmpPlayerPos > 2000 and !Global.passedHalfway or Global.overRide:
+	if tmpPlayerPos > 7200 and !Global.passedHalfway or Global.overRide:
 		Global.passedHalfway = true
 		Global.overRide = false
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
