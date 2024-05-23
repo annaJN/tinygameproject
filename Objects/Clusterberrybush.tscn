@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://n4pq4e626okk"]
+
+[ext_resource type="Texture2D" uid="uid://c0gvdgdhpss3q" path="res://Assets/Environment/Woodsy/thorns.png" id="1_nlqjs"]
+[ext_resource type="Texture2D" uid="uid://uffo02bqrkwq" path="res://Assets/Environment/Woodsy/leaves.png" id="2_lc2pm"]
+[ext_resource type="PackedScene" uid="uid://b6emo5ljrppfu" path="res://Objects/InventoryItem.tscn" id="3_ybofj"]
+[ext_resource type="Texture2D" uid="uid://5r781xyke57v" path="res://Assets/Environment/Woodsy/clusterberry.png" id="4_jjp3w"]
+[ext_resource type="Texture2D" uid="uid://m1so76xxwpoh" path="res://Assets/Environment/Woodsy/clusterberryIcon.png" id="5_ewxrb"]
+
+[node name="Clusterberry bush" type="Node2D"]
+position = Vector2(13, -9)
+
+[node name="Thorns" type="Sprite2D" parent="."]
+position = Vector2(347.167, -175.5)
+scale = Vector2(0.138333, 0.138333)
+texture = ExtResource("1_nlqjs")
+
+[node name="Leaves" type="Sprite2D" parent="."]
+position = Vector2(344.5, -162.5)
+scale = Vector2(0.141, 0.141)
+texture = ExtResource("2_lc2pm")
+
+[node name="Blueberry1" parent="." instance=ExtResource("3_ybofj")]
+position = Vector2(89.0001, -147)
+rotation = 0.622178
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Clusterberry"
+item_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
+
+[node name="Blueberry2" parent="." instance=ExtResource("3_ybofj")]
+position = Vector2(147, -199)
+rotation = 0.515515
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Clusterberry"
+item_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
+
+[node name="Blueberry3" parent="." instance=ExtResource("3_ybofj")]
+position = Vector2(150, -144)
+rotation = -0.407795
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Clusterberry"
+item_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
+
+[node name="Blueberry4" parent="." instance=ExtResource("3_ybofj")]
+position = Vector2(227, -217)
+rotation = 0.584702
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Clusterberry"
+item_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")
+
+[node name="Blueberry5" parent="." instance=ExtResource("3_ybofj")]
+position = Vector2(174, -87)
+rotation = 0.459627
+scale = Vector2(0.3, 0.3)
+item_type = "Food"
+item_name = "Clusterberry"
+item_texture = ExtResource("4_jjp3w")
+icon_texture = ExtResource("5_ewxrb")

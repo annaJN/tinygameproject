@@ -123,9 +123,11 @@ func _physics_process(delta):
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
 				if self.position.x <= currentGround.position.x + 32 and !isFacingRight:
-					carrying = false
+					releaseItem()
+					return
 				elif self.position.x >= currentGround.position.x + 208 and isFacingRight:
-					carrying = false
+					releaseItem()
+					return
 			carryingBody.position.x = $Marker2D.global_position.x
 		else:
 			carryingBody.position = $Marker2D.global_position
@@ -213,7 +215,6 @@ func _unhandled_input(_event):
 
 func releaseItem():
 	max_jumps = movement_data.max_jumps
-	#print("MAX JUMPS " + str(Global.movement.max_jumps))
 	carrying = false
 	carryingBody.set_axis_velocity(velocity)
 	carryingBody.freeze = false
@@ -420,8 +421,8 @@ func _on_halfway_pressed():
 	die_screen.hide()
 	get_tree().paused = false
 	Global.passedHalfway = false
-	Global.positionX = 2050
-	Global.positionY = 750
+	Global.positionX = 7288
+	Global.positionY = 558
 	Global.denaRemoved = false
 	Global.denaShouldInitiate = true
 	get_tree().reload_current_scene()
