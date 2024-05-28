@@ -58,12 +58,11 @@ func _process(_delta):
 		tmpSleepy = Sleepy.instantiate()
 		tmpSleepy.position = Vector2(10000, 500)
 		add_child(tmpSleepy)
-		#get_node("Sleepy").animation.play("idle")
 		denaInstantiated = true
 	
 	if !dragonInstantiated and tmpPlayerPos >= 9500:
 		tmpDragon = Dragon.instantiate()
-		tmpDragon.position = Vector2(11000, 60)
+		tmpDragon.position = Vector2(13000, -900)
 		add_child(tmpDragon)
 		dragonInstantiated = true
 	
@@ -84,3 +83,14 @@ func _process(_delta):
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
 		tmpPlayer.save_ui()
 		SaveGame.saveGame()
+
+func _on_in_tree_body_entered(body):
+	if body.name == "Player":
+		$PlatformTree1.set_visible(false)
+		$BigGren/PlatformTree7.set_visible(false)
+
+
+func _on_in_tree_body_exited(body):
+	if body.name == "Player":
+		$PlatformTree1.set_visible(true)
+		$BigGren/PlatformTree7.set_visible(true)
