@@ -3164,7 +3164,7 @@ scale = Vector2(0.298259, 0.298259)
 texture = ExtResource("40_doty2")
 
 [node name="Enemy2" type="Path2D" parent="Interactables"]
-position = Vector2(13926, 122)
+position = Vector2(13928, 155)
 curve = SubResource("Curve2D_w2hll")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Interactables/Enemy2"]
@@ -3177,7 +3177,7 @@ position = Vector2(6.88155, -12.1095)
 rotation = 0.149627
 
 [node name="Mushroom-9" type="Sprite2D" parent="Interactables"]
-position = Vector2(9128, 757)
+position = Vector2(9110, 780)
 scale = Vector2(0.603294, 0.603294)
 texture = ExtResource("78_tls4d")
 
