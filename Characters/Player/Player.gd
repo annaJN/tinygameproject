@@ -159,8 +159,9 @@ func _input(event):
 	if (event.is_action_pressed("ui_add")):
 		var items = $ObjectFinder.get_overlapping_bodies()
 		for item in items:
-			item.pickup_item()
-			return
+			if item is StaticBody2D:
+				item.pickup_item()
+				return
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
