@@ -43,6 +43,8 @@ var talked_to_dragon = false
 var startSporeAnimation = false
 var talking_to_dragon = false
 
+var gameOver = false
+
 signal inventory_updated
 
 var acorn = {

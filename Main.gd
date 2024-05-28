@@ -48,14 +48,13 @@ func _process(delta):
 		if character.position.x > -1250:
 			character.position.x -= 750 * delta
 	
-	if startUp:
+	if startUp and !Global.gameOver:
 		SaveGame.loadGame()
 		if !Global.passedHalfway:
 			$MushroomRingBackground/CenterContainer/VBoxContainer/Halfway.set_disabled(true)
 		if !Global.savedGame:
 			$MushroomRingBackground/CenterContainer/VBoxContainer/Load.set_disabled(true)
 		startUp = false
-
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://Views/Menus/Settings.tscn")

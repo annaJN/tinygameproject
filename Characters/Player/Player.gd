@@ -159,8 +159,9 @@ func _input(event):
 	if (event.is_action_pressed("ui_add")):
 		var items = $ObjectFinder.get_overlapping_bodies()
 		for item in items:
-			item.pickup_item()
-			return
+			if item is StaticBody2D:
+				item.pickup_item()
+				return
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
@@ -263,8 +264,8 @@ func jumpHandling():
 		if carrying and carryingBody.is_in_group("Heavy"):
 			velocity.y = 0
 			releaseItem()
-		var vel = velocity
-		var vel_jump = movement_data.jump_velocity
+		#var vel = velocity
+		#var vel_jump = movement_data.jump_velocity
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0
@@ -360,6 +361,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_object_finder_body_entered(body):
 	if body.is_in_group("WallJump") and !carrying:
+		print("WALLJUMP IS TRUE")
 		wallBody = true
 	if body.is_in_group("CollectItem") and !in_range_dialogue:
 		interact_ui_action_label.text = "collect"
@@ -376,6 +378,7 @@ func _on_object_finder_body_entered(body):
 
 func _on_object_finder_body_exited(_body):
 	if _body.is_in_group("WallJump"):
+		print("WALLJUMP IS FALSE")
 		wallBody = false
 	elif _body.is_in_group("CollectItem") or _body.is_in_group("CarryItem"):
 		interact_ui.visible = false

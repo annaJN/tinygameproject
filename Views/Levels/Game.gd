@@ -20,7 +20,7 @@ func _init():
 	add_child(tmpPlayer)
 	
 	tmpSleepy = Sleepy.instantiate()
-	tmpSleepy.position = Vector2(2813, 761)
+	tmpSleepy.position = Vector2(2843, 761)
 	add_child(tmpSleepy)
 	
 	var tmpMushroom = Mushroom.instantiate()
@@ -42,6 +42,11 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel") and !Global.dialogue_is_playing:
 		get_tree().paused = true
 		$Player/PauseMenuUI.show()
+		
+	if (event.is_action_pressed("Dash")):
+		Global.gameOver = true
+		get_tree().change_scene_to_file("res://Views/Menus/Victory.tscn")
+
 
 
 func _process(_delta):
@@ -83,14 +88,3 @@ func _process(_delta):
 		get_node("MidSavePoint/AnimationPlayer").play("light_up")
 		tmpPlayer.save_ui()
 		SaveGame.saveGame()
-
-func _on_in_tree_body_entered(body):
-	if body.name == "Player":
-		$PlatformTree1.set_visible(false)
-		$BigGren/PlatformTree7.set_visible(false)
-
-
-func _on_in_tree_body_exited(body):
-	if body.name == "Player":
-		$PlatformTree1.set_visible(true)
-		$BigGren/PlatformTree7.set_visible(true)
