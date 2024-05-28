@@ -5,10 +5,12 @@
 [resource]
 script = ExtResource("1_ktg42")
 speed = 400.0
-jump_velocity = -700.0
+jump_velocity = -1050.0
 acceleration = 900.0
 friction = 2000.0
 push_force = 80.0
 strength = 10000
+knockback_power = 500
+max_jumps = 2
 wall_jump_push = 1000
 wall_slide_gravity = 10000
