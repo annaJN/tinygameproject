@@ -10,7 +10,7 @@
 			#Guarding the edges of their territory
 
 ~ snorlax_start
-if Global.dena_in_village
+if Global.denaRemoved
 	=> dena_in_village
 elif Global.snorlax_state_angry_at_player
 	=> snorlax_angry_start
@@ -31,8 +31,8 @@ Sleepy Creature: *sits up and looks around*
 	Sleepy Creature: Must have been the wind.
 	- *Walk out* 
 		Sleepy Creature: Oh, well hello there. 
-=> snorlax_introduction
-- *Sneak away*
+		=> snorlax_introduction
+	- *Sneak away*
 		do Global.dena_not_met = true
 		=> END
 - *Try to hide in the grass*
@@ -98,12 +98,13 @@ Sleepy Creature: [shake rate=20 level=10]What in the[speed=0.2]...[/shake]
 Sleepy Creature: *looks around and locks eyes with you*
 Sleepy Creature: [shake rate=20 level=10]Did you do that[/shake]
 - Yes, sorry, it just slipped out of my hands.
-		Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. 
-		Sleepy Creature: None the matter, I have to get back to the village.
+	Sleepy Creature: Hmm. Probably should have picked a better spot to sleep. 
+	Sleepy Creature: None the matter, I have to get back to the village.
 	=> leave
 - No, it just fell from the tree.
 	Sleepy Creature: *snort*
 	Sleepy Creature: If you say so. 
+	=> leave
 - *blink* *blink*
 	Sleepy Creature: Well?
 	- I'm sorry. I didn't mean to hit you. 
@@ -123,9 +124,9 @@ do Global.sleepy_dialogue_done = true
 
 
 ~ dena_in_village
-if snorlax_state_angry_at_player
+if Global.snorlax_state_angry_at_player
 	=> dena_village_mad
-elif dena_not_met 
+elif Global.dena_not_met 
 	=> village_first
 else 
 	=> dena_village_nice

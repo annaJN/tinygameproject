@@ -17,6 +17,7 @@ var jump_count = 0
 var max_jumps = 2
 var time_on_ground = 0
 var in_air = false
+var in_range_dialogue = false
 
 var isFacingRight = false
 
@@ -27,10 +28,15 @@ var wallBody = false
 @onready var actionableFinder: Area2D = $ActionableFinder
 
 @onready var interact_ui = $InteractUI
+@onready var interact_ui_action_label = $InteractUI/Panel/ActionLabel
+@onready var interact_ui_key_label = $InteractUI/Panel/Panel/KeyLabel
 @onready var inventory_ui = $InventoryUI
 @onready var hp = $HP/HP
 @onready var animation_player = $AnimationPlayer
 @onready var new_item_ui = $NewItemUI
+@onready var save_point = $SavePoint
+@onready var die_screen = $DieScreen
+
 
 @onready var anim = get_node("AnimationPlayer")
 
@@ -43,6 +49,18 @@ func _ready():
 func _process(_delta):
 	## Display the health of the player by a label
 	hp.text = "HP " + str(Global.health)
+	
+	if self.position.x > 4000 and !Global.denaRemoved:
+		Global.removeSleepy = true
+		Global.denaRemoved = true
+	
+	if Global.health <= 0:
+		if !Global.savedGame:
+			$DieScreen/MenuBar/CenterContainer/VBoxContainer/SavePoint.set_disabled(true)
+		if !Global.passedHalfway:
+			$DieScreen/MenuBar/CenterContainer/VBoxContainer/Halfway.set_disabled(true)
+		get_tree().paused = true
+		die_screen.visible = true
 
 func _physics_process(delta):
 	## Add the gravity to the player
@@ -79,22 +97,37 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.acceleration * delta)
 		## Start the running animation
 		if is_on_floor() and !in_air and time_on_ground > 5:
-			anim.play("running")
+			if carrying:
+				if carryingBody.is_in_group("Heavy"):
+					anim.play("pushing")
+				else:
+					anim.play("item_running")
+			else:
+				anim.play("running")
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, movement_data.friction * delta)
 		# Play idle animation
 		if is_on_floor() and !in_air and velocity.y == 0 and velocity.x == 0 and time_on_ground > 5:
-			anim.play("idle")
+			if carrying:
+				if carryingBody.is_in_group("Heavy"):
+					#print("IDLE PUSHING ANIMATION")
+					anim.play("idle_pushing")
+				else:
+					anim.play("idle_item")
+			else:
+				anim.play("idle")
 
 	if carrying:
 		carryingBody.set_highlight_item(false)
 		if carryingBody.is_in_group("Heavy"):
 			if currentGround.name.begins_with("Hallelujah"):
 				if self.position.x <= currentGround.position.x + 32 and !isFacingRight:
-					carrying = false
+					releaseItem()
+					return
 				elif self.position.x >= currentGround.position.x + 208 and isFacingRight:
-					carrying = false
+					releaseItem()
+					return
 			carryingBody.position.x = $Marker2D.global_position.x
 		else:
 			carryingBody.position = $Marker2D.global_position
@@ -132,26 +165,25 @@ func _unhandled_input(_event):
 		var actionables = actionableFinder.get_overlapping_areas()
 		if actionables.size() > 0:
 			Global.dialogue_is_playing = true
+			interact_ui.visible = false
 			actionables[0].action()
 			return
 
 	if Input.is_action_just_pressed("Pickup"):
 		var bodies = $ObjectFinder.get_overlapping_bodies()
 		if carrying:
-			carrying = false
-			carryingBody.set_axis_velocity(velocity)
-			carryingBody.freeze = false
-			carryingBody.get_node("cool").disabled = false
-			carryingBody = null
-			Global.movement = "res://Characters/Player/DefaultMovementData.tres"
-			$Marker2D.position.x = marker_original_offset * self.get_scale().x
+			releaseItem()
 			return
-			
 		for body in bodies:
 			if !carrying and body is RigidBody2D:
+				$Sounds/ItemPickup.play()
+				max_jumps = 1
 				carrying = true
 				carryingBody = body
-				
+				if body.is_in_group("Heavy"):
+					anim.play("init_pushing")
+				else:
+					anim.play("pick_up")
 				carryingBody.freeze = true
 				carryingBody.get_node("cool").disabled = true
 				var tmp_node = carryingBody.get_node("cool")
@@ -181,6 +213,17 @@ func _unhandled_input(_event):
 				return
 
 
+func releaseItem():
+	max_jumps = movement_data.max_jumps
+	carrying = false
+	carryingBody.set_axis_velocity(velocity)
+	carryingBody.freeze = false
+	carryingBody.get_node("cool").disabled = false
+	carryingBody = null
+	Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+	$Marker2D.position.x = marker_original_offset * self.get_scale().x
+	$Sounds/ItemDrop.play()
+
 func inventory():
 	inventory_ui.visible = !inventory_ui.visible
 	if inventory_ui.visible:
@@ -209,12 +252,15 @@ func landing():
 			in_air = false
 
 func jumpHandling():
-	if jump_count < max_jumps and !carrying:
+	if jump_count < max_jumps:
 		if is_on_floor():
 			$Sounds/JumpGround.play()
 		else:
 			$Sounds/JumpAir.play()
 		anim.play("jump")
+		if carrying and carryingBody.is_in_group("Heavy"):
+			velocity.y = 0
+			releaseItem()
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0
@@ -309,10 +355,16 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_object_finder_body_entered(body):
-	print(body.name)
 	if body.is_in_group("WallJump") and !carrying:
 		wallBody = true
-	if body.is_in_group("PickableItem"):
+	if body.is_in_group("CollectItem") and !in_range_dialogue:
+		interact_ui_action_label.text = "collect"
+		interact_ui_key_label.text = "F"
+		interact_ui.visible = true
+		body.set_highlight_item(true)
+	if body.is_in_group("CarryItem") and !in_range_dialogue:
+		interact_ui_action_label.text = "carry"
+		interact_ui_key_label.text = "C"
 		interact_ui.visible = true
 		body.set_highlight_item(true)
 		
@@ -321,6 +373,56 @@ func _on_object_finder_body_entered(body):
 func _on_object_finder_body_exited(_body):
 	if _body.is_in_group("WallJump"):
 		wallBody = false
-	elif _body.is_in_group("PickableItem"):
+	elif _body.is_in_group("CollectItem") or _body.is_in_group("CarryItem"):
 		interact_ui.visible = false
 		_body.set_highlight_item(false)
+
+
+func _on_actionable_finder_area_entered(_area):
+	in_range_dialogue = true
+	interact_ui_action_label.text = "talk"
+	interact_ui_key_label.text = "E"
+	interact_ui.visible = true
+
+
+func _on_actionable_finder_area_exited(_area):
+	in_range_dialogue = false
+	interact_ui.visible = false
+
+	
+func save_ui():
+	save_point.visible = true
+	$SavePoint/Timer.start()
+	
+func _on_timer_timeout():
+	save_point.visible = false
+
+func _on_save_point_pressed():
+	SaveGame.loadGame()
+	if !Global.savedGame:
+		$DieScreen/MenuBar/CenterContainer/VBoxContainer/Message.text = "You forgot to save :("
+		return
+	if Global.passedHalfway:
+		Global.passedHalfway = false
+		Global.overRide = true
+	die_screen.hide()
+	get_tree().paused = false
+	Global.denaRemoved = false
+	Global.denaShouldInitiate = true
+	get_tree().reload_current_scene()
+
+
+func _on_halfway_pressed():
+	print("pressing on halfway")
+	SaveGame.loadGame()
+	if !Global.passedHalfway:
+		$DieScreen/MenuBar/CenterContainer/VBoxContainer/Message.text = "Sorry, but you did not get halfway :("
+		return
+	die_screen.hide()
+	get_tree().paused = false
+	Global.passedHalfway = false
+	Global.positionX = 7288
+	Global.positionY = 558
+	Global.denaRemoved = false
+	Global.denaShouldInitiate = true
+	get_tree().reload_current_scene()

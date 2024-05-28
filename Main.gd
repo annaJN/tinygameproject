@@ -1,6 +1,7 @@
 extends Node2D
 
 var initiateGame = false
+var startUp = true
 
 func _on_start_pressed():
 	$Message.text = "Starting Game!"
@@ -33,8 +34,8 @@ func _on_halfway_pressed():
 		$Message.text = "You have yet to pass the halfway savepoint"
 		return
 	Global.passedHalfway = false
-	Global.positionX = 2050
-	Global.positionY = 750
+	Global.positionX = 7288
+	Global.positionY = 558
 	initiateGame = true
 	await get_tree().create_timer(1.8).timeout
 	get_tree().change_scene_to_file("res://Views/Levels/LevelOne.tscn")
@@ -46,6 +47,14 @@ func _process(delta):
 		characterAnim.play("running")
 		if character.position.x > -1250:
 			character.position.x -= 750 * delta
+	
+	if startUp:
+		SaveGame.loadGame()
+		if !Global.passedHalfway:
+			$MushroomRingBackground/CenterContainer/VBoxContainer/Halfway.set_disabled(true)
+		if !Global.savedGame:
+			$MushroomRingBackground/CenterContainer/VBoxContainer/Load.set_disabled(true)
+		startUp = false
 
 
 func _on_settings_pressed():
