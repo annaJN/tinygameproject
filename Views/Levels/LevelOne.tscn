@@ -867,7 +867,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_dstvp"]
 script = ExtResource("6_ldgbf")
-position = Vector2(10691.5, 694.408)
+position = Vector2(10739.1, 851.383)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_t36q1")
@@ -880,7 +880,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_k6rmj"]
 script = ExtResource("6_ldgbf")
-position = Vector2(11291.4, 631.37)
+position = Vector2(11324.7, 838.292)
 point_in = Vector2(-215.204, -3.77551)
 point_out = Vector2(215.204, 3.77551)
 properties = SubResource("Resource_3tplt")
@@ -893,12 +893,12 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_3hdvm"]
 script = ExtResource("6_ldgbf")
-position = Vector2(11998.3, 845.326)
+position = Vector2(12271.4, 1129.89)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_c6xub")
 
-[sub_resource type="Resource" id="Resource_04ih8"]
+[sub_resource type="Resource" id="Resource_r1g41"]
 script = ExtResource("5_5t0x4")
 texture_idx = 0
 flip = false
@@ -906,10 +906,10 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_n4jv4"]
 script = ExtResource("6_ldgbf")
-position = Vector2(12540.8, 1078.4)
+position = Vector2(12654.6, 1208.79)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_04ih8")
+properties = SubResource("Resource_r1g41")
 
 [sub_resource type="Resource" id="Resource_jir61"]
 script = ExtResource("5_5t0x4")
@@ -919,7 +919,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_iv8tb"]
 script = ExtResource("6_ldgbf")
-position = Vector2(12534.7, 1422.24)
+position = Vector2(12630.5, 1402.08)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_jir61")
@@ -1049,7 +1049,7 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_nb6ug"]
 script = ExtResource("6_ldgbf")
-position = Vector2(10691.5, 694.408)
+position = Vector2(10739.1, 851.383)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_8lca1")
@@ -1259,9 +1259,9 @@ point_in = Vector2(-120.642, 73.0204)
 point_out = Vector2(120.642, -73.0204)
 properties = SubResource("Resource_b4e02")
 
-[sub_resource type="Resource" id="Resource_14k17"]
+[sub_resource type="Resource" id="Resource_0wfhe"]
 script = ExtResource("5_5t0x4")
-texture_idx = -5
+texture_idx = -6
 flip = false
 width = 1.0
 
@@ -1270,7 +1270,7 @@ script = ExtResource("6_ldgbf")
 position = Vector2(12842.6, 1076.36)
 point_in = Vector2(-167.149, -119.528)
 point_out = Vector2(167.149, 119.528)
-properties = SubResource("Resource_14k17")
+properties = SubResource("Resource_0wfhe")
 
 [sub_resource type="Resource" id="Resource_ok4gd"]
 script = ExtResource("5_5t0x4")
@@ -2883,29 +2883,16 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Ground2"]
 visible = false
 show_behind_parent = true
-polygon = PackedVector2Array(10691.4, 694.326, 10910.7, 661.473, 11291.4, 631.369, 11334.8, 634.395, 11383.6, 641.647, 11492.6, 666.393, 11725.5, 739.763, 11998.3, 845.326, 12540.9, 1078.35, 12534.8, 1422.34, 11361, 1446.27, 11358.4, 1974.16, 11620.8, 1976.18, 11845.9, 1966.34, 11951.8, 1955.15, 12042, 1938.42, 12079.9, 1926.19, 12114.6, 1909.74, 12146.6, 1889.67, 12176.7, 1866.58, 12288.7, 1755.98, 12348.2, 1698.1, 12380.9, 1670.62, 12416.3, 1644.9, 12455.2, 1621.54, 12498, 1601.15, 12545.3, 1584.31, 12597.8, 1571.64, 12725.6, 1556.45, 12879.1, 1550.89, 13210.4, 1559.29, 13601.9, 1588.51, 14686.7, 1583.19, 14688.6, 1363.6, 14703.2, 1044.78, 15780, 749.011, 16890.1, 566.153, 18762.2, 511.725, 18900.9, 3411.54, 10819.6, 3507.18)
-
-[node name="b1" type="StaticBody2D" parent="Interactables" groups=["Landing"]]
-position = Vector2(10232, 148)
-rotation = -0.285524
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Interactables/b1"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("26_gi5k1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/b1"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
+polygon = PackedVector2Array(10739, 851.282, 11324.7, 838.291, 11370.8, 842.188, 11427.2, 851.905, 11563.4, 885.446, 11878.7, 985.505, 12271.4, 1129.89, 12654.7, 1208.71, 12630.5, 1402.17, 11361, 1446.27, 11358.4, 1974.16, 11620.8, 1976.18, 11845.9, 1966.34, 11951.8, 1955.15, 12042, 1938.42, 12079.9, 1926.19, 12114.6, 1909.74, 12146.6, 1889.67, 12176.7, 1866.58, 12288.7, 1755.98, 12348.2, 1698.1, 12380.9, 1670.62, 12416.3, 1644.9, 12455.2, 1621.54, 12498, 1601.15, 12545.3, 1584.31, 12597.8, 1571.64, 12725.6, 1556.45, 12879.1, 1550.89, 13210.4, 1559.29, 13601.9, 1588.51, 14686.7, 1583.19, 14688.6, 1363.6, 14703.2, 1044.78, 15780, 749.011, 16890.1, 566.153, 18762.2, 511.725, 18900.9, 3411.54, 10819.6, 3507.18)
 
 [node name="BranchWall" type="StaticBody2D" parent="Interactables" groups=["Landing", "WallJump"]]
-position = Vector2(10097, -230)
+position = Vector2(10132, -129)
 rotation = -1.58253
 collision_mask = 5
 
 [node name="BackBranch" type="Sprite2D" parent="Interactables/BranchWall"]
 modulate = Color(0.929412, 0.929412, 0.929412, 1)
-z_index = -5
+z_index = -15
 position = Vector2(-495.151, 95.1944)
 rotation = 1.58253
 scale = Vector2(0.997635, 1.25993)
@@ -3222,18 +3209,18 @@ scale = Vector2(0.687392, 0.687392)
 texture = ExtResource("40_slhwn")
 
 [node name="UntitledArtwork-142" type="Sprite2D" parent="Interactables/Bushes"]
-position = Vector2(1588.56, -676.144)
+position = Vector2(1721.1, -615.679)
 scale = Vector2(0.947197, 0.969425)
 texture = ExtResource("26_tvae1")
 flip_h = true
 
 [node name="UntitledArtwork-141" type="Sprite2D" parent="Interactables/Bushes"]
-position = Vector2(1814.91, -646.688)
+position = Vector2(1931.95, -607.927)
 scale = Vector2(0.947197, 0.969425)
 texture = ExtResource("26_tvae1")
 
 [node name="Plants" type="Node2D" parent="Interactables"]
-position = Vector2(10353, -282)
+position = Vector2(10406, -75)
 
 [node name="Plant" type="Sprite2D" parent="Interactables/Plants"]
 texture = ExtResource("80_q5uc6")
@@ -3274,7 +3261,7 @@ position = Vector2(471, -53)
 texture = ExtResource("87_ih2o4")
 
 [node name="Plants2" type="Node2D" parent="Interactables"]
-position = Vector2(12984, 516)
+position = Vector2(12980, 552)
 
 [node name="WhiteGrass" type="Sprite2D" parent="Interactables/Plants2"]
 texture = ExtResource("88_c6mxy")
@@ -3360,48 +3347,120 @@ scroll_offset = Vector2(-3254.09, -785.349)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground"]
 motion_scale = Vector2(1.2, 1.2)
 
-[node name="BlurryPlant2" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="Group1" type="Node2D" parent="Foreground/ParallaxLayer"]
+
+[node name="BlurryPlant2" type="Sprite2D" parent="Foreground/ParallaxLayer/Group1"]
 position = Vector2(257, 606)
 texture = ExtResource("45_8d1o2")
 
-[node name="BlurryPlant" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryPlant" type="Sprite2D" parent="Foreground/ParallaxLayer/Group1"]
 position = Vector2(214, 684)
 texture = ExtResource("46_0rc23")
 
-[node name="UntitledArtwork-14" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="UntitledArtwork-14" type="Sprite2D" parent="Foreground/ParallaxLayer/Group1"]
 position = Vector2(93, 663)
 scale = Vector2(2.45979, 2.45979)
 texture = ExtResource("48_m8g4m")
 
-[node name="BlurryBush" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="Group2" type="Node2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(1, 1)
+
+[node name="BlurryBush" type="Sprite2D" parent="Foreground/ParallaxLayer/Group2"]
 position = Vector2(4242.5, 803)
 texture = ExtResource("63_s72kl")
 
-[node name="BlurryBush2" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryBush2" type="Sprite2D" parent="Foreground/ParallaxLayer/Group2"]
 position = Vector2(4468.5, 747)
 texture = ExtResource("63_s72kl")
 
-[node name="BlurryBush3" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryBush3" type="Sprite2D" parent="Foreground/ParallaxLayer/Group2"]
 position = Vector2(4566.5, 868)
 texture = ExtResource("63_s72kl")
 
-[node name="BlurryPlant3" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryPlant3" type="Sprite2D" parent="Foreground/ParallaxLayer/Group2"]
 position = Vector2(4748.5, 833)
 texture = ExtResource("45_8d1o2")
 
-[node name="BlurryBush4" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="Group3" type="Node2D" parent="Foreground/ParallaxLayer"]
+
+[node name="BlurryBush4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group3"]
 position = Vector2(5713.5, 785)
 texture = ExtResource("63_s72kl")
 
-[node name="BlurryBush5" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryBush5" type="Sprite2D" parent="Foreground/ParallaxLayer/Group3"]
 position = Vector2(5939.5, 729)
 texture = ExtResource("63_s72kl")
 
-[node name="BlurryBush6" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryBush6" type="Sprite2D" parent="Foreground/ParallaxLayer/Group3"]
 position = Vector2(6037.5, 850)
 texture = ExtResource("63_s72kl")
 
-[node name="BlurryPlant4" type="Sprite2D" parent="Foreground/ParallaxLayer"]
+[node name="BlurryPlant4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group3"]
+position = Vector2(6201, 847)
+texture = ExtResource("45_8d1o2")
+flip_h = true
+
+[node name="Group4" type="Node2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(4545, 2046)
+rotation = -0.281638
+
+[node name="BlurryBush4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group4"]
+position = Vector2(5713.5, 785)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryBush5" type="Sprite2D" parent="Foreground/ParallaxLayer/Group4"]
+position = Vector2(5939.5, 729)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryBush6" type="Sprite2D" parent="Foreground/ParallaxLayer/Group4"]
+position = Vector2(6037.5, 850)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryPlant4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group4"]
+position = Vector2(6201, 847)
+texture = ExtResource("45_8d1o2")
+flip_h = true
+
+[node name="Group5" type="Node2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(9463, 4335)
+rotation = -0.736241
+
+[node name="BlurryBush4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group5"]
+position = Vector2(5713.5, 785)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryBush5" type="Sprite2D" parent="Foreground/ParallaxLayer/Group5"]
+position = Vector2(5939.5, 729)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryBush6" type="Sprite2D" parent="Foreground/ParallaxLayer/Group5"]
+position = Vector2(6037.5, 850)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryPlant4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group5"]
+position = Vector2(6201, 847)
+texture = ExtResource("45_8d1o2")
+flip_h = true
+
+[node name="Group6" type="Node2D" parent="Foreground/ParallaxLayer"]
+position = Vector2(12072, 3864)
+rotation = -0.736241
+
+[node name="BlurryBush4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group6"]
+position = Vector2(5713.5, 785)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryBush5" type="Sprite2D" parent="Foreground/ParallaxLayer/Group6"]
+position = Vector2(5939.5, 729)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryBush6" type="Sprite2D" parent="Foreground/ParallaxLayer/Group6"]
+position = Vector2(6037.5, 850)
+texture = ExtResource("63_s72kl")
+
+[node name="BlurryPlant4" type="Sprite2D" parent="Foreground/ParallaxLayer/Group6"]
+visible = false
 position = Vector2(6201, 847)
 texture = ExtResource("45_8d1o2")
 flip_h = true
