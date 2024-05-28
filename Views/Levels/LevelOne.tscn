@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=244 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="Texture2D" uid="uid://chi3f85sc21mt" path="res://Assets/Environment/Trees/blurry_tree5.png" id="3_42oxf"]
@@ -89,6 +89,8 @@
 [ext_resource type="Texture2D" uid="uid://bvefirknwnnc4" path="res://Assets/Environment/Plants/grass8.png" id="87_ih2o4"]
 [ext_resource type="Texture2D" uid="uid://cnbecd0pc1jw6" path="res://Assets/Environment/Plants/white_grass.png" id="88_c6mxy"]
 [ext_resource type="Texture2D" uid="uid://c7qwekld0ulec" path="res://Assets/Environment/Plants/white_grass2.png" id="89_c8sb1"]
+[ext_resource type="Texture2D" uid="uid://7kwscbefjvyy" path="res://Assets/Environment/Mushrooms/Mushroom-8.png" id="90_ah4yo"]
+[ext_resource type="Texture2D" uid="uid://bcrckd2gwsif7" path="res://Assets/Environment/Mushrooms/Mushroom-7.png" id="91_4y1rg"]
 
 [sub_resource type="Resource" id="Resource_lygcf"]
 script = ExtResource("5_5t0x4")
@@ -1760,8 +1762,6 @@ texture = ExtResource("26_tvae1")
 flip_h = true
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Node2D" parent="."]
-
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Ground" type="StaticBody2D" parent="Interactables" groups=["Landing", "WallJump"]]
@@ -2968,6 +2968,163 @@ rotates = false
 position = Vector2(6.88155, -12.1095)
 rotation = 0.149627
 
+[node name="Mushroom-9" type="Sprite2D" parent="Interactables"]
+position = Vector2(9128, 757)
+scale = Vector2(0.603294, 0.603294)
+texture = ExtResource("78_tls4d")
+
+[node name="Bushes" type="Node2D" parent="Interactables"]
+position = Vector2(9517.71, 1163.25)
+scale = Vector2(1.29004, 1.29004)
+
+[node name="UntitledArtwork-131" type="Sprite2D" parent="Interactables/Bushes"]
+texture = ExtResource("29_31873")
+
+[node name="UntitledArtwork-111" type="Sprite2D" parent="Interactables/Bushes"]
+modulate = Color(0.752941, 0.752941, 0.752941, 1)
+position = Vector2(345.953, -95.54)
+scale = Vector2(0.775172, 0.775172)
+texture = ExtResource("40_slhwn")
+
+[node name="UntitledArtwork-121" type="Sprite2D" parent="Interactables/Bushes"]
+modulate = Color(0.776471, 0.776471, 0.776471, 1)
+position = Vector2(621.14, -102.517)
+scale = Vector2(1.73754, 1.73754)
+texture = ExtResource("79_tqihn")
+
+[node name="UntitledArtwork-112" type="Sprite2D" parent="Interactables/Bushes"]
+modulate = Color(0.882353, 0.890196, 0.882353, 1)
+z_index = 20
+position = Vector2(2005.6, -405.609)
+rotation = -0.223401
+scale = Vector2(0.687392, 0.687392)
+texture = ExtResource("40_slhwn")
+
+[node name="UntitledArtwork-142" type="Sprite2D" parent="Interactables/Bushes"]
+position = Vector2(1588.56, -676.144)
+scale = Vector2(0.947197, 0.969425)
+texture = ExtResource("26_tvae1")
+flip_h = true
+
+[node name="UntitledArtwork-141" type="Sprite2D" parent="Interactables/Bushes"]
+position = Vector2(1814.91, -646.688)
+scale = Vector2(0.947197, 0.969425)
+texture = ExtResource("26_tvae1")
+
+[node name="Plants" type="Node2D" parent="Interactables"]
+position = Vector2(10353, -282)
+
+[node name="Plant" type="Sprite2D" parent="Interactables/Plants"]
+texture = ExtResource("80_q5uc6")
+
+[node name="Plant1" type="Sprite2D" parent="Interactables/Plants"]
+z_index = 20
+position = Vector2(620, 98)
+texture = ExtResource("81_e646o")
+
+[node name="Plant3(2)" type="Sprite2D" parent="Interactables/Plants"]
+position = Vector2(835, 15)
+texture = ExtResource("82_4cwkh")
+
+[node name="Plant3" type="Sprite2D" parent="Interactables/Plants"]
+position = Vector2(528, -36)
+texture = ExtResource("83_yqoam")
+
+[node name="Plant4(2)" type="Sprite2D" parent="Interactables/Plants"]
+position = Vector2(789, -26)
+rotation = -0.0452633
+scale = Vector2(1.21871, 1.21871)
+texture = ExtResource("84_rlrtn")
+
+[node name="Plant6" type="Sprite2D" parent="Interactables/Plants"]
+z_index = 20
+position = Vector2(995, 180)
+texture = ExtResource("85_wtvji")
+
+[node name="Grass7" type="Sprite2D" parent="Interactables/Plants"]
+modulate = Color(1, 0.870588, 1, 1)
+position = Vector2(438, -49)
+texture = ExtResource("86_b8qwi")
+
+[node name="Grass8" type="Sprite2D" parent="Interactables/Plants"]
+modulate = Color(0.756863, 0.815686, 0.807843, 1)
+z_index = 20
+position = Vector2(471, -53)
+texture = ExtResource("87_ih2o4")
+
+[node name="Plants2" type="Node2D" parent="Interactables"]
+position = Vector2(12984, 516)
+
+[node name="WhiteGrass" type="Sprite2D" parent="Interactables/Plants2"]
+texture = ExtResource("88_c6mxy")
+
+[node name="WhiteGrass2" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(382, 51)
+texture = ExtResource("89_c8sb1")
+flip_h = true
+
+[node name="Mushroom-10" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(1737, -530)
+scale = Vector2(0.566791, 0.566791)
+texture = ExtResource("78_tls4d")
+
+[node name="Mushroom-8" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(1839, -594)
+scale = Vector2(0.452562, 0.452562)
+texture = ExtResource("90_ah4yo")
+
+[node name="Mushroom-7" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(2011, -597)
+scale = Vector2(0.431558, 0.431558)
+texture = ExtResource("91_4y1rg")
+
+[node name="UntitledArtwork-122" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(4276, -1066)
+scale = Vector2(2.83191, 2.83191)
+texture = ExtResource("79_tqihn")
+
+[node name="UntitledArtwork-113" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(4900.46, -1126.25)
+scale = Vector2(1.46951, 1.46951)
+texture = ExtResource("40_slhwn")
+
+[node name="WhiteGrass3" type="Sprite2D" parent="Interactables/Plants2"]
+z_index = 20
+position = Vector2(2587, -750)
+texture = ExtResource("89_c8sb1")
+
+[node name="WhiteGrass4" type="Sprite2D" parent="Interactables/Plants2"]
+z_index = 20
+position = Vector2(2548, -757)
+texture = ExtResource("88_c6mxy")
+flip_h = true
+
+[node name="Plant" type="Sprite2D" parent="Interactables/Plants2"]
+position = Vector2(2262, -720)
+texture = ExtResource("80_q5uc6")
+
+[node name="Enemy" type="Path2D" parent="Interactables"]
+position = Vector2(4584, 751)
+curve = SubResource("Curve2D_w2hll")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Interactables/Enemy"]
+position = Vector2(-342, 70)
+rotation = -0.152649
+rotates = false
+
+[node name="HazardCreature" parent="Interactables/Enemy/PathFollow2D" instance=ExtResource("26_sd5ab")]
+position = Vector2(6.88155, -12.1095)
+rotation = 0.149627
+
+[node name="Clusterberry bush" parent="Interactables" instance=ExtResource("65_1kmo1")]
+position = Vector2(6073, 785)
+
+[node name="Clusterberry bush2" parent="Interactables" instance=ExtResource("65_1kmo1")]
+position = Vector2(11248, 1161)
+
+[node name="EndTree" parent="Interactables" instance=ExtResource("66_jrrdg")]
+position = Vector2(16797, -1128)
+
 [node name="UI" parent="." instance=ExtResource("15_jvokw")]
 visible = false
 
@@ -2977,7 +3134,6 @@ position = Vector2(7288, 558)
 
 [node name="Foreground" type="ParallaxBackground" parent="."]
 layer = 2
-visible = false
 scroll_offset = Vector2(-3254.09, -785.349)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Foreground"]
@@ -3036,93 +3192,3 @@ position = Vector2(15, -230)
 script = ExtResource("16_ykx52")
 _points = SubResource("Resource_thb0y")
 shape_material = SubResource("Resource_o4873")
-
-[node name="Enemy" type="Path2D" parent="."]
-position = Vector2(4584, 751)
-curve = SubResource("Curve2D_w2hll")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Enemy"]
-position = Vector2(-342, 70)
-rotation = -0.152649
-rotates = false
-
-[node name="HazardCreature" parent="Enemy/PathFollow2D" instance=ExtResource("26_sd5ab")]
-position = Vector2(6.88155, -12.1095)
-rotation = 0.149627
-
-[node name="Clusterberry bush" parent="." instance=ExtResource("65_1kmo1")]
-position = Vector2(6073, 785)
-
-[node name="EndTree" parent="." instance=ExtResource("66_jrrdg")]
-position = Vector2(16797, -1128)
-
-[node name="Mushroom-9" type="Sprite2D" parent="."]
-position = Vector2(9128, 757)
-scale = Vector2(0.603294, 0.603294)
-texture = ExtResource("78_tls4d")
-
-[node name="UntitledArtwork-131" type="Sprite2D" parent="."]
-position = Vector2(9517.71, 1163.25)
-scale = Vector2(1.29004, 1.29004)
-texture = ExtResource("29_31873")
-
-[node name="UntitledArtwork-111" type="Sprite2D" parent="."]
-modulate = Color(0.752941, 0.752941, 0.752941, 1)
-position = Vector2(9964, 1040)
-texture = ExtResource("40_slhwn")
-
-[node name="UntitledArtwork-121" type="Sprite2D" parent="."]
-modulate = Color(0.776471, 0.776471, 0.776471, 1)
-position = Vector2(10319, 1031)
-scale = Vector2(2.24149, 2.24149)
-texture = ExtResource("79_tqihn")
-
-[node name="Plants" type="Node2D" parent="."]
-position = Vector2(10353, -282)
-
-[node name="Plant" type="Sprite2D" parent="Plants"]
-texture = ExtResource("80_q5uc6")
-
-[node name="Plant1" type="Sprite2D" parent="Plants"]
-z_index = 20
-position = Vector2(620, 98)
-texture = ExtResource("81_e646o")
-
-[node name="Plant3(2)" type="Sprite2D" parent="Plants"]
-position = Vector2(835, 15)
-texture = ExtResource("82_4cwkh")
-
-[node name="Plant3" type="Sprite2D" parent="Plants"]
-position = Vector2(528, -36)
-texture = ExtResource("83_yqoam")
-
-[node name="Plant4(2)" type="Sprite2D" parent="Plants"]
-position = Vector2(789, -26)
-rotation = -0.0452633
-scale = Vector2(1.21871, 1.21871)
-texture = ExtResource("84_rlrtn")
-
-[node name="Plant6" type="Sprite2D" parent="Plants"]
-z_index = 20
-position = Vector2(995, 180)
-texture = ExtResource("85_wtvji")
-
-[node name="Grass7" type="Sprite2D" parent="Plants"]
-modulate = Color(1, 0.870588, 1, 1)
-position = Vector2(438, -49)
-texture = ExtResource("86_b8qwi")
-
-[node name="Grass8" type="Sprite2D" parent="Plants"]
-modulate = Color(0.756863, 0.815686, 0.807843, 1)
-z_index = 20
-position = Vector2(471, -53)
-texture = ExtResource("87_ih2o4")
-
-[node name="WhiteGrass" type="Sprite2D" parent="."]
-position = Vector2(12984, 516)
-texture = ExtResource("88_c6mxy")
-
-[node name="WhiteGrass2" type="Sprite2D" parent="."]
-position = Vector2(13366, 567)
-texture = ExtResource("89_c8sb1")
-flip_h = true
