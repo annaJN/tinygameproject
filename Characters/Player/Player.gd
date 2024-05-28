@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var movement_data : PlayerMovementData
+var movement_data : PlayerMovementData
 
 var is_wall_sliding = false
 
@@ -43,8 +43,10 @@ var wallBody = false
 
 func _ready():
 	# Set this node as the player node
+	
 	Global.set_player_reference(self)
 	movement_data = load(Global.movement)
+	print("player is ready")
 
 func _process(_delta):
 	## Display the health of the player by a label
@@ -157,8 +159,9 @@ func _input(event):
 	if (event.is_action_pressed("ui_add")):
 		var items = $ObjectFinder.get_overlapping_bodies()
 		for item in items:
-			item.pickup_item()
-			return
+			if item is StaticBody2D:
+				item.pickup_item()
+				return
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact"):
@@ -261,6 +264,8 @@ func jumpHandling():
 		if carrying and carryingBody.is_in_group("Heavy"):
 			velocity.y = 0
 			releaseItem()
+		#var vel = velocity
+		#var vel_jump = movement_data.jump_velocity
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0

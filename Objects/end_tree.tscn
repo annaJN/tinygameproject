@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://bmsr6uswcks24"]
 
-[ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_4cc5q"]
 [ext_resource type="Texture2D" uid="uid://c08y2pr0ttmxk" path="res://Assets/Environment/EndTree/platform_tree_1.png" id="1_dwjli"]
 [ext_resource type="Texture2D" uid="uid://da4g6ai0dvmxr" path="res://Assets/Environment/EndTree/platform_tree_2.png" id="1_gu3y3"]
+[ext_resource type="Script" path="res://Objects/end_tree.gd" id="1_mc1vj"]
 [ext_resource type="Texture2D" uid="uid://ry8f8qng5c03" path="res://Assets/Environment/Branches/branchshape_round.png" id="2_j8m5n"]
 [ext_resource type="Texture2D" uid="uid://cp1nfr2hw63j6" path="res://Assets/Environment/EndTree/platform_tree_6.png" id="3_03pb3"]
 [ext_resource type="Texture2D" uid="uid://dvn4mve4qskdj" path="res://Assets/Environment/Branches/moss3.png" id="3_mjert"]
@@ -37,7 +37,7 @@ b = Vector2(-33, 595)
 size = Vector2(436, 1389.5)
 
 [node name="EndTree" type="StaticBody2D"]
-script = ExtResource("1_4cc5q")
+script = ExtResource("1_mc1vj")
 
 [node name="PlatformTree2" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -86,34 +86,6 @@ position = Vector2(117, 234)
 rotation = -1.5708
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("5_gq40w")
-
-[node name="Branch3" type="StaticBody2D" parent="Branches" groups=["Landing"]]
-position = Vector2(-83, 187)
-rotation = 3.14159
-scale = Vector2(1, -1)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Branches/Branch3"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("6_18x7b")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Branches/Branch3"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
-
-[node name="Branch7" type="StaticBody2D" parent="Branches" groups=["Landing"]]
-position = Vector2(-68, -287)
-rotation = 3.14159
-scale = Vector2(1, -1)
-metadata/_edit_group_ = true
-
-[node name="Branch1m" type="Sprite2D" parent="Branches/Branch7"]
-scale = Vector2(0.335366, 0.335366)
-texture = ExtResource("6_18x7b")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Branches/Branch7"]
-polygon = PackedVector2Array(-61, -30, -54, -31, -49, -29, -38, -27, -10, -14, 7, -10, 16, -8, 30, -12, 48.0676, -10.5546, 80, -8, 93, -5, 107, 0, 13, -3)
-one_way_collision = true
 
 [node name="Branch4" type="StaticBody2D" parent="Branches" groups=["Landing"]]
 position = Vector2(5, -447)
@@ -175,6 +147,7 @@ position = Vector2(258, -8)
 shape = SubResource("SegmentShape2D_3xy4v")
 
 [node name="PlatformTree1" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_dwjli")
 
@@ -195,6 +168,7 @@ visible = false
 polygon = PackedVector2Array(-602, -559, -536, -556, -404, -536, -232, -509, -64, -495, 113, -491, 328, -477, 467, -465, 630, -481, 684, -484, 719, -470, 719, -463, 473, -432, 154, -427, -130, -414, -567, -328)
 
 [node name="InTree" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InTree"]
