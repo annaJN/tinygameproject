@@ -40,7 +40,7 @@ offset_top = 130.0
 offset_right = 1516.0
 offset_bottom = 343.0
 theme_override_font_sizes/font_size = 50
-text = "You found your way home.
+text = "You reached ascencion.
 Congratulations!"
 horizontal_alignment = 1
 

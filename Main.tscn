@@ -45,7 +45,8 @@ text = "Resume Game"
 [node name="Halfway" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer" groups=["Saves"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Resume halfway"
+text = "Resume from Tower
+"
 
 [node name="Settings" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
