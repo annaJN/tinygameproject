@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c25vemi4bk2au"
-path="res://.godot/imported/ground_innerfill.png-0556357c97d55b3f80bb537f834ffe46.ctex"
+uid="uid://d4hiuk33q1508"
+path="res://.godot/imported/ground_micro_right.png-a0ec06f9c53c012eac630a51ae272276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/ground_innerfill.png"
-dest_files=["res://.godot/imported/ground_innerfill.png-0556357c97d55b3f80bb537f834ffe46.ctex"]
+source_file="res://Assets/Environment/Ground/old ground/ground_micro_right.png"
+dest_files=["res://.godot/imported/ground_micro_right.png-a0ec06f9c53c012eac630a51ae272276.ctex"]
 
 [params]
 

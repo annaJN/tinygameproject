@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=12 format=3 uid="uid://dsfbfkdwevhw3"]
+
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="1_v6aw3"]
+[ext_resource type="Texture2D" uid="uid://suu5e8gmq4me" path="res://Assets/Environment/Ground/Roof(2).png" id="2_yvmal"]
+[ext_resource type="Texture2D" uid="uid://vj3ggcvw3cfl" path="res://Assets/Environment/Ground/inner_corner.png" id="3_bh8bg"]
+[ext_resource type="Texture2D" uid="uid://bnraffowpyoxl" path="res://Assets/Environment/Ground/Bottom right(1).png" id="4_yi2mp"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="5_1p1mb"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_n5m6j"]
+[ext_resource type="Texture2D" uid="uid://c25vemi4bk2au" path="res://Assets/Environment/Ground/old ground/ground_innerfill.png" id="7_m45uh"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_pwsfl"]
+
+[sub_resource type="Resource" id="Resource_1r0ex"]
+script = ExtResource("1_v6aw3")
+textures = Array[Texture2D]([ExtResource("2_yvmal")])
+textures_corner_outer = Array[Texture2D]([ExtResource("4_yi2mp")])
+textures_corner_inner = Array[Texture2D]([ExtResource("3_bh8bg")])
+textures_taper_left = Array[Texture2D]([])
+textures_taper_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = true
+use_taper_texture = false
+fit_mode = 1
+
+[sub_resource type="Resource" id="Resource_e6syo"]
+script = ExtResource("5_1p1mb")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_4pq81"]
+script = ExtResource("6_n5m6j")
+edge_material = SubResource("Resource_1r0ex")
+normal_range = SubResource("Resource_e6syo")
+weld = true
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.2
+
+[resource]
+script = ExtResource("8_pwsfl")
+_edge_meta_materials = Array[ExtResource("6_n5m6j")]([SubResource("Resource_4pq81")])
+fill_textures = Array[Texture2D]([ExtResource("7_m45uh")])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = -0.6

@@ -55,19 +55,19 @@ func _process(_delta):
 	
 	if !pickerInstantiated and tmpPlayerPos >= 7600:
 		tmpPicker = BerryPicker.instantiate()
-		tmpPicker.position = Vector2(8650, 720)
+		tmpPicker.position = Vector2(8630, 560)
 		add_child(tmpPicker)
 		pickerInstantiated = true
 	
 	if !denaInstantiated and tmpPlayerPos >= 9000 and Global.denaRemoved:
 		tmpSleepy = Sleepy.instantiate()
-		tmpSleepy.position = Vector2(10000, 500)
+		tmpSleepy.position = Vector2(10700, -150)
 		add_child(tmpSleepy)
 		denaInstantiated = true
 	
 	if !dragonInstantiated and tmpPlayerPos >= 9500:
 		tmpDragon = Dragon.instantiate()
-		tmpDragon.position = Vector2(13000, -900)
+		tmpDragon.position = Vector2(18900, -1550)
 		add_child(tmpDragon)
 		dragonInstantiated = true
 	
