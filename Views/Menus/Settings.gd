@@ -2,14 +2,18 @@ extends Node2D
 
 var checkbuttonen = Global.accessible
 
+func _ready():
+	AudioPlayer.play_music_home()
+	
 func _process(_delta):
-	if Global.accessible:
-		set_color($DefaultActive, 1,1,1,1)
-		set_color($AccessibleActive, 0,1,0,0.5)
+	pass
+	#if Global.accessible:
+		#set_color($DefaultActive, 1,1,1,1)
+		#set_color($AccessibleActive, 0,1,0,0.5)
 		
-	else:
-		set_color($DefaultActive, 0,1,0,0.5)
-		set_color($AccessibleActive, 1,1,1,1)
+	#else:
+		#set_color($DefaultActive, 0,1,0,0.5)
+		#set_color($AccessibleActive, 1,1,1,1)
 		
 func _on_return_pressed():
 	get_tree().change_scene_to_file("res://Main.tscn")

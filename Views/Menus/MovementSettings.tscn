@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2vt8dvkbu118"]
+
+[ext_resource type="PackedScene" uid="uid://c2ubkrevhir58" path="res://Views/Menus/SettingsButtons.tscn" id="1_cmrd7"]
+[ext_resource type="Script" path="res://Views/Menus/Settings.gd" id="1_nx6fm"]
+
+[node name="MovementSettings" type="Node2D"]
+script = ExtResource("1_nx6fm")
+
+[node name="SettingsButtons" parent="." instance=ExtResource("1_cmrd7")]
+
+[node name="Default" type="Button" parent="SettingsButtons"]
+offset_left = 128.0
+offset_top = 225.0
+offset_right = 278.0
+offset_bottom = 325.0
+text = "Default"
+
+[node name="Accessible" type="Button" parent="SettingsButtons"]
+offset_left = 299.0
+offset_top = 225.0
+offset_right = 449.0
+offset_bottom = 325.0
+text = "Visually 
+accessible"
+
+[node name="Custom" type="Button" parent="SettingsButtons"]
+offset_left = 469.0
+offset_top = 225.0
+offset_right = 619.0
+offset_bottom = 325.0
+text = "Custom
+"
+
+[node name="DoubleJumpToggle" type="CheckButton" parent="SettingsButtons"]
+offset_left = 384.0
+offset_top = 382.0
+offset_right = 428.0
+offset_bottom = 406.0
+
+[node name="PauseWallToggle" type="CheckButton" parent="SettingsButtons"]
+offset_left = 384.0
+offset_top = 437.0
+offset_right = 428.0
+offset_bottom = 461.0
+
+[node name="DoubleJump" type="Label" parent="SettingsButtons"]
+offset_left = 256.0
+offset_top = 382.0
+offset_right = 381.0
+offset_bottom = 405.0
+text = "Double jump"
+
+[node name="PauseWall" type="Label" parent="SettingsButtons"]
+offset_left = 204.0
+offset_top = 437.0
+offset_right = 363.0
+offset_bottom = 460.0
+text = "Pause on wall jump
+"
+
+[node name="Return" type="Button" parent="."]
+offset_left = 49.0
+offset_top = 40.0
+offset_right = 94.0
+offset_bottom = 71.0
+text = "Back"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

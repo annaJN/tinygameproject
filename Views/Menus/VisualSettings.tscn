@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://xb0o7fwcpsni"]
+
+[ext_resource type="PackedScene" uid="uid://c2ubkrevhir58" path="res://Views/Menus/SettingsButtons.tscn" id="1_gvpta"]
+[ext_resource type="Script" path="res://Views/Menus/VisualSettings.gd" id="1_yc4to"]
+
+[node name="VisualSettings" type="Node2D"]
+script = ExtResource("1_yc4to")
+
+[node name="SettingsButtons" parent="." instance=ExtResource("1_gvpta")]
+
+[node name="Default" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 214.0
+offset_right = 278.0
+offset_bottom = 314.0
+text = "Default"
+
+[node name="Accessible" type="Button" parent="."]
+offset_left = 305.0
+offset_top = 214.0
+offset_right = 455.0
+offset_bottom = 314.0
+text = "Visually 
+accessible"
+
+[node name="Custom" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 214.0
+offset_right = 634.0
+offset_bottom = 314.0
+text = "Custom
+"
+
+[node name="DialogueToggle" type="CheckButton" parent="."]
+offset_left = 426.0
+offset_top = 348.0
+offset_right = 470.0
+offset_bottom = 372.0
+
+[node name="ParallaxToggle" type="CheckButton" parent="."]
+offset_left = 426.0
+offset_top = 388.0
+offset_right = 470.0
+offset_bottom = 412.0
+
+[node name="HighconstrastToggle" type="CheckButton" parent="."]
+offset_left = 426.0
+offset_top = 433.0
+offset_right = 470.0
+offset_bottom = 457.0
+
+[node name="Dialogue" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 348.0
+offset_right = 370.0
+offset_bottom = 371.0
+text = "Dialogue effects"
+
+[node name="Parallax" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 388.0
+offset_right = 404.0
+offset_bottom = 411.0
+text = "Parallax background
+"
+
+[node name="High contrast" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 433.0
+offset_right = 398.0
+offset_bottom = 456.0
+text = "High contrast mode"
