@@ -20,7 +20,7 @@ func _init():
 	add_child(tmpPlayer)
 	
 	tmpSleepy = Sleepy.instantiate()
-	tmpSleepy.position = Vector2(2813, 761)
+	tmpSleepy.position = Vector2(2843, 761)
 	add_child(tmpSleepy)
 	
 	var tmpMushroom = Mushroom.instantiate()
