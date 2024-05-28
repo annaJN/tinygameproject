@@ -263,8 +263,8 @@ func jumpHandling():
 		if carrying and carryingBody.is_in_group("Heavy"):
 			velocity.y = 0
 			releaseItem()
-		var vel = velocity
-		var vel_jump = movement_data.jump_velocity
+		#var vel = velocity
+		#var vel_jump = movement_data.jump_velocity
 		velocity.y = movement_data.jump_velocity
 		jump_count += 1
 		time_on_ground = 0
