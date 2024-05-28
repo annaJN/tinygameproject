@@ -66,8 +66,8 @@ one_way_collision = true
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("3_mjert")
 
-[node name="Branch2" type="StaticBody2D" parent="Branches" groups=["WallJump"]]
-position = Vector2(0, -4)
+[node name="Branch2" type="StaticBody2D" parent="Branches" groups=["Landing", "WallJump"]]
+position = Vector2(0, -29)
 
 [node name="Branch2" type="Sprite2D" parent="Branches/Branch2"]
 position = Vector2(111, 149)

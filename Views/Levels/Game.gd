@@ -20,7 +20,7 @@ func _init():
 	add_child(tmpPlayer)
 	
 	tmpSleepy = Sleepy.instantiate()
-	tmpSleepy.position = Vector2(2813, 761)
+	tmpSleepy.position = Vector2(2843, 761)
 	add_child(tmpSleepy)
 	
 	var tmpMushroom = Mushroom.instantiate()
@@ -42,6 +42,11 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel") and !Global.dialogue_is_playing:
 		get_tree().paused = true
 		$Player/PauseMenuUI.show()
+		
+	if (event.is_action_pressed("Dash")):
+		Global.gameOver = true
+		get_tree().change_scene_to_file("res://Views/Menus/Victory.tscn")
+
 
 
 func _process(_delta):

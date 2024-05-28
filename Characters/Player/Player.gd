@@ -361,6 +361,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_object_finder_body_entered(body):
 	if body.is_in_group("WallJump") and !carrying:
+		print("WALLJUMP IS TRUE")
 		wallBody = true
 	if body.is_in_group("CollectItem") and !in_range_dialogue:
 		interact_ui_action_label.text = "collect"
@@ -377,6 +378,7 @@ func _on_object_finder_body_entered(body):
 
 func _on_object_finder_body_exited(_body):
 	if _body.is_in_group("WallJump"):
+		print("WALLJUMP IS FALSE")
 		wallBody = false
 	elif _body.is_in_group("CollectItem") or _body.is_in_group("CarryItem"):
 		interact_ui.visible = false
