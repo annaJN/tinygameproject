@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bliftdufwbqis"
-path="res://.godot/imported/ground_nice_edges.png-87b9a7bb5ef1f53a2288d53320072adc.ctex"
+uid="uid://lymeeb2ek8jw"
+path="res://.godot/imported/ground_micro_left.png-a509752fcd459f3dabac44738b235a32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/ground_nice_edges.png"
-dest_files=["res://.godot/imported/ground_nice_edges.png-87b9a7bb5ef1f53a2288d53320072adc.ctex"]
+source_file="res://Assets/Environment/Ground/old ground/ground_micro_left.png"
+dest_files=["res://.godot/imported/ground_micro_left.png-a509752fcd459f3dabac44738b235a32.ctex"]
 
 [params]
 

@@ -44,7 +44,8 @@ text = "Resume Game"
 [node name="Halfway" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer" groups=["Saves"]]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Resume halfway"
+text = "Resume from Tower
+"
 
 [node name="Settings" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
@@ -62,7 +63,6 @@ offset_top = 238.0
 offset_right = 1064.0
 offset_bottom = 316.0
 theme_override_font_sizes/font_size = 50
-text = "A Message"
 
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]

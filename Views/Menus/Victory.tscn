@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b58202k3vd8eq"]
+
+[ext_resource type="Texture2D" uid="uid://di3jnefwt6276" path="res://Assets/backgrounds/mushroomRingBackground.png" id="1_ixw5l"]
+[ext_resource type="Script" path="res://Main.gd" id="1_wjnax"]
+[ext_resource type="PackedScene" uid="uid://blo7ghg04650k" path="res://Characters/Player/dummy_player.tscn" id="2_uhslb"]
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_wjnax")
+
+[node name="MushroomRingBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_ixw5l")
+
+[node name="DummyPlayer" parent="MushroomRingBackground" instance=ExtResource("2_uhslb")]
+position = Vector2(-82, -1)
+
+[node name="CenterContainer" type="CenterContainer" parent="MushroomRingBackground"]
+offset_left = -628.0
+offset_top = -374.0
+offset_right = 532.0
+offset_bottom = 268.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MushroomRingBackground/CenterContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Start" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Start New Game"
+
+[node name="Quit" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Quit"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 318.0
+offset_top = 130.0
+offset_right = 1516.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 50
+text = "You reached ascencion.
+Congratulations!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

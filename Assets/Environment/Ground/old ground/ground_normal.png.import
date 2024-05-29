@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv8feddkt7gop"
-path="res://.godot/imported/groundTiny.png-350f1165a5780f9c65831797cacea507.ctex"
+uid="uid://bn3thwf5h87ob"
+path="res://.godot/imported/ground_normal.png-fb53995e9de9a3d750c495b679c6a8ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/groundTiny.png"
-dest_files=["res://.godot/imported/groundTiny.png-350f1165a5780f9c65831797cacea507.ctex"]
+source_file="res://Assets/Environment/Ground/old ground/ground_normal.png"
+dest_files=["res://.godot/imported/ground_normal.png-fb53995e9de9a3d750c495b679c6a8ba.ctex"]
 
 [params]
 

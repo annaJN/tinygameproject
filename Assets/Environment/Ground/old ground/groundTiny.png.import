@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fm183yuo3lin"
-path="res://.godot/imported/inner_corner_tiny.png-d72e1b10171022ac5301e15c7c250110.ctex"
+uid="uid://bv8feddkt7gop"
+path="res://.godot/imported/groundTiny.png-1da091f0e20fdf4a99e7228909f38657.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Ground/inner_corner_tiny.png"
-dest_files=["res://.godot/imported/inner_corner_tiny.png-d72e1b10171022ac5301e15c7c250110.ctex"]
+source_file="res://Assets/Environment/Ground/old ground/groundTiny.png"
+dest_files=["res://.godot/imported/groundTiny.png-1da091f0e20fdf4a99e7228909f38657.ctex"]
 
 [params]
 
