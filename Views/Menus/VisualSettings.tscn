@@ -70,3 +70,10 @@ offset_top = 433.0
 offset_right = 398.0
 offset_bottom = 456.0
 text = "High contrast mode"
+
+[connection signal="pressed" from="Default" to="." method="_on_default_pressed"]
+[connection signal="pressed" from="Accessible" to="." method="_on_accessible_pressed"]
+[connection signal="pressed" from="Custom" to="." method="_on_custom_pressed"]
+[connection signal="toggled" from="DialogueToggle" to="." method="_on_dialogue_toggle_toggled"]
+[connection signal="toggled" from="ParallaxToggle" to="." method="_on_parallax_toggle_toggled"]
+[connection signal="toggled" from="HighconstrastToggle" to="." method="_on_highconstrast_toggle_toggled"]
