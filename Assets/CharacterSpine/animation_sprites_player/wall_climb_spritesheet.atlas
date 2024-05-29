@@ -1,0 +1,243 @@
+
+wall_climb_spritesheet.png
+size: 4761,6469
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wall_climb_00
+  rotate: false
+  xy: 1, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_01
+  rotate: false
+  xy: 953, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_02
+  rotate: false
+  xy: 1905, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_03
+  rotate: false
+  xy: 2857, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_04
+  rotate: false
+  xy: 3809, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_05
+  rotate: false
+  xy: 1, 1079
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_06
+  rotate: false
+  xy: 953, 1079
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_07
+  rotate: false
+  xy: 1905, 1079
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_08
+  rotate: false
+  xy: 2857, 1079
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_09
+  rotate: false
+  xy: 3809, 1079
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_10
+  rotate: false
+  xy: 1, 2157
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_11
+  rotate: false
+  xy: 953, 2157
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_12
+  rotate: false
+  xy: 1905, 2157
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_13
+  rotate: false
+  xy: 2857, 2157
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_14
+  rotate: false
+  xy: 3809, 2157
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_15
+  rotate: false
+  xy: 1, 3235
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_16
+  rotate: false
+  xy: 953, 3235
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_17
+  rotate: false
+  xy: 1905, 3235
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_18
+  rotate: false
+  xy: 2857, 3235
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_19
+  rotate: false
+  xy: 3809, 3235
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_20
+  rotate: false
+  xy: 1, 4313
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_21
+  rotate: false
+  xy: 953, 4313
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_22
+  rotate: false
+  xy: 1905, 4313
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_23
+  rotate: false
+  xy: 2857, 4313
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_24
+  rotate: false
+  xy: 3809, 4313
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_25
+  rotate: false
+  xy: 1, 5391
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_26
+  rotate: false
+  xy: 953, 5391
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_27
+  rotate: false
+  xy: 1905, 5391
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_28
+  rotate: false
+  xy: 2857, 5391
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_29
+  rotate: false
+  xy: 3809, 5391
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+
+wall_climb_spritesheet2.png
+size: 2857,1079
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skeleton-wall_climb_30
+  rotate: false
+  xy: 1, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_31
+  rotate: false
+  xy: 953, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
+skeleton-wall_climb_32
+  rotate: false
+  xy: 1905, 1
+  size: 951, 1077
+  orig: 951, 1077
+  offset: 0, 0
+  index: -1
