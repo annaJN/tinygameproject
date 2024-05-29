@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2ubkrevhir58"]
+[gd_scene load_steps=11 format=3 uid="uid://c2ubkrevhir58"]
 
 [ext_resource type="Script" path="res://Views/Menus/SettingsButtons.gd" id="1_v6wtb"]
 
@@ -8,42 +8,76 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2ccy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggme6"]
+bg_color = Color(0.301961, 0.301961, 0.301961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1wii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uebhs"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xrfw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys5wx"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7sbt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pby6"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+
 [node name="SettingsButtons" type="Node2D"]
 script = ExtResource("1_v6wtb")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 112.0
-offset_top = 104.0
-offset_right = 632.0
-offset_bottom = 176.0
+offset_right = 520.0
+offset_bottom = 72.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jb6wy")
 
 [node name="Audio" type="Button" parent="."]
-offset_left = 128.0
-offset_top = 120.0
-offset_right = 228.0
-offset_bottom = 160.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 116.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t2ccy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ggme6")
 text = "Audio"
 
 [node name="Visuals" type="Button" parent="."]
-offset_left = 256.0
-offset_top = 120.0
-offset_right = 356.0
-offset_bottom = 160.0
+offset_left = 144.0
+offset_top = 16.0
+offset_right = 244.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_u1wii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uebhs")
 text = "Visuals"
 
 [node name="Controls" type="Button" parent="."]
-offset_left = 384.0
-offset_top = 120.0
-offset_right = 484.0
-offset_bottom = 160.0
+offset_left = 272.0
+offset_top = 16.0
+offset_right = 372.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xrfw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ys5wx")
 text = "Controls"
 
 [node name="Movement" type="Button" parent="."]
-offset_left = 512.0
-offset_top = 120.0
-offset_right = 612.0
-offset_bottom = 160.0
+offset_left = 400.0
+offset_top = 16.0
+offset_right = 500.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7sbt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0pby6")
 text = "Movement
 "
 

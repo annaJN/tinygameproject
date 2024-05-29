@@ -7,12 +7,27 @@ var checkbuttonen = Global.accessible
 @onready var double_jump_toggle = $DoubleJumpToggle
 @onready var pause_wall_toggle = $PauseWallToggle
 
+@onready var audio = $SettingsButtons/Audio
+@onready var visuals = $SettingsButtons/Visuals
+@onready var controls = $SettingsButtons/Controls
+@onready var movement = $SettingsButtons/Movement
+
+
 
 func _ready():
 	AudioPlayer.play_music_home()
 	set_color(default,0,1,0,0.5)
 	set_color(accessible, 1,1,1,1)
 	set_color(custom,1,1,1,1)
+	
+	movement.add_theme_color_override("font_color", Color("FFFFFF"))
+	var new_stylebox_normal = movement.get_theme_stylebox("normal").duplicate()
+	new_stylebox_normal.bg_color = Color("000")
+	new_stylebox_normal.corner_radius_bottom_left = 5
+	new_stylebox_normal.corner_radius_bottom_right = 5
+	new_stylebox_normal.corner_radius_top_left = 5
+	new_stylebox_normal.corner_radius_top_right = 5
+	movement.add_theme_stylebox_override("normal", new_stylebox_normal)
 	
 func _process(_delta):
 	pass

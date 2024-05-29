@@ -7,69 +7,77 @@
 script = ExtResource("1_yc4to")
 
 [node name="SettingsButtons" parent="." instance=ExtResource("1_gvpta")]
+position = Vector2(700, 100)
 
 [node name="Default" type="Button" parent="."]
-offset_left = 128.0
-offset_top = 214.0
-offset_right = 278.0
-offset_bottom = 314.0
+offset_left = 704.0
+offset_top = 296.0
+offset_right = 854.0
+offset_bottom = 396.0
 text = "Default"
 
 [node name="Accessible" type="Button" parent="."]
-offset_left = 305.0
-offset_top = 214.0
-offset_right = 455.0
-offset_bottom = 314.0
+offset_left = 880.0
+offset_top = 296.0
+offset_right = 1030.0
+offset_bottom = 396.0
 text = "Visually 
 accessible"
 
 [node name="Custom" type="Button" parent="."]
-offset_left = 484.0
-offset_top = 214.0
-offset_right = 634.0
-offset_bottom = 314.0
+offset_left = 1064.0
+offset_top = 296.0
+offset_right = 1214.0
+offset_bottom = 396.0
 text = "Custom
 "
 
 [node name="DialogueToggle" type="CheckButton" parent="."]
-offset_left = 426.0
-offset_top = 348.0
-offset_right = 470.0
-offset_bottom = 372.0
+offset_left = 1002.0
+offset_top = 430.0
+offset_right = 1046.0
+offset_bottom = 454.0
 
 [node name="ParallaxToggle" type="CheckButton" parent="."]
-offset_left = 426.0
-offset_top = 388.0
-offset_right = 470.0
-offset_bottom = 412.0
+offset_left = 1002.0
+offset_top = 470.0
+offset_right = 1046.0
+offset_bottom = 494.0
 
 [node name="HighconstrastToggle" type="CheckButton" parent="."]
-offset_left = 426.0
-offset_top = 433.0
-offset_right = 470.0
-offset_bottom = 457.0
+offset_left = 1002.0
+offset_top = 515.0
+offset_right = 1046.0
+offset_bottom = 539.0
 
 [node name="Dialogue" type="Label" parent="."]
-offset_left = 245.0
-offset_top = 348.0
-offset_right = 370.0
-offset_bottom = 371.0
+offset_left = 821.0
+offset_top = 430.0
+offset_right = 946.0
+offset_bottom = 453.0
 text = "Dialogue effects"
 
 [node name="Parallax" type="Label" parent="."]
-offset_left = 245.0
-offset_top = 388.0
-offset_right = 404.0
-offset_bottom = 411.0
+offset_left = 821.0
+offset_top = 470.0
+offset_right = 980.0
+offset_bottom = 493.0
 text = "Parallax background
 "
 
 [node name="High contrast" type="Label" parent="."]
-offset_left = 245.0
-offset_top = 433.0
-offset_right = 398.0
-offset_bottom = 456.0
+offset_left = 821.0
+offset_top = 515.0
+offset_right = 974.0
+offset_bottom = 538.0
 text = "High contrast mode"
+
+[node name="Return" type="Button" parent="."]
+offset_left = 49.0
+offset_top = 40.0
+offset_right = 94.0
+offset_bottom = 71.0
+text = "Back"
 
 [connection signal="pressed" from="Default" to="." method="_on_default_pressed"]
 [connection signal="pressed" from="Accessible" to="." method="_on_accessible_pressed"]
@@ -77,3 +85,6 @@ text = "High contrast mode"
 [connection signal="toggled" from="DialogueToggle" to="." method="_on_dialogue_toggle_toggled"]
 [connection signal="toggled" from="ParallaxToggle" to="." method="_on_parallax_toggle_toggled"]
 [connection signal="toggled" from="HighconstrastToggle" to="." method="_on_highconstrast_toggle_toggled"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+
+[editable path="SettingsButtons"]
