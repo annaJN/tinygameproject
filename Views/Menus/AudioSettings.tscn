@@ -9,44 +9,44 @@ script = ExtResource("1_38yvo")
 
 [node name="MasterVolume" parent="." instance=ExtResource("2_t3m2h")]
 offset_left = 881.0
-offset_top = 226.0
+offset_top = 248.0
 offset_right = 1169.0
-offset_bottom = 242.0
+offset_bottom = 264.0
 bus_name = "Master"
 
 [node name="SoundEffectVolume" parent="." instance=ExtResource("2_t3m2h")]
 offset_left = 881.0
-offset_top = 353.0
+offset_top = 377.0
 offset_right = 1169.0
-offset_bottom = 369.0
+offset_bottom = 393.0
 bus_name = "Sounds"
 
 [node name="MusicVolume" parent="." instance=ExtResource("2_t3m2h")]
 offset_left = 881.0
-offset_top = 292.0
+offset_top = 316.0
 offset_right = 1169.0
-offset_bottom = 308.0
+offset_bottom = 332.0
 bus_name = "Music"
 
 [node name="Sound effects" type="Label" parent="."]
 offset_left = 758.0
-offset_top = 347.0
+offset_top = 371.0
 offset_right = 874.0
-offset_bottom = 370.0
+offset_bottom = 394.0
 text = "Sound effects"
 
 [node name="Music" type="Label" parent="."]
 offset_left = 758.0
-offset_top = 286.0
+offset_top = 310.0
 offset_right = 874.0
-offset_bottom = 309.0
+offset_bottom = 333.0
 text = "Music"
 
 [node name="Master" type="Label" parent="."]
 offset_left = 758.0
-offset_top = 220.0
+offset_top = 248.0
 offset_right = 813.0
-offset_bottom = 243.0
+offset_bottom = 271.0
 text = "Master"
 
 [node name="SettingsButtons" parent="." instance=ExtResource("3_6jk55")]

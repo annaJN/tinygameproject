@@ -10,66 +10,66 @@ script = ExtResource("1_yc4to")
 position = Vector2(700, 100)
 
 [node name="Default" type="Button" parent="."]
-offset_left = 704.0
-offset_top = 296.0
-offset_right = 854.0
-offset_bottom = 396.0
+offset_left = 720.0
+offset_top = 248.0
+offset_right = 870.0
+offset_bottom = 348.0
 text = "Default"
 
 [node name="Accessible" type="Button" parent="."]
-offset_left = 880.0
-offset_top = 296.0
-offset_right = 1030.0
-offset_bottom = 396.0
+offset_left = 891.0
+offset_top = 248.0
+offset_right = 1041.0
+offset_bottom = 348.0
 text = "Visually 
 accessible"
 
 [node name="Custom" type="Button" parent="."]
-offset_left = 1064.0
-offset_top = 296.0
-offset_right = 1214.0
-offset_bottom = 396.0
+offset_left = 1061.0
+offset_top = 248.0
+offset_right = 1211.0
+offset_bottom = 348.0
 text = "Custom
 "
 
 [node name="DialogueToggle" type="CheckButton" parent="."]
 offset_left = 1002.0
-offset_top = 430.0
+offset_top = 405.0
 offset_right = 1046.0
-offset_bottom = 454.0
+offset_bottom = 429.0
 
 [node name="ParallaxToggle" type="CheckButton" parent="."]
 offset_left = 1002.0
-offset_top = 470.0
+offset_top = 451.0
 offset_right = 1046.0
-offset_bottom = 494.0
+offset_bottom = 475.0
 
 [node name="HighconstrastToggle" type="CheckButton" parent="."]
 offset_left = 1002.0
-offset_top = 515.0
+offset_top = 496.0
 offset_right = 1046.0
-offset_bottom = 539.0
+offset_bottom = 520.0
 
 [node name="Dialogue" type="Label" parent="."]
 offset_left = 821.0
-offset_top = 430.0
+offset_top = 405.0
 offset_right = 946.0
-offset_bottom = 453.0
+offset_bottom = 428.0
 text = "Dialogue effects"
 
 [node name="Parallax" type="Label" parent="."]
 offset_left = 821.0
-offset_top = 470.0
+offset_top = 451.0
 offset_right = 980.0
-offset_bottom = 493.0
+offset_bottom = 474.0
 text = "Parallax background
 "
 
 [node name="High contrast" type="Label" parent="."]
 offset_left = 821.0
-offset_top = 515.0
+offset_top = 496.0
 offset_right = 974.0
-offset_bottom = 538.0
+offset_bottom = 519.0
 text = "High contrast mode"
 
 [node name="Return" type="Button" parent="."]
