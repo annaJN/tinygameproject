@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=3 uid="uid://dyulsnxhxe31r"]
+[gd_scene load_steps=277 format=3 uid="uid://dyulsnxhxe31r"]
 
 [ext_resource type="Script" path="res://Views/Levels/Game.gd" id="1_l4e1y"]
 [ext_resource type="Texture2D" uid="uid://chi3f85sc21mt" path="res://Assets/Environment/Trees/blurry_tree5.png" id="3_42oxf"]
@@ -1136,6 +1136,9 @@ Array[int]([0, 15]): 15
 _next_key = 21
 _material_overrides = {}
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d6s1"]
+size = Vector2(414.341, 20)
+
 [sub_resource type="Curve2D" id="Curve2D_w2hll"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -342, 70, 0, 0, 0, 0, 110, 71, 0, 0, 0, 0, -123, 70, 0, 0, 0, 0, -342, 70)
@@ -1988,7 +1991,7 @@ metadata/_edit_lock_ = true
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="Ground" type="StaticBody2D" parent="Interactables" groups=["Landing", "WallJump"]]
+[node name="Ground" type="StaticBody2D" parent="Interactables" groups=["Landing"]]
 position = Vector2(-12898, 45)
 collision_mask = 5
 
@@ -2793,7 +2796,6 @@ rotation = -0.111701
 texture = ExtResource("58_onnx8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Tree"]
-visible = false
 position = Vector2(-9827.62, 994.296)
 rotation = -0.126223
 polygon = PackedVector2Array(8933.96, 31.2415, 9456, -111, 9639, -124, 9948, 3, 10584, 211, 10831.4, 268.056, 10972.9, 345.891, 10789.1, 531.766, 9956, 406, 9592, 220, 9185, 317, 9004.99, 431.627)
@@ -2884,7 +2886,6 @@ shape_material = ExtResource("30_88d57")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables/Ground2"]
-visible = false
 show_behind_parent = true
 polygon = PackedVector2Array(10739, 851.281, 11324.7, 838.291, 11370.8, 842.188, 11427.2, 851.905, 11563.4, 885.447, 11878.8, 985.507, 12271.4, 1129.89, 12654.7, 1208.71, 12630.6, 1402.17, 11361, 1446.27, 11358.4, 1974.16, 11620.8, 1976.18, 11845.9, 1966.34, 11951.8, 1955.15, 12042, 1938.42, 12079.9, 1926.19, 12114.6, 1909.74, 12146.6, 1889.67, 12176.7, 1866.58, 12288.7, 1755.98, 12348.2, 1698.1, 12380.9, 1670.62, 12416.3, 1644.9, 12455.2, 1621.54, 12498, 1601.15, 12545.3, 1584.31, 12597.8, 1571.64, 12725.6, 1556.45, 12879.1, 1550.89, 13210.4, 1559.29, 13601.9, 1588.51, 14686.7, 1583.19, 14688.6, 1363.6, 14703.2, 1044.78, 15780, 749.011, 16890.1, 566.153, 18762.2, 511.725, 18900.9, 3411.54, 10819.6, 3507.18)
 
@@ -2940,6 +2941,10 @@ rotation = 1.40754
 scale = Vector2(0.786442, 0.786442)
 texture = ExtResource("67_hqk7a")
 flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/BranchWall"]
+position = Vector2(-328.005, 254.169)
+shape = SubResource("RectangleShape2D_2d6s1")
 
 [node name="BigTree2" type="Node2D" parent="Interactables"]
 position = Vector2(11463, -86)
