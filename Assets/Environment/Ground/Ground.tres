@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=12 format=3 uid="uid://dsfbfkdwevhw3"]
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=12 format=3 uid="uid://d1st1qnslhlb1"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="1_v6aw3"]
 [ext_resource type="Texture2D" uid="uid://suu5e8gmq4me" path="res://Assets/Environment/Ground/Roof(2).png" id="2_yvmal"]
