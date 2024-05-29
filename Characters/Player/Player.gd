@@ -79,6 +79,9 @@ func _physics_process(delta):
 		in_air = true
 	
 	wall_sliding_handler(delta)
+	if is_wall_sliding:
+		anim.play("climbing")
+	
 	## Handle jump (including double jump)
 	if Input.is_action_just_pressed("Jump") and !Global.dialogue_is_playing:
 		jumpHandling()

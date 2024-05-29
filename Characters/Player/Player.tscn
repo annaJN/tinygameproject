@@ -1,6 +1,7 @@
-[gd_scene load_steps=250 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=252 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
+[ext_resource type="Texture2D" uid="uid://pthrodc17ggs" path="res://Assets/Spritesheets/Player/wall_climb_still_spritesheet.png" id="2_8x2qq"]
 [ext_resource type="Texture2D" uid="uid://bsous3x1vl4po" path="res://Assets/Spritesheets/Player/idle/idle_spritesheet.png" id="3_xiy85"]
 [ext_resource type="Texture2D" uid="uid://cu0vgvckijaaw" path="res://Assets/Spritesheets/Player/idle/idle_spritesheet2.png" id="4_5umqo"]
 [ext_resource type="Texture2D" uid="uid://dnbtnx1n7cbqa" path="res://Assets/Spritesheets/Player/jump_spritesheet.png" id="4_moe3t"]
@@ -839,6 +840,14 @@ region = Rect2(3284, 1259, 821, 1259)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6jd1w"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8x2qq")
+}],
+"loop": false,
+"name": &"climbing",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7radb")
@@ -1825,9 +1834,40 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
 }
 
+[sub_resource type="Animation" id="Animation_xaa3m"]
+resource_name = "climbing"
+length = 0.20002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"climbing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w87xx"]
 _data = {
 "RESET": SubResource("Animation_434x8"),
+"climbing": SubResource("Animation_xaa3m"),
 "falling": SubResource("Animation_wxx4v"),
 "idle": SubResource("Animation_yqnfo"),
 "idle_item": SubResource("Animation_a0s7p"),
