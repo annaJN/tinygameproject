@@ -263,6 +263,7 @@ func jumpHandling():
 		else:
 			$Sounds/JumpAir.play()
 		anim.play("jump")
+		print("PLAYING JUMP")
 		if carrying and carryingBody.is_in_group("Heavy"):
 			velocity.y = 0
 			releaseItem()
@@ -302,11 +303,13 @@ func wall_jump():
 	var right_angle = abs(wall_normal.angle_to(Vector2.RIGHT))
 	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.RIGHT) or right_angle < 10.0) and is_on_wall_only() and wallBody:
 		print("i am right jumping"+str(wall_normal))
+		anim.queue("wallJumping")
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 		
 	if Input.is_action_just_pressed("Jump") and (wall_normal.is_equal_approx(Vector2.LEFT) or left_angle < 10.0) and is_on_wall_only() and wallBody:
 		print("i am left jumping"+str(wall_normal))
+		anim.queue("wallJumping")
 		velocity.y = movement_data.jump_velocity
 		velocity.x = wall_normal.x * movement_data.speed
 
