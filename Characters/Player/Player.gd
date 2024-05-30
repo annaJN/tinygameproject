@@ -14,7 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var jump_count = 0
 # could be increased if we want a power up or for accessibly purposes
 #if we don't want to have double jump, change it to 1
-var max_jumps = 2
+var max_jumps
 var time_on_ground = 0
 var in_air = false
 var in_range_dialogue = false
@@ -48,7 +48,9 @@ func _ready():
 	
 	Global.set_player_reference(self)
 	movement_data = load(Global.movement)
+	max_jumps = movement_data.max_jumps
 	print("player is ready")
+	print(Global.movement)
 
 func _process(_delta):
 	## Display the health of the player by a label

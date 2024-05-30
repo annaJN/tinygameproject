@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerMovementData" load_steps=2 format=3 uid="uid://64jge0dcomx2"]
+
+[ext_resource type="Script" path="res://Characters/Player/MovementData.gd" id="1_gohmr"]
+
+[resource]
+script = ExtResource("1_gohmr")
+speed = 400.0
+jump_velocity = -1050.0
+acceleration = 900.0
+friction = 2000.0
+push_force = 80.0
+strength = 20000
+knockback_power = 500
+max_jumps = 2
+wall_jump_push = 1000
+wall_slide_gravity = 0
