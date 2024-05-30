@@ -29,7 +29,7 @@ offset_right = 1041.0
 offset_bottom = 304.0
 theme = ExtResource("5_7i7f0")
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-text = "Visually 
+text = "Mobility
 accessible"
 metadata/_edit_use_anchors_ = true
 

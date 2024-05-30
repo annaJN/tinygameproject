@@ -16,7 +16,10 @@ var checkbuttonen = Global.accessible
 
 func _ready():
 	AudioPlayer.play_music_home()
-	setHighlighted(default)
+	if(Global.accessible):
+		setHighlighted(accessible)
+	else:
+		setHighlighted(default)
 	movement.add_theme_color_override("font_color", Color("FFF"))
 	var new_stylebox_normal = movement.get_theme_stylebox("normal").duplicate()
 	new_stylebox_normal.bg_color = Color("000")
@@ -33,14 +36,18 @@ func _process(_delta):
 
 
 func _on_default_active_pressed():
+	
 	Global.movement = "res://Characters/Player/DefaultMovementData.tres"
 	Global.accessible = false
+	
 	
 
 
 func _on_accessible_active_pressed():
+	
 	Global.accessible = true
 	Global.movement = "res://Characters/Player/AccessibleMovementData.tres"
+	
 
 func set_color(node, a, b, c, d):
 	node.modulate = Color(a,b,c,d)
@@ -48,6 +55,10 @@ func set_color(node, a, b, c, d):
 
 
 func _on_default_pressed():
+	print("before default",Global.movement)
+	Global.movement = "res://Characters/Player/DefaultMovementData.tres"
+	Global.accessible = false
+	print("after default",Global.movement)
 	setHighlighted(default)
 	setDefault(accessible)
 	setDefault(custom)
@@ -60,6 +71,10 @@ func _on_default_pressed():
 
 
 func _on_accessible_pressed():
+	print("before accessible",Global.movement)
+	Global.accessible = true
+	Global.movement = "res://Characters/Player/AccessibleSettingsMovement.tres"
+	print("after accessible",Global.movement)
 	setHighlighted(accessible)
 	setDefault(custom)
 	setDefault(default)
