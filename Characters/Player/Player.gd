@@ -36,6 +36,8 @@ var wallBody = false
 @onready var new_item_ui = $NewItemUI
 @onready var save_point = $SavePoint
 @onready var die_screen = $DieScreen
+@onready var inventory_prompt = $InventoryPrompt
+
 
 
 @onready var anim = get_node("AnimationPlayer")
@@ -161,6 +163,8 @@ func _input(event):
 		for item in items:
 			if item is StaticBody2D:
 				item.pickup_item()
+				inventory_prompt.visible = true
+				$InventoryPrompt/InventoryTimer.start()
 				return
 
 func _unhandled_input(_event):
@@ -433,3 +437,7 @@ func _on_halfway_pressed():
 	Global.denaRemoved = false
 	Global.denaShouldInitiate = true
 	get_tree().reload_current_scene()
+
+
+func _on_inventory_timer_timeout():
+	inventory_prompt.visible = false
