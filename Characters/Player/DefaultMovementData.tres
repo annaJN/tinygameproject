@@ -13,4 +13,4 @@ strength = 10000
 knockback_power = 500
 max_jumps = 1
 wall_jump_push = 1000
-wall_slide_gravity = 10000
+wall_slide_gravity = 5000
