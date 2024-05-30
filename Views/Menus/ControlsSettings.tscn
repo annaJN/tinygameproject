@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dobaql8hc0hvi"]
+[gd_scene load_steps=4 format=3 uid="uid://dobaql8hc0hvi"]
 
 [ext_resource type="Script" path="res://Views/Menus/ControlsSettings.gd" id="1_wcpr8"]
 [ext_resource type="PackedScene" uid="uid://c2ubkrevhir58" path="res://Views/Menus/SettingsButtons.tscn" id="1_we3to"]
+[ext_resource type="PackedScene" uid="uid://ci5m0qsuyhb74" path="res://Views/Menus/backButton.tscn" id="3_db3ja"]
 
 [node name="ControlsSettings" type="Node2D"]
 script = ExtResource("1_wcpr8")
 
+[node name="SettingsButtons" parent="." instance=ExtResource("1_we3to")]
+position = Vector2(-1, 151)
+
 [node name="OptionButton" type="OptionButton" parent="."]
-offset_left = 969.0
-offset_top = 248.0
-offset_right = 1101.0
-offset_bottom = 279.0
+offset_left = 1008.0
+offset_top = 348.0
+offset_right = 1140.0
+offset_bottom = 379.0
 item_count = 2
 selected = 0
 popup/item_0/text = "WASD"
@@ -18,21 +22,14 @@ popup/item_0/id = 0
 popup/item_1/text = "Arrow keys"
 popup/item_1/id = 1
 
-[node name="SettingsButtons" parent="." instance=ExtResource("1_we3to")]
-position = Vector2(700, 100)
-
 [node name="Label" type="Label" parent="."]
-offset_left = 831.0
-offset_top = 248.0
-offset_right = 940.0
-offset_bottom = 271.0
+offset_left = 818.0
+offset_top = 348.0
+offset_right = 980.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 24
 text = "Input controls"
 
-[node name="Return" type="Button" parent="."]
-offset_left = 49.0
-offset_top = 40.0
-offset_right = 94.0
-offset_bottom = 71.0
-text = "Back"
+[node name="Return" parent="." instance=ExtResource("3_db3ja")]
 
 [editable path="SettingsButtons"]

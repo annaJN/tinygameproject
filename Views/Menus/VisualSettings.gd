@@ -39,9 +39,9 @@ func _process(delta):
 
 func _on_default_pressed():
 	default.button_pressed = true
-	set_color(default,0,1,0,0.5)
-	set_color(accessible, 1,1,1,1)
-	set_color(custom,1,1,1,1)
+	setHighlighted(default)
+	setDefault(custom)
+	setDefault(accessible)
 	dialogue_toggle.button_pressed = true
 	parallax_toggle.button_pressed = true
 	highconstrast_toggle.button_pressed = false
@@ -50,9 +50,9 @@ func _on_default_pressed():
 
 func _on_accessible_pressed():
 	accessible.button_pressed = true
-	set_color(accessible,0,1,0,0.5)
-	set_color(default, 1,1,1,1)
-	set_color(custom,1,1,1,1)
+	setHighlighted(accessible)
+	setDefault(default)
+	setDefault(custom)
 	dialogue_toggle.button_pressed = false
 	parallax_toggle.button_pressed = false
 	highconstrast_toggle.button_pressed = true
@@ -60,10 +60,9 @@ func _on_accessible_pressed():
 
 func _on_custom_pressed():
 	custom.button_pressed = true
-	set_color(custom,0,1,0,0.5)
-	set_color(accessible, 1,1,1,1)
-	set_color(default,1,1,1,1)
-
+	setHighlighted(custom)
+	setDefault(accessible)
+	setDefault(default)
 func check_if_other_state():
 	if (!dialogue_toggle.button_pressed and !parallax_toggle.button_pressed and highconstrast_toggle.button_pressed):
 		_on_accessible_pressed()
@@ -88,5 +87,36 @@ func _on_parallax_toggle_toggled(toggled_on):
 func _on_highconstrast_toggle_toggled(toggled_on):
 	check_if_other_state()
 
-func _on_return_pressed():
-	get_tree().change_scene_to_file("res://Main.tscn")
+	
+func setHighlighted(button):
+	
+	var new_stylebox_normal = button.get_theme_stylebox("normal").duplicate()
+	new_stylebox_normal.bg_color = Color("7fa12a")
+	new_stylebox_normal.border_width_bottom = 2
+	new_stylebox_normal.border_width_left = 2
+	new_stylebox_normal.border_width_right = 2
+	new_stylebox_normal.border_width_top = 2
+	new_stylebox_normal.corner_radius_bottom_left = 10
+	new_stylebox_normal.corner_radius_bottom_right = 10
+	new_stylebox_normal.corner_radius_top_left = 10
+	new_stylebox_normal.corner_radius_top_right = 10
+	new_stylebox_normal.border_color = Color("7fa12a")
+	button.add_theme_color_override("font_color", Color("FFF"))
+	
+	button.add_theme_stylebox_override("normal", new_stylebox_normal)
+
+func setDefault(button):
+	button.add_theme_color_override("font_color", Color("000"))
+	var new_stylebox_normal = button.get_theme_stylebox("normal").duplicate()
+	new_stylebox_normal.bg_color = Color("d1dab4")
+	new_stylebox_normal.border_width_bottom = 0
+	new_stylebox_normal.border_width_left = 0
+	new_stylebox_normal.border_width_right = 0
+	new_stylebox_normal.border_width_top = 0
+	new_stylebox_normal.corner_radius_bottom_left = 10
+	new_stylebox_normal.corner_radius_bottom_right = 10
+	new_stylebox_normal.corner_radius_top_left = 10
+	new_stylebox_normal.corner_radius_top_right = 10
+	
+	button.add_theme_stylebox_override("normal", new_stylebox_normal)
+	

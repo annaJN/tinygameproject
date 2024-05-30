@@ -1,83 +1,92 @@
-[gd_scene load_steps=3 format=3 uid="uid://xb0o7fwcpsni"]
+[gd_scene load_steps=5 format=3 uid="uid://xb0o7fwcpsni"]
 
 [ext_resource type="PackedScene" uid="uid://c2ubkrevhir58" path="res://Views/Menus/SettingsButtons.tscn" id="1_gvpta"]
 [ext_resource type="Script" path="res://Views/Menus/VisualSettings.gd" id="1_yc4to"]
+[ext_resource type="PackedScene" uid="uid://ci5m0qsuyhb74" path="res://Views/Menus/backButton.tscn" id="3_5f7vm"]
+[ext_resource type="Theme" uid="uid://ck5rsqoxlpelk" path="res://Helpers/MainTheme.tres" id="3_icbyb"]
 
 [node name="VisualSettings" type="Node2D"]
 script = ExtResource("1_yc4to")
 
 [node name="SettingsButtons" parent="." instance=ExtResource("1_gvpta")]
-position = Vector2(700, 100)
+position = Vector2(-1, 151)
 
 [node name="Default" type="Button" parent="."]
 offset_left = 720.0
-offset_top = 248.0
+offset_top = 360.0
 offset_right = 870.0
-offset_bottom = 348.0
+offset_bottom = 460.0
+theme = ExtResource("3_icbyb")
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Default"
 
 [node name="Accessible" type="Button" parent="."]
 offset_left = 891.0
-offset_top = 248.0
+offset_top = 360.0
 offset_right = 1041.0
-offset_bottom = 348.0
+offset_bottom = 460.0
+theme = ExtResource("3_icbyb")
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Visually 
 accessible"
 
 [node name="Custom" type="Button" parent="."]
 offset_left = 1061.0
-offset_top = 248.0
+offset_top = 360.0
 offset_right = 1211.0
-offset_bottom = 348.0
+offset_bottom = 460.0
+theme = ExtResource("3_icbyb")
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Custom
 "
 
 [node name="DialogueToggle" type="CheckButton" parent="."]
-offset_left = 1002.0
-offset_top = 405.0
-offset_right = 1046.0
-offset_bottom = 429.0
+offset_left = 1040.0
+offset_top = 517.0
+offset_right = 1084.0
+offset_bottom = 541.0
+scale = Vector2(1.6, 1.6)
 
 [node name="ParallaxToggle" type="CheckButton" parent="."]
-offset_left = 1002.0
-offset_top = 451.0
-offset_right = 1046.0
-offset_bottom = 475.0
+offset_left = 1040.0
+offset_top = 568.0
+offset_right = 1084.0
+offset_bottom = 592.0
+scale = Vector2(1.6, 1.6)
 
 [node name="HighconstrastToggle" type="CheckButton" parent="."]
-offset_left = 1002.0
-offset_top = 496.0
-offset_right = 1046.0
-offset_bottom = 520.0
+offset_left = 1040.0
+offset_top = 616.0
+offset_right = 1084.0
+offset_bottom = 640.0
+scale = Vector2(1.6, 1.6)
 
 [node name="Dialogue" type="Label" parent="."]
-offset_left = 821.0
-offset_top = 405.0
-offset_right = 946.0
-offset_bottom = 428.0
+offset_left = 840.0
+offset_top = 517.0
+offset_right = 1027.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 24
 text = "Dialogue effects"
 
 [node name="Parallax" type="Label" parent="."]
-offset_left = 821.0
-offset_top = 451.0
-offset_right = 980.0
-offset_bottom = 474.0
+offset_left = 792.0
+offset_top = 568.0
+offset_right = 1030.0
+offset_bottom = 602.0
+theme_override_font_sizes/font_size = 24
 text = "Parallax background
 "
 
 [node name="High contrast" type="Label" parent="."]
-offset_left = 821.0
-offset_top = 496.0
-offset_right = 974.0
-offset_bottom = 519.0
+offset_left = 808.0
+offset_top = 624.0
+offset_right = 1036.0
+offset_bottom = 658.0
+theme_override_font_sizes/font_size = 24
 text = "High contrast mode"
 
-[node name="Return" type="Button" parent="."]
-offset_left = 49.0
-offset_top = 40.0
-offset_right = 94.0
-offset_bottom = 71.0
-text = "Back"
+[node name="Return" parent="." instance=ExtResource("3_5f7vm")]
 
 [connection signal="pressed" from="Default" to="." method="_on_default_pressed"]
 [connection signal="pressed" from="Accessible" to="." method="_on_accessible_pressed"]
@@ -85,6 +94,5 @@ text = "Back"
 [connection signal="toggled" from="DialogueToggle" to="." method="_on_dialogue_toggle_toggled"]
 [connection signal="toggled" from="ParallaxToggle" to="." method="_on_parallax_toggle_toggled"]
 [connection signal="toggled" from="HighconstrastToggle" to="." method="_on_highconstrast_toggle_toggled"]
-[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 
 [editable path="SettingsButtons"]

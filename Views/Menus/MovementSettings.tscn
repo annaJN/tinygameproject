@@ -1,82 +1,102 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2vt8dvkbu118"]
+[gd_scene load_steps=5 format=3 uid="uid://d2vt8dvkbu118"]
 
 [ext_resource type="PackedScene" uid="uid://c2ubkrevhir58" path="res://Views/Menus/SettingsButtons.tscn" id="1_cmrd7"]
 [ext_resource type="Script" path="res://Views/Menus/Settings.gd" id="1_nx6fm"]
+[ext_resource type="PackedScene" uid="uid://ci5m0qsuyhb74" path="res://Views/Menus/backButton.tscn" id="3_8lhrb"]
+[ext_resource type="Theme" uid="uid://ck5rsqoxlpelk" path="res://Helpers/MainTheme.tres" id="5_7i7f0"]
 
 [node name="MovementSettings" type="Node2D"]
+position = Vector2(1, 156)
 script = ExtResource("1_nx6fm")
+
+[node name="SettingsButtons" parent="." instance=ExtResource("1_cmrd7")]
+position = Vector2(-2, -5)
 
 [node name="Default" type="Button" parent="."]
 offset_left = 720.0
-offset_top = 248.0
+offset_top = 204.0
 offset_right = 870.0
-offset_bottom = 348.0
+offset_bottom = 304.0
+theme = ExtResource("5_7i7f0")
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Default"
+metadata/_edit_use_anchors_ = true
 
 [node name="Accessible" type="Button" parent="."]
 offset_left = 891.0
-offset_top = 248.0
+offset_top = 204.0
 offset_right = 1041.0
-offset_bottom = 348.0
+offset_bottom = 304.0
+theme = ExtResource("5_7i7f0")
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Visually 
 accessible"
+metadata/_edit_use_anchors_ = true
 
 [node name="Custom" type="Button" parent="."]
 offset_left = 1061.0
-offset_top = 248.0
+offset_top = 204.0
 offset_right = 1211.0
-offset_bottom = 348.0
+offset_bottom = 304.0
+theme = ExtResource("5_7i7f0")
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Custom
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="DoubleJumpToggle" type="CheckButton" parent="."]
-offset_left = 976.0
-offset_top = 405.0
-offset_right = 1020.0
-offset_bottom = 429.0
+offset_left = 1025.0
+offset_top = 361.0
+offset_right = 1069.0
+offset_bottom = 385.0
+scale = Vector2(1.6, 1.6)
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseWallToggle" type="CheckButton" parent="."]
-offset_left = 976.0
-offset_top = 460.0
-offset_right = 1020.0
-offset_bottom = 484.0
+offset_left = 1025.0
+offset_top = 416.0
+offset_right = 1069.0
+offset_bottom = 440.0
+scale = Vector2(1.6, 1.6)
+metadata/_edit_use_anchors_ = true
 
 [node name="DoubleJump" type="Label" parent="."]
-offset_left = 848.0
-offset_top = 405.0
-offset_right = 973.0
-offset_bottom = 428.0
+offset_left = 870.0
+offset_top = 361.0
+offset_right = 1020.0
+offset_bottom = 395.0
+theme_override_font_sizes/font_size = 24
 text = "Double jump"
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseWall" type="Label" parent="."]
 offset_left = 796.0
-offset_top = 460.0
-offset_right = 955.0
-offset_bottom = 483.0
+offset_top = 416.0
+offset_right = 1022.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 24
 text = "Pause on wall jump
 "
-
-[node name="SettingsButtons" parent="." instance=ExtResource("1_cmrd7")]
-position = Vector2(700, 100)
-
-[node name="Return" type="Button" parent="."]
-offset_left = 49.0
-offset_top = 40.0
-offset_right = 94.0
-offset_bottom = 71.0
-text = "Back"
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 1920.0
 offset_top = 971.0
 offset_right = 1920.0
 offset_bottom = 1011.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Return" parent="." instance=ExtResource("3_8lhrb")]
+offset_left = 100.0
+offset_top = -85.0
+offset_right = 238.0
+offset_bottom = -29.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Default" to="." method="_on_default_pressed"]
 [connection signal="pressed" from="Accessible" to="." method="_on_accessible_pressed"]
 [connection signal="pressed" from="Custom" to="." method="_on_custom_pressed"]
 [connection signal="toggled" from="DoubleJumpToggle" to="." method="_on_double_jump_toggle_toggled"]
 [connection signal="toggled" from="PauseWallToggle" to="." method="_on_pause_wall_toggle_toggled"]
-[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 
 [editable path="SettingsButtons"]

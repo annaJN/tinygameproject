@@ -1,85 +1,138 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2ubkrevhir58"]
+[gd_scene load_steps=15 format=3 uid="uid://c2ubkrevhir58"]
 
 [ext_resource type="Script" path="res://Views/Menus/SettingsButtons.gd" id="1_v6wtb"]
+[ext_resource type="Texture2D" uid="uid://cpm7gbsawi3dv" path="res://Assets/Environment/Background/back(1)(1).jpg" id="2_glme8"]
+[ext_resource type="Texture2D" uid="uid://dxktg7j0mxhbo" path="res://Assets/Environment/Trees/leafy_branch_small.png" id="3_ob6yh"]
+[ext_resource type="Texture2D" uid="uid://p4sjuav3cyp5" path="res://Assets/Environment/Trees/leafy_branch.png" id="4_1o8hn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5e7y"]
+bg_color = Color(0.301961, 0.301961, 0.101961, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb6wy"]
+bg_color = Color(0.819608, 0.854902, 0.705882, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2ccy"]
+bg_color = Color(0.819608, 0.854902, 0.705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggme6"]
 bg_color = Color(0.301961, 0.301961, 0.301961, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1wii"]
+bg_color = Color(0.819608, 0.854902, 0.705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uebhs"]
 bg_color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xrfw"]
+bg_color = Color(0.819608, 0.854902, 0.705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys5wx"]
 bg_color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7sbt"]
+bg_color = Color(0.819608, 0.854902, 0.705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pby6"]
 bg_color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [node name="SettingsButtons" type="Node2D"]
+position = Vector2(0, 152)
 script = ExtResource("1_v6wtb")
 
+[node name="Back(1)(1)2" type="Sprite2D" parent="."]
+position = Vector2(2063, 506)
+texture = ExtResource("2_glme8")
+
+[node name="Back(1)(1)" type="Sprite2D" parent="."]
+position = Vector2(688, 506)
+texture = ExtResource("2_glme8")
+
+[node name="LeafyBranchSmall" type="Sprite2D" parent="."]
+position = Vector2(15, -352)
+texture = ExtResource("3_ob6yh")
+
+[node name="LeafyBranch" type="Sprite2D" parent="."]
+position = Vector2(1848, 200)
+rotation = 0.261799
+scale = Vector2(0.813595, 0.813595)
+texture = ExtResource("4_1o8hn")
+flip_h = true
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 544.0
+offset_right = 1376.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5e7y")
+metadata/_edit_use_anchors_ = true
+
 [node name="Panel" type="Panel" parent="."]
-offset_right = 520.0
-offset_bottom = 72.0
+offset_left = 616.0
+offset_top = 72.0
+offset_right = 1304.0
+offset_bottom = 144.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jb6wy")
+metadata/_edit_use_anchors_ = true
 
 [node name="Audio" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 116.0
-offset_bottom = 56.0
+offset_left = 632.0
+offset_top = 88.0
+offset_right = 784.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_t2ccy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ggme6")
 text = "Audio"
+metadata/_edit_use_anchors_ = true
 
 [node name="Visuals" type="Button" parent="."]
-offset_left = 144.0
-offset_top = 16.0
-offset_right = 244.0
-offset_bottom = 56.0
+offset_left = 800.0
+offset_top = 88.0
+offset_right = 952.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_u1wii")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_uebhs")
 text = "Visuals"
+metadata/_edit_use_anchors_ = true
 
 [node name="Controls" type="Button" parent="."]
-offset_left = 272.0
-offset_top = 16.0
-offset_right = 372.0
-offset_bottom = 56.0
+offset_left = 968.0
+offset_top = 88.0
+offset_right = 1120.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_0xrfw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ys5wx")
 text = "Controls"
+metadata/_edit_use_anchors_ = true
 
 [node name="Movement" type="Button" parent="."]
-offset_left = 400.0
-offset_top = 16.0
-offset_right = 500.0
-offset_bottom = 56.0
+offset_left = 1136.0
+offset_top = 88.0
+offset_right = 1288.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_n7sbt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0pby6")
 text = "Movement
 "
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="Visuals" to="." method="_on_visuals_pressed"]
