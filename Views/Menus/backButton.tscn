@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci5m0qsuyhb74"]
+
+[ext_resource type="Theme" uid="uid://ck5rsqoxlpelk" path="res://Helpers/MainTheme.tres" id="1_aryc2"]
+[ext_resource type="Texture2D" uid="uid://cdg8lrtttlhr1" path="res://Assets/Icons/ion_chevron-back-outline(2).png" id="1_bl0yp"]
+[ext_resource type="Script" path="res://Views/Menus/backButton.gd" id="2_0h0an"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vftr"]
+bg_color = Color(0.301961, 0.301961, 0.101961, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkje1"]
+bg_color = Color(0.462745, 0.462745, 0.176471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa4gu"]
+bg_color = Color(0.258824, 0.258824, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Return" type="Button"]
+offset_left = 101.0
+offset_top = 71.0
+offset_right = 239.0
+offset_bottom = 127.0
+theme = ExtResource("1_aryc2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vftr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nkje1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa4gu")
+text = "Back"
+icon = ExtResource("1_bl0yp")
+script = ExtResource("2_0h0an")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
