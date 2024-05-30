@@ -2068,6 +2068,7 @@ metadata/_edit_use_anchors_ = true
 wait_time = 4.0
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
+layer = 5
 visible = false
 
 [node name="Panel2" type="Panel" parent="InventoryUI"]

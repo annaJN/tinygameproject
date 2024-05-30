@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://blqfu67pm8yq3"]
+[gd_scene load_steps=7 format=3 uid="uid://blqfu67pm8yq3"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_pki7g"]
 [ext_resource type="Texture2D" uid="uid://bkp2ud52syqfn" path="res://Assets/backgrounds/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" id="2_gkc5u"]
 [ext_resource type="Texture2D" uid="uid://di3jnefwt6276" path="res://Assets/backgrounds/mushroomRingBackground.png" id="3_4iryg"]
-[ext_resource type="PackedScene" path="res://Characters/Player/dummy_player.tscn" id="4_j2je2"]
+[ext_resource type="PackedScene" uid="uid://blo7ghg04650k" path="res://Characters/Player/dummy_player.tscn" id="4_j2je2"]
+[ext_resource type="Theme" uid="uid://ck5rsqoxlpelk" path="res://Helpers/MainTheme.tres" id="5_jn3yo"]
+[ext_resource type="FontFile" uid="uid://lih7w08v7tju" path="res://Assets/Icons/TheHeartOfEverythingDemo-KRdD.ttf" id="6_h3wju"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pki7g")
@@ -22,47 +24,78 @@ texture = ExtResource("3_4iryg")
 position = Vector2(-82, -1)
 
 [node name="CenterContainer" type="CenterContainer" parent="MushroomRingBackground"]
-offset_left = -628.0
-offset_top = -374.0
-offset_right = 532.0
-offset_bottom = 268.0
+custom_minimum_size = Vector2(500, 500)
+offset_left = -83.0
+offset_top = -347.0
+offset_right = 1077.0
+offset_bottom = 295.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MushroomRingBackground/CenterContainer"]
+custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 20
+alignment = 1
 
 [node name="Start" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+theme = ExtResource("5_jn3yo")
 text = "Start New Game"
 
 [node name="Load" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer" groups=["Saves"]]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+theme = ExtResource("5_jn3yo")
 text = "Resume Game"
 
 [node name="Halfway" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer" groups=["Saves"]]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+theme = ExtResource("5_jn3yo")
 text = "Resume from Tower
 "
 
 [node name="Settings" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+theme = ExtResource("5_jn3yo")
 text = "Settings"
 
 [node name="Quit" type="Button" parent="MushroomRingBackground/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+theme = ExtResource("5_jn3yo")
 text = "Quit"
 
 [node name="Message" type="Label" parent="."]
+visible = false
 offset_left = 738.0
 offset_top = 238.0
 offset_right = 1064.0
 offset_bottom = 316.0
 theme_override_font_sizes/font_size = 50
+
+[node name="Label" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 80.0
+offset_right = 878.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.870588, 0.74902, 0.345098, 1)
+theme_override_fonts/font = ExtResource("6_h3wju")
+theme_override_font_sizes/font_size = 200
+text = "Whispering"
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = 226.0
+offset_top = 157.0
+offset_right = 855.0
+offset_bottom = 357.0
+theme_override_colors/font_color = Color(0.870588, 0.74902, 0.345098, 1)
+theme_override_fonts/font = ExtResource("6_h3wju")
+theme_override_font_sizes/font_size = 200
+text = "woods
+"
 
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MushroomRingBackground/CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
