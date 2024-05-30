@@ -3,6 +3,9 @@ extends Node2D
 var initiateGame = false
 var startUp = true
 
+func _ready():
+	AudioPlayer.play_music_home()
+
 func _on_start_pressed():
 	$Message.text = "Starting Game!"
 	Global.health = 50
@@ -57,7 +60,7 @@ func _process(delta):
 		startUp = false
 
 func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://Views/Menus/Settings.tscn")
+	get_tree().change_scene_to_file("res://Views/Menus/AudioSettings.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()

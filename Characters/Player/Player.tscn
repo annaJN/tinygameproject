@@ -1,4 +1,4 @@
-[gd_scene load_steps=250 format=3 uid="uid://c5vd8x40yfoan"]
+[gd_scene load_steps=249 format=3 uid="uid://c5vd8x40yfoan"]
 
 [ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_7pauv"]
 [ext_resource type="Texture2D" uid="uid://bsous3x1vl4po" path="res://Assets/Spritesheets/Player/idle/idle_spritesheet.png" id="3_xiy85"]
@@ -21,7 +21,6 @@
 [ext_resource type="AudioStream" uid="uid://bqbaqr8veaoy0" path="res://Assets/Sound/SFX/recharge/ratsch.wav" id="15_bqtvt"]
 [ext_resource type="AudioStream" uid="uid://ce0w2nd7lk4fq" path="res://Assets/Sound/SFX/jump/Ground Jump.wav" id="16_t6lya"]
 [ext_resource type="AudioStream" uid="uid://dlw5ni4kl0m3b" path="res://Assets/Sound/SFX/jump/Ground Jump 2.wav" id="16_w7eho"]
-[ext_resource type="AudioStream" uid="uid://dvtv8bku7vt4o" path="res://Assets/Sound/Music/OST_2.mp3" id="18_n7pv0"]
 [ext_resource type="AudioStream" uid="uid://bcag2pviflxhh" path="res://Assets/Sound/SFX/pop/pop5.wav" id="19_bu81v"]
 [ext_resource type="AudioStream" uid="uid://b6qu7noaml2yx" path="res://Assets/Sound/SFX/pop/pop2.wav" id="20_t3w84"]
 
@@ -2086,11 +2085,6 @@ volume_db = -20.0
 stream = ExtResource("16_t6lya")
 volume_db = -24.333
 pitch_scale = 1.31
-
-[node name="background_music" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("18_n7pv0")
-volume_db = -30.0
-autoplay = true
 
 [node name="ItemDrop" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("19_bu81v")
