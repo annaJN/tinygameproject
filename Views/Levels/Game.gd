@@ -15,6 +15,7 @@ var denaInstantiated = false
 var dragonInstantiated = false
 
 func _init():
+	AudioPlayer.play_music_level()
 	tmpPlayer = PlayerSomething.instantiate()
 	tmpPlayer.position = Vector2(Global.positionX, Global.positionY)
 	add_child(tmpPlayer)
@@ -50,6 +51,7 @@ func _input(event):
 
 
 func _process(_delta):
+
 	# A game over of sorts, if the health is 0 or less the game will return to the home page
 	var tmpPlayerPos = get_node("Player").position.x
 	

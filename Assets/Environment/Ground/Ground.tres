@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bnraffowpyoxl" path="res://Assets/Environment/Ground/Bottom right(1).png" id="4_yi2mp"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="5_1p1mb"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_n5m6j"]
-[ext_resource type="Texture2D" uid="uid://c25vemi4bk2au" path="res://Assets/Environment/Ground/old ground/ground_innerfill.png" id="7_m45uh"]
+[ext_resource type="Texture2D" uid="uid://e2w34katikpg" path="res://Assets/Environment/Ground/Ground_Texture.png" id="7_rdwek"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_pwsfl"]
 
 [sub_resource type="Resource" id="Resource_1r0ex"]
@@ -40,7 +40,7 @@ offset = 0.2
 [resource]
 script = ExtResource("8_pwsfl")
 _edge_meta_materials = Array[ExtResource("6_n5m6j")]([SubResource("Resource_4pq81")])
-fill_textures = Array[Texture2D]([ExtResource("7_m45uh")])
+fill_textures = Array[Texture2D]([ExtResource("7_rdwek")])
 fill_texture_z_index = -10
 fill_texture_show_behind_parent = false
 fill_texture_scale = 1.0

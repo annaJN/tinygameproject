@@ -14,7 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 var jump_count = 0
 # could be increased if we want a power up or for accessibly purposes
 #if we don't want to have double jump, change it to 1
-var max_jumps = 2
+var max_jumps
 var time_on_ground = 0
 var in_air = false
 var in_range_dialogue = false
@@ -36,6 +36,8 @@ var wallBody = false
 @onready var new_item_ui = $NewItemUI
 @onready var save_point = $SavePoint
 @onready var die_screen = $DieScreen
+@onready var inventory_prompt = $InventoryPrompt
+
 
 
 @onready var anim = get_node("AnimationPlayer")
@@ -46,7 +48,9 @@ func _ready():
 	
 	Global.set_player_reference(self)
 	movement_data = load(Global.movement)
+	max_jumps = movement_data.max_jumps
 	print("player is ready")
+	print(Global.movement)
 
 func _process(_delta):
 	## Display the health of the player by a label
@@ -163,6 +167,8 @@ func _input(event):
 		for item in items:
 			if item is StaticBody2D:
 				item.pickup_item()
+				inventory_prompt.visible = true
+				$InventoryPrompt/InventoryTimer.start()
 				return
 
 func _unhandled_input(_event):
@@ -440,3 +446,7 @@ func _on_halfway_pressed():
 	Global.denaRemoved = false
 	Global.denaShouldInitiate = true
 	get_tree().reload_current_scene()
+
+
+func _on_inventory_timer_timeout():
+	inventory_prompt.visible = false
