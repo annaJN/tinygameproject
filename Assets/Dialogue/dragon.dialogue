@@ -79,7 +79,7 @@ do Global.talking_to_dragon = false
 => END
 
 ~ dragon_talk
-if Global.check_item_in_inventory("quest_item") 
+if Global.check_item_in_inventory("Acorn") 
 	=> dragon_quest
 else 
 	=> dragon_waiting
@@ -88,7 +88,7 @@ else
 ~ dragon_quest
 Dragon: Ah, you have brought it. 
 #Check identifying traits 
-do Global.remove_item("quest","") 
+do Global.remove_item("Acorn","") 
 Dragon: Now stay still here for a moment and I will grant you what you need. 
 #Insert spore animation
 do Global.spore_animation()
